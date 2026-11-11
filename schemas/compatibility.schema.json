@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Compatibility row",
+  "description": "One row of the compatibility matrix, always scoped to the project's target profile.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "category", "status", "target", "evidence_claim_ids", "notes", "last_checked"],
+  "properties": {
+    "id": {"type": "string", "pattern": "^CMP-\\d{3}$"},
+    "category": {
+      "type": "string",
+      "enum": [
+        "SPTM Research", "SPTM Bypass", "Kernel Vulnerability", "Kernel Read",
+        "Kernel Write", "Sandbox Escape", "Privilege Escalation", "AMFI Compatibility",
+        "Complete Exploit Chain", "Bootstrap", "Package Manager", "Persistence",
+        "Public Jailbreak Tool", "Independent A17 Pro Reproduction", "Exact Build Verification"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["verified", "partially_verified", "reported_unverified", "unverified", "not_established", "not_researched"]
+    },
+    "target": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["device_identifier", "device_name", "chipset", "ios_version", "build_number"],
+      "properties": {
+        "device_identifier": {"const": "iPhone16,2"},
+        "device_name": {"const": "iPhone 15 Pro Max"},
+        "chipset": {"const": "A17 Pro"},
+        "ios_version": {"const": "27.0.1"},
+        "build_number": {"const": "24A446"}
+      }
+    },
+    "evidence_claim_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^C-\\d{3}$"}
+    },
+    "notes": {"type": "string", "minLength": 10},
+    "last_checked": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+  }
+}

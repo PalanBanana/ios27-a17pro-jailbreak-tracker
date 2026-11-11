@@ -1,0 +1,53 @@
+name: New research, announcement, or scam report
+description: Propose a research lead, an official announcement, or a scam or fake-tool report. Every entry needs a source.
+title: "[Research] "
+labels: ["research"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include exploit code, tools, installation packages, configuration profiles, download links to them, device identifiers (UDID, ECID, serial number, IMEI, EID), Apple Account details, tokens, backups or personal data.
+  - type: dropdown
+    id: entry-type
+    attributes:
+      label: Type of entry
+      options:
+        - New research lead
+        - Official announcement
+        - Scam or fake-tool report
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: summary
+    attributes:
+      label: One-line summary
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Sources
+      description: For each source give the URL, the publisher, the publication date, the date you accessed it, and whether you read the full text.
+      placeholder: "https://... | publisher | 2026-11-11 | accessed 2026-11-11 | full text read: yes"
+    validations:
+      required: true
+  - type: input
+    id: scope
+    attributes:
+      label: Device, chip, iOS version and build concerned (if any)
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes, limits, and any contradicting sources
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Checklist
+      options:
+        - label: I have not included exploit code, tools, IPA files, profiles or download links to them.
+          required: true
+        - label: I have not included device identifiers or personal data.
+          required: true
+        - label: Every factual statement has a source URL.
+          required: true

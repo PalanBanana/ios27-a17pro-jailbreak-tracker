@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Source",
+  "description": "One cited source. Tier definitions are in docs/RESEARCH_METHODOLOGY.md.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id", "title", "url", "publisher", "author", "source_tier",
+    "publication_date", "access_date", "source_type", "verification_method",
+    "associated_claim_ids", "reliability_notes"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^S-\\d{3}$"},
+    "title": {"type": "string", "minLength": 3},
+    "url": {"type": "string", "pattern": "^https://"},
+    "publisher": {"type": "string", "minLength": 2},
+    "author": {"type": ["string", "null"]},
+    "source_tier": {"type": "integer", "enum": [1, 2, 3, 4]},
+    "publication_date": {"type": ["string", "null"], "pattern": "^\\d{4}-\\d{2}(-\\d{2})?$"},
+    "access_date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "source_type": {
+      "type": "string",
+      "enum": [
+        "vendor_security_advisory", "vendor_security_guide", "vendor_security_blog",
+        "vendor_spec_page", "vendor_release_index", "official_repository_api",
+        "official_repository_readme", "conference_site", "company_site",
+        "news_article", "government_advisory", "third_party_firmware_index",
+        "community_wiki", "community_reference", "forum_post", "encyclopedia",
+        "license_text"
+      ]
+    },
+    "verification_method": {
+      "type": "string",
+      "enum": ["fetched_full_text", "fetched_partial_text", "api_response", "search_snippet_only", "not_accessed"]
+    },
+    "associated_claim_ids": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^C-\\d{3}$"}
+    },
+    "reliability_notes": {"type": "string", "minLength": 10},
+    "notes": {"type": ["string", "null"]}
+  }
+}

@@ -1,0 +1,36 @@
+name: Research update
+description: Report a material change since the last snapshot, or confirm that nothing material has changed.
+title: "[Update] "
+labels: ["research-update"]
+body:
+  - type: input
+    id: since
+    attributes:
+      label: Date of the last snapshot you checked against (YYYY-MM-DD)
+    validations:
+      required: true
+  - type: dropdown
+    id: change-type
+    attributes:
+      label: Change type
+      options:
+        - New official security disclosure
+        - New researcher or developer announcement
+        - New GitHub release or commit
+        - New firmware or signing change
+        - No material change
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details and sources
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Checklist
+      options:
+        - label: I have not included exploit code, tools or personal data.
+          required: true

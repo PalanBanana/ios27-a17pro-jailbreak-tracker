@@ -1,0 +1,106 @@
+[
+  {
+    "version": "27.0",
+    "build_number": "24A437",
+    "device_identifier": "iPhone16,2",
+    "release_date": "2026-09-14",
+    "signing_status": {
+      "status": "unsigned_per_third_party_index",
+      "checked_on": "2026-11-12",
+      "basis": "ipsw.me field signed=false on 2026-11-12 (re-checked; unchanged from 2026-11-11). No Apple-hosted signing record was checked."
+    },
+    "security_bulletin": "https://support.apple.com/en-us/149034",
+    "cve_status": "listed_on_apple_page",
+    "cves": [
+      "CVE-2026-28968",
+      "CVE-2026-65409",
+      "CVE-2026-65410",
+      "CVE-2026-86886"
+    ],
+    "patched_vulnerabilities": [
+      "Subset credited to Calif.io researchers and listed in Apple's iOS 27 security notes. The fixed-in release for each entry is not confirmed from the extracted text. The page references more than one hundred CVE identifiers in total; only the Calif.io subset is recorded here."
+    ],
+    "relevant_kernel_changes": "Not established. Apple's notes give CVE-2026-28968 the impact 'corrupt kernel memory'; the component and the fixed-in release were not confirmed.",
+    "exploit_compatibility": "No verified public exploit compatibility for build 24A437 on iPhone 15 Pro Max.",
+    "a17pro_compatibility": "not_established",
+    "source_ids": [
+      "S-001",
+      "S-014"
+    ],
+    "last_checked": "2026-11-12"
+  },
+  {
+    "version": "27.0.1",
+    "build_number": "24A446",
+    "device_identifier": "iPhone16,2",
+    "release_date": "2026-09-28",
+    "signing_status": {
+      "status": "unsigned_per_third_party_index",
+      "checked_on": "2026-11-12",
+      "basis": "ipsw.me field signed=false on 2026-11-12 (re-checked; unchanged from 2026-11-11). A community reference reported the build as still signed on 2026-11-02 (C-021). No Apple-hosted signing record was checked. Unresolved: do not assume a restore to this build is possible."
+    },
+    "security_bulletin": "https://support.apple.com/en-us/100100",
+    "cve_status": "none_published",
+    "cves": [],
+    "patched_vulnerabilities": [],
+    "relevant_kernel_changes": "None published in Apple's security notes for this build; Apple's index states 'This update has no published CVE entries'. Per-build kernel differences were not reviewed.",
+    "exploit_compatibility": "No verified public exploit compatibility for 24A446 on iPhone 15 Pro Max. The public demonstration reports concern an iPhone 18 Pro (A20 Pro), not this target.",
+    "a17pro_compatibility": "not_established",
+    "source_ids": [
+      "S-002",
+      "S-014",
+      "S-016"
+    ],
+    "last_checked": "2026-11-12"
+  },
+  {
+    "version": "27.2",
+    "build_number": "24B119",
+    "device_identifier": "iPhone16,2",
+    "release_date": "2026-10-26",
+    "signing_status": {
+      "status": "signed_per_third_party_index",
+      "checked_on": "2026-11-12",
+      "basis": "ipsw.me field signed=true on 2026-11-12 (re-checked; unchanged from 2026-11-11). Not verified against Apple."
+    },
+    "security_bulletin": "https://support.apple.com/en-us/100100",
+    "cve_status": "not_located",
+    "cves": [],
+    "patched_vulnerabilities": [],
+    "relevant_kernel_changes": "Not reviewed. Secondary press reports 163 fixed vulnerabilities (unverified, see C-010); Apple's 27.2 advisory was not located.",
+    "exploit_compatibility": "Secondary press (PBX Science) reports Apple fixed most flaws in iOS 27.2 and that no public tool is planned (unverified). No verified public exploit for 27.2 on iPhone 15 Pro Max.",
+    "a17pro_compatibility": "not_established",
+    "source_ids": [
+      "S-002",
+      "S-014",
+      "S-017",
+      "S-018",
+      "S-019"
+    ],
+    "last_checked": "2026-11-12"
+  },
+  {
+    "version": "27.2.1",
+    "build_number": "24B156",
+    "device_identifier": "iPhone16,2",
+    "release_date": "2026-11-09",
+    "signing_status": {
+      "status": "signed_per_third_party_index",
+      "checked_on": "2026-11-12",
+      "basis": "ipsw.me field signed=true on 2026-11-12 (re-checked; unchanged from 2026-11-11). Not verified against Apple."
+    },
+    "security_bulletin": "https://support.apple.com/en-us/100100",
+    "cve_status": "not_located",
+    "cves": [],
+    "patched_vulnerabilities": [],
+    "relevant_kernel_changes": "Not reviewed.",
+    "exploit_compatibility": "No verified public exploit compatibility for 24B156 on iPhone 15 Pro Max.",
+    "a17pro_compatibility": "not_established",
+    "source_ids": [
+      "S-002",
+      "S-014",
+      "S-030"
+    ],
+    "last_checked": "2026-11-12"
+  }
+]

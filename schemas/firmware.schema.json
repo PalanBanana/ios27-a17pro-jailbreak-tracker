@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Firmware record",
+  "description": "One iOS 27 build relevant to the target device family. Signing status is always reported with its basis.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "version", "build_number", "device_identifier", "release_date", "signing_status",
+    "security_bulletin", "cve_status", "cves", "patched_vulnerabilities",
+    "relevant_kernel_changes", "exploit_compatibility", "a17pro_compatibility",
+    "source_ids", "last_checked"
+  ],
+  "properties": {
+    "version": {"type": "string", "pattern": "^27\\.\\d+(\\.\\d+)?$"},
+    "build_number": {"type": "string", "pattern": "^24[A-Z]\\d{3,4}$"},
+    "device_identifier": {"const": "iPhone16,2"},
+    "release_date": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+    "signing_status": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "checked_on", "basis"],
+      "properties": {
+        "status": {"type": "string", "enum": ["signed_per_third_party_index", "unsigned_per_third_party_index", "conflicting", "unknown"]},
+        "checked_on": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"},
+        "basis": {"type": "string", "minLength": 10}
+      }
+    },
+    "security_bulletin": {"type": "string", "pattern": "^https://"},
+    "cve_status": {"type": "string", "enum": ["none_published", "listed_on_apple_page", "not_located"]},
+    "cves": {
+      "type": "array", "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^CVE-\\d{4}-\\d+$"}
+    },
+    "patched_vulnerabilities": {"type": "array", "items": {"type": "string"}},
+    "relevant_kernel_changes": {"type": "string", "minLength": 10},
+    "exploit_compatibility": {"type": "string", "minLength": 10},
+    "a17pro_compatibility": {"type": "string", "enum": ["not_established", "unverified", "partially_verified"]},
+    "source_ids": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^S-\\d{3}$"}
+    },
+    "last_checked": {"type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$"}
+  }
+}

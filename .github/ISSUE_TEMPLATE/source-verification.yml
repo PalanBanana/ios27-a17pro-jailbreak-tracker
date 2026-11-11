@@ -1,0 +1,39 @@
+name: Source verification
+description: Check whether an existing source supports the claim it is cited for.
+title: "[Source] "
+labels: ["source-verification"]
+body:
+  - type: input
+    id: source-id
+    attributes:
+      label: Source ID (S-###)
+    validations:
+      required: true
+  - type: input
+    id: claim-ids
+    attributes:
+      label: Claim IDs that cite it (C-###)
+  - type: dropdown
+    id: result
+    attributes:
+      label: Result
+      options:
+        - Supports the claim as recorded
+        - Supports only part of the claim
+        - Does not support the claim
+        - Source is no longer available
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details, with the page section, the date, and how you checked
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Checklist
+      options:
+        - label: I have not included personal data or device identifiers.
+          required: true

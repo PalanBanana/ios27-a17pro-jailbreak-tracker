@@ -1,0 +1,52 @@
+name: Compatibility report
+description: Report evidence about whether a specific device, chip, iOS version and build works. Evidence must be checkable.
+title: "[Compatibility] "
+labels: ["compatibility"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not include device identifiers, serial numbers, Apple Account information, or screenshots that show them. Describe the device by model, chip and build only.
+  - type: input
+    id: device
+    attributes:
+      label: Device model and chip
+      placeholder: "for example: iPhone 15 Pro Max, A17 Pro"
+    validations:
+      required: true
+  - type: input
+    id: build
+    attributes:
+      label: iOS version and build number
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence-type
+    attributes:
+      label: Type of evidence
+      options:
+        - Primary publication
+        - Independent reproduction
+        - Secondary report
+        - Community report
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence, with sources
+    validations:
+      required: true
+  - type: textarea
+    id: limits
+    attributes:
+      label: Limits, and whether a third party reproduced it
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Checklist
+      options:
+        - label: I have not included exploit code, tools or personal data.
+          required: true
+        - label: I understand compatibility is recorded only with evidence for the exact device and build.
+          required: true

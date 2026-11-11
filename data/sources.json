@@ -1,0 +1,566 @@
+[
+  {
+    "id": "S-001",
+    "title": "About the security content of iOS 27 and iPadOS 27",
+    "url": "https://support.apple.com/en-us/149034",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-09-14",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_security_advisory",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-005",
+      "C-006",
+      "C-023"
+    ],
+    "reliability_notes": "Official Apple page. Credits Calif.io researchers for four CVE entries: CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886 (the last was missed in the first extraction). An entry-update note dated October 19, 2026 follows CVE-2026-28968. Re-fetched on 2026-11-12: no entry for iOS 27.0.1, and no occurrence of the identifier CVE-2026-112611 or the handle pwnlambda.",
+    "notes": "publication_date is the iOS 27 release date from search metadata; the page itself carries later update dates."
+  },
+  {
+    "id": "S-002",
+    "title": "Apple security releases",
+    "url": "https://support.apple.com/en-us/100100",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-007",
+      "C-008",
+      "C-009",
+      "C-024"
+    ],
+    "reliability_notes": "Official Apple index. Shows 'This update has no published CVE entries' for iOS 27.0.1 and iPadOS 27.0.1, a 26 Oct 2026 row for iOS 27.2, a 09 Nov 2026 row for iOS 27.2.1, and an iOS 27.1 row for iPhone Duo dated 23 Oct 2026 with no CVE entries. The text extract truncates some month names; dates were read from the surrounding rows.",
+    "notes": "Build numbers are not shown on this index."
+  },
+  {
+    "id": "S-003",
+    "title": "Memory Integrity Enforcement",
+    "url": "https://security.apple.com/blog/memory-integrity-enforcement/",
+    "publisher": "Apple Inc. (Apple Security Research)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2025-09",
+    "access_date": "2026-11-11",
+    "source_type": "vendor_security_blog",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-011",
+      "C-012"
+    ],
+    "reliability_notes": "Apple's own technical description. States MIE is built into all iPhone 17 and iPhone Air models, names the A19 and A19 Pro chips, and says the Secure Page Table Monitor protects the kernel allocator backing store and tag storage. It does not name the A17 Pro.",
+    "notes": "Launch was September 2025; the exact day was not extracted from the page."
+  },
+  {
+    "id": "S-004",
+    "title": "Apple Platform Security: Secure Page Table Monitor and Trusted Execution Monitor",
+    "url": "https://support.apple.com/guide/security/sec8b776536b/web",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "vendor_security_guide",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-013",
+      "C-014",
+      "C-032"
+    ],
+    "reliability_notes": "Apple's platform security guide, continuously updated. States SPTM is supported on A15-or-later and M2-or-later SoCs and replaces the Page Protection Layer on supported platforms.",
+    "notes": "The guide has no publication date."
+  },
+  {
+    "id": "S-005",
+    "title": "iPhone 18 Pro - Technical Specifications",
+    "url": "https://www.apple.com/iphone-18-pro/specs/",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "vendor_spec_page",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001",
+      "C-002"
+    ],
+    "reliability_notes": "Apple's specification page. Static HTML lists the A20 Pro chip for this model.",
+    "notes": null
+  },
+  {
+    "id": "S-006",
+    "title": "iPhone 15 Pro - Technical Specifications",
+    "url": "https://www.apple.com/iphone-15-pro/specs/",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "vendor_spec_page",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [],
+    "reliability_notes": "Fetched on 2026-11-11, but the chip name did not appear in the static HTML, so this page is not used as evidence for the A17 Pro claim.",
+    "notes": "Checked and intentionally not cited as support."
+  },
+  {
+    "id": "S-007",
+    "title": "Dopamine releases",
+    "url": "https://github.com/opa334/Dopamine/releases",
+    "publisher": "opa334 (Dopamine project, GitHub)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-03",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-016",
+      "C-017",
+      "C-018",
+      "C-028"
+    ],
+    "reliability_notes": "Official release list retrieved through the GitHub REST API. Latest tag 3.0.13 was published 2026-11-03. Release notes describe specific fixes and do not state an iOS version range.",
+    "notes": null
+  },
+  {
+    "id": "S-008",
+    "title": "Dopamine repository README",
+    "url": "https://github.com/opa334/Dopamine",
+    "publisher": "opa334 (Dopamine project, GitHub)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "official_repository_readme",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-018"
+    ],
+    "reliability_notes": "The main-branch README fetched on 2026-11-11 still describes an early iOS 15.0 to 15.4.1 release and says more details will follow. It does not contain the support matrix quoted by secondary coverage.",
+    "notes": "Stale documentation; cited to show the official matrix was not found here."
+  },
+  {
+    "id": "S-009",
+    "title": "Dopamine 3.0 Jailbreak Released With iOS 17.3.1 Support, iOS 26 on A12/A13",
+    "url": "https://www.iclarified.com/101697/dopamine-30-jailbreak-released-with-ios-1731-support-ios-26-on-a12a13",
+    "publisher": "iClarified",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-08-07",
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-016",
+      "C-018",
+      "C-028"
+    ],
+    "reliability_notes": "Secondary news report that quotes a Dopamine 3.0 support table: A15, A16, A17 and M2 devices on iOS 16.5.1 to 17.3.1; A12, A12X, A12Z and A13 on iOS 16.6 to 18.7.1 and 26.0 to 26.0.1. Confirm against official documentation before relying on it.",
+    "notes": null
+  },
+  {
+    "id": "S-010",
+    "title": "Hackers Jailbreak iPhone 18 Pro on Stage, and It Survives a Reboot",
+    "url": "https://decrypt.co/381177/hackers-jailbreak-iphone-18-pro-survives-reboot",
+    "publisher": "Decrypt",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-10-16",
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001",
+      "C-002",
+      "C-004",
+      "C-027",
+      "C-028"
+    ],
+    "reliability_notes": "Reputable tech news. Reports the 2026-10-16 Hexacon demonstration on an iPhone 18 Pro running iOS 27.0.1, that root access returned after a reboot, that no tool or vulnerability details were public, and that the firm said it would publish later. Secondary to the event itself.",
+    "notes": "The article credits a third-party researcher with posting stage video; that person is not named in this repository."
+  },
+  {
+    "id": "S-011",
+    "title": "Hexacon 2026",
+    "url": "https://hexacon.fr",
+    "publisher": "Hexacon (conference organiser)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "conference_site",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001"
+    ],
+    "reliability_notes": "Official conference site. Confirms Hexacon 2026 took place on 16 and 17 October 2026 in Paris. The programme pages tried (/program, /talks, /schedule, /speakers) returned HTTP 404, so the talk listing is not confirmed from the official site.",
+    "notes": null
+  },
+  {
+    "id": "S-012",
+    "title": "Calif.io",
+    "url": "https://calif.io",
+    "publisher": "Calif.io",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "company_site",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001"
+    ],
+    "reliability_notes": "The company's own homepage. It describes an AI-security business and does not mention Hexacon or iOS 27 on the page fetched.",
+    "notes": null
+  },
+  {
+    "id": "S-013",
+    "title": "GitHub user record: pwnlambda",
+    "url": "https://api.github.com/users/pwnlambda",
+    "publisher": "GitHub",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-029"
+    ],
+    "reliability_notes": "Confirms only that a public GitHub account with this login exists (created 2014-09-11, 27 public repositories, none with iOS 27 names in the listing). It does not establish a link to Calif.io, to any iOS exploit, or to any real-world identity.",
+    "notes": "Existence check only."
+  },
+  {
+    "id": "S-014",
+    "title": "ipsw.me device firmware index: iPhone16,2",
+    "url": "https://api.ipsw.me/v4/device/iPhone16,2?type=ipsw",
+    "publisher": "ipsw.me",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "third_party_firmware_index",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-003",
+      "C-008",
+      "C-009",
+      "C-021",
+      "C-024",
+      "C-025"
+    ],
+    "reliability_notes": "Third-party firmware index, not an Apple source. Lists iPhone 15 Pro Max (iPhone16,2) builds 24A437 (27.0, 2026-09-14, signed=false), 24A446 (27.0.1, 2026-09-28, signed=false), 24B119 (27.2, 2026-10-26, signed=true) and 24B156 (27.2.1, 2026-11-09, signed=true). The signed field is the index's own status as of 2026-11-11.",
+    "notes": null
+  },
+  {
+    "id": "S-015",
+    "title": "Keys:Rave 24A446 (iPhone16,2)",
+    "url": "https://theapplewiki.com/wiki/Keys:Rave_24A446_(iPhone16,2)",
+    "publisher": "The Apple Wiki",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "community_wiki",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-003"
+    ],
+    "reliability_notes": "Community wiki. Only a search result was seen; the page was not fetched. Used only to corroborate that a build key page exists for iPhone16,2 and 24A446.",
+    "notes": null
+  },
+  {
+    "id": "S-016",
+    "title": "iOS 27.0.1 bug fixes, changes and improvements",
+    "url": "https://forums.macrumors.com/threads/ios-27-0-1-bug-fixes-changes-and-improvements.2490674/",
+    "publisher": "MacRumors Forums",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "forum_post",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-003",
+      "C-024"
+    ],
+    "reliability_notes": "Community forum thread. Only the search summary was reviewed; it cites build 24A446 and a 2026-09-28 release date.",
+    "notes": null
+  },
+  {
+    "id": "S-017",
+    "title": "Apple Fixes 163 iPhone, iPad Flaws in iOS 27.2 Update",
+    "url": "https://www.esecurityplanet.com/threats/news-apple-ios-27-2-ipados-163-security-flaws/",
+    "publisher": "eSecurityPlanet",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-010"
+    ],
+    "reliability_notes": "Secondary press. Only the search summary was reviewed. Reports 163 vulnerabilities fixed in iOS 27.2 and iPadOS 27.2. Apple's own 27.2 advisory was not located.",
+    "notes": null
+  },
+  {
+    "id": "S-018",
+    "title": "Apple Just Patched 163 iPhone Security Flaws - Here's What Was at Risk",
+    "url": "https://www.techrepublic.com/article/news-ios-27-2-security-flaws-patched/",
+    "publisher": "TechRepublic",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-010"
+    ],
+    "reliability_notes": "Secondary press repeating the 163-vulnerability count. Only the search summary was reviewed.",
+    "notes": null
+  },
+  {
+    "id": "S-019",
+    "title": "Calif's iPhone Jailbreak: Apple Patches Most Flaws in iOS 27.2, but No Public Tool Is Planned",
+    "url": "https://pbxscience.com/califs-iphone-jailbreak-apple-patches-most-flaws-in-ios-27-2-but-no-public-tool-is-planned/",
+    "publisher": "PBX Science",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-022",
+      "C-027",
+      "C-028"
+    ],
+    "reliability_notes": "Secondary press with coverage through about 2026-11-06, per the search summary. Says Apple fixed most flaws in iOS 27.2 and that no public tool is planned. Conflicts with the earlier PBX Science article in S-029.",
+    "notes": null
+  },
+  {
+    "id": "S-020",
+    "title": "No More Downgrading: Apple Stops Signing iOS 26.6.2 and iOS 26.7 Following Release of iOS 27",
+    "url": "https://www.mactrast.com/2026/09/no-more-downgrading-apple-stops-signing-ios-26-6-2-and-ios-26-7-following-release-of-ios-27/",
+    "publisher": "MacTrast",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [],
+    "reliability_notes": "Secondary press. Reports signing ended for iOS 26.6.2 and 26.7 after iOS 27 shipped. Used only as a pattern example of how older builds lose signing.",
+    "notes": "Does not address iOS 27.0.1 directly."
+  },
+  {
+    "id": "S-021",
+    "title": "Vulnerability in iPhones with A12 and A13 processors",
+    "url": "https://www.incibe.es/en/incibe-cert/publications/cybersecurity-highlights/vulnerability-iphones-a12-and-a13-processors",
+    "publisher": "INCIBE-CERT (Spain)",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "government_advisory",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-019"
+    ],
+    "reliability_notes": "Government CERT advisory on the A12 and A13 BootROM issue. Per the search summary, it states later designs use a different approach. Not fetched in full.",
+    "notes": null
+  },
+  {
+    "id": "S-022",
+    "title": "Apple's A12 and A13 Chips Facing New Unpatchable Exploit",
+    "url": "https://www.macrumors.com/2026/06/18/a12-and-a13-chips-facing-exploit/",
+    "publisher": "MacRumors",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-06-18",
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-019"
+    ],
+    "reliability_notes": "Secondary news report on the June 2026 A12 and A13 BootROM exploit. Only the search result was reviewed.",
+    "notes": null
+  },
+  {
+    "id": "S-023",
+    "title": "usbliter8 Brings Unpatchable BootROM Exploit to Apple A12 and A13 Devices",
+    "url": "https://securityaffairs.com/193965/hacking/usbliter8-brings-unpatchable-bootrom-exploit-to-apple-a12-and-a13-devices.html",
+    "publisher": "Security Affairs",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-019"
+    ],
+    "reliability_notes": "Secondary news report. No original researcher write-up was located in this session.",
+    "notes": null
+  },
+  {
+    "id": "S-024",
+    "title": "Apple rains on MIE-bypassing iPhone jailbreak parade with iOS update",
+    "url": "https://www.itnews.com.au/news/apple-rains-on-mie-bypassing-iphone-jailbreak-parade-with-ios-update-629978",
+    "publisher": "iTnews",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-11-03",
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [],
+    "reliability_notes": "Secondary news report that Apple responded to MIE-bypass claims with an update. Details were not fetched, and the date comes from search metadata.",
+    "notes": "Timeline reference only."
+  },
+  {
+    "id": "S-025",
+    "title": "How usbliter8 enables a full jailbreak of iOS 27 (tutorial page)",
+    "url": "https://www.besthub.dev/articles/how-usbliter8-enables-a-full-jailbreak-of-ios-27-complete-technical-guide-0a0ebb30bb7d",
+    "publisher": "Unknown (tutorial-style website)",
+    "author": null,
+    "source_tier": 4,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "community_reference",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-020"
+    ],
+    "reliability_notes": "Tutorial-style page making broad full-jailbreak claims with no verifiable author or evidence. Treated as high risk and not used as evidence. Do not download anything from it.",
+    "notes": "Included only as a warning example for DIM10."
+  },
+  {
+    "id": "S-026",
+    "title": "iOS 27.0.1 Jailbreak Fact-Check and Ongoing Tracker (iMaxTomas/ios27-jb-tracker)",
+    "url": "https://github.com/iMaxTomas/ios27-jb-tracker",
+    "publisher": "iMaxTomas (GitHub)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": "2026-11-04",
+    "access_date": "2026-11-11",
+    "source_type": "community_reference",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-015",
+      "C-021",
+      "C-022",
+      "C-023"
+    ],
+    "reliability_notes": "Community fact-check archive in Chinese. Its original content is CC BY 4.0 per its LICENSE. Fetched README, SKILL.md and LICENSE for methodology review. Its conclusions were not adopted without independent checks, and its personal-name attributions are not reproduced here.",
+    "notes": "Used as a methodology reference and a list of leads; no text is copied."
+  },
+  {
+    "id": "S-027",
+    "title": "Creative Commons Attribution 4.0 International - Legal Code",
+    "url": "https://creativecommons.org/licenses/by/4.0/legalcode",
+    "publisher": "Creative Commons",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "license_text",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [],
+    "reliability_notes": "Official licence text, used verbatim in LICENSE-DOCS.",
+    "notes": null
+  },
+  {
+    "id": "S-028",
+    "title": "Contributor Covenant Code of Conduct, version 2.1",
+    "url": "https://www.contributor-covenant.org/version/2/1/code_of_conduct/",
+    "publisher": "Contributor Covenant project",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "license_text",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [],
+    "reliability_notes": "Official text, adapted with only the contact method changed in CODE_OF_CONDUCT.md.",
+    "notes": null
+  },
+  {
+    "id": "S-029",
+    "title": "PBX Science: Calif iPhone jailbreak coverage (2026-11-04)",
+    "url": "https://pbxscience.com/?p=24999",
+    "publisher": "PBX Science",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-11-04",
+    "access_date": "2026-11-11",
+    "source_type": "news_article",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-022"
+    ],
+    "reliability_notes": "Secondary press. Per the search summary, it reported exploit code and a write-up would follow within about a week. Conflicts with the later PBX Science article in S-019. Only the search summary was reviewed.",
+    "notes": null
+  },
+  {
+    "id": "S-030",
+    "title": "iPhone 15 Pro",
+    "url": "https://en.wikipedia.org/wiki/IPhone_15_Pro",
+    "publisher": "Wikipedia",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-11",
+    "source_type": "encyclopedia",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-014",
+      "C-026"
+    ],
+    "reliability_notes": "Encyclopedia article. Its infobox lists the system-on-chip as Apple A17 Pro and the current iOS as 27.2.1, released 2026-11-09. Secondary, not a primary source.",
+    "notes": null
+  },
+  {
+    "id": "S-031",
+    "title": "Sileo/Sileo: latest GitHub release (2.5.1)",
+    "url": "https://github.com/Sileo/Sileo/releases/tag/2.5.1",
+    "publisher": "Sileo project (GitHub repository named Sileo/Sileo)",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2024-10-08",
+    "access_date": "2026-11-11",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-030"
+    ],
+    "reliability_notes": "GitHub API response for the latest release of the repository named Sileo/Sileo: tag 2.5.1, published 2024-10-08. The release notes do not mention iOS 27. The repository's identity is taken from its name and was not confirmed against a project website, so the source is tier 2.",
+    "notes": null
+  },
+  {
+    "id": "S-032",
+    "title": "Dopamine default-branch commit history",
+    "url": "https://github.com/opa334/Dopamine/commits",
+    "publisher": "opa334 (Dopamine project, GitHub)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-03",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-033"
+    ],
+    "reliability_notes": "GitHub API response listing the five most recent commits on the default branch (2026-10-30 to 2026-11-03). Subject lines mention posix_spawn and SpringBoard snapshot hooks, detection for the iOS 26.0 beta, and the 3.0.13 release. None mentions iOS 27. Commit bodies were not reviewed.",
+    "notes": null
+  }
+]

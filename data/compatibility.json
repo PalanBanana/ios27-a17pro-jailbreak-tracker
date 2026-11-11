@@ -1,0 +1,254 @@
+[
+  {
+    "id": "CMP-001",
+    "category": "SPTM Research",
+    "status": "partially_verified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-013",
+      "C-014"
+    ],
+    "notes": "Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. No public A17 Pro SPTM research specific to 27.0.1 was located.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-002",
+    "category": "SPTM Bypass",
+    "status": "unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-015"
+    ],
+    "notes": "The only SPTM bypass mention is a community reference describing an undisclosed bypass. No public technical disclosure was found.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-003",
+    "category": "Kernel Vulnerability",
+    "status": "unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-005"
+    ],
+    "notes": "Apple credits Calif.io for iOS 27 entries, including a kernel-memory impact on CVE-2026-28968. Applicability to 27.0.1 or the A17 Pro is not established.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-004",
+    "category": "Kernel Read",
+    "status": "unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-022"
+    ],
+    "notes": "A kernel read primitive is reported as planned by a Calif.io-linked researcher. No primary release was located and nothing has been reproduced.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-005",
+    "category": "Kernel Write",
+    "status": "unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-022"
+    ],
+    "notes": "Same basis as CMP-004. A kernel write primitive has not been verified.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-006",
+    "category": "Sandbox Escape",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [],
+    "notes": "No verified public sandbox escape for this target. A community reference describes a chain that includes one, but it is not verified.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-007",
+    "category": "Privilege Escalation",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [],
+    "notes": "No verified public privilege escalation for this target.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-008",
+    "category": "AMFI Compatibility",
+    "status": "not_researched",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [],
+    "notes": "AMFI (code signing enforcement) was not researched in this pass. Scheduled for the next research update.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-009",
+    "category": "Complete Exploit Chain",
+    "status": "reported_unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-001",
+      "C-002",
+      "C-027"
+    ],
+    "notes": "A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. It is not shown for the A17 Pro and has no published write-up.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-010",
+    "category": "Bootstrap",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-016"
+    ],
+    "notes": "No bootstrap for iOS 27.0.1 is verified. The documented Dopamine range for A15 to A17 stops at iOS 17.3.1 (secondary coverage).",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-011",
+    "category": "Package Manager",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-030"
+    ],
+    "notes": "Sileo: the repository named Sileo/Sileo has 2.5.1 (2024-10-08) as its latest release, and its notes do not mention iOS 27. ElleKit: name searches returned candidate repositories, none confirmed as the official upstream; the top two candidates have no GitHub release. Package-manager readiness for iOS 27.0.1 on A17 Pro is therefore not established.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-012",
+    "category": "Persistence",
+    "status": "reported_unverified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-004"
+    ],
+    "notes": "Reboot persistence is reported for an iPhone 18 Pro demonstration, not for the target. Accounts differ and nothing has been reproduced.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-013",
+    "category": "Public Jailbreak Tool",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-028"
+    ],
+    "notes": "No publicly installable tool is verified for this target. Downloads advertising iOS 27.0.1 jailbreaks are not verified and must not be installed.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-014",
+    "category": "Independent A17 Pro Reproduction",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [],
+    "notes": "No independent reproduction on A17 Pro hardware was found. This project does not test exploit code on the primary device.",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "CMP-015",
+    "category": "Exact Build Verification",
+    "status": "partially_verified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-003",
+      "C-024",
+      "C-025"
+    ],
+    "notes": "Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. No Apple-hosted build record was located, so verification is partial.",
+    "last_checked": "2026-11-11"
+  }
+]

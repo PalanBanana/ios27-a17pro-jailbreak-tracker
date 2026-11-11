@@ -1,0 +1,607 @@
+[
+  {
+    "id": "C-001",
+    "title": "Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro at Hexacon 2026",
+    "description": "Press reports say Calif.io showed a live jailbreak of an iPhone 18 Pro running iOS 27.0.1 at Hexacon in Paris on 2026-10-16, with root access returning after a restart and no host computer involved. Hexacon 2026 itself is confirmed on the official site. The talk listing and any primary Calif.io material were not located, and nothing has been independently reproduced.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 18 Pro (as reported)",
+    "chipset_scope": "A20 Pro (Apple specification for iPhone 18 Pro); demonstration chip as reported",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated in the reports reviewed",
+    "supporting_source_ids": [
+      "S-010",
+      "S-011",
+      "S-012",
+      "S-005"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Relies on press descriptions. No primary Calif.io or Hexacon talk material was found, there is no technical write-up, nothing has been independently reproduced, and the demonstration device is not the target device.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-002",
+    "title": "The reported demonstration device (iPhone 18 Pro) uses A20 Pro, so the demonstration is not direct evidence for A17 Pro",
+    "description": "Apple's iPhone 18 Pro specification page lists the A20 Pro chip. The reported demonstration device is an iPhone 18 Pro. A demonstration on A20 Pro hardware therefore cannot by itself establish A17 Pro compatibility.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 18 Pro (demonstration device as reported)",
+    "chipset_scope": "A20 Pro (demonstration) versus A17 Pro (target)",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-005",
+      "S-010"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The chip mapping comes from Apple. The identity of the demonstration device comes from press reports.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-003",
+    "title": "iOS 27.0.1 build 24A446 is the build for iPhone16,2 (iPhone 15 Pro Max)",
+    "description": "Third-party firmware indexes list build 24A446 under version 27.0.1 for device identifier iPhone16,2, released 2026-09-28. A community wiki page for the same build and device appeared in search results, and a forum thread cites the same build.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
+    "chipset_scope": "A17 Pro (see C-026)",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-014",
+      "S-015",
+      "S-016"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "No Apple-hosted build record was located. The Apple pages checked do not list build numbers, so verification relies on third-party indexes.",
+    "first_observed": "2026-09-28",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-004",
+    "title": "The demonstrated jailbreak state persisted across a reboot",
+    "description": "One press report says root access returned after the demonstration device was restarted on stage. Accounts of reboot behaviour differ between outlets, and no independent reproduction or video analysis has been done.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 18 Pro (as reported)",
+    "chipset_scope": "A20 Pro (demonstration device)",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-010"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Single fetched press source. The mechanism is undisclosed and no video or independent replication was reviewed.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-005",
+    "title": "Apple's iOS 27 security notes credit Calif.io researchers for four CVE entries (CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886)",
+    "description": "Apple's iOS 27 security content page lists four CVE entries that credit Calif.io researchers, some jointly with other researchers. CVE-2026-65409 and CVE-2026-65410 credit Calif.io researchers in collaboration with Claude and Anthropic Research. CVE-2026-28968 carries the impact text 'An app may be able to cause unexpected system termination or corrupt kernel memory'. CVE-2026-86886 carries the impact text 'An app may be able to modify protected system files' and the description 'A path traversal issue was addressed with improved input validation'. An entry-update note dated October 19, 2026 follows CVE-2026-28968 in the extracted text.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not established per entry from the extracted text. Apple's iOS 27 notes list 'iPhone 11 and later' among device lists, which would include the iPhone 15 Pro Max.",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27 security notes; the fixed-in release per CVE is not identified in the extracted text",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The extracted text does not tie each CVE to a specific 27.x release, so these entries are not shown to apply to iOS 27.0.1, and they are not shown to apply to A17 Pro.",
+    "first_observed": "2026-10-19",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-006",
+    "title": "Apple's iOS 27 security notes name Claude and Anthropic Research alongside Calif.io for two entries",
+    "description": "Apple's text credits CVE-2026-65409 and CVE-2026-65410 to Calif.io in collaboration with Claude and Anthropic Research. This tracker quotes Apple's wording only. The maintainer's drafts were prepared with AI assistance from Claude, which Anthropic builds (see the disclosure in README.md). The credit does not describe the nature or extent of that collaboration.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple wording)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27 security notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's text does not describe the collaboration. Do not infer from this entry how any jailbreak was or was not developed.",
+    "first_observed": "2026-10-19",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-007",
+    "title": "iOS 27.0.1 has no published CVE entries in Apple's security releases index",
+    "description": "Apple's security releases index lists iOS 27.0.1 and iPadOS 27.0.1 with the note 'This update has no published CVE entries'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later and the iPads Apple lists for iOS 27.0.1",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446 (build mapping per C-003)",
+    "supporting_source_ids": [
+      "S-002"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The note reflects Apple's published CVE entries. It does not prove that no security fixes exist, and the index extract does not show the build number.",
+    "first_observed": "2026-09-28",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-008",
+    "title": "iOS 27.2 (build 24B119) was released on 2026-10-26",
+    "description": "Apple's security releases index lists iOS 27.2 with a 26 Oct 2026 release. ipsw.me lists build 24B119 as version 27.2 on 2026-10-26.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2) per the third-party index",
+    "chipset_scope": "A17 Pro (task profile)",
+    "ios_scope": "iOS 27.2",
+    "build_scope": "24B119 (third-party index)",
+    "supporting_source_ids": [
+      "S-002",
+      "S-014"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The build number comes from a third-party index. Apple's index extract shows the date but not the build.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-009",
+    "title": "iOS 27.2.1 (build 24B156) was released on 2026-11-09",
+    "description": "Apple's security releases index lists iOS 27.2.1 with a 09 Nov 2026 release. ipsw.me lists build 24B156 as version 27.2.1 on 2026-11-09.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2) per the third-party index",
+    "chipset_scope": "A17 Pro (task profile)",
+    "ios_scope": "iOS 27.2.1",
+    "build_scope": "24B156 (third-party index)",
+    "supporting_source_ids": [
+      "S-002",
+      "S-014"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The build number comes from a third-party index. Apple's index extract shows the date but not the build.",
+    "first_observed": "2026-11-09",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-010",
+    "title": "iOS 27.2 fixed 163 vulnerabilities",
+    "description": "Two secondary outlets report 163 vulnerabilities fixed in iOS 27.2 and iPadOS 27.2. Apple's own 27.2 advisory was not located in this check, so the count is not verified.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated in the reports reviewed",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 (as reported)",
+    "build_scope": "24B119 (third-party index)",
+    "supporting_source_ids": [
+      "S-017",
+      "S-018"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Secondary press counts only. Apple's advisory would be needed to verify the count and the components.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-011",
+    "title": "Apple says Memory Integrity Enforcement is built into all iPhone 17 and iPhone Air models and names the A19 and A19 Pro chips",
+    "description": "Apple's Security Research blog says MIE is built into all iPhone 17 and iPhone Air models and that the A19 and A19 Pro chips were designed to support it. The post also says the Secure Page Table Monitor protects the kernel allocator backing store and tag storage.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 17 and iPhone Air (Apple)",
+    "chipset_scope": "A19 and A19 Pro (named by Apple)",
+    "ios_scope": "Not specified in the extracted text",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-003"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's text names the chips for the MIE hardware story. It is not a complete list of chips and says nothing explicit about A17 Pro.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11",
+    "notes": "Launch was September 2025. The exact day was not extracted, so first_observed is the date this tracker recorded the claim."
+  },
+  {
+    "id": "C-012",
+    "title": "A17 Pro is not among the chips Apple names for Memory Integrity Enforcement",
+    "description": "The MIE post names the A19 and A19 Pro chips and does not name the A17 Pro. This is a negative inference from Apple's stated scope and is not a direct statement that A17 Pro lacks MIE hardware.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (target)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "Not specified",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-003"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "This is a negative inference from the absence of a name. Apple's full hardware documentation was not searched for the A17 Pro specifically.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-013",
+    "title": "Apple states SPTM is supported on A15-or-later and M2-or-later SoCs",
+    "description": "Apple's Platform Security guide says the Secure Page Table Monitor is supported on A15 or later and M2 or later SoCs and replaces the Page Protection Layer on supported platforms.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Devices with A15-or-later SoCs (Apple wording)",
+    "chipset_scope": "A15 or later; M2 or later",
+    "ios_scope": "Not specified in the extracted text",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The guide is continuously updated. The extracted text does not name the A17 Pro.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-014",
+    "title": "The A17 Pro falls within Apple's A15-or-later SPTM class",
+    "description": "The A17 Pro is a later SoC than the A15, so Apple's statement covers it by ordering. The chip identity for the iPhone 15 family is supported by Wikipedia (S-030), not by an Apple specification page.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (target)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "All iOS versions that use SPTM (Apple wording)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-004",
+      "S-030"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Depends on the chip identity (see C-026) and on Apple's ordering. No SPTM detail specific to the A17 Pro was checked.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-015",
+    "title": "A publicly disclosed SPTM bypass applies to A17 Pro on iOS 27.0.1",
+    "description": "The reference repository reports a credible but undisclosed SPTM bypass that it says is valid through iOS 27.0.1. No public technical disclosure, proof of concept or independent reproduction was located, so the claim is not verified.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 15 Pro Max (target)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "iOS 27.0.1 (claimed by a community reference)",
+    "build_scope": "24A446 (claimed by a community reference)",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Community-sourced and undisclosed. The reference does not provide primary evidence for the bypass.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-016",
+    "title": "Dopamine 3.0 lists iOS 16.5.1 to 17.3.1 support for A15, A16, A17 and M2 devices",
+    "description": "Secondary coverage quotes a Dopamine 3.0 support table listing iOS 16.5.1 to 17.3.1 for A15, A16, A17 and M2 devices. The official main-branch README was checked and is a stale iOS 15 description, so the table is not confirmed from an official page.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "A15, A16, A17 and M2 devices (as quoted)",
+    "chipset_scope": "A15, A16, A17, M2",
+    "ios_scope": "iOS 16.5.1 to 17.3.1 (as quoted)",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-009",
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Secondary report. The official support matrix was not located in the repository README.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-017",
+    "title": "Dopamine 3.0.13 is the latest official Dopamine release (published 2026-11-03)",
+    "description": "The GitHub release API lists 3.0.13 as the most recent release, published 2026-11-03. Its notes describe specific fixes and do not state iOS 27 support.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable (software release)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not stated in release notes",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Describes the latest release only. The notes concern individual fixes rather than device support.",
+    "first_observed": "2026-11-03",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-018",
+    "title": "No Dopamine release is documented to support iOS 27.0.1 on A17 Pro",
+    "description": "The official release notes do not mention iOS 27 support, the main README is stale, and secondary coverage lists 17.3.1 as the highest iOS version for A15 to A17 devices.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "A15 to A17 devices (A17 Pro-class)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "iOS 27.0.1 (no documented support)",
+    "build_scope": "24A446 (no documented support)",
+    "supporting_source_ids": [
+      "S-009",
+      "S-007",
+      "S-008"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Absence of documentation. This is not a formal support statement from the project.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-019",
+    "title": "The usbliter8 BootROM exploit is reported to affect A12 and A13 chips and not A14 or later",
+    "description": "Several outlets and a national CERT advisory describe a SecureROM (BootROM) flaw in A12 and A13 processors, with reports that later designs avoid it. No original researcher write-up was located, and device lists differ between outlets.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone XS, XR, 11 family and SE (2nd generation) as reported",
+    "chipset_scope": "A12 and A13 (reported; S4 and S5 watch chips also reported)",
+    "ios_scope": "Not iOS-version specific (BootROM)",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-021",
+      "S-022",
+      "S-023"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Relies on secondary reporting and a CERT summary. The A14-and-later exclusion is reported, not tested here.",
+    "first_observed": "2026-06-18",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-020",
+    "title": "A tutorial page claims a full iOS 27 jailbreak using usbliter8",
+    "description": "A tutorial-style web page claims a complete iOS 27 jailbreak chain built on usbliter8, including iBoot, SPTM, TXM and kernel patching. Its claims are unverified and the page is treated as high risk.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27 beta (as claimed)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-025"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Unverified marketing-style claims with no evidence of working code. Not endorsed. Do not download anything from the page.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-021",
+    "title": "iOS 27.0.1 (24A446) is currently unsigned by Apple",
+    "description": "The ipsw.me firmware index marks 27.0.1 as not signed when checked on 2026-11-11. The reference repository reported that 27.0.1 was still signed on 2026-11-02. No Apple-hosted signing record was checked.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-014"
+    ],
+    "contradicting_source_ids": [
+      "S-026"
+    ],
+    "limitations": "Signing status changes over time. The two sources report different dates. The index field is a third-party status, not an Apple statement.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-022",
+    "title": "A Calif.io-linked researcher reportedly announced a kernel read/write exploit and write-up within about a week",
+    "description": "Press coverage and the reference repository both report a planned release of exploit code and a write-up about a week after 2026-11-04. A later press report says no public tool is planned. No primary announcement was located.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026",
+      "S-029"
+    ],
+    "contradicting_source_ids": [
+      "S-019"
+    ],
+    "limitations": "Conflicting secondary reports and no primary announcement. No release was located, and nothing has been reproduced.",
+    "first_observed": "2026-11-04",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-023",
+    "title": "An Apple CVE credit confirms the identity of the lambda handle, according to the reference repository",
+    "description": "The reference repository says the lambda handle is confirmed by an Apple CVE credit (CVE-2026-112611). The iOS 27 security content page checked in this audit does not contain that identifier or the handle. This tracker does not reproduce the reference's personal-name attribution.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [
+      "S-001"
+    ],
+    "limitations": "The CVE may appear in another Apple advisory that was not checked. The identity question concerns a private individual and is not published here.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-024",
+    "title": "iOS 27.0.1 was released on 2026-09-28",
+    "description": "Apple's security releases index shows the iOS 27.0.1 entry dated 28 September 2026. ipsw.me and a community forum thread give the same release date for build 24A446.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2) via the third-party index",
+    "chipset_scope": "A17 Pro (task profile)",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-002",
+      "S-014",
+      "S-016"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The Apple index extract truncated the month of the 27.0.1 date. ipsw.me supplies the full date.",
+    "first_observed": "2026-09-28",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-025",
+    "title": "The device identifier iPhone16,2 corresponds to the iPhone 15 Pro Max",
+    "description": "ipsw.me lists device identifier iPhone16,2 under the name iPhone 15 Pro Max.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-014"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Single third-party index for the mapping. No Apple device-identifier page was checked.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-026",
+    "title": "The iPhone 15 Pro Max uses the Apple A17 Pro chip",
+    "description": "Wikipedia's iPhone 15 Pro article lists the system-on-chip as Apple A17 Pro, and the task profile names the same chip for the iPhone 15 Pro Max. The Apple specification page fetched for the iPhone 15 Pro did not expose the chip name in static HTML, so it is not used as evidence here.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (target); the cited article covers the iPhone 15 Pro",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-030"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Wikipedia is a secondary source. Apple's product page did not expose the chip name in this check, and the Pro Max chip is inferred from the Pro page plus the task profile.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-027",
+    "title": "No public complete exploit chain applicable to iPhone 15 Pro Max on iOS 27.0.1 has been verified",
+    "description": "The only reported complete chain was demonstrated on an iPhone 18 Pro (A20 Pro), and it has no published write-up or tool. No public chain for the A17 Pro on iOS 27.0.1 was located.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (target)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-010",
+      "S-019"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Based on absence in the searches and secondary reports. This is not a proof of absence.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-028",
+    "title": "No publicly installable jailbreak tool is verified for iOS 27.0.1 on A17 Pro",
+    "description": "Calif.io's reported demonstration did not come with a public installable package, and the official Dopamine release notes do not list iOS 27 support. Downloads that advertise iOS 27.0.1 jailbreaks are not verified to relate to the demonstration.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone 15 Pro Max (target)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "iOS 27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-010",
+      "S-019",
+      "S-009",
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Based on the sources reviewed. Some websites host unverified downloads and must not be trusted.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-029",
+    "title": "A GitHub account with the login pwnlambda exists",
+    "description": "The GitHub users API returns a public account with the login pwnlambda, created 2014-09-11, with 27 public repositories. The account is not linked to any iOS exploit in this check.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-013"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Existence only. This does not establish any affiliation or identity, and the tracker does not attribute the handle to any named individual.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-030",
+    "title": "The latest GitHub release of the repository named Sileo/Sileo is 2.5.1 (2024-10-08), and its notes do not mention iOS 27",
+    "description": "The GitHub release API returns 2.5.1 as the latest release of the repository named Sileo/Sileo, published 2024-10-08. The release notes do not contain the string 27, so they do not mention iOS 27.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not applicable (package manager software)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "No iOS 27 support documented in the latest release notes",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-031"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Repository identity is taken from its name and was not confirmed against the project's own site. Other release channels and repository commits were not reviewed.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-032",
+    "title": "Apple states PPL and SPTM enforce execution of signed and trusted code on all platforms except macOS",
+    "description": "Apple's Platform Security guide states that the Page Protection Layer and the Secure Page Table Monitor enforce execution of signed and trusted code on all platforms except macOS, and that the other security properties, including page-table protection, are present across all supported platforms.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "All Apple platforms except macOS (Apple wording)",
+    "chipset_scope": "Not chip-specific in the extracted text",
+    "ios_scope": "Not version-specific in the extracted text",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A design statement from Apple. It does not describe bypass resistance or any specific exploit.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-11"
+  },
+  {
+    "id": "C-033",
+    "title": "The five most recent Dopamine default-branch commit subjects do not mention iOS 27",
+    "description": "The GitHub commit list for opa334/Dopamine shows five recent commits from 2026-10-30 to 2026-11-03, including the 3.0.13 release commit. Their subject lines mention hook fixes, SpringBoard snapshot handling, and detection for the iOS 26.0 beta. None mentions iOS 27.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable (software development activity)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 26.0 beta detection mentioned; iOS 27 not mentioned in subject lines",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-032"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Subject lines only. Commit bodies, branches and pull requests were not reviewed, so absence from subject lines is not proof of absence of iOS 27 work.",
+    "first_observed": "2026-11-11",
+    "last_checked": "2026-11-12"
+  }
+]

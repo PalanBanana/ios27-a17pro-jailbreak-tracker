@@ -1,0 +1,36 @@
+name: Incorrect information
+description: Report a claim, date, build number or verdict that is wrong, with a correction and a source.
+title: "[Correction] "
+labels: ["correction"]
+body:
+  - type: input
+    id: record
+    attributes:
+      label: Record ID (C-###, S-###, E-###, CMP-### or build number)
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong, and where it appears
+    validations:
+      required: true
+  - type: textarea
+    id: correct
+    attributes:
+      label: Correct information
+    validations:
+      required: true
+  - type: textarea
+    id: source
+    attributes:
+      label: Source for the correction (URL, publisher, date, and how you checked it)
+    validations:
+      required: true
+  - type: checkboxes
+    id: rules
+    attributes:
+      label: Checklist
+      options:
+        - label: I have not included personal data or device identifiers.
+          required: true
