@@ -1,0 +1,92 @@
+{
+  "generated": "2026-11-12",
+  "scope": "Counts only. Addresses, symbol names and kernel hashes are not published. Claims C-097 to C-100 and C-101 cover the signature and symbolication facts.",
+  "signature_source": {
+    "repository": "blacktop/symbolicator (MIT licence; source S-046)",
+    "commit_short": "08dbc78",
+    "folder": "kernel/27.0",
+    "declared_total": 6626,
+    "entries_present": 6511,
+    "declared_darwin_range": {
+      "max": "27.2.0",
+      "min": "27.0.0"
+    }
+  },
+  "builtin_map": {
+    "entries": 13798,
+    "by_segment": {
+      "__DATA_CONST": 6455,
+      "__DATA": 3240,
+      "__TEXT_EXEC": 4103
+    }
+  },
+  "anchor_presence_in_24A446_kernelcache": {
+    "distinct_xnu_anchor_strings": 14189,
+    "present": 11317,
+    "signatures_with_anchors": 6003,
+    "signatures_with_all_anchors_present": 4714
+  },
+  "ipsw_reported_counter": {
+    "matched": 4920,
+    "missed": 1591,
+    "total": 6511,
+    "percent": 75.5644
+  },
+  "log_kernel_matching": {
+    "distinct_names": 5320,
+    "kernel_addresses_with_a_name": 4257,
+    "addresses_with_more_than_one_name": 1160,
+    "addresses_with_non_equivalent_names": 1139,
+    "matching_by_provenance_label": {
+      "direct": {
+        "total": 4667,
+        "matched": 3829,
+        "unmatched": 838
+      },
+      "weak-string+callee": {
+        "total": 822,
+        "matched": 719,
+        "unmatched": 103
+      },
+      "dual-evidence": {
+        "total": 514,
+        "matched": 421,
+        "unmatched": 93
+      },
+      "propagated": {
+        "total": 508,
+        "matched": 351,
+        "unmatched": 157
+      }
+    },
+    "matched_with_all_anchors_present": 4670,
+    "matched_with_an_anchor_missing": 299,
+    "matched_without_anchors": 351
+  },
+  "conservative_subset": {
+    "names": 2346,
+    "applied_in_project_copy": 2316,
+    "failed_no_decodable_function": 30,
+    "functions_created": 0
+  },
+  "table_crosscheck": {
+    "comparable_addresses": 58,
+    "exact_agreement": 55,
+    "disagreement": 3,
+    "syscall_entries": 441,
+    "syscall_addresses_with_signature_name": 54,
+    "mach_trap_entries": 63,
+    "mach_trap_addresses_with_signature_name": 4,
+    "mig_routines": 354,
+    "mig_routines_with_signature_name": 0,
+    "cxx_mangled_names_checked": 681,
+    "cxx_prefix_present_in_class_list": 656
+  },
+  "kext_signature_files": {
+    "files": 773,
+    "darwin_range_covers_27_0_0": 773,
+    "anchor_presence_rate_all_files": 0.6003,
+    "fileset_entries_with_matches": 196,
+    "anchor_presence_rate_matched_entries": 0.9813
+  }
+}

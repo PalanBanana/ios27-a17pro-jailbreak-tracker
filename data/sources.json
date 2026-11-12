@@ -74,16 +74,19 @@
     "author": null,
     "source_tier": 1,
     "publication_date": null,
-    "access_date": "2026-11-11",
+    "access_date": "2026-11-12",
     "source_type": "vendor_security_guide",
     "verification_method": "fetched_full_text",
     "associated_claim_ids": [
       "C-013",
       "C-014",
       "C-032",
-      "C-059"
+      "C-059",
+      "C-105",
+      "C-106",
+      "C-107"
     ],
-    "reliability_notes": "Apple's platform security guide, continuously updated. States SPTM is supported on A15-or-later and M2-or-later SoCs and replaces the Page Protection Layer on supported platforms.",
+    "reliability_notes": "Apple's platform security guide, continuously updated. States SPTM is supported on A15-or-later and M2-or-later SoCs and replaces the Page Protection Layer on supported platforms. Re-read on 2026-11-12 for the memory-protection review. The OS-integrity section (page date January 28, 2026) states SPTM support on A15-or-later and M2-or-later SoCs, with SPTM and TXM replacing the PPL there. It states MIE availability on A19 and M5 processors or later. The support table's cells are images in the fetched copy, so per-chip cell values could not be read.",
     "notes": "The guide has no publication date."
   },
   {
@@ -805,9 +808,82 @@
       "C-085",
       "C-086",
       "C-087",
-      "C-088"
+      "C-088",
+      "C-093",
+      "C-094",
+      "C-095",
+      "C-096",
+      "C-098",
+      "C-099",
+      "C-100",
+      "C-101",
+      "C-102",
+      "C-103",
+      "C-104"
     ],
     "reliability_notes": "Partial remote extraction of the official package on 2026-11-12, by HTTP range requests: BuildManifest.plist, the kernelcache IM4P container, and the SPTM and TXM IM4P containers. Manifest digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed. The expected SHA-256 is listed by the firmware index and in the CDN object metadata.",
+    "notes": null
+  },
+  {
+    "id": "S-044",
+    "title": "iOS 27.2 (24B119) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)",
+    "url": "https://updates.cdn-apple.com/2026FallFCS/dcf3b441-e473-4c28-a936-99d6af8c60a2/iPhone16,2_27.2_24B119_Restore.ipsw",
+    "publisher": "Apple Inc. (CDN object; URL resolved by a firmware index lookup)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-10-26",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-089",
+      "C-090",
+      "C-093",
+      "C-094",
+      "C-095"
+    ],
+    "reliability_notes": "Partial remote retrieval on 2026-11-12 by HTTP range requests: BuildManifest.plist and the kernelcache, SPTM and TXM IM4P containers. Normal digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed.",
+    "notes": null
+  },
+  {
+    "id": "S-045",
+    "title": "iOS 27.2.1 (24B156) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)",
+    "url": "https://updates.cdn-apple.com/2026FallFCS/079a8de1-4a8d-4aa2-b5fb-7c33a7ffbf19/iPhone16,2_27.2.1_24B156_Restore.ipsw",
+    "publisher": "Apple Inc. (CDN object; URL resolved by a firmware index lookup)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-09",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-091",
+      "C-092",
+      "C-093",
+      "C-094",
+      "C-095"
+    ],
+    "reliability_notes": "Partial remote retrieval on 2026-11-12 by HTTP range requests: BuildManifest.plist and the kernelcache, SPTM and TXM IM4P containers. Normal digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed.",
+    "notes": null
+  },
+  {
+    "id": "S-046",
+    "title": "blacktop/symbolicator: ipsw symbolication signatures (kernel/27.0 folder, MIT licence)",
+    "url": "https://github.com/blacktop/symbolicator",
+    "publisher": "blacktop/symbolicator repository (community; MIT licence)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": "2026-11-05",
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-097",
+      "C-098",
+      "C-099",
+      "C-100"
+    ],
+    "reliability_notes": "Read on 2026-11-12 at commit 08dbc78 (commit date 2026-11-05), folder kernel/27.0 only. The README says the signatures are generated with IDA from kernel debug kits and reports 63.85% xnu coverage; that figure was not verified here. The file declares 6,626 signatures but holds 6,511. Signature matching is anchor-based and is not guaranteed to give correct names.",
     "notes": null
   }
 ]

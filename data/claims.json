@@ -1615,5 +1615,356 @@
     "limitations": "Tool output. Original function names are essentially absent, and the counts include analysis-generated functions. The behaviour of the TXM code was not reviewed.",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-089",
+    "title": "The 24B119 (27.2) manifest's KernelCache, SPTM and TXM normal digests match the retrieved containers",
+    "description": "In the first build identity, the BuildManifest digests for the kernelcache, SPTM and TXM equal the SHA-384 of the containers retrieved by range request.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.2",
+    "build_scope": "24B119",
+    "supporting_source_ids": [
+      "S-044"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Retrieved containers only. The complete package was not hashed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-090",
+    "title": "The 24B119 (27.2) restore-entry digests for the kernelcache, SPTM and TXM do not match the retrieved containers",
+    "description": "The restore entries for the kernelcache, SPTM and TXM carry digests that differ from the SHA-384 of the containers retrieved at the same archive paths.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.2",
+    "build_scope": "24B119",
+    "supporting_source_ids": [
+      "S-044"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The mismatch is verified. Its cause is unresolved. Restore-variant objects were not retrieved.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-091",
+    "title": "The 24B156 (27.2.1) manifest's KernelCache, SPTM and TXM normal digests match the retrieved containers",
+    "description": "In the first build identity, the BuildManifest digests for the kernelcache, SPTM and TXM equal the SHA-384 of the containers retrieved by range request.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.2.1",
+    "build_scope": "24B156",
+    "supporting_source_ids": [
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Retrieved containers only. The complete package was not hashed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-092",
+    "title": "The 24B156 (27.2.1) restore-entry digests for the kernelcache, SPTM and TXM do not match the retrieved containers",
+    "description": "The restore entries for the kernelcache, SPTM and TXM carry digests that differ from the SHA-384 of the containers retrieved at the same archive paths.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.2.1",
+    "build_scope": "24B156",
+    "supporting_source_ids": [
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The mismatch is verified. Its cause is unresolved. Restore-variant objects were not retrieved.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-093",
+    "title": "The SPTM and TXM containers of 24B119 and 24B156 are byte-identical to each other and differ from 24A446",
+    "description": "The SPTM and TXM IM4P containers have the same SHA-256 in 27.2 and 27.2.1, and both differ from the 27.0.1 containers. Their decompressed sizes are the same in all three builds.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1, 27.2 and 27.2.1",
+    "build_scope": "24A446, 24B119, 24B156",
+    "supporting_source_ids": [
+      "S-043",
+      "S-044",
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Byte identity of the containers only. What the monitor code does is not compared (no code-level comparison was made).",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-094",
+    "title": "The kernel version strings are darwin 27.0.0 (XNU 13432.2.10~2) for 24A446 and darwin 27.2.0 (XNU 13432.42.3~28) for 24B119 and 24B156",
+    "description": "The version record inside each decompressed kernelcache reports these darwin and XNU strings. Both 27.2 builds report the same strings.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "T8122 (kernel CPU field; not mapped to the A17 Pro by any cited source)",
+    "ios_scope": "27.0.1, 27.2 and 27.2.1",
+    "build_scope": "24A446, 24B119, 24B156",
+    "supporting_source_ids": [
+      "S-043",
+      "S-044",
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Version strings only. They do not establish which changes a build contains.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-095",
+    "title": "The KEXT inventories of 24B119 and 24B156 contain the same 281 records as 24A446; 47 bundle-version and 48 short-version fields differ from 24A446 in each",
+    "description": "No KEXT record is added or removed between 24A446 and either 27.2 build. The two 27.2 builds have identical version fields.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1, 27.2 and 27.2.1",
+    "build_scope": "24A446, 24B119, 24B156",
+    "supporting_source_ids": [
+      "S-043",
+      "S-044",
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Counts from the ipsw KEXT listing. A version change is not treated as a security fix, and no version change is interpreted here. The two version fields differ because the bundle-version field and the short-version field change independently for one record.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-096",
+    "title": "The kernelcache and the SPTM and TXM monitor images of 24A446 carry the arm64e subtype bit in their Mach-O headers",
+    "description": "The subtype field of each Mach-O header has the arm64e bit set. The images are therefore built for pointer-authentication-capable code.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "A17 Pro target family (arm64e build flag)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A build-level header flag. It does not show that pointer authentication is enforced on any device.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-097",
+    "title": "The signature set kernel/27.0 in the symbolicator repository declares a darwin range of 27.0.0 to 27.2.0",
+    "description": "The xnu signature file declares a minimum darwin version of 27.0.0 and a maximum of 27.2.0, and its KEXT signature files all declare ranges that include 27.0.0.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0.0 (darwin) to 27.2.0 (declared range)",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-046"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The declared range is the repository's own statement. The signatures' accuracy is not established by this claim.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-098",
+    "title": "About 80% of the distinct xnu signature anchor strings occur in the 24A446 kernelcache",
+    "description": "Of 14,189 distinct anchor strings in the xnu signature file, 11,317 are present in the 24A446 kernelcache (79.8%). Of the 6,003 signatures that carry anchors, 4,714 have all anchors present.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043",
+      "S-046"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Presence of the strings only. A string present in the binary does not show that the signature matches the function it names.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-099",
+    "title": "Signature-assisted symbolication of the 24A446 kernel assigns non-equivalent names to 1,139 addresses",
+    "description": "Logged output gives 1,160 kernel addresses with more than one signature name. For 1,139 of them the names belong to different families after normalising constructor, destructor and cold-split variants.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043",
+      "S-046"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Some pairs may be true aliases that the normalisation does not capture. The correct name at each address is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-100",
+    "title": "On 58 kernel addresses that have independent table-derived names, signature names agree in 55 (94.8%)",
+    "description": "The comparison uses syscall-table and Mach-trap-table names at the same addresses. The 95% interval is 85.9% to 98.2%.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043",
+      "S-046"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A small sample, biased toward functions the signatures found. The rate does not establish accuracy for other names.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-101",
+    "title": "Ghidra cannot import the standalone KEXT files extracted from the 24A446 kernelcache, because stub processing reads symbols from an empty table",
+    "description": "The failure is raised while the loader processes stub entries that point at symbol index 0, and the symbol table of each standalone file has no entries. Copying a standalone file with its indirect-symbol count set to zero imports successfully. The release kernelcache's own symbol tables are empty, and the standalone files carry the same symbol and indirect-symbol counts as their fileset entries (their string table is larger).",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Tested with one Ghidra version. Why the fileset load does not raise the same exception was not traced. Extends C-086 with the mechanism.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-102",
+    "title": "Of the 281 KEXT inventory records of 24A446, 263 match a fileset entry, 11 are codeless and 7 are kernel-programming-interface pseudo-KEXTs with no fileset entry",
+    "description": "No alias or duplicate record was found. The one fileset entry without an inventory record is the kernel image itself.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Records outside the fileset are not treated as missing firmware components. Their absence from the fileset is expected for codeless and interface bundles.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-103",
+    "title": "Ghidra's reference model records no register-indirect call references in the 24A446 SPTM or TXM images, while a byte-level decoder finds such encodings in both",
+    "description": "Ghidra records zero indirect call and jump references for both monitor programs. The decoder finds 83 register-indirect call encodings in the SPTM and 279 in the TXM.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The two methods disagree and the disagreement is not resolved. The decoder counts upper bounds.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-104",
+    "title": "Four methods found no code path that addresses the 24A446 __DATA_SPTM segment; the cause of the absence is unresolved",
+    "description": "A reference scan with Ghidra, a PC-relative (ADRP) pair scan, a literal-load scan and a MOVZ/MOVK constant scan found no reference to the segment. One raw 8-byte value in the segment's range lies in a __TEXT segment and is loaded by no decoded literal instruction. Extends C-085.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not device-specific (kernel analysis of iPhone16,2 build 24A446)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Absence by these four methods is not evidence that the segment is unused. Accesses through other encodings, through the SPTM side or through the interface were not tested.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-105",
+    "title": "Apple's Platform Security guide states that SPTM is supported on A15-or-later and M2-or-later SoCs, and that SPTM with TXM replaces the PPL there",
+    "description": "The OS-integrity section of the guide, re-read on 2026-11-12, gives the SPTM support statement and the replacement statement. The page date shown is January 28, 2026.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (Apple platform documentation)",
+    "chipset_scope": "A15 or later; M2 or later (as stated)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The support table's cells are images in the fetched copy. A17 Pro is not named in the text. Documentation-level statement only; not a statement about any build.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-106",
+    "title": "Apple's Platform Security guide states that Memory Integrity Enforcement is available on A19 and M5 processors or later",
+    "description": "The MIE passage of the same guide names A19 and M5 processors or later. The A17 family is not named in that passage.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (Apple platform documentation)",
+    "chipset_scope": "A19 and M5 or later (as stated)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A negative inference for A17 (see C-012) is drawn from the stated scope and is not a direct statement that the A17 Pro lacks the hardware.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-107",
+    "title": "The A15-A18 column of the Platform Security guide's feature table includes the A17 generation; the support cells are not readable from the fetched copy",
+    "description": "The feature table has a column headed A15-A18. The cells are images in the fetched copy, so the support marks in that column cannot be read from the text.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not device-specific (Apple platform documentation)",
+    "chipset_scope": "A15-A18 (column header)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Refines the limitation of C-013 for range-based reading. Support marks for the A17 column are not established by the text.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
   }
 ]

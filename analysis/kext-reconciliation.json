@@ -1,0 +1,3687 @@
+{
+  "generated": "2026-11-12",
+  "scope": "static reconciliation of ipsw KEXT inventory against kernelcache fileset headers; no load addresses in this file",
+  "rules": [
+    "fileset_backed: identifier in fileset, load address equals the entry header, executable field present",
+    "codeless: not in fileset, no executable field, sentinel load address",
+    "pseudo_kext: not in fileset, identifier prefix com.apple.kpi., executable names a kernel component, sentinel address",
+    "alias: two fileset-backed records share one executable load address (none found)",
+    "duplicate: identifier listed more than once (none found)",
+    "other: anything else with a sentinel address; fileset entries with no inventory record",
+    "unresolved: evidence conflicts or does not fit a category"
+  ],
+  "interpretation": "Records outside the fileset are not treated as missing firmware components. Codeless and pseudo-KEXT records describe personality or interface bundles and are expected to have no fileset entry. The one fileset entry without an inventory record is the kernel image itself.",
+  "summary": {
+    "inventory_records": 281,
+    "fileset_entries": 264,
+    "records_matched_to_fileset": 263,
+    "inventory_only_records": 18,
+    "fileset_only_entries": 1,
+    "categories_inventory": {
+      "codeless": 11,
+      "fileset_backed": 263,
+      "pseudo_kext": 7
+    },
+    "categories_fileset_only": {
+      "other": 1
+    },
+    "identity_check": {
+      "inventory_identifiers_unique": true,
+      "duplicate_identifiers": [],
+      "shared_executable_load_addresses": 0,
+      "shared_bundle_paths": 0
+    },
+    "display_name_collisions": [
+      "Image4 (two records; distinct identifiers and fileset entries)",
+      "I/O Kit Driver for USB HID Devices (two records; distinct identifiers)"
+    ]
+  },
+  "records": [
+    {
+      "id": "com.apple.kec.Libm",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.kec.pthread",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AFKHIDTBDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Auxiliary",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.AGXFirmwareKextG16PRTBuddy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.AGXFirmwareKextRTBuddy64",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.AGXG16P",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.security.AKSAnalytics",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AOPTouchKext",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ASIOKit",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.AUC",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleA7IOP-ASCWrap-v6",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleA7IOP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleALSColorSensor",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAOPAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAOPVoiceTrigger",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.AppleARMIISAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleARMPMU",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleARMPlatform",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleARMWatchdogTimer",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAVD",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAVE2",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleActuatorDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAstrisGpioProbe",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAudioClockLibs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAuthCP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBSDKextStarter",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBasebandM20",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBasebandPCI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBasebandPCIMAVControl",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBasebandPCIMAVPDP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothDebug",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothDebugService",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBluetoothModule",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleC26Charger",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleCSEmbeddedAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleCallbackPowerSource",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleConvergedIPCOLYBTControl",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleConvergedPCI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDAPF",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDCP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDCPDPTXProxy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDiagnosticDataAccessReadOnly",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDialogPMU",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDiskImages2",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDisplayCrossbar",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleDockChannel",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEffaceableBlockDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEffaceableStorage",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAOPAD5860",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleAOPHaptics",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleCS35L27Amp",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleCS42L77Audio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedAudioLibs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedAudioResourceManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedGPS",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedLightSensor",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedMikeyBus",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedPCIE",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedTempSensor",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedTouchEEPROM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedUSB",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEmbeddedUSBHost",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEventLogHandler",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleEverestErrorHandler",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleFAN53740",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.AppleFSCompression.AppleFSCompressionTypeZlib",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleFirmwareKit",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleFirmwareUpdateKext",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleGPIOCanary",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleGPIOICController",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleGameControllerPersonality",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleGenericMultitouch",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleH10PearlCameraInterface",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleH16ANEInterface",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleH16CameraInterface",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleH16PhotonDetector",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDALSService",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDKeyboard",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDTransport",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDTransportFIFO",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDTransportMailbox",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDTransportSCMCommon",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDTransportSPI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHPM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHapticsSupportLEAP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHapticsSupportNVM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleIDAMInterface",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleIDV",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleIISController",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleIPAppender",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.security.AppleImage4",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleInputDeviceSupport",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleInterruptControllerV3",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleJPEGDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleLockdownMode",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleM2ScalerCSCDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleM68Buttons",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMCA2-T8130",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMSG",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.kext.AppleMatch",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMikeyBusAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMobileApNonce",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMobileDispH16P-DCP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMobileFileIntegrity",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMultiFunctionManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMultitouchDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleMultitouchSPI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleNANDConfigAccess",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleOLYHAL",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleOnboardSerial",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePIODMA",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePMGR",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePMP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePMPFirmware",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePPMCPMS",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePTD",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleParrot",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePearlSEPDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePhoneBTM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ApplePhotonDetector",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleProResHW",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleProxDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleS5L8920XPWM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleS5L8940XI2C",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleS5L8960XNCO",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleS8000AES",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleS8000DWI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSARService",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSART",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSEPCredentialManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.AppleSEPGenericTransfer",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSEPHDCPManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSEPKeyStore",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSEPManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSMC",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSMCWirelessCharger",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPIMC",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPMI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPMIPMU",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPU",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPURose",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSPUSphere",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSSE",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSamsungSerial",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSerialShim",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSmartBatteryManagerEmbedded",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSmartIO2",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleStockholmControl",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBCardReader",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBMassStorageInterfaceNub",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleSynopsysMIPIDSI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT6020PCIePIODMA",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8030SOCTuner",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8110DART",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8130",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8130CLPC",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8130PCIe",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8130PMGR",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleTemperatureSensor",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleTopCaseHIDEventDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBTopCaseDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleTriStar",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleTypeCPhy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleT8130TypeCPhy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBAudio",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.cdc",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBCommon",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBDeviceAudioController",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBDeviceMux",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBDeviceNCM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.cdc.ecm",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.ethernet.asix",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBEthernetDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBEthernetHost",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBLightningAdapter",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBMike",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.cdc.ncm",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.networking",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUVDM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUVDMDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AudioDMAController-T8130",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.kec.Compression",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.CoreAnalyticsFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.kext.CoreTrust",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DCPAVFamilyProxy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DCPDPFamilyProxy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOMIPIFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.EXBrightCalibrationConsumer",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.ExclavesAudioKext",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.FairPlayIOKit",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.IISAudioIsolatedStreamECProxy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOAVFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOAccessoryManager",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOAccessoryPortUSB",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOAudio2Family",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.IOAudioCodecs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOBiometricFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOCECFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOCryptoAcceleratorFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.IODARTFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IODisplayPortFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOGPUFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOGameControllerFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOHDCPFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages.FileBackingStore",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages.KernelBacked",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages.RAMBackingStore",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages.ReadWriteDiskImage",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.DiskImages.UDIFDiskImage",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOHIDFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.IOHIDPowerSource",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOMikeyBusFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOMobileGraphicsFamily-DCP",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOMobileGraphicsFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IONVMeFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IONetworkFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IONetworkingFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOPCIFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOPortFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOReportFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIArchitectureModelFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSCSIBlockCommandsDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSerialFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSkywalkFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.IOSlaveProcessor",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSlowAdaptiveClockingFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOStorageFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOStreamFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOSurface",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.IOTextEncryptionFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOThunderboltFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOTimeSyncFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOUSBDeviceFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBXDCI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBXDCIARM",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOUSBHostFamily",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleSynopsysUSBXHCI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostBillboardDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostCompositeDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostDeviceSupport",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleUSBHostMergeProperties",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostPacketFilter",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostiOSDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHub",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBXHCI",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.IOUSBHostHIDDevice",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOUSBMassStorageDriver",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOUserEthernet",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.plugin.IOgPTPPlugin",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.security.Image4",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.nke.l2tp",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.nke.ppp",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.RTBuddy",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": null,
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.security.sandbox",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.VideoProcessing",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.filesystems.apfs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.corecapture",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.kec.corecrypto",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.filesystems.lifs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.mDNSOffloadUserClient-Embedded",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Network-Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.filesystems.tmpfs",
+      "category": "fileset_backed",
+      "note": "identifier present in the fileset; load address equals the entry header; executable field present",
+      "evidence": {
+        "in_fileset": true,
+        "has_executable_field": true,
+        "load_address_is_sentinel": false,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root",
+        "load_address_equals_fileset_header": true
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBSDKextStarterTMPFS",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleBSDKextStarterVPN",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleHIDKeyboardEmbedded",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console"
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleStorageDrivers",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; no personality data (weaker evidence)",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": null
+      }
+    },
+    {
+      "id": "com.apple.driver.AppleTopCaseDriverV2",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console"
+      }
+    },
+    {
+      "id": "com.apple.driver.SCSIDeviceSpecifics",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root"
+      }
+    },
+    {
+      "id": "com.apple.driver.USBStorageDeviceSpecifics",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Local-Root"
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.AppleUSBHostPlatformProperties",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.driver.usb.IOUSBHostHIDDeviceSafeBoot",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot"
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOHIDEventDriver",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Console"
+      }
+    },
+    {
+      "id": "com.apple.iokit.IOHIDEventDriverSafeBoot",
+      "category": "codeless",
+      "note": "no executable field and sentinel load address; personality data present",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": false,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": true,
+        "os_bundle_required": "Safe Boot"
+      }
+    },
+    {
+      "id": "com.apple.kpi.bsd",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.dsep",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.iokit",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.libkern",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.mach",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.private",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    },
+    {
+      "id": "com.apple.kpi.unsupported",
+      "category": "pseudo_kext",
+      "note": "kernel-programming-interface bundle; its executable field names a kernel component; no fileset entry",
+      "evidence": {
+        "in_fileset": false,
+        "has_executable_field": true,
+        "load_address_is_sentinel": true,
+        "has_io_kit_personalities": false,
+        "os_bundle_required": "Root"
+      }
+    }
+  ],
+  "fileset_only": [
+    {
+      "id": "com.apple.kernel",
+      "category": "other",
+      "note": "fileset entry with no KEXT inventory record; kernel image entry (MH_EXECUTE)",
+      "evidence": {
+        "in_inventory": false,
+        "filetype_from_probe": "MH_EXECUTE"
+      }
+    }
+  ]
+}

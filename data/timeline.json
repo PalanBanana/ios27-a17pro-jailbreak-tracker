@@ -419,5 +419,22 @@
     "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
     "firmware_scope": "27.0.1 (24A446)",
     "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-032",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "Static research on the 24A446 kernelcache and monitors: symbolication with a third-party signature set, a KEXT import investigation, monitor structure counts, a memory-protection documentation re-read, and metadata comparison with the 24B119 and 24B156 builds. The v0.3.0 release was not created. Readiness is unchanged.",
+    "associated_source_ids": [
+      "S-004",
+      "S-043",
+      "S-044",
+      "S-045",
+      "S-046"
+    ],
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "firmware_scope": "27.0.1 (24A446); 27.2 (24B119); 27.2.1 (24B156)",
+    "verification_state": "partially_verified"
   }
 ]

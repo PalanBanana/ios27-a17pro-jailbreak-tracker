@@ -1,0 +1,312 @@
+{
+  "scope": "metadata-level comparison only; no code, function, or disassembly comparison was performed",
+  "builds": {
+    "24A446": {
+      "version": "27.0.1",
+      "product_version": "27.0.1",
+      "build": "24A446",
+      "supported_products": [
+        "iPhone16,2"
+      ],
+      "build_identities": 3,
+      "components_per_identity": [
+        97,
+        97,
+        24
+      ],
+      "manifest_sha256": "c023bfa8dff4b299aa140699817e53f44fac4ad07cc3a19791d2c39a858021e1"
+    },
+    "24B119": {
+      "version": "27.2",
+      "product_version": "27.2",
+      "build": "24B119",
+      "supported_products": [
+        "iPhone16,2"
+      ],
+      "build_identities": 3,
+      "components_per_identity": [
+        97,
+        97,
+        24
+      ],
+      "manifest_sha256": "4acab4a08dea01522f9de6c7a7a75a1d8911b8403896896f4f9b6b1b59ede379"
+    },
+    "24B156": {
+      "version": "27.2.1",
+      "product_version": "27.2.1",
+      "build": "24B156",
+      "supported_products": [
+        "iPhone16,2"
+      ],
+      "build_identities": 3,
+      "components_per_identity": [
+        97,
+        97,
+        24
+      ],
+      "manifest_sha256": "643eeb99dc8295378a8d3965f14485dc9e375c9c2eddaea0a86d9be197bee761"
+    }
+  },
+  "manifest_structure": {
+    "24B119": {
+      "component_keys_identical_to_27.0.1": true,
+      "component_paths_identical_to_27.0.1": false,
+      "variants_present": [
+        "Customer Erase Install (IPSW)",
+        "Customer Upgrade Install (IPSW)",
+        "Recovery Customer Install"
+      ]
+    },
+    "24B156": {
+      "component_keys_identical_to_27.0.1": true,
+      "component_paths_identical_to_27.0.1": false,
+      "variants_present": [
+        "Customer Erase Install (IPSW)",
+        "Customer Upgrade Install (IPSW)",
+        "Recovery Customer Install"
+      ]
+    }
+  },
+  "manifest_digest_counts_identity_by_identity": {
+    "24B119": {
+      "components_compared": 206,
+      "digest_identical": 78,
+      "digest_differs": 128
+    },
+    "24B156": {
+      "components_compared": 206,
+      "digest_identical": 78,
+      "digest_differs": 128
+    }
+  },
+  "restore_and_normal_container_checks": {
+    "24B119": {
+      "kernelcache.release.iphone16": {
+        "bytes": 22665154,
+        "sha256": "7fd4e6d38acbdbcef27ff40d0ee8d0601def62abe4114807ba83eaf22cc0eedf",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      },
+      "Firmware/sptm.t8122.release.im4p": {
+        "bytes": 204424,
+        "sha256": "1976658c6b7eeef3ed969e1da2ca0f040aba2d56fd84f06b24b3ea7ead8684e7",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      },
+      "Firmware/txm.iphoneos.release.im4p": {
+        "bytes": 224174,
+        "sha256": "284e5413dfd447dc81c8840e92748dc8a390b474142f390c1fddee1ac1c716b6",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      }
+    },
+    "24B156": {
+      "kernelcache.release.iphone16": {
+        "bytes": 22665289,
+        "sha256": "3d95e0111562c2004844bc32e4448bfef411212e2a8eb200a9fbbb0ba14ee27e",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      },
+      "Firmware/sptm.t8122.release.im4p": {
+        "bytes": 204424,
+        "sha256": "1976658c6b7eeef3ed969e1da2ca0f040aba2d56fd84f06b24b3ea7ead8684e7",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      },
+      "Firmware/txm.iphoneos.release.im4p": {
+        "bytes": 224174,
+        "sha256": "284e5413dfd447dc81c8840e92748dc8a390b474142f390c1fddee1ac1c716b6",
+        "normal_digest_match": true,
+        "restore_digest_match": false
+      }
+    }
+  },
+  "container_sha256_identical": {
+    "kernelcache": {
+      "27.0.1_vs_27.2": false,
+      "27.0.1_vs_27.2.1": false,
+      "27.2_vs_27.2.1": false
+    },
+    "sptm": {
+      "27.0.1_vs_27.2": false,
+      "27.0.1_vs_27.2.1": false,
+      "27.2_vs_27.2.1": true
+    },
+    "txm": {
+      "27.0.1_vs_27.2": false,
+      "27.0.1_vs_27.2.1": false,
+      "27.2_vs_27.2.1": true
+    }
+  },
+  "container_sha256": {
+    "kernelcache": {
+      "24A446": "33606c425d5b9ebc9db16f1e7cf5197e8437c0df09ff061c9bd16596547c4d96",
+      "24B119": "7fd4e6d38acbdbcef27ff40d0ee8d0601def62abe4114807ba83eaf22cc0eedf",
+      "24B156": "3d95e0111562c2004844bc32e4448bfef411212e2a8eb200a9fbbb0ba14ee27e"
+    },
+    "sptm": {
+      "24A446": "e9d428a985d885d1b93d549f942e79b2bffa6f011d8f3064291e15e03e1521f5",
+      "24B119": "1976658c6b7eeef3ed969e1da2ca0f040aba2d56fd84f06b24b3ea7ead8684e7",
+      "24B156": "1976658c6b7eeef3ed969e1da2ca0f040aba2d56fd84f06b24b3ea7ead8684e7"
+    },
+    "txm": {
+      "24A446": "b81fb0c2db25d77055639bfdf8d1dc4610f31cde914f77d873e757c7405c65ff",
+      "24B119": "284e5413dfd447dc81c8840e92748dc8a390b474142f390c1fddee1ac1c716b6",
+      "24B156": "284e5413dfd447dc81c8840e92748dc8a390b474142f390c1fddee1ac1c716b6"
+    }
+  },
+  "im4p_metadata": {
+    "24A446": {
+      "kernelcache": {
+        "type": "krnl",
+        "version": "KernelManagement_host-514.2.2",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 73023488
+        },
+        "data_size": 22511573,
+        "keybag_present": false
+      },
+      "sptm": {
+        "type": "sptm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 1212448
+        },
+        "data_size": 201189,
+        "keybag_present": false
+      },
+      "txm": {
+        "type": "trxm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 557088
+        },
+        "data_size": 223564,
+        "keybag_present": false
+      }
+    },
+    "24B119": {
+      "kernelcache": {
+        "type": "krnl",
+        "version": "KernelManagement_host-514.40.8",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 73351168
+        },
+        "data_size": 22664751,
+        "keybag_present": false
+      },
+      "sptm": {
+        "type": "sptm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 1212448
+        },
+        "data_size": 204082,
+        "keybag_present": false
+      },
+      "txm": {
+        "type": "trxm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 557088
+        },
+        "data_size": 223854,
+        "keybag_present": false
+      }
+    },
+    "24B156": {
+      "kernelcache": {
+        "type": "krnl",
+        "version": "KernelManagement_host-514.40.8",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 73351168
+        },
+        "data_size": 22664886,
+        "keybag_present": false
+      },
+      "sptm": {
+        "type": "sptm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 1212448
+        },
+        "data_size": 204082,
+        "keybag_present": false
+      },
+      "txm": {
+        "type": "trxm",
+        "version": "1",
+        "encrypted": false,
+        "compression": {
+          "algorithm": "LZFSE",
+          "uncompressed_size": 557088
+        },
+        "data_size": 223854,
+        "keybag_present": false
+      }
+    }
+  },
+  "kernel_version": {
+    "24A446": {
+      "darwin": "27.0.0",
+      "date": "2026-08-13T21:40:21Z",
+      "xnu": "13432.2.10~2",
+      "type": "RELEASE",
+      "arch": "ARM64",
+      "cpu": "T8122"
+    },
+    "24B119": {
+      "darwin": "27.2.0",
+      "date": "2026-10-13T21:23:37Z",
+      "xnu": "13432.42.3~28",
+      "type": "RELEASE",
+      "arch": "ARM64",
+      "cpu": "T8122"
+    },
+    "24B156": {
+      "darwin": "27.2.0",
+      "date": "2026-10-13T21:23:37Z",
+      "xnu": "13432.42.3~28",
+      "type": "RELEASE",
+      "arch": "ARM64",
+      "cpu": "T8122"
+    }
+  },
+  "kext_inventory_counts": {
+    "24B119": {
+      "records_27.0.1": 281,
+      "records_new": 281,
+      "short_version_changed": 48,
+      "bundle_version_changed": 47,
+      "added": 0,
+      "removed": 0
+    },
+    "24B156": {
+      "records_27.0.1": 281,
+      "records_new": 281,
+      "short_version_changed": 48,
+      "bundle_version_changed": 47,
+      "added": 0,
+      "removed": 0
+    },
+    "24B119_vs_24B156": {
+      "short_version_changed": 0
+    }
+  }
+}

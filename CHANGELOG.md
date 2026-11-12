@@ -6,20 +6,24 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ### Added
 
-- Records C-078 to C-088 for build 24A446: provenance of the kernelcache and monitor containers, manifest digest checks, the unencrypted monitor containers, presence of security components and interface strings, the outcomes of the Ghidra analyses, and the unresolved restore-entry digests and KEXT import failure.
-- Source S-043: Apple-hosted firmware components for iOS 27.0.1 (24A446), retrieved by HTTP range requests on 2026-11-12. The complete package was not hashed.
-- Timeline event E-031 (local static analysis, unreleased).
-- Public summary reports: `reports/ghidra-kernel-analysis.md`, `reports/ghidra-sptm-analysis.md`, `reports/ghidra-txm-analysis.md`, `reports/ghidra-sandbox-analysis.md`, `reports/ghidra-amfi-analysis.md` and `reports/ghidra-memory-protection.md`.
+- Claims C-089 to C-107 for builds 24A446, 24B119 and 24B156: manifest and container verification for the two 27.2 builds; identity of the SPTM and TXM containers between 27.2 and 27.2.1; kernel version strings; KEXT inventory counts; the arm64e header flag; the scope of a third-party symbolication signature set and the presence of its anchor strings in the kernelcache; name conflicts and a small cross-check; the mechanism of a standalone KEXT import failure; the KEXT inventory reconciliation; a disagreement on register-indirect control flow in the monitors; four methods on the `__DATA_SPTM` segment; and Apple's Platform Security guide statements on SPTM, MIE and the A15-A18 table column.
+- Sources S-044 and S-045: Apple CDN objects for iOS 27.2 (24B119) and iOS 27.2.1 (24B156), retrieved in part by HTTP range requests on 2026-11-12. The complete packages were not hashed. Source S-046: the `kernel/27.0` signature folder of a community symbolication repository (MIT licence), read at a single commit.
+- Timeline event E-032 (static research update; no release).
+- Public reports: `reports/ghidra-kernel-symbolication.md`, `reports/ghidra-kext-loader-investigation.md`, `reports/sptm-semantic-analysis.md`, `reports/txm-semantic-analysis.md`, `reports/firmware-diff-27.0.1-27.2.md`, `reports/firmware-diff-27.0.1-27.2.1.md`, `reports/a17pro-memory-protection-analysis.md` and `reports/ghidra-cve-correlation.md`.
+- Count-level inventories: `analysis/kext-reconciliation.json`, `analysis/firmware-diff-metadata.json` and `analysis/kernel-symbolication-metrics.json`.
 
 ### Changed
 
-- CMP-015 (build verification) notes updated. The Apple-hosted manifest matches the retrieved kernelcache container. The complete package is not hashed, so the status stays partially verified.
-- The 24A446 firmware record lists S-043.
+- S-004 (Apple Platform Security guide) was re-read on 2026-11-12. Its access date and reliability note are updated. C-013 is unchanged. C-107 records the range reading of the A15-A18 column and the fact that its cells could not be read.
+- S-043 gained the claims that cite it. The firmware rows for 24B119 and 24B156 list S-044 and S-045.
 
 ### Notes
 
-- No firmware bytes, Ghidra project or function-level output is published. The readiness level (LEVEL 0) and the decision (NO-GO) are unchanged.
-- Release rule: these records were not released as a version.
+- Two analyses were declined and are not in this release: code-level differencing between 24A446 and later builds, and binary-to-advisory correlation. The firmware comparison is metadata only, and no difference is read as a security fix. The advisory page records advisory-level counts only.
+- Standalone KEXT files are not imported for analysis, because the release kernelcache's stub tables make the standalone import fail. The fileset program is used instead.
+- Symbol names, addresses, symbol listings, Ghidra projects and firmware bytes are not published. Symbolication is reported as counts.
+- The monitor reference counts were taken from a read-only copy of the Ghidra project.
+- No release was created. The findings support the research record and do not change readiness (LEVEL 0, NO-GO).
 
 ## [0.2.0] - 2026-11-12
 

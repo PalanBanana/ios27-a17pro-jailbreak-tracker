@@ -50,7 +50,7 @@ The research target is fixed at iOS 27.0.1 (build 24A446), as described in the t
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-12):** 87 claims (47 verified, 20 partially verified, 20 unverified), 43 sources, 31 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 32 timeline events, 15 compatibility rows and 4 firmware builds.
 
 **Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
 
@@ -190,6 +190,7 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | 2026-11-12 | Research pass for the v0.2.0 update: Apple's iOS 27.2 and 27.2.1 advisories parsed, the upstream reference reconciled, and the kernel, Calif.io and SPTM evidence re-classified. | verified | S-033, S-034, S-026 |
 | 2026-11-12 | The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021). | partially verified | S-014, S-026 |
 | 2026-11-12 | Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged. | partially verified | S-043 |
+| 2026-11-12 | Static research on the 24A446 kernelcache and monitors: symbolication with a third-party signature set, a KEXT import investigation, monitor structure counts, a memory-protection documentation re-read, and metadata comparison with the 24B119 and 24B156 builds. The v0.3.0 release was not created. Readiness is unchanged. | partially verified | S-004, S-043, S-044, S-045, S-046 |
 
 ## 14. Verified Claims
 
@@ -244,6 +245,21 @@ A `verified` verdict requires a fetched, API or tier-1 source and high confidenc
 | C-083 | The 24A446 kernelcache contains kernel log strings that name SPTM and TXM interfaces | high | S-043 |
 | C-086 | Standalone KEXT files extracted from the 24A446 kernelcache have empty symbol tables, and Ghidra cannot import them | high | S-043 |
 | C-088 | Ghidra's automatic analysis of the 24A446 TXM image completed without logged errors, recovering 1,654 functions (1,653 default-named) | high | S-043 |
+| C-089 | The 24B119 (27.2) manifest's KernelCache, SPTM and TXM normal digests match the retrieved containers | high | S-044 |
+| C-090 | The 24B119 (27.2) restore-entry digests for the kernelcache, SPTM and TXM do not match the retrieved containers | high | S-044 |
+| C-091 | The 24B156 (27.2.1) manifest's KernelCache, SPTM and TXM normal digests match the retrieved containers | high | S-045 |
+| C-092 | The 24B156 (27.2.1) restore-entry digests for the kernelcache, SPTM and TXM do not match the retrieved containers | high | S-045 |
+| C-093 | The SPTM and TXM containers of 24B119 and 24B156 are byte-identical to each other and differ from 24A446 | high | S-043, S-044, S-045 |
+| C-094 | The kernel version strings are darwin 27.0.0 (XNU 13432.2.10~2) for 24A446 and darwin 27.2.0 (XNU 13432.42.3~28) for 24B119 and 24B156 | high | S-043, S-044, S-045 |
+| C-095 | The KEXT inventories of 24B119 and 24B156 contain the same 281 records as 24A446; 47 bundle-version and 48 short-version fields differ from 24A446 in each | high | S-043, S-044, S-045 |
+| C-096 | The kernelcache and the SPTM and TXM monitor images of 24A446 carry the arm64e subtype bit in their Mach-O headers | high | S-043 |
+| C-097 | The signature set kernel/27.0 in the symbolicator repository declares a darwin range of 27.0.0 to 27.2.0 | high | S-046 |
+| C-098 | About 80% of the distinct xnu signature anchor strings occur in the 24A446 kernelcache | high | S-043, S-046 |
+| C-099 | Signature-assisted symbolication of the 24A446 kernel assigns non-equivalent names to 1,139 addresses | high | S-043, S-046 |
+| C-101 | Ghidra cannot import the standalone KEXT files extracted from the 24A446 kernelcache, because stub processing reads symbols from an empty table | high | S-043 |
+| C-102 | Of the 281 KEXT inventory records of 24A446, 263 match a fileset entry, 11 are codeless and 7 are kernel-programming-interface pseudo-KEXTs with no fileset entry | high | S-043 |
+| C-105 | Apple's Platform Security guide states that SPTM is supported on A15-or-later and M2-or-later SoCs, and that SPTM with TXM replaces the PPL there | high | S-004 |
+| C-106 | Apple's Platform Security guide states that Memory Integrity Enforcement is available on A19 and M5 processors or later | high | S-004 |
 
 ## 15. Unverified Claims
 
@@ -273,6 +289,10 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-084 | The 24A446 kernelcache contains MIE-related strings; whether MIE is active on the A17 Pro is not established | medium | S-043 |
 | C-085 | Ghidra recorded no code reference into the 24A446 __DATA_SPTM segment; the cause is unresolved | medium | S-043 |
 | C-087 | Ghidra's automatic analysis of the 24A446 kernelcache completed, recovering 230,298 functions (3 named) with 17 logged errors | medium | S-043 |
+| C-100 | On 58 kernel addresses that have independent table-derived names, signature names agree in 55 (94.8%) | medium | S-043, S-046 |
+| C-103 | Ghidra's reference model records no register-indirect call references in the 24A446 SPTM or TXM images, while a byte-level decoder finds such encodings in both | medium | S-043 |
+| C-104 | Four methods found no code path that addresses the 24A446 __DATA_SPTM segment; the cause of the absence is unresolved | medium | S-043 |
+| C-107 | The A15-A18 column of the Platform Security guide's feature table includes the A17 generation; the support cells are not readable from the fetched copy | medium | S-004 |
 
 ### Unverified
 
@@ -348,6 +368,9 @@ Tiers: 1 primary (Apple, original research, official repositories and conference
 | S-041 | [staturnzz/momentarius (repository metadata)](https://api.github.com/repos/staturnzz/momentarius) | GitHub (repository owner: staturnzz) | 3 | 2026-08-07 | API response |
 | S-042 | [Inside the DarkSword Kernel Escalation: From GPU Process to Kernel R/W (CVE-2025-43510 & CVE-2025-43520)](https://www.8ksec.io/darksword-kernel-escalation-cve-2025-43510-43520/) | 8kSec | 2 | 2026-05-03 | fetched (full text) |
 | S-043 | [iOS 27.0.1 (24A446) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/531d0d56-6e43-4fb9-b4ee-abb5aab5c04f/iPhone16,2_27.0.1_24A446_Restore.ipsw) | Apple Inc. (CDN object listed by the ipsw.me firmware index) | 1 | 2026-09-28 | fetched (partial text) |
+| S-044 | [iOS 27.2 (24B119) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/dcf3b441-e473-4c28-a936-99d6af8c60a2/iPhone16,2_27.2_24B119_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-10-26 | fetched (partial text) |
+| S-045 | [iOS 27.2.1 (24B156) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/079a8de1-4a8d-4aa2-b5fb-7c33a7ffbf19/iPhone16,2_27.2.1_24B156_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-11-09 | fetched (partial text) |
+| S-046 | [blacktop/symbolicator: ipsw symbolication signatures (kernel/27.0 folder, MIT licence)](https://github.com/blacktop/symbolicator) | blacktop/symbolicator repository (community; MIT licence) | 3 | 2026-11-05 | fetched (partial text) |
 
 ## 17. Contribution Instructions
 

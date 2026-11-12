@@ -6,8 +6,8 @@
 
 | Verdict | Claims |
 |---|---|
-| verified | 47 |
-| partially verified | 20 |
+| verified | 62 |
+| partially verified | 24 |
 | unverified | 20 |
 | disproved | 0 |
 | superseded | 0 |
@@ -16,15 +16,15 @@
 
 | Source tier | Sources |
 |---|---|
-| Tier 1 | 17 |
+| Tier 1 | 19 |
 | Tier 2 | 20 |
-| Tier 3 | 5 |
+| Tier 3 | 6 |
 | Tier 4 | 1 |
 
 | Verification method | Sources |
 |---|---|
 | fetched (full text) | 23 |
-| fetched (partial text) | 2 |
+| fetched (partial text) | 5 |
 | API response | 7 |
 | search snippet only | 11 |
 | not accessed | 0 |
@@ -71,6 +71,7 @@ These claims rest on secondary, community or unverifiable sources. They are reco
 - C-075: heise reports the Calif.io jailbreak as 'the first reboot-proof jailbreak since iOS 9' (press claim; unverified) (supporting tiers: 2)
 - C-076: t3n reports AI-assisted exploit-chain discovery and an iOS 27.2 beta comparison as established; heise calls the comparison theoretical (supporting tiers: 2)
 - C-077: The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified) (supporting tiers: 3)
+- C-097: The signature set kernel/27.0 in the symbolicator repository declares a darwin range of 27.0.0 to 27.2.0 (supporting tiers: 3)
 
 ## Claims with contradicting sources
 

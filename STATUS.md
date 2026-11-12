@@ -14,7 +14,7 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 
 ## Data
 
-**Data snapshot (2026-11-12):** 87 claims (47 verified, 20 partially verified, 20 unverified), 43 sources, 31 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 32 timeline events, 15 compatibility rows and 4 firmware builds.
 
 ## Research priorities
 
