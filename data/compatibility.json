@@ -229,7 +229,7 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [],
-    "notes": "No independent reproduction on A17 Pro hardware was found. This project does not test exploit code on the primary device.",
+    "notes": "No independent reproduction on A17 Pro hardware was found. This project does not test exploit code on any real device.",
     "last_checked": "2026-11-11"
   },
   {

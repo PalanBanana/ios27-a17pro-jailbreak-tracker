@@ -9,11 +9,11 @@ Press outlets reported a live demonstration on 2026-10-16. Hexacon 2026 took pla
 **Why does the project say "reported" so often?**
 Because most of what is known about the demonstration comes from press coverage. A reported fact is not a verified fact, and the records say which is which.
 
-**Is my phone still on iOS 27.0.1?**
-The owner reports that iOS 27.0.1 (build 24A446) is installed, and that over-the-air update blocking is enabled. The project has not verified either, and it does not connect to or query the device. See [DEVICE_PROFILE.md](DEVICE_PROFILE.md).
+**Which firmware does the research target use?**
+The research target profile is iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) running iOS 27.0.1 (build 24A446). The project does not check the installed state of any individual device. See [DEVICE_PROFILE.md](DEVICE_PROFILE.md).
 
 **Is the iOS 27.0.1 build still signed?**
-Unresolved. A third-party index marked build 24A446 as not signed on 2026-11-11 (C-021). A community reference reported it as still signed on 2026-11-02, and that report is not verified. Apple has not published a signing record that this project could check. Do not assume that a restore to 27.0.1 is possible. See `docs/RECOVERY_AND_PRESERVATION.md`.
+Unresolved. A third-party index marked build 24A446 as not signed on 2026-11-12 (ipsw.me, S-014; C-021). A community reference reported it as still signed on 2026-11-02, and that report is not verified. Apple has not published a signing record that this project could check. Do not assume that a restore to 27.0.1 is possible. See `docs/RECOVERY_AND_PRESERVATION.md`.
 
 **Should I update or downgrade?**
 This project does not recommend either. Those decisions belong to the device owner, who should weigh backups, signing status and the project's safety policy. The project does not change update settings or perform updates.

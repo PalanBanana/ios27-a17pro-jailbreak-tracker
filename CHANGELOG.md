@@ -2,11 +2,25 @@
 
 All notable changes to this repository are recorded here. Dates use ISO 8601 (`YYYY-MM-DD`). Records are superseded, never deleted.
 
-## [Unreleased]
+## [0.1.1] - 2026-11-12
 
 ### Added
 
 - Research priorities (P0, P1 and P2) recorded in `STATUS.md`. No data, verdict or readiness level changed.
+- Validator check that fails when maintainer device-state phrases appear in published text (`scripts/validate_tracker.py`).
+
+### Changed (privacy correction)
+
+- Removed statements about a maintainer's personal device, including its installed firmware, its update configuration and its usage, from the documentation.
+- Added a target profile statement to `docs/DEVICE_PROFILE.md`, `README.md` and `README_KR.md`. It describes the research target only.
+- Revised the preservation, recovery and safety guidance so that it refers to any real device rather than to a particular one. The guidance is otherwise unchanged.
+- Public firmware signing observations keep their sources and last-checked dates.
+- The research target, compatibility scope, evidence records, verdicts and readiness level are unchanged.
+
+### Notes
+
+- Published history was not rewritten. Earlier commits and the v0.1.0 release (its tag and release notes) still contain the earlier wording. This release does not erase them.
+- The `[0.1.0]` section of this file was revised to remove the same wording. The v0.1.0 tag and release were not changed.
 
 ## [0.1.0] - 2026-11-12
 
@@ -37,8 +51,7 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ### Documented (2026-11-12)
 
-- Owner-reported research baseline: iPhone 15 Pro Max (A17 Pro, `iPhone16,2`), installed iOS 27.0.1 (build 24A446), signing reported as unsigned, over-the-air update blocking reported as enabled, and the device is the owner's primary daily-use phone. The project has not verified these and does not connect to the device. The baseline is recorded in documentation only, not as evidence.
-- Preservation policy and the limits of safeguards: unsigned builds, SHSH blobs and OTA blocking. See `docs/RECOVERY_AND_PRESERVATION.md`, `docs/SAFETY_POLICY.md` and `reports/firmware-report.md`.
+- Research target profile, firmware preservation limits, and public firmware signing observations with their sources (see `docs/DEVICE_PROFILE.md` and `docs/RECOVERY_AND_PRESERVATION.md`).
 - Research re-check on 2026-11-12: no new iOS 27 build, no signing change in the third-party index, no Dopamine release or default-branch commit since 3.0.13, no new pwnlambda repository, and no published kernel read/write write-up found. Result: no material change, apart from the correction above.
 
 ### Changed

@@ -4,7 +4,7 @@
 
 ## Builds for the target device family (iPhone16,2)
 
-| Version | Build | Released | Apple CVE status | Signing (third-party index, 2026-11-11) | Records |
+| Version | Build | Released | Apple CVE status | Signing (third-party index, 2026-11-12) | Records |
 |---|---|---|---|---|---|
 | 27.0 | 24A437 | 2026-09-14 | Listed on Apple page; subset of Calif.io-credited entries recorded | Not signed | S-001, S-014 |
 | 27.0.1 | 24A446 | 2026-09-28 | No published CVE entries (Apple index) | Not signed; conflicting report (C-021) | C-007, C-024, C-021 |

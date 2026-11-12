@@ -77,6 +77,26 @@ README_HEADINGS = [
     "Source Index", "Contribution Instructions", "Safety Policy", "License", "Disclaimer",
 ]
 
+# Phrases that would publish a maintainer's personal device state. The research target profile
+# (iPhone 15 Pro Max, A17 Pro, iPhone16,2, iOS 27.0.1, build 24A446) is public; personal device
+# state is not. This file is excluded from the scan because it defines these patterns.
+MAINTAINER_STATE_PATTERNS = [
+    r"owner[- ]reported",
+    r"owner[- ]confirmed",
+    r"owner reports?",
+    r"owner['\u2019]s (?:iphone|phone|device|installed|primary|build)",
+    r"primary daily[- ]use",
+    r"daily[- ]use phone",
+    r"update[- ]blocking",
+    r"OTA (?:update )?block",
+    r"over-the-air update block",
+    r"installed (?:ios|firmware|build) \d",
+    r"소유자 (?:보고|확인)",
+    r"주력 기기",
+    r"OTA 차단",
+    r"무선 업데이트\(OTA\) 차단",
+]
+
 # Patterns that must not appear in published text.
 PRIVACY_PATTERNS = {
     "email address": re.compile(r"[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+"),
@@ -390,6 +410,19 @@ def main(argv: list[str] | None = None) -> int:
         if pattern not in gitignore
     ]
     check(".gitignore covers device artefacts and secrets", gi_problems)
+
+    # 16. Maintainer device-state phrases must not appear in published text.
+    state_problems: list[str] = []
+    state_regexes = [re.compile(p, re.IGNORECASE) for p in MAINTAINER_STATE_PATTERNS]
+    for path in iter_text_files(root):
+        if path.relative_to(root).as_posix() == "scripts/validate_tracker.py":
+            continue
+        text = path.read_text(encoding="utf-8", errors="replace")
+        for regex in state_regexes:
+            for match in regex.finditer(text):
+                line_no = text.count("\n", 0, match.start()) + 1
+                state_problems.append(f"{path.relative_to(root)}:{line_no}: device-state phrase {match.group(0)!r}")
+    check("no maintainer device-state phrases", state_problems)
 
     # Report.
     for name in passes:

@@ -1,8 +1,8 @@
 # Safety Policy
 
-The owner's iPhone is a daily-use device. This project treats it as one. Research permission is not permission to run anything on the device.
+Real devices, including devices in daily use, are treated as non-disposable. Research permission is not permission to run anything on a real device.
 
-## 1. Operations this project never performs or recommends on the owner's iPhone
+## 1. Operations this project never performs or recommends on any real device
 
 - Jailbreak installation or any jailbreak attempt.
 - Kernel exploit or SPTM bypass execution on the device.
@@ -17,11 +17,11 @@ Permission to research a jailbreak is not permission to execute one. Permission 
 
 ## 2. Environments
 
-- **Environment A, primary device**: the owner's iPhone. Daily use only. The project never connects to it.
+- **Environment A, real devices**: any device a person uses in daily life. The project never connects to, inspects, or modifies any such device.
 - **Environment B, research workspace**: repository inspection, static reading, documentation, version comparison, data validation. No exploit code is run here.
 - **Environment C, isolated test environment**: optional, for reviewed tools only. Emulators do not reproduce A17 Pro hardware behaviour, so emulator results are not compatibility evidence.
 
-Experimental code is never moved onto the primary device.
+Experimental code is never moved onto a real device.
 
 ## 3. Third-party code
 
@@ -50,12 +50,9 @@ Run the privacy and secret checks before any commit (`scripts/validate_tracker.p
 
 This project is an information resource. It is not legal advice. Owners are responsible for complying with the law where they live and with the terms of their device, operating system and service agreements.
 
-## 7. Preservation of the primary device
+## 7. Real devices
 
-The owner's iPhone is a primary daily-use device, and the owner intends to keep its current firmware for future research. The project's rules for it:
-
-- Keep the installed firmware (owner-reported: iOS 27.0.1, build 24A446) and the owner's over-the-air update blocking exactly as they are.
-- Do not disable OTA blocking, change update settings, install or remove configuration profiles, trigger an update, restore or downgrade firmware, enter DFU or Recovery Mode, reboot the device for research, or install experimental components.
-- Do not treat the device as disposable. A failed experiment is not an acceptable cost of the research.
-- Any future operation on the device needs explicit, separate authorization from the owner for that specific operation. Publishing this repository does not provide it.
-- The project itself never connects to, queries or inspects the device.
+- The project does not connect to, inspect, or modify any maintainer-owned device.
+- Research in this repository never requires operating on a real device. Compatibility is assessed from public sources, and recorded only with evidence for the exact device and build.
+- Any operation on a real device needs explicit, separate authorization from that device's owner for that specific operation. Publishing this repository does not provide that authorization.
+- A device in daily use is not a research device. A failed experiment is not an acceptable cost of research.

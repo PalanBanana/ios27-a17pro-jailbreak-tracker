@@ -16,11 +16,17 @@ Every claim is recorded with its sources, dates, scope, verdict and limitations.
 
 - Establish, with evidence, whether any jailbreak path exists for the target device and build.
 - Track the research areas that could lead to one: SPTM, kernel research, sandbox and privilege escalation, build compatibility, exploit-chain integration, the jailbreak ecosystem, persistence, and scam detection.
-- Protect the owner's primary device. The project never connects to it and never recommends operations on it.
+- Protect real devices from research risk. The project never connects to, inspects, or modifies any maintainer-owned device, and it never recommends operations on a real device.
 - Keep firmware facts accurate: what is installed, what is signed, and what is not known.
 - Publish evidence that others can check, correct and reuse under the licences in section 19.
 
 ## 3. Target Hardware
+
+This repository maintains an independent research target profile for the iPhone 15 Pro Max (A17 Pro) running iOS 27.0.1 (build 24A446).
+
+The target profile is used for compatibility research. It does not disclose or verify the personal device state of the repository maintainer.
+
+The project does not connect to, inspect, or modify any maintainer-owned device.
 
 | Field | Value |
 |---|---|
@@ -38,10 +44,9 @@ The five evidence levels, and which of them are not established, are in [docs/DE
 | iOS version | 27.0.1, released 2026-09-28 (C-024) |
 | Build | 24A446 (third-party index; C-003, partially verified) |
 | Apple security notes | No published CVE entries for 27.0.1 (C-007) |
-| Signing status | Unresolved. A third-party index lists the build as not signed. A community reference reported it as signed on 2026-11-02 (C-021). |
-| Owner-reported baseline | Installed build iOS 27.0.1 (24A446). The owner reports that the build is unsigned, which is consistent with the third-party index, and that over-the-air update blocking is enabled. The project has not verified either. |
+| Signing status (public observation) | Unresolved. A third-party firmware index (ipsw.me, S-014) lists build 24A446 as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02. Apple has not published a signing record that the project could check (C-021). |
 
-The target is fixed. The owner reports that the research device runs iOS 27.0.1 (build 24A446). The project does not connect to or query the device, so it cannot verify this.
+The research target is fixed at iOS 27.0.1 (build 24A446), as described in the target profile above. Firmware observations in this section come from public sources, with attribution and the date each was last checked.
 
 ## 5. Research Status
 
@@ -138,11 +143,11 @@ Details: [research/DIM08-jailbreak-ecosystem.md](research/DIM08-jailbreak-ecosys
 | 27.2.1 | 24B156 | 2026-11-09 | signed (third-party index), 2026-11-12 | not located |
 
 - An installed build is not the same as a restorable build. Restore depends on Apple's signing at restore time.
-- The signing status of 24A446 is unresolved (C-021). Do not assume a restore to it is possible.
+- The signing status of 24A446 is unresolved (C-021). A third-party index (ipsw.me, S-014) lists it as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02. Do not assume a restore to it is possible.
 - SHSH blobs do not guarantee a restore.
 - The project does not recommend updating or downgrading. Those decisions belong to the device owner.
-- Owner-reported: over-the-air update blocking is enabled. Its mechanism and coverage are not verified, and it does not guarantee protection against every update or restore pathway.
-- A failed experiment or a recovery attempt could result in a newer firmware being installed, which would end the iOS 27.0.1 research baseline. The project recommends against any operation that carries that risk.
+- Update-deferral settings, where a device offers them, do not guarantee protection against every update or restore pathway. Their coverage is device-specific, and this project does not verify it.
+- A failed experiment or a recovery attempt on any device could result in a newer firmware being installed, after which the affected build may no longer be restorable through ordinary channels. The project recommends against any operation that carries that risk.
 
 Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) and [reports/firmware-report.md](reports/firmware-report.md).
 
@@ -271,7 +276,7 @@ Maintainers do not run code from pull requests, and no pull request is merged au
 - This project never connects to, operates on, or recommends operations on an iPhone. Permission to research a jailbreak is not permission to execute one.
 - Do not install IPA files, configuration profiles or jailbreak tools from unverified sources. Treat them as malware until shown otherwise.
 - Never publish or submit serial numbers, UDIDs, ECIDs, IMEI or EID values, Apple Account data, tokens, backups or device logs.
-- The owner's primary device is preserved as it is: no change to its firmware, over-the-air update blocking or configuration; no DFU or Recovery Mode; no reboots for research.
+- The project never connects to, inspects, or modifies any maintainer-owned device. Research never requires operating on a real device, and any operation on a real device needs explicit authorization from that device's owner for that operation.
 - Full policy: [docs/SAFETY_POLICY.md](docs/SAFETY_POLICY.md). Security reports: [SECURITY.md](SECURITY.md).
 
 ## 19. License

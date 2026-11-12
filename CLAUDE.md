@@ -17,7 +17,7 @@ This is an independent research and compatibility tracker for an iPhone 15 Pro M
 7. Keep `README.md` and `README_KR.md` structurally parallel. English is the source of truth.
 8. Before finishing any change, run `python3 scripts/validate_tracker.py` and fix every failure. Never weaken a check to make it pass.
 9. Never force-push, rewrite history or delete existing evidence. Supersede an earlier verdict with a new record instead.
-10. Owner-reported device state (docs/DEVICE_PROFILE.md) is a documented baseline, not evidence. Never turn it into a verdict or a compatibility claim.
+10. Never record a maintainer's personal device state (installed build, update or configuration settings, usage, or any device identifier) in this repository. The research target profile in `docs/DEVICE_PROFILE.md` is the only device description published here.
 
 ## Data conventions
 

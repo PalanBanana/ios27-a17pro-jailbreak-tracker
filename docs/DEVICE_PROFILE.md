@@ -25,27 +25,23 @@ The project keeps five separate questions. A result for one does not answer the 
 | 4. Build 24A446 compatibility | Is there build-specific evidence? | **Not established.** The build mapping is partially verified (C-003). | C-003, CMP-015 |
 | 5. Independently reproduced compatibility on the exact target | Has a third party reproduced a result on this device and build? | **Not established.** No reproduction found. | CMP-014 |
 
-## Owner-reported research baseline
+## Target profile statement
 
-The repository owner has reported the current state of the research device. The project has not checked any of it. The project does not connect to, query or inspect the device, and it will not do so.
+This repository maintains an independent research target profile for the iPhone 15 Pro Max (A17 Pro) running iOS 27.0.1 (build 24A446).
 
-| Item | Owner-reported state | Project status |
-|---|---|---|
-| Device | iPhone 15 Pro Max | Consistent with the model identifier mapping (C-025) |
-| Chip | Apple A17 Pro | Consistent with C-026 (partially verified) |
-| Model identifier | iPhone16,2 | Third-party index (C-025) |
-| Installed iOS version | 27.0.1 | Owner-reported baseline. Not independently verified. |
-| Research build | 24A446 | Baseline. The build mapping is partially verified (C-003). The installed build is not independently confirmed. |
-| Firmware signing status | Unsigned | Consistent with the third-party index (C-021). Not verified against Apple. |
-| Over-the-air update blocking | Enabled | Owner-reported. The mechanism and its coverage are not verified. |
-| Use | Primary daily-use phone | Governs every research decision: the project performs no operation on the device. |
+The target profile is used for compatibility research. It does not disclose or verify the personal device state of the repository maintainer.
 
-How this baseline is used:
+The project does not connect to, inspect, or modify any maintainer-owned device.
 
-- It is the research baseline for the target profile. It is not evidence of compatibility, and it changes no verdict or readiness level.
-- Confirmation of the installed build, if it is ever needed, is the owner's decision. It must be non-invasive. The project will not request device identifiers or device access.
-- The owner records any change to this baseline by updating this section with a date.
-- No serial number, UDID, ECID, IMEI, EID or Apple Account information is collected or published.
+## Public firmware signing observations
+
+| Build | Observation | Source | Last checked |
+|---|---|---|---|
+| 24A446 (iOS 27.0.1) | Listed as not signed by a third-party firmware index | ipsw.me device index for iPhone16,2 (S-014) | 2026-11-12 |
+| 24A446 (iOS 27.0.1) | Reported as still signed on 2026-11-02; not verified | Community reference repository (S-026). The report is dated 2026-11-02. | Reference fetched 2026-11-11 |
+| 24B119 (iOS 27.2) and 24B156 (iOS 27.2.1) | Listed as signed by the same index | ipsw.me (S-014) | 2026-11-12 |
+
+The status of build 24A446 is unresolved. No Apple-hosted signing record was checked (C-021). Signing status can change, so each observation carries its source and date.
 
 ## Out of scope
 
