@@ -275,9 +275,11 @@
     "evidence_claim_ids": [
       "C-003",
       "C-024",
-      "C-025"
+      "C-025",
+      "C-078",
+      "C-079"
     ],
-    "notes": "Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. No Apple-hosted build record was located, so verification is partial.",
+    "notes": "Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. An Apple-hosted BuildManifest (27.0.1, 24A446, iPhone16,2) was retrieved by range request on 2026-11-12, and its KernelCache digest matches the retrieved container (C-078). The complete package was not hashed, so verification remains partial.",
     "last_checked": "2026-11-12"
   }
 ]

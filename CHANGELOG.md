@@ -2,6 +2,25 @@
 
 All notable changes to this repository are recorded here. Dates use ISO 8601 (`YYYY-MM-DD`). Records are superseded, never deleted.
 
+## [Unreleased]
+
+### Added
+
+- Records C-078 to C-088 for build 24A446: provenance of the kernelcache and monitor containers, manifest digest checks, the unencrypted monitor containers, presence of security components and interface strings, the outcomes of the Ghidra analyses, and the unresolved restore-entry digests and KEXT import failure.
+- Source S-043: Apple-hosted firmware components for iOS 27.0.1 (24A446), retrieved by HTTP range requests on 2026-11-12. The complete package was not hashed.
+- Timeline event E-031 (local static analysis, unreleased).
+- Public summary reports: `reports/ghidra-kernel-analysis.md`, `reports/ghidra-sptm-analysis.md`, `reports/ghidra-txm-analysis.md`, `reports/ghidra-sandbox-analysis.md`, `reports/ghidra-amfi-analysis.md` and `reports/ghidra-memory-protection.md`.
+
+### Changed
+
+- CMP-015 (build verification) notes updated. The Apple-hosted manifest matches the retrieved kernelcache container. The complete package is not hashed, so the status stays partially verified.
+- The 24A446 firmware record lists S-043.
+
+### Notes
+
+- No firmware bytes, Ghidra project or function-level output is published. The readiness level (LEVEL 0) and the decision (NO-GO) are unchanged.
+- Release rule: these records were not released as a version.
+
 ## [0.2.0] - 2026-11-12
 
 ### Added

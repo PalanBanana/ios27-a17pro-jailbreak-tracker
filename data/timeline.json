@@ -406,5 +406,18 @@
     "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
     "firmware_scope": "27.0.1 (24A446)",
     "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-031",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged.",
+    "associated_source_ids": [
+      "S-043"
+    ],
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "firmware_scope": "27.0.1 (24A446)",
+    "verification_state": "partially_verified"
   }
 ]

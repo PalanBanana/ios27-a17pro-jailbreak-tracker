@@ -6,8 +6,8 @@
 
 | Verdict | Claims |
 |---|---|
-| verified | 39 |
-| partially verified | 17 |
+| verified | 47 |
+| partially verified | 20 |
 | unverified | 20 |
 | disproved | 0 |
 | superseded | 0 |
@@ -16,7 +16,7 @@
 
 | Source tier | Sources |
 |---|---|
-| Tier 1 | 16 |
+| Tier 1 | 17 |
 | Tier 2 | 20 |
 | Tier 3 | 5 |
 | Tier 4 | 1 |
@@ -24,7 +24,7 @@
 | Verification method | Sources |
 |---|---|
 | fetched (full text) | 23 |
-| fetched (partial text) | 1 |
+| fetched (partial text) | 2 |
 | API response | 7 |
 | search snippet only | 11 |
 | not accessed | 0 |

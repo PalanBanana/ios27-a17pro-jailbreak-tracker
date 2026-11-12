@@ -782,5 +782,32 @@
     ],
     "reliability_notes": "Security-company analysis dated 2026-05-03. Gives fixed-in versions: CVE-2025-43510 in iOS 18.7.5 and 26.2; CVE-2025-43520 in iOS 18.7.6 and 26.3. Describes the DarkSword exploit kit as reported by Google's threat intelligence team in March 2026. Covers DarkSword only; ClearSword is not mentioned. The exploit narrative is not reproduced here. Its Apple version data was not checked against Apple's 26.x advisories.",
     "notes": null
+  },
+  {
+    "id": "S-043",
+    "title": "iOS 27.0.1 (24A446) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)",
+    "url": "https://updates.cdn-apple.com/2026FallFCS/531d0d56-6e43-4fb9-b4ee-abb5aab5c04f/iPhone16,2_27.0.1_24A446_Restore.ipsw",
+    "publisher": "Apple Inc. (CDN object listed by the ipsw.me firmware index)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-09-28",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-078",
+      "C-079",
+      "C-080",
+      "C-081",
+      "C-082",
+      "C-083",
+      "C-084",
+      "C-085",
+      "C-086",
+      "C-087",
+      "C-088"
+    ],
+    "reliability_notes": "Partial remote extraction of the official package on 2026-11-12, by HTTP range requests: BuildManifest.plist, the kernelcache IM4P container, and the SPTM and TXM IM4P containers. Manifest digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed. The expected SHA-256 is listed by the firmware index and in the CDN object metadata.",
+    "notes": null
   }
 ]

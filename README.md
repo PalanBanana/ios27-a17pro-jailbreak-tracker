@@ -50,7 +50,7 @@ The research target is fixed at iOS 27.0.1 (build 24A446), as described in the t
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-12):** 76 claims (39 verified, 17 partially verified, 20 unverified), 42 sources, 30 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 87 claims (47 verified, 20 partially verified, 20 unverified), 43 sources, 31 timeline events, 15 compatibility rows and 4 firmware builds.
 
 **Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
 
@@ -91,7 +91,7 @@ Status key: `verified`; `partially_verified`; `reported_unverified` (reported, n
 | CMP-012 | Persistence | reported, unverified | C-004, C-053 | Reboot persistence is reported for the iPhone 18 Pro demonstration (C-004). |
 | CMP-013 | Public Jailbreak Tool | not established | C-028, C-058, C-064 | No publicly installable tool is verified for this target (C-028). |
 | CMP-014 | Independent A17 Pro Reproduction | not established | C-049, C-062 | No independent reproduction on A17 Pro hardware was found. |
-| CMP-015 | Exact Build Verification | partially verified | C-003, C-024, C-025 | Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. |
+| CMP-015 | Exact Build Verification | partially verified | C-003, C-024, C-025, C-078, C-079 | Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. |
 
 Every row is scoped to the target profile: iPhone16,2, A17 Pro, iOS 27.0.1, build 24A446. `not_established` means no verified evidence exists for that row. It does not mean the answer is no.
 
@@ -189,6 +189,7 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | 2026-11-11 | The one-week window reported on 2026-11-04 for a kernel read/write write-up lapses. No publication, repository or source-code release for the announced work was found on 2026-11-12. | partially verified | S-029, S-013 |
 | 2026-11-12 | Research pass for the v0.2.0 update: Apple's iOS 27.2 and 27.2.1 advisories parsed, the upstream reference reconciled, and the kernel, Calif.io and SPTM evidence re-classified. | verified | S-033, S-034, S-026 |
 | 2026-11-12 | The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021). | partially verified | S-014, S-026 |
+| 2026-11-12 | Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged. | partially verified | S-043 |
 
 ## 14. Verified Claims
 
@@ -235,6 +236,14 @@ A `verified` verdict requires a fetched, API or tier-1 source and high confidenc
 | C-072 | Most Apple entries in iOS 27 and 27.2 apply to iPhone 11 and later; three Apple Intelligence entries apply to iPhone 15 Pro and later | high | S-001, S-033 |
 | C-073 | Apple's iOS 27 and iOS 27.2 notes do not mention AGX, IOGPU, SPTM, TXM, PPL, CoreTrust, AMFI or Exclave | high | S-001, S-033 |
 | C-074 | Apple's iOS 27 notes list four kernel or root privilege entries; the iOS 27.2 notes list none | high | S-001, S-033 |
+| C-078 | The 24A446 manifest's KernelCache digest equals the SHA-384 of the raw IM4P container (identities 0, 1 and 2) | high | S-043 |
+| C-079 | The analysed 24A446 kernelcache is the LZFSE decompression of the verified container (73,023,488 bytes, byte-identical) | high | S-043 |
+| C-080 | Restore-entry digests for the 24A446 kernelcache and the SPTM and TXM monitors do not match the retrieved containers | high | S-043 |
+| C-081 | The 24A446 package contains SPTM and TXM monitor containers that are unencrypted, with matching normal manifest digests | high | S-043 |
+| C-082 | The 24A446 kernelcache fileset contains the sandbox, AMFI, CoreTrust and Image4 bundles, by exact identifier | high | S-043 |
+| C-083 | The 24A446 kernelcache contains kernel log strings that name SPTM and TXM interfaces | high | S-043 |
+| C-086 | Standalone KEXT files extracted from the 24A446 kernelcache have empty symbol tables, and Ghidra cannot import them | high | S-043 |
+| C-088 | Ghidra's automatic analysis of the 24A446 TXM image completed without logged errors, recovering 1,654 functions (1,653 default-named) | high | S-043 |
 
 ## 15. Unverified Claims
 
@@ -261,6 +270,9 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-046 | Apple's iOS 27.2 notes contain 162 distinct CVE identifiers in the extracted text; press reports 163 | medium | S-033 |
 | C-049 | No public kernel read/write write-up or exploit code by the researcher announced on 2026-11-04 was found as of 2026-11-12 | medium | S-013, S-029 |
 | C-069 | 8kSec reports Apple's fixed-in versions for the two DarkSword kernel CVEs as iOS 26.2 and 26.3 (secondary analysis) | medium | S-042 |
+| C-084 | The 24A446 kernelcache contains MIE-related strings; whether MIE is active on the A17 Pro is not established | medium | S-043 |
+| C-085 | Ghidra recorded no code reference into the 24A446 __DATA_SPTM segment; the cause is unresolved | medium | S-043 |
+| C-087 | Ghidra's automatic analysis of the 24A446 kernelcache completed, recovering 230,298 functions (3 named) with 17 logged errors | medium | S-043 |
 
 ### Unverified
 
@@ -335,6 +347,7 @@ Tiers: 1 primary (Apple, original research, official repositories and conference
 | S-040 | [tealbathingsuit/ellekit (repository reached by redirect from evelyneee/ellekit)](https://github.com/tealbathingsuit/ellekit) | GitHub (repository owner: tealbathingsuit) | 2 | - | API response |
 | S-041 | [staturnzz/momentarius (repository metadata)](https://api.github.com/repos/staturnzz/momentarius) | GitHub (repository owner: staturnzz) | 3 | 2026-08-07 | API response |
 | S-042 | [Inside the DarkSword Kernel Escalation: From GPU Process to Kernel R/W (CVE-2025-43510 & CVE-2025-43520)](https://www.8ksec.io/darksword-kernel-escalation-cve-2025-43510-43520/) | 8kSec | 2 | 2026-05-03 | fetched (full text) |
+| S-043 | [iOS 27.0.1 (24A446) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/531d0d56-6e43-4fb9-b4ee-abb5aab5c04f/iPhone16,2_27.0.1_24A446_Restore.ipsw) | Apple Inc. (CDN object listed by the ipsw.me firmware index) | 1 | 2026-09-28 | fetched (partial text) |
 
 ## 17. Contribution Instructions
 

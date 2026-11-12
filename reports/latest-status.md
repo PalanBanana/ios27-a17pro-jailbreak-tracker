@@ -14,6 +14,9 @@
 
 **2026-11-12 (v0.2.0 research update):** Apple's iOS 27.2 and 27.2.1 advisories were parsed and mapped ([apple-27x-cve-mapping.md](../research/apple-27x-cve-mapping.md)). The upstream reference was reconciled claim by claim ([upstream-reconciliation.md](../research/upstream-reconciliation.md)). The Dopamine 3.0 release notes were read: real-device SPTM support ends at iOS 17.3.1 (C-066). An independent SPTM paper's scope was checked (C-060). A November project claim for iOS 27.0 to 27.0.1 is recorded as unverified (C-064). **Corrections:** Apple's iOS 27 page lists four Calif.io-credited entries and its iOS 27.2 page lists six; an earlier count of three was wrong (C-005). Readiness is unchanged. Changes are listed in [CHANGELOG.md](../CHANGELOG.md).
 
+**2026-11-12 (local static analysis, no release):** the 24A446 kernelcache and the SPTM and TXM monitor images were checked against their manifest digests and analysed in Ghidra. The kernelcache container and both monitor containers match their normal digests. Restore-entry digests do not match and are unresolved (C-080). The analysis of the kernelcache completed with 17 logged errors (C-087). The SPTM and TXM analyses logged none (C-088). Records: [ghidra-kernel-analysis.md](../reports/ghidra-kernel-analysis.md) and related pages. Readiness is unchanged.
+
+
 ## Update procedure check
 
 | Step | Done in this snapshot | Notes |
@@ -33,7 +36,7 @@
 
 ## Dataset
 
-**Data snapshot (2026-11-12):** 76 claims (39 verified, 17 partially verified, 20 unverified), 42 sources, 30 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 87 claims (47 verified, 20 partially verified, 20 unverified), 43 sources, 31 timeline events, 15 compatibility rows and 4 firmware builds.
 
 ## Open items
 

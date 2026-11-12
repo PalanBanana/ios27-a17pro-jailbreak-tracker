@@ -1417,5 +1417,203 @@
     "limitations": "Second-hand. The upstream classifies this as verified from the interview. That interview was not seen here.",
     "first_observed": "2026-10-19",
     "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-078",
+    "title": "The 24A446 manifest's KernelCache digest equals the SHA-384 of the raw IM4P container (identities 0, 1 and 2)",
+    "description": "The BuildManifest entry for the kernelcache (path kernelcache.release.iphone16) carries a 48-byte digest. Its SHA-384 equals the SHA-384 of the raw IM4P container retrieved from the package. The digest is identical in all three build identities.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Checked on the retrieved container. The complete package was not hashed. The restore-entry digest is a separate claim (C-080).",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-079",
+    "title": "The analysed 24A446 kernelcache is the LZFSE decompression of the verified container (73,023,488 bytes, byte-identical)",
+    "description": "The IM4P metadata reports LZFSE compression, an uncompressed size of 73,023,488 bytes and no key bag. Decompression with the ipsw tool gives output byte-identical to the kernelcache used for analysis.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Decompression was performed by one tool. An independent decoder was not used for a cross-check.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-080",
+    "title": "Restore-entry digests for the 24A446 kernelcache and the SPTM and TXM monitors do not match the retrieved containers",
+    "description": "The manifest entries RestoreKernelCache, Ap,RestoreSecurePageTableMonitor and Ap,RestoreTrustedExecutionMonitor carry digests that differ from the SHA-384 of the containers retrieved at the same archive paths.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The mismatch is verified. Its cause is unresolved. The restore-variant objects were not retrieved, so no conclusion is drawn about them.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-081",
+    "title": "The 24A446 package contains SPTM and TXM monitor containers that are unencrypted, with matching normal manifest digests",
+    "description": "The sptm and trxm IM4P containers carry no key bag, use LZFSE compression, and have SHA-384 digests equal to their normal manifest entries (Ap,SecurePageTableMonitor and Ap,TrustedExecutionMonitor). Both decompress to Mach-O MH_EXECUTE files.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Verified for the containers and payload structure. The code inside the monitors is not interpreted by this record.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-082",
+    "title": "The 24A446 kernelcache fileset contains the sandbox, AMFI, CoreTrust and Image4 bundles, by exact identifier",
+    "description": "The bundle identifiers com.apple.security.sandbox, com.apple.driver.AppleMobileFileIntegrity, com.apple.kext.CoreTrust, com.apple.security.AppleImage4 and com.apple.security.Image4 are present in the kernelcache fileset.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Presence of a component on the build. This is not evidence that the component is affected by any advisory or reachable, and it does not establish applicability (C-047).",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-083",
+    "title": "The 24A446 kernelcache contains kernel log strings that name SPTM and TXM interfaces",
+    "description": "Defined strings in the kernelcache refer to the SPTM version and load address, ASIDs supplied by SPTM, and TXM load address and thread associations.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Presence of strings only. The behaviour of the code paths that use them was not analysed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-084",
+    "title": "The 24A446 kernelcache contains MIE-related strings; whether MIE is active on the A17 Pro is not established",
+    "description": "The kernelcache contains the strings 'MIE factor' and 'MIE update', and an MTE soft-mode message for ptraced processes.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Presence is verified. Activation on the A17 Pro is not established. Apple names MIE for A19 and later (C-011, C-012).",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-085",
+    "title": "Ghidra recorded no code reference into the 24A446 __DATA_SPTM segment; the cause is unresolved",
+    "description": "The __DATA_SPTM segment is a single read-only block. Every address in it was checked, and the only recorded reference comes from the linkage segment, not from code.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A limitation of one automatic analysis (17 logged errors). Possible causes are unresolved accesses, access from the monitor side, or the analysis errors. It is not a finding about the segment's behaviour.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-086",
+    "title": "Standalone KEXT files extracted from the 24A446 kernelcache have empty symbol tables, and Ghidra cannot import them",
+    "description": "Each of the eight standalone bundles has LC_SYMTAB with zero symbols and an 8-byte string table. Ghidra's Mach-O loader fails on each file, whether or not imports were resolved.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The cause, whether the extraction or the loader, is not established. Analysis used the kernelcache fileset instead.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-087",
+    "title": "Ghidra's automatic analysis of the 24A446 kernelcache completed, recovering 230,298 functions (3 named) with 17 logged errors",
+    "description": "The analysis completed and the program was saved. Of the recovered functions, 230,295 have default names. The log records 13 function-creation failures caused by thunk overlaps and 4 value-tracking failures.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The completion and the counts are tool outputs. The errors leave some regions unanalysed, and original symbol names are essentially absent.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-088",
+    "title": "Ghidra's automatic analysis of the 24A446 TXM image completed without logged errors, recovering 1,654 functions (1,653 default-named)",
+    "description": "The TXM image (an IM4P of type trxm, decompressed to a six-segment Mach-O) was imported and analysed. Analysis succeeded, the program was saved, and no analyser errors were logged. The program has 1,654 functions, 1,653 of them default-named, and 21 memory blocks.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "Not stated in the manifest",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Tool output. Original function names are essentially absent, and the counts include analysis-generated functions. The behaviour of the TXM code was not reviewed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
   }
 ]

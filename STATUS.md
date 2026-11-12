@@ -14,7 +14,7 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 
 ## Data
 
-**Data snapshot (2026-11-12):** 76 claims (39 verified, 17 partially verified, 20 unverified), 42 sources, 30 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 87 claims (47 verified, 20 partially verified, 20 unverified), 43 sources, 31 timeline events, 15 compatibility rows and 4 firmware builds.
 
 ## Research priorities
 
@@ -32,6 +32,7 @@ No compatibility is marked verified without evidence. The target readiness stays
 
 ## Latest update
 
+- 2026-11-12 (local Ghidra analysis, no release): static analysis of the 24A446 kernelcache and the SPTM and TXM images. Provenance verified for the kernelcache and monitor containers; restore-entry digests unresolved; full-package hash not computed. Records C-078 to C-088, source S-043, timeline E-031. Readiness unchanged (LEVEL 0 / NO-GO).
 - 2026-11-12 (v0.2.0 research update): Apple's iOS 27.2 and 27.2.1 advisories parsed and mapped; the upstream reference reconciled claim by claim; Dopamine 3.0 release notes read; the independent SPTM paper's scope checked; a November project claim recorded as unverified; the 24A446 signing change recorded. Readiness unchanged (LEVEL 0 / NO-GO). Details in CHANGELOG.md.
 - 2026-11-12: research re-check with no material change, except the CVE correction (four Calif.io-credited entries, not three). First public commit and release v0.1.0. Privacy correction: maintainer-specific device statements removed from the documentation; the research target and compatibility scope are unchanged.
 - 2026-11-11: initial snapshot. Details in [CHANGELOG.md](CHANGELOG.md).
