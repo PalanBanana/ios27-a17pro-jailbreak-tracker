@@ -17,6 +17,14 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 
 **Data snapshot (2026-11-11):** 32 claims (10 verified, 15 partially verified, 7 unverified), 32 sources, 17 timeline events, 15 compatibility rows and 4 firmware builds.
 
+## Research priorities
+
+- **P0:** A17 Pro SPTM research; kernel read/write research; Calif.io and Hexacon disclosures; lambda / pwnlambda research; exact build compatibility (build 24A446).
+- **P1:** sandbox escape; privilege escalation; AMFI and code signing; exploit chain integration.
+- **P2:** bootstrap; Dopamine; Sileo; ElleKit; daily-driver stability.
+
+No compatibility is marked verified without evidence. The target readiness stays at LEVEL 0 / NO-GO unless new evidence supports a change.
+
 ## Blockers
 
 1. **Primary sources:** as of 2026-11-12, the Hexacon 2026 talk listing, any primary Calif.io statement, and a primary write-up of the lambda kernel read/write work have not been located.

@@ -2,6 +2,12 @@
 
 All notable changes to this repository are recorded here. Dates use ISO 8601 (`YYYY-MM-DD`). Records are superseded, never deleted.
 
+## [Unreleased]
+
+### Added
+
+- Research priorities (P0, P1 and P2) recorded in `STATUS.md`. No data, verdict or readiness level changed.
+
 ## [0.1.0] - 2026-11-12
 
 ### Added
