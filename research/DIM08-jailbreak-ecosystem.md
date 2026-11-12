@@ -1,5 +1,7 @@
 # DIM08: Jailbreak ecosystem
 
+**v0.4.0 update (2026-11-12):** the ElleKit official repository states no version range and has no release (C-134); Procursus states no iOS range (C-135). Erosion and the SKVLENT repository are audited in [erosion-compatibility-audit.md](erosion-compatibility-audit.md) and [skvlent-a19pro-research-audit.md](skvlent-a19pro-research-audit.md). See [jailbreak-ecosystem-update.md](jailbreak-ecosystem-update.md) for the dated changes.
+
 **Status:** Researched for this pass. Dopamine's release records, Sileo's latest release, ElleKit's repository move and the momentarius repository metadata are checked. Bootstrap and package-manager status for iOS 27.0.1 is not established.
 
 ## Dopamine (opa334)
@@ -12,7 +14,7 @@
 | Update behaviour | The 3.0 notes say that a jbupdate from an earlier version triggers a full reboot by design. | S-007 |
 | Earlier 2.5 betas | 2.5b1 (2026-03-26) added a DarkSword kernel exploit option for iOS 15.8.7 (A9 and A10) and 16.7 to 16.7.15 (arm64). | S-007 |
 | Support range (third-party) | A third-party table lists iOS 15.0 to 17.3.1 for A14 to A17 and M1 to M2, and iOS 15.0 to 18.7.1 and 26.0 to 26.0.1 for A8 to A13. It is not an official source. | C-016, S-039 |
-| Official README | The default-branch README describes an early rootless arm64e release for iOS 15.0 to 15.4.1. It has no current support matrix. | S-008 |
+| Official README | The default-branch README describes an early rootless arm64e release for iOS 15.0 to 15.4.1. It has no current support matrix. **Superseded on 2026-11-12:** the default-branch README now lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range. See [jailbreak-ecosystem-update.md](jailbreak-ecosystem-update.md), C-133. | S-008, S-050 |
 | iOS 27 on the A17 Pro | **No support documented.** Real-device SPTM support is limited to iOS 17.3.1 in the 3.0 notes. | C-018, C-066 |
 
 Rootless and rootful status for the current 3.0.x line is not verified in this pass. The stale README's rootless wording refers to an early release only.

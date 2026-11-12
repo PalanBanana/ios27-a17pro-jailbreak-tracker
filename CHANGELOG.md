@@ -4,6 +4,38 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-11-12
+
+### Added
+
+- Research audit of the SKVLENT iOS 27 research repository at commit 73f7a579ce91: its identity, licence, configurations, verdict table, the twelve questions answered at outcome level, the separated security categories, and its withdrawn, corrected and contradictory statements. See `research/skvlent-a19pro-research-audit.md`.
+- Cross-device compatibility analysis using exact device metadata: the BuildManifests of the A19 Pro (iPhone18,1, 24A446) and the A18 Pro (iPhone17,2, 24B119), compared with the A17 Pro (iPhone16,2, 24A446). See `research/cross-device-compatibility.md` and `reports/a17pro-compatibility-matrix.md`.
+- Erosion compatibility audit and generic daily-driver risk assessment, from its README, release notes, website and metadata. Erosion was not installed, its IPA was not downloaded, and no device was used. See `research/erosion-compatibility-audit.md` and `reports/erosion-daily-driver-risk.md`.
+- A sandbox-escape-versus-jailbreak explanation, with capability claims kept with the project that states them. See `research/sandbox-escape-vs-jailbreak.md`.
+- Dated ecosystem update: Dopamine, ElleKit, Procursus, Sileo, an upstream tracker, and a community repository claim. See `research/jailbreak-ecosystem-update.md`.
+- Summary and priorities: `reports/v0.4.0-research-summary.md` and `reports/next-research-priorities.md`.
+- Claims C-108 to C-137, sources S-047 to S-056, timeline events E-034 and E-035, and compatibility rows CMP-016 to CMP-018.
+
+### Changed
+
+- DIM08's reading of the Dopamine README is superseded by the current default-branch README (C-133). The original text is kept and annotated.
+- DIM05, DIM08 and the readiness report carry pointers to the new material. Their statuses are unchanged.
+- Compatibility rows CMP-006, CMP-010 and CMP-011 gained evidence and notes. Their statuses are unchanged.
+
+### Corrections
+
+- The Dopamine README reading in DIM08 (15.0 to 15.4.1, no current matrix) is replaced by the current ranges (C-133).
+- C-057 (an upstream claim that ElleKit 1.2 covers iOS 15 to 27) is not supported by the official ElleKit repository, which states no version range and has no release. C-057 stays unverified.
+- The inference "fixed in 27.2, so open on 27.0.1", found in an external project's open-work page, is recorded as not established.
+
+### Notes
+
+- Readiness is unchanged: LEVEL 0 / NO-GO. No capability is upgraded for the target.
+- Every external result is recorded as the source's own statement at the cited commit. None is verified as a technical result for the A17 Pro.
+- No device was connected, updated, restored, rebooted or used. No firmware was installed. No external jailbreak or exploit software was installed, run or downloaded. The public tool ipsw was used to read public firmware manifests only.
+- No code-level or binary-level differencing was performed, and no binary was mapped to an advisory. Both remain declined.
+- Erosion's documents name no iPhone model or SoC, and its repository records no device reports.
+
 ## [0.3.0] - 2026-11-12
 
 ### Added

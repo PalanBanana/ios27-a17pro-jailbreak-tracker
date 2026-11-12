@@ -50,7 +50,7 @@ The research target is fixed at iOS 27.0.1 (build 24A446), as described in the t
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 33 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 136 claims (87 verified, 27 partially verified, 22 unverified), 56 sources, 35 timeline events, 18 compatibility rows and 4 firmware builds.
 
 **Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
 
@@ -82,16 +82,19 @@ Status key: `verified`; `partially_verified`; `reported_unverified` (reported, n
 | CMP-003 | Kernel Vulnerability | unverified | C-037, C-039, C-041, C-070, C-071 | Apple's iOS 27 and iOS 27.2 notes list kernel-memory write and corruption entries (research/apple-27x-cve-mapping.md). |
 | CMP-004 | Kernel Read | unverified | C-035, C-040 | Apple lists kernel-memory read, disclosure and layout impacts: eight on the iOS 27 page (including CVE-2026-84622, which needs root) and six on the iOS 27.2 page. |
 | CMP-005 | Kernel Write | unverified | C-037, C-039, C-041 | Apple lists write and corruption impacts for kernel memory on the iOS 27 and iOS 27.2 pages. |
-| CMP-006 | Sandbox Escape | not established | C-034, C-048, C-074 | Apple lists a WebContent sandbox escape reachable by a remote attacker (iOS 27.2: CVE-2026-112690) and a WebKit Process Model escape (iOS 27.2: CVE-2026-113897). |
+| CMP-006 | Sandbox Escape | not established | C-034, C-048, C-074, C-111, C-114 | Apple lists a WebContent sandbox escape reachable by a remote attacker (iOS 27.2: CVE-2026-112690) and a WebKit Process Model escape (iOS 27.2: CVE-2026-113897). |
 | CMP-007 | Privilege Escalation | not established | C-035, C-036, C-074 | Apple lists a kernel entry in which a malicious app may gain root privileges (iOS 27: CVE-2026-43689) and an entry in which an app with root privileges reads uninitialised kernel memory (iOS 27: CVE-2026-84622). |
 | CMP-008 | AMFI Compatibility | not researched | - | AMFI (code signing enforcement) was not researched in this pass. |
 | CMP-009 | Complete Exploit Chain | reported, unverified | C-001, C-002, C-027, C-038, C-042, C-049 | A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. |
-| CMP-010 | Bootstrap | not established | C-016, C-055, C-065, C-066 | No bootstrap for iOS 27.0.1 is verified. |
-| CMP-011 | Package Manager | not established | C-030, C-056, C-057 | Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). |
+| CMP-010 | Bootstrap | not established | C-016, C-055, C-065, C-066, C-133, C-135 | No bootstrap for iOS 27.0.1 is verified. |
+| CMP-011 | Package Manager | not established | C-030, C-056, C-057, C-134 | Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). |
 | CMP-012 | Persistence | reported, unverified | C-004, C-053 | Reboot persistence is reported for the iPhone 18 Pro demonstration (C-004). |
 | CMP-013 | Public Jailbreak Tool | not established | C-028, C-058, C-064 | No publicly installable tool is verified for this target (C-028). |
 | CMP-014 | Independent A17 Pro Reproduction | not established | C-049, C-062 | No independent reproduction on A17 Pro hardware was found. |
 | CMP-015 | Exact Build Verification | partially verified | C-003, C-024, C-025, C-078, C-079 | Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. |
+| CMP-016 | Sandbox Escape | reported, unverified | C-109, C-111, C-114 | The SKVLENT repository states boundary crossings into other applications' containers and shared groups on an A19 Pro configuration (27.0.1). |
+| CMP-017 | Public Jailbreak Tool | reported, unverified | C-126, C-127, C-128, C-129, C-132 | The declared iOS range includes 27.0.1 by range only. |
+| CMP-018 | Exact Build Verification | partially verified | C-119, C-120, C-121, C-122, C-123, C-124, C-125 | Manifest-level differences only. |
 
 Every row is scoped to the target profile: iPhone16,2, A17 Pro, iOS 27.0.1, build 24A446. `not_established` means no verified evidence exists for that row. It does not mean the answer is no.
 
@@ -192,6 +195,8 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | 2026-11-12 | Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged. | partially verified | S-043 |
 | 2026-11-12 | Static research on the 24A446 kernelcache and monitors: symbolication with a third-party signature set, a KEXT import investigation, monitor structure counts, a memory-protection documentation re-read, and metadata comparison with the 24B119 and 24B156 builds. The v0.3.0 release was not created. Readiness is unchanged. | partially verified | S-004, S-043, S-044, S-045, S-046 |
 | 2026-11-12 | Release v0.3.0 (A17 Pro Ghidra Static Analysis & Symbolication) was published after the validator and CI checks passed. It records static analysis, symbolication and metadata-level comparisons. Code-level differencing and binary-to-advisory correlation were not performed. Readiness is unchanged (LEVEL 0, NO-GO). | partially verified | S-004, S-043, S-044, S-045, S-046 |
+| 2026-11-12 | Documentary audit for v0.4.0: the SKVLENT iOS 27 research repository at commit 73f7a579 (statements and contradictions), metadata comparison of the A17 Pro, A19 Pro and A18 Pro firmware packages, a re-check of Erosion's documents and release metadata, an ecosystem re-check, and a sandbox-versus-jailbreak explanation. No device was used. Readiness is unchanged (LEVEL 0, NO-GO). | partially verified | S-047, S-048, S-049, S-050, S-051, S-052, S-053, S-054, S-055, S-056 |
+| 2026-11-12 | Correction: the default-branch README of the Dopamine repository, read on 2026-11-12, lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range. It supersedes the reading in DIM08 from 2026-11-11. The official ElleKit repository states no version range and has no release. | verified | S-008, S-050, S-051 |
 
 ## 14. Verified Claims
 
@@ -261,6 +266,31 @@ A `verified` verdict requires a fetched, API or tier-1 source and high confidenc
 | C-102 | Of the 281 KEXT inventory records of 24A446, 263 match a fileset entry, 11 are codeless and 7 are kernel-programming-interface pseudo-KEXTs with no fileset entry | high | S-043 |
 | C-105 | Apple's Platform Security guide states that SPTM is supported on A15-or-later and M2-or-later SoCs, and that SPTM with TXM replaces the PPL there | high | S-004 |
 | C-106 | Apple's Platform Security guide states that Memory Integrity Enforcement is available on A19 and M5 processors or later | high | S-004 |
+| C-108 | SKVLENT's repository states that its material is educational research and that no exploit is published | high | S-047 |
+| C-109 | SKVLENT's primary configuration is an iPhone 17 Pro (A19 Pro) on iOS 27.0.1 (24A446), and every STATUS verdict is stated to be produced on it | high | S-047 |
+| C-110 | SKVLENT states that directions 01 to 07 reproduce on an iPhone 16 Pro Max (A18 Pro) on iOS 27.2 (24B119) | high | S-047 |
+| C-114 | SKVLENT states that kernel read and write were not demonstrated, and that a jailbreak was not demonstrated, on its configuration | high | S-047 |
+| C-115 | SKVLENT's cross-line summary states that none of its four analysed lines produced code execution | high | S-047 |
+| C-116 | SKVLENT's documents give two different build numbers for its second device's 27.2 build | high | S-047 |
+| C-117 | SKVLENT's open-work page infers that CVE-2026-112705 is open on its 27.0.1 configuration because Apple lists the fix in 27.2 | high | S-047 |
+| C-118 | SKVLENT states that its 27.0.1 and 27.2 builds differ in a decoder status check, and that its 27.0.1 copy carries the unchecked status | high | S-047 |
+| C-119 | The BuildManifest for iPhone16,2 build 24A446 names the SPTM, TXM, GPU and neural-engine firmware images used on the A17 Pro | high | S-043 |
+| C-120 | The BuildManifest for iPhone18,1 build 24A446 names the A19 Pro monitor and GPU firmware images | high | S-055 |
+| C-121 | The BuildManifest for iPhone17,2 build 24B119 names the A18 Pro monitor and GPU firmware images | high | S-056 |
+| C-122 | The A17 Pro manifest lists no exclave-related component in any build identity; the A19 Pro and A18 Pro manifests list six per erase identity | high | S-043, S-055, S-056 |
+| C-123 | The erase identity of the A17 Pro build 24A446 lists 97 components, against 169 for the A19 Pro and 103 for the A18 Pro | high | S-043, S-055, S-056 |
+| C-125 | The TXM image has the same file name in the A17 Pro, A19 Pro and A18 Pro manifests | high | S-043, S-055, S-056 |
+| C-126 | Erosion's README declares iOS 26.0 to 26.6.2 (limited), 27.0 to 27.2.1, and 27.3 beta 1 (24C5037i) | high | S-048 |
+| C-127 | Erosion's repository description and website state a range to iOS 26.7.2, which differs from the README's 26.6.2 | high | S-048, S-049 |
+| C-128 | Erosion's README, release notes and website name no iPhone model, SoC or device list | high | S-048, S-049 |
+| C-129 | Erosion's README warns that data may be lost and asks users to back up their device before use | high | S-048 |
+| C-130 | Erosion's README states, dated 2026-11-08, that worse_query has not been patched in any new Apple release | high | S-048 |
+| C-131 | Erosion is licensed under the GNU General Public License v3.0 | high | S-048 |
+| C-132 | Erosion's repository records no GitHub issues at review, so no device report is recorded there | high | S-048 |
+| C-133 | The default-branch README of the Dopamine repository lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range | high | S-050 |
+| C-134 | The official ElleKit repository (dhinakg/ellekit-official) states no iOS version range and has no GitHub release | high | S-051 |
+| C-135 | The Procursus repository describes a cross-compiled OS bootstrap and states no iOS version range in the lines read | high | S-052 |
+| C-136 | The upstream iMaxTomas tracker, at commit 038b9f09 (2026-11-06), states that no publicly usable PPL or SPTM bypass is known for iOS 27.0.1 | high | S-054, S-026 |
 
 ## 15. Unverified Claims
 
@@ -294,6 +324,9 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-103 | Ghidra's reference model records no register-indirect call references in the 24A446 SPTM or TXM images, while a byte-level decoder finds such encodings in both | medium | S-043 |
 | C-104 | Four methods found no code path that addresses the 24A446 __DATA_SPTM segment; the cause of the absence is unresolved | medium | S-043 |
 | C-107 | The A15-A18 column of the Platform Security guide's feature table includes the A17 generation; the support cells are not readable from the fetched copy | medium | S-004 |
+| C-111 | SKVLENT reports a sandbox boundary crossing into other applications' containers and shared system groups on its A19 Pro configuration | medium | S-047 |
+| C-112 | SKVLENT reports a denial-of-service effect on its A19 Pro configuration: a single property write aborts a system UI daemon | medium | S-047 |
+| C-113 | SKVLENT reports a read over-run in a networking consumer on its A19 Pro configuration; the write is stated as reproduced locally only | medium | S-047 |
 
 ### Unverified
 
@@ -319,6 +352,8 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-075 | heise reports the Calif.io jailbreak as 'the first reboot-proof jailbreak since iOS 9' (press claim; unverified) | low | S-036 |
 | C-076 | t3n reports AI-assisted exploit-chain discovery and an iOS 27.2 beta comparison as established; heise calls the comparison theoretical | low | S-038 |
 | C-077 | The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified) | low | S-026 |
+| C-124 | The chip tokens in the monitor image names (t8122, t8140, t8150) map to the marketing SoC names A17 Pro, A18 Pro and A19 Pro | low | S-043, S-055, S-056 |
+| C-137 | A community repository created on 2026-11-09 claims IOSurface kernel-surface exploitation on devices described as iPhone 13 Pro and iPhone 17 Pro | low | S-053 |
 
 ## 16. Source Index
 
@@ -372,6 +407,16 @@ Tiers: 1 primary (Apple, original research, official repositories and conference
 | S-044 | [iOS 27.2 (24B119) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/dcf3b441-e473-4c28-a936-99d6af8c60a2/iPhone16,2_27.2_24B119_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-10-26 | fetched (partial text) |
 | S-045 | [iOS 27.2.1 (24B156) iPhone16,2 firmware package: BuildManifest and IM4P components (Apple CDN object)](https://updates.cdn-apple.com/2026FallFCS/079a8de1-4a8d-4aa2-b5fb-7c33a7ffbf19/iPhone16,2_27.2.1_24B156_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-11-09 | fetched (partial text) |
 | S-046 | [blacktop/symbolicator: ipsw symbolication signatures (kernel/27.0 folder, MIT licence)](https://github.com/blacktop/symbolicator) | blacktop/symbolicator repository (community; MIT licence) | 3 | 2026-11-05 | fetched (partial text) |
+| S-047 | [SKVLENT iOS 27 Research — Exploits: repository documentation at commit 73f7a579 (audit)](https://github.com/SKVLENT/iOS27-Research-Exploits/tree/73f7a579ce91) | SKVLENT (individual research repository; documentation and original analysis released for educational use) | 1 | 2026-10-30 | fetched (partial text) |
+| S-048 | [Erosion: repository README, release notes and metadata (commit 585a24a)](https://github.com/jailbreakdotparty/Erosion) | jailbreakdotparty (Erosion; official source repository) | 1 | 2026-08-23 | fetched (full text) |
+| S-049 | [Erosion official website (jailbreak.party/erosion)](https://jailbreak.party/erosion) | jailbreak.party (Erosion's official website, as the site states) | 1 | 2026-11-12 | fetched (partial text) |
+| S-050 | [Dopamine: repository README and metadata (default branch 3.x, head 5b1d2c1)](https://github.com/opa334/Dopamine/tree/5b1d2c1c3bf5) | opa334 (Dopamine project; official source repository) | 1 | 2026-11-03 | fetched (full text) |
+| S-051 | [ElleKit official repository (dhinakg/ellekit-official): README and metadata](https://github.com/dhinakg/ellekit-official) | dhinakg/ellekit-official (described as the official ElleKit repository and website) | 1 | 2026-08-10 | fetched (full text) |
+| S-052 | [Procursus: repository README (ProcursusTeam/Procursus)](https://github.com/ProcursusTeam/Procursus) | ProcursusTeam (bootstrap project; official source repository) | 1 | 2026-11-12 | fetched (partial text) |
+| S-053 | [Community repository: iOS 27.0.1 research claim (ramonburf/ios-27-jailbreak-research), metadata only](https://github.com/ramonburf/ios-27-jailbreak-research) | Community repository (no licence; created 2026-11-09) | 3 | 2026-11-09 | API response |
+| S-054 | [iMaxTomas/ios27-jb-tracker: repository head and chip-status statements (commit 038b9f09, 2026-11-06)](https://github.com/iMaxTomas/ios27-jb-tracker/tree/038b9f090564) | iMaxTomas (upstream community tracker; licence field 'Other') | 3 | 2026-11-06 | fetched (partial text) |
+| S-055 | [iPhone18,1 (A19 Pro) iOS 27.0.1 (24A446) firmware package: BuildManifest (Apple CDN object, range request)](https://updates.cdn-apple.com/2026FallFCS/8451c50e-8b6f-4f5c-94c2-81469528464e/iPhone18,1_27.0.1_24A446_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-09-28 | fetched (partial text) |
+| S-056 | [iPhone17,2 (A18 Pro) iOS 27.2 (24B119) firmware package: BuildManifest (Apple CDN object, range request)](https://updates.cdn-apple.com/2026FallFCS/3a256522-d649-403a-8ec5-b6fbcb940cbe/iPhone17,2_27.2_24B119_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-10-26 | fetched (partial text) |
 
 ## 17. Contribution Instructions
 

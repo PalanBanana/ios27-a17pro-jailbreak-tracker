@@ -492,7 +492,8 @@
       "C-063",
       "C-064",
       "C-075",
-      "C-077"
+      "C-077",
+      "C-136"
     ],
     "reliability_notes": "Upstream community fact-check archive in Chinese (CC BY 4.0 for its original content). Re-read on 2026-11-12: claims V1 to V33, E1 to E3, P1 to P6 and O1 to O3 were reviewed against the sources in this repository. Its statements are leads, recorded as reported. This repository does not reproduce personal details about individuals that appear in that file, does not link to any third-party exploit repository, and does not adopt its verdicts without its cited sources.",
     "notes": "Used as a methodology reference and a list of leads; no text is copied."
@@ -819,7 +820,12 @@
       "C-101",
       "C-102",
       "C-103",
-      "C-104"
+      "C-104",
+      "C-119",
+      "C-122",
+      "C-123",
+      "C-124",
+      "C-125"
     ],
     "reliability_notes": "Partial remote extraction of the official package on 2026-11-12, by HTTP range requests: BuildManifest.plist, the kernelcache IM4P container, and the SPTM and TXM IM4P containers. Manifest digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed. The expected SHA-256 is listed by the firmware index and in the CDN object metadata.",
     "notes": null
@@ -884,6 +890,201 @@
       "C-100"
     ],
     "reliability_notes": "Read on 2026-11-12 at commit 08dbc78 (commit date 2026-11-05), folder kernel/27.0 only. The README says the signatures are generated with IDA from kernel debug kits and reports 63.85% xnu coverage; that figure was not verified here. The file declares 6,626 signatures but holds 6,511. Signature matching is anchor-based and is not guaranteed to give correct names.",
+    "notes": null
+  },
+  {
+    "id": "S-047",
+    "title": "SKVLENT iOS 27 Research — Exploits: repository documentation at commit 73f7a579 (audit)",
+    "url": "https://github.com/SKVLENT/iOS27-Research-Exploits/tree/73f7a579ce91",
+    "publisher": "SKVLENT (individual research repository; documentation and original analysis released for educational use)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-10-30",
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-108",
+      "C-109",
+      "C-110",
+      "C-111",
+      "C-112",
+      "C-113",
+      "C-114",
+      "C-115",
+      "C-116",
+      "C-117",
+      "C-118"
+    ],
+    "reliability_notes": "Original research publication (tier 1 under the methodology). Statements are the repository's own at the audited commit. Technical results were not reproduced. The repository states that no exploit is published. Operational material in some direction folders was not reproduced or used. Licence: educational use with attribution.",
+    "notes": null
+  },
+  {
+    "id": "S-048",
+    "title": "Erosion: repository README, release notes and metadata (commit 585a24a)",
+    "url": "https://github.com/jailbreakdotparty/Erosion",
+    "publisher": "jailbreakdotparty (Erosion; official source repository)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-08-23",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_readme",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-126",
+      "C-127",
+      "C-128",
+      "C-129",
+      "C-130",
+      "C-131",
+      "C-132"
+    ],
+    "reliability_notes": "Official source repository and its release records (tier 1). README and release notes read in full. Source code and IPA assets were not reviewed or downloaded. Commit 585a24a973d1 (2026-11-10). GPL-3.0.",
+    "notes": null
+  },
+  {
+    "id": "S-049",
+    "title": "Erosion official website (jailbreak.party/erosion)",
+    "url": "https://jailbreak.party/erosion",
+    "publisher": "jailbreak.party (Erosion's official website, as the site states)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-12",
+    "access_date": "2026-11-12",
+    "source_type": "company_site",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-127",
+      "C-128"
+    ],
+    "reliability_notes": "Undated page; the publication date recorded is the access date. Static HTML read; the visible text is partial and scripted content was not executed.",
+    "notes": null
+  },
+  {
+    "id": "S-050",
+    "title": "Dopamine: repository README and metadata (default branch 3.x, head 5b1d2c1)",
+    "url": "https://github.com/opa334/Dopamine/tree/5b1d2c1c3bf5",
+    "publisher": "opa334 (Dopamine project; official source repository)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-03",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_readme",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-133"
+    ],
+    "reliability_notes": "Official repository README (457 bytes), read in full at the default-branch head. Repository metadata: MIT licence; last push 2026-11-03.",
+    "notes": null
+  },
+  {
+    "id": "S-051",
+    "title": "ElleKit official repository (dhinakg/ellekit-official): README and metadata",
+    "url": "https://github.com/dhinakg/ellekit-official",
+    "publisher": "dhinakg/ellekit-official (described as the official ElleKit repository and website)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-08-10",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_readme",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-134"
+    ],
+    "reliability_notes": "README (359 bytes) read in full. No GitHub release. No licence field. The README names maintainers and states no version range.",
+    "notes": null
+  },
+  {
+    "id": "S-052",
+    "title": "Procursus: repository README (ProcursusTeam/Procursus)",
+    "url": "https://github.com/ProcursusTeam/Procursus",
+    "publisher": "ProcursusTeam (bootstrap project; official source repository)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-12",
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_readme",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-135"
+    ],
+    "reliability_notes": "README read by keyword and section lines, not in full. No GitHub release. Licence: BSD Zero Clause (repository metadata). No iOS version range is stated in the lines read.",
+    "notes": null
+  },
+  {
+    "id": "S-053",
+    "title": "Community repository: iOS 27.0.1 research claim (ramonburf/ios-27-jailbreak-research), metadata only",
+    "url": "https://github.com/ramonburf/ios-27-jailbreak-research",
+    "publisher": "Community repository (no licence; created 2026-11-09)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": "2026-11-09",
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-137"
+    ],
+    "reliability_notes": "Repository metadata only (description, dates, licence and stars). The repository was not cloned, read or analysed. Its description claims exploitation work on devices other than the tracker's target. Recorded as an unverified community claim.",
+    "notes": null
+  },
+  {
+    "id": "S-054",
+    "title": "iMaxTomas/ios27-jb-tracker: repository head and chip-status statements (commit 038b9f09, 2026-11-06)",
+    "url": "https://github.com/iMaxTomas/ios27-jb-tracker/tree/038b9f090564",
+    "publisher": "iMaxTomas (upstream community tracker; licence field 'Other')",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": "2026-11-06",
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-136"
+    ],
+    "reliability_notes": "Upstream community tracker, read in part at the recorded head. Its chip-status statements are its own and are recorded as repository statements. Not an official source.",
+    "notes": null
+  },
+  {
+    "id": "S-055",
+    "title": "iPhone18,1 (A19 Pro) iOS 27.0.1 (24A446) firmware package: BuildManifest (Apple CDN object, range request)",
+    "url": "https://updates.cdn-apple.com/2026FallFCS/8451c50e-8b6f-4f5c-94c2-81469528464e/iPhone18,1_27.0.1_24A446_Restore.ipsw",
+    "publisher": "Apple Inc. (CDN object; URL resolved by a firmware index lookup)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-09-28",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-120",
+      "C-122",
+      "C-123",
+      "C-124",
+      "C-125"
+    ],
+    "reliability_notes": "BuildManifest.plist only, retrieved by HTTP range request on 2026-11-12. No component of the package was downloaded or hashed. Used for component names and counts. The device is not the tracker's target.",
+    "notes": null
+  },
+  {
+    "id": "S-056",
+    "title": "iPhone17,2 (A18 Pro) iOS 27.2 (24B119) firmware package: BuildManifest (Apple CDN object, range request)",
+    "url": "https://updates.cdn-apple.com/2026FallFCS/3a256522-d649-403a-8ec5-b6fbcb940cbe/iPhone17,2_27.2_24B119_Restore.ipsw",
+    "publisher": "Apple Inc. (CDN object; URL resolved by a firmware index lookup)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-10-26",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_release_index",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-121",
+      "C-122",
+      "C-123",
+      "C-124",
+      "C-125"
+    ],
+    "reliability_notes": "BuildManifest.plist only, retrieved by HTTP range request on 2026-11-12. No component of the package was downloaded or hashed. Used for component names and counts. The device is not the tracker's target.",
     "notes": null
   }
 ]

@@ -38,3 +38,7 @@ A sandbox entry describes a boundary that Apple says a bug could cross. It does 
 1. Record the applicability of each Apple-listed sandbox entry once Apple states affected versions.
 2. Find the code-signing section of Apple's guide that covers AMFI, and record it as a separate claim.
 3. Do not infer a sandbox escape from a privilege entry, or the reverse.
+
+## v0.4.0 update (2026-11-12)
+
+Two external projects now state sandbox results, both for configurations other than the target. The SKVLENT repository states a boundary crossing into other applications' containers and shared groups on the iPhone 17 Pro (A19 Pro, 27.0.1). Erosion documents a sandbox escape and container browsing for iOS 26 and 27 without naming a device. Neither result is transferred to the A17 Pro. The explanation of why a sandbox escape is not a jailbreak is in [sandbox-escape-vs-jailbreak.md](sandbox-escape-vs-jailbreak.md). The external statements are recorded in [skvlent-a19pro-research-audit.md](skvlent-a19pro-research-audit.md) and [erosion-compatibility-audit.md](erosion-compatibility-audit.md). The status of this direction for the target is unchanged: not established.

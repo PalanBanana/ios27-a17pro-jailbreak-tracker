@@ -1966,5 +1966,556 @@
     "limitations": "Refines the limitation of C-013 for range-based reading. Support marks for the A17 column are not established by the text.",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-108",
+    "title": "SKVLENT's repository states that its material is educational research and that no exploit is published",
+    "description": "The README states that no weaponised exploit, zero-day or jailbreak is published there. The LICENSE states that the documentation and original analysis are released for educational use.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement at the audited commit. Not verified by this tracker.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-109",
+    "title": "SKVLENT's primary configuration is an iPhone 17 Pro (A19 Pro) on iOS 27.0.1 (24A446), and every STATUS verdict is stated to be produced on it",
+    "description": "The README table and the STATUS page's last-measurements section name this configuration as the source of all findings.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone18,1 (iPhone 17 Pro)",
+    "chipset_scope": "A19 Pro (T8150, as stated by the repository)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement. The configuration is not the tracker's target.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-110",
+    "title": "SKVLENT states that directions 01 to 07 reproduce on an iPhone 16 Pro Max (A18 Pro) on iOS 27.2 (24B119)",
+    "description": "The README's tested-configuration table lists this configuration, and states that the direction 04 trigger no longer panics on it.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A18 Pro (as stated by the repository)",
+    "ios_scope": "27.2",
+    "build_scope": "24B119",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A reproduction statement by the same author on a second device. Not independent. Not verified by this tracker.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-111",
+    "title": "SKVLENT reports a sandbox boundary crossing into other applications' containers and shared system groups on its A19 Pro configuration",
+    "description": "Direction 10 is stated as demonstrated, with reads and writes in other applications' containers and in shared system groups. The repository states that this is not kernel code execution, not root and not a jailbreak.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone18,1 (iPhone 17 Pro)",
+    "chipset_scope": "A19 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A technical result stated by the repository. Not reproduced or confirmed independently. Not transferable to the A17 Pro.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-112",
+    "title": "SKVLENT reports a denial-of-service effect on its A19 Pro configuration: a single property write aborts a system UI daemon",
+    "description": "Direction 11 is stated as demonstrated, as an availability result. The repository states that the device recovers after a restart and that two aborts close together can wedge the device.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone18,1 (iPhone 17 Pro)",
+    "chipset_scope": "A19 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A technical result stated by the repository. Not reproduced. Availability effect only, per the repository.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-113",
+    "title": "SKVLENT reports a read over-run in a networking consumer on its A19 Pro configuration; the write is stated as reproduced locally only",
+    "description": "Direction 17 is stated as read-demonstrated on the device, with the write reproduced only in a local environment.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone18,1 (iPhone 17 Pro)",
+    "chipset_scope": "A19 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A technical result stated by the repository. Not reproduced. The write is not demonstrated on the device, per the repository.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-114",
+    "title": "SKVLENT states that kernel read and write were not demonstrated, and that a jailbreak was not demonstrated, on its configuration",
+    "description": "The STATUS page's kernel read-write and jailbreak sections state these negative results.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement at the audited commit. It is not a statement about the platform.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-115",
+    "title": "SKVLENT's cross-line summary states that none of its four analysed lines produced code execution",
+    "description": "The summary document in the repository's research folder is written in Russian and states this result.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "A19 Pro (repository configuration)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement. The summary is one document in the repository.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-116",
+    "title": "SKVLENT's documents give two different build numbers for its second device's 27.2 build",
+    "description": "One document gives 27.2 as build 24B115 for the second device. The README and STATUS give 24B119 for the same configuration.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A18 Pro",
+    "ios_scope": "27.2",
+    "build_scope": "24B115 or 24B119 (not resolved)",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "An internal inconsistency of the repository, verified by reading its text. Which number is correct is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-117",
+    "title": "SKVLENT's open-work page infers that CVE-2026-112705 is open on its 27.0.1 configuration because Apple lists the fix in 27.2",
+    "description": "The repository makes this inference. Apple's advisory text gives no affected version ranges (C-047), so the inference is not established.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0.1 (inferred)",
+    "build_scope": "24A446 (inferred)",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The verified statement is the repository's inference. The inference itself is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-118",
+    "title": "SKVLENT states that its 27.0.1 and 27.2 builds differ in a decoder status check, and that its 27.0.1 copy carries the unchecked status",
+    "description": "This is the repository's own static comparison. The tracker has not reproduced it and does not infer a vulnerability in 24A446 from a later build.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0.1 and 27.2 (repository comparison)",
+    "build_scope": "24A446 and 24B119",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement of a static comparison. Not verified by this tracker. No vulnerability is inferred.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-119",
+    "title": "The BuildManifest for iPhone16,2 build 24A446 names the SPTM, TXM, GPU and neural-engine firmware images used on the A17 Pro",
+    "description": "The manifest names the monitor images sptm.t8122.release.im4p and txm.iphoneos.release.im4p, the GPU firmware armfw_g16p.im4p, and the neural-engine firmware h16x_ane_fw_iaso_d8x.im4p.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
+    "chipset_scope": "A17 Pro (device class d84ap)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Names from the manifest only. File contents were not examined.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-120",
+    "title": "The BuildManifest for iPhone18,1 build 24A446 names the A19 Pro monitor and GPU firmware images",
+    "description": "The manifest names the monitor image sptm.t8150.release.im4p, the GPU firmware armfw_g18p.im4p and the neural-engine firmware h18_ane_fw_apollo_v5x.im4p.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone18,1 (iPhone 17 Pro)",
+    "chipset_scope": "A19 Pro (device class v53ap)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-055"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Names from the manifest only. The device is not the tracker's target.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-121",
+    "title": "The BuildManifest for iPhone17,2 build 24B119 names the A18 Pro monitor and GPU firmware images",
+    "description": "The manifest names the monitor image sptm.t8140.release.im4p, the GPU firmware armfw_g17p.im4p and the neural-engine firmware h17_ane_fw_theia_d9x.im4p.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A18 Pro (device class d94ap)",
+    "ios_scope": "27.2",
+    "build_scope": "24B119",
+    "supporting_source_ids": [
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Names from the manifest only. The device is not the tracker's target.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-122",
+    "title": "The A17 Pro manifest lists no exclave-related component in any build identity; the A19 Pro and A18 Pro manifests list six per erase identity",
+    "description": "Counts of components whose names or paths refer to exclaves in each manifest's build identities. The A17 Pro has zero in all three identities.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max); iPhone18,1 (iPhone 17 Pro); iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A17 Pro; A19 Pro; A18 Pro",
+    "ios_scope": "27.0.1 and 27.2",
+    "build_scope": "24A446 and 24B119",
+    "supporting_source_ids": [
+      "S-043",
+      "S-055",
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A difference in what the packages list. Its reason and any behavioural effect are not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-123",
+    "title": "The erase identity of the A17 Pro build 24A446 lists 97 components, against 169 for the A19 Pro and 103 for the A18 Pro",
+    "description": "Component counts of the Customer Erase Install identity in each manifest.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max); iPhone18,1 (iPhone 17 Pro); iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A17 Pro; A19 Pro; A18 Pro",
+    "ios_scope": "27.0.1 and 27.2",
+    "build_scope": "24A446 and 24B119",
+    "supporting_source_ids": [
+      "S-043",
+      "S-055",
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Counts from the manifests. Counts do not establish equivalence or difference of content.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-124",
+    "title": "The chip tokens in the monitor image names (t8122, t8140, t8150) map to the marketing SoC names A17 Pro, A18 Pro and A19 Pro",
+    "description": "The manifests name the tokens, but none of the sources checked states the mapping from token to marketing name. The kernel of the A17 Pro build records a CPU field of T8122, and its inventory contains a T8130 identifier.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max); iPhone18,1 (iPhone 17 Pro); iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A17 Pro; A19 Pro; A18 Pro",
+    "ios_scope": "27.0.1 and 27.2",
+    "build_scope": "24A446 and 24B119",
+    "supporting_source_ids": [
+      "S-043",
+      "S-055",
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Unresolved. No mapping claim is made beyond what the manifests show.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-125",
+    "title": "The TXM image has the same file name in the A17 Pro, A19 Pro and A18 Pro manifests",
+    "description": "The file name txm.iphoneos.release.im4p appears in all three manifests. The file contents were not compared.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (iPhone 15 Pro Max); iPhone18,1 (iPhone 17 Pro); iPhone17,2 (iPhone 16 Pro Max)",
+    "chipset_scope": "A17 Pro; A19 Pro; A18 Pro",
+    "ios_scope": "27.0.1 and 27.2",
+    "build_scope": "24A446 and 24B119",
+    "supporting_source_ids": [
+      "S-043",
+      "S-055",
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Name identity only. It does not establish that the image contents or interfaces are the same.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-126",
+    "title": "Erosion's README declares iOS 26.0 to 26.6.2 (limited), 27.0 to 27.2.1, and 27.3 beta 1 (24C5037i)",
+    "description": "The README declares these ranges and states that a version not on the list is not supported.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "26.0 to 26.6.2; 27.0 to 27.2.1; 27.3 beta 1",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A developer statement about versions only. It names no device or SoC.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-127",
+    "title": "Erosion's repository description and website state a range to iOS 26.7.2, which differs from the README's 26.6.2",
+    "description": "The repository description, the website and release 0.3 state 26.0 to 26.7.2. The README states 26.0 to 26.6.2.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "26.6.2 or 26.7.2 (not resolved)",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048",
+      "S-049"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "An internal inconsistency of the developer's surfaces. Which range is current is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-128",
+    "title": "Erosion's README, release notes and website name no iPhone model, SoC or device list",
+    "description": "A search of the README, the release notes and the website text for device and SoC terms found none.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0 to 27.2.1",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048",
+      "S-049"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A statement about the documents read. The project may document devices elsewhere; none was found.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-129",
+    "title": "Erosion's README warns that data may be lost and asks users to back up their device before use",
+    "description": "The README states that there is a possibility of data loss and asks for a backup before usage.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A developer warning. It is recorded as a warning, not as a measured risk.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-130",
+    "title": "Erosion's README states, dated 2026-11-08, that worse_query has not been patched in any new Apple release",
+    "description": "The README gives this as the situation on the stated date and says it is expected to change.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0 to 27.2.1 (declared)",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A dated statement by the developer. It is not verified.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-131",
+    "title": "Erosion is licensed under the GNU General Public License v3.0",
+    "description": "The LICENSE file and the repository metadata give GPL-3.0.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Licence statement of the repository. Attribution applies to any reuse.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-132",
+    "title": "Erosion's repository records no GitHub issues at review, so no device report is recorded there",
+    "description": "The issue count of the repository was zero at review, and device-term searches found no matching issue.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The repository's issue tracker only. A Discord channel named by the project was not accessed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-133",
+    "title": "The default-branch README of the Dopamine repository lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range",
+    "description": "The README describes a rootless semi-untethered jailbreak, lists these ranges and A12 and A13 devices for 26.0 to 26.0.1, and states that version-support issues are not answered. This supersedes the earlier reading in DIM08 from S-008.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "arm64e, arm64, A12 and A13 (as stated; A17 Pro not named)",
+    "ios_scope": "15.0 to 17.3.1 (arm64e); 15.0 to 18.7.1; 26.0 to 26.0.1 (A12 and A13)",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-050"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository statement at the recorded head. Rootful status is not stated. The A17 Pro is not named.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-134",
+    "title": "The official ElleKit repository (dhinakg/ellekit-official) states no iOS version range and has no GitHub release",
+    "description": "The README states that the repository hosts official ElleKit builds, and gives no version range. The repository has no release record. It therefore does not state the upstream claim that ElleKit 1.2 covers iOS 15 to 27 (C-057).",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-051"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A statement about the repository read. C-057 remains unverified.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-135",
+    "title": "The Procursus repository describes a cross-compiled OS bootstrap and states no iOS version range in the lines read",
+    "description": "The README describes Procursus as a cross-compiled OS bootstrap and names no iOS version range in the lines read. The repository has no GitHub release.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-052"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The README was read by keyword and section lines, not in full. Bootstrap compatibility for iOS 27.0.1 is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-136",
+    "title": "The upstream iMaxTomas tracker, at commit 038b9f09 (2026-11-06), states that no publicly usable PPL or SPTM bypass is known for iOS 27.0.1",
+    "description": "The tracker's chip-status table states this for the stated chip groups. It is a repository statement of that tracker.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific (repository statement)",
+    "chipset_scope": "A15 to A18 Pro (as stated)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-054",
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A community repository's statement. Not an official source. Not verified by this tracker.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-137",
+    "title": "A community repository created on 2026-11-09 claims IOSurface kernel-surface exploitation on devices described as iPhone 13 Pro and iPhone 17 Pro",
+    "description": "A metadata-only record. The repository's description makes the claim. Its content was not read or analysed.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not device-specific (community claim about other devices)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not build-specific",
+    "supporting_source_ids": [
+      "S-053"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Metadata only. The 17 Pro in the description is the iPhone 17 Pro (A19 Pro), not the tracker's target. No compatibility inference is drawn.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
   }
 ]

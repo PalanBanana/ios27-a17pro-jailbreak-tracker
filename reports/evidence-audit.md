@@ -6,9 +6,9 @@
 
 | Verdict | Claims |
 |---|---|
-| verified | 62 |
-| partially verified | 24 |
-| unverified | 20 |
+| verified | 87 |
+| partially verified | 27 |
+| unverified | 22 |
 | disproved | 0 |
 | superseded | 0 |
 
@@ -16,16 +16,16 @@
 
 | Source tier | Sources |
 |---|---|
-| Tier 1 | 19 |
+| Tier 1 | 27 |
 | Tier 2 | 20 |
-| Tier 3 | 6 |
+| Tier 3 | 8 |
 | Tier 4 | 1 |
 
 | Verification method | Sources |
 |---|---|
-| fetched (full text) | 23 |
-| fetched (partial text) | 5 |
-| API response | 7 |
+| fetched (full text) | 26 |
+| fetched (partial text) | 11 |
+| API response | 8 |
 | search snippet only | 11 |
 | not accessed | 0 |
 
@@ -72,6 +72,8 @@ These claims rest on secondary, community or unverifiable sources. They are reco
 - C-076: t3n reports AI-assisted exploit-chain discovery and an iOS 27.2 beta comparison as established; heise calls the comparison theoretical (supporting tiers: 2)
 - C-077: The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified) (supporting tiers: 3)
 - C-097: The signature set kernel/27.0 in the symbolicator repository declares a darwin range of 27.0.0 to 27.2.0 (supporting tiers: 3)
+- C-136: The upstream iMaxTomas tracker, at commit 038b9f09 (2026-11-06), states that no publicly usable PPL or SPTM bypass is known for iOS 27.0.1 (supporting tiers: 3)
+- C-137: A community repository created on 2026-11-09 claims IOSurface kernel-surface exploitation on devices described as iPhone 13 Pro and iPhone 17 Pro (supporting tiers: 3)
 
 ## Claims with contradicting sources
 

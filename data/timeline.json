@@ -453,5 +453,42 @@
     "device_scope": "iPhone16,2 (iPhone 15 Pro Max)",
     "firmware_scope": "27.0.1 (24A446); 27.2 (24B119); 27.2.1 (24B156)",
     "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-034",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "Documentary audit for v0.4.0: the SKVLENT iOS 27 research repository at commit 73f7a579 (statements and contradictions), metadata comparison of the A17 Pro, A19 Pro and A18 Pro firmware packages, a re-check of Erosion's documents and release metadata, an ecosystem re-check, and a sandbox-versus-jailbreak explanation. No device was used. Readiness is unchanged (LEVEL 0, NO-GO).",
+    "associated_source_ids": [
+      "S-047",
+      "S-048",
+      "S-049",
+      "S-050",
+      "S-051",
+      "S-052",
+      "S-053",
+      "S-054",
+      "S-055",
+      "S-056"
+    ],
+    "device_scope": "iPhone16,2 (target); iPhone18,1 and iPhone17,2 (reference metadata only)",
+    "firmware_scope": "27.0.1 (24A446); 27.2 (24B119)",
+    "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-035",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "Correction: the default-branch README of the Dopamine repository, read on 2026-11-12, lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range. It supersedes the reading in DIM08 from 2026-11-11. The official ElleKit repository states no version range and has no release.",
+    "associated_source_ids": [
+      "S-008",
+      "S-050",
+      "S-051"
+    ],
+    "device_scope": "Not device-specific",
+    "firmware_scope": "Not build-specific",
+    "verification_state": "verified"
   }
 ]
