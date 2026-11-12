@@ -490,5 +490,59 @@
     "device_scope": "Not device-specific",
     "firmware_scope": "Not build-specific",
     "verification_state": "verified"
+  },
+  {
+    "event_id": "E-036",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "vendor_announcement",
+    "description": "Apple publishes 'Secure Exclaves and Ambient Sensing' (SEAR and Core OS). The article describes Secure Exclaves, exclaveOS, Secure IPC, the Exclave Indicator Controller and the SPTM relationship. It names iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, MacBook Neo and HomeView, and no A17 Pro device or chip.",
+    "associated_source_ids": [
+      "S-058"
+    ],
+    "device_scope": "Products named by Apple: iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, MacBook Neo, HomeView",
+    "firmware_scope": "Not specified",
+    "verification_state": "verified"
+  },
+  {
+    "event_id": "E-037",
+    "event_date": "2025-03-08",
+    "publication_date": "2025-03-08",
+    "event_category": "press_coverage",
+    "description": "Press coverage reports exclave references in Apple open-source XNU code tied to M4 and A18 processors, and a 2023 first appearance of the term in Apple software (reported; not verified here).",
+    "associated_source_ids": [
+      "S-060"
+    ],
+    "device_scope": "Not specified (press names M4 and A18 processors)",
+    "firmware_scope": "Not specified",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-038",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "v0.5.0 research update: Apple Secure Exclaves article analysed; all BuildIdentities of the A17 Pro, A18 Pro and A19 Pro manifests enumerated; static string checks on the A17 Pro 24A446 kernelcache and SPTM image; XNU public-source observations; SKVLENT, Erosion and ecosystem repository heads re-checked and unchanged.",
+    "associated_source_ids": [
+      "S-043",
+      "S-044",
+      "S-045",
+      "S-055",
+      "S-056",
+      "S-057",
+      "S-058",
+      "S-047",
+      "S-048",
+      "S-049",
+      "S-050",
+      "S-051",
+      "S-052",
+      "S-054",
+      "S-040",
+      "S-031"
+    ],
+    "device_scope": "iPhone16,2 (target); iPhone17,2 and iPhone18,1 (comparison)",
+    "firmware_scope": "24A446, 24B119, 24B156",
+    "verification_state": "partially_verified"
   }
 ]

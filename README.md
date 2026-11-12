@@ -50,9 +50,9 @@ The research target is fixed at iOS 27.0.1 (build 24A446), as described in the t
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-12):** 136 claims (87 verified, 27 partially verified, 22 unverified), 56 sources, 35 timeline events, 18 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 168 claims (114 verified, 29 partially verified, 25 unverified), 61 sources, 38 timeline events, 20 compatibility rows and 4 firmware builds.
 
-**Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
+**Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level. The v0.5.0 update analyses Apple's Secure Exclaves article of 2026-11-12, reconciles the BuildManifests of the A17 Pro, A18 Pro and A19 Pro families, and records exclave-prefixed identifiers as static strings in the target build's kernelcache and SPTM image. None of this establishes Secure Exclaves on the target. The readiness level is unchanged.
 
 Research status by dimension (details in [research/](research/)):
 
@@ -77,7 +77,7 @@ Status key: `verified`; `partially_verified`; `reported_unverified` (reported, n
 
 | ID | Category | Status | Evidence | Note |
 |---|---|---|---|---|
-| CMP-001 | SPTM Research | partially verified | C-013, C-014 | Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. |
+| CMP-001 | SPTM Research | partially verified | C-013, C-014, C-145, C-157 | Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. |
 | CMP-002 | SPTM Bypass | unverified | C-015 | The only SPTM bypass mention is a community reference describing an undisclosed bypass. |
 | CMP-003 | Kernel Vulnerability | unverified | C-037, C-039, C-041, C-070, C-071 | Apple's iOS 27 and iOS 27.2 notes list kernel-memory write and corruption entries (research/apple-27x-cve-mapping.md). |
 | CMP-004 | Kernel Read | unverified | C-035, C-040 | Apple lists kernel-memory read, disclosure and layout impacts: eight on the iOS 27 page (including CVE-2026-84622, which needs root) and six on the iOS 27.2 page. |
@@ -86,15 +86,17 @@ Status key: `verified`; `partially_verified`; `reported_unverified` (reported, n
 | CMP-007 | Privilege Escalation | not established | C-035, C-036, C-074 | Apple lists a kernel entry in which a malicious app may gain root privileges (iOS 27: CVE-2026-43689) and an entry in which an app with root privileges reads uninitialised kernel memory (iOS 27: CVE-2026-84622). |
 | CMP-008 | AMFI Compatibility | not researched | - | AMFI (code signing enforcement) was not researched in this pass. |
 | CMP-009 | Complete Exploit Chain | reported, unverified | C-001, C-002, C-027, C-038, C-042, C-049 | A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. |
-| CMP-010 | Bootstrap | not established | C-016, C-055, C-065, C-066, C-133, C-135 | No bootstrap for iOS 27.0.1 is verified. |
-| CMP-011 | Package Manager | not established | C-030, C-056, C-057, C-134 | Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). |
+| CMP-010 | Bootstrap | not established | C-016, C-055, C-065, C-066, C-133, C-135, C-167 | No bootstrap for iOS 27.0.1 is verified. |
+| CMP-011 | Package Manager | not established | C-030, C-056, C-057, C-134, C-167 | Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). |
 | CMP-012 | Persistence | reported, unverified | C-004, C-053 | Reboot persistence is reported for the iPhone 18 Pro demonstration (C-004). |
 | CMP-013 | Public Jailbreak Tool | not established | C-028, C-058, C-064 | No publicly installable tool is verified for this target (C-028). |
 | CMP-014 | Independent A17 Pro Reproduction | not established | C-049, C-062 | No independent reproduction on A17 Pro hardware was found. |
 | CMP-015 | Exact Build Verification | partially verified | C-003, C-024, C-025, C-078, C-079 | Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. |
-| CMP-016 | Sandbox Escape | reported, unverified | C-109, C-111, C-114 | The SKVLENT repository states boundary crossings into other applications' containers and shared groups on an A19 Pro configuration (27.0.1). |
-| CMP-017 | Public Jailbreak Tool | reported, unverified | C-126, C-127, C-128, C-129, C-132 | The declared iOS range includes 27.0.1 by range only. |
-| CMP-018 | Exact Build Verification | partially verified | C-119, C-120, C-121, C-122, C-123, C-124, C-125 | Manifest-level differences only. |
+| CMP-016 | Sandbox Escape | reported, unverified | C-109, C-111, C-114, C-165 | The SKVLENT repository states boundary crossings into other applications' containers and shared groups on an A19 Pro configuration (27.0.1). |
+| CMP-017 | Public Jailbreak Tool | reported, unverified | C-126, C-127, C-128, C-129, C-132, C-166 | The declared iOS range includes 27.0.1 by range only. |
+| CMP-018 | Exact Build Verification | partially verified | C-119, C-120, C-121, C-122, C-123, C-124, C-125, C-157, C-159, C-160 | Manifest-level differences only. |
+| CMP-019 | Exact Build Verification | not established | C-157, C-158, C-159, C-161, C-162, C-163 | Secure Exclaves applicability to the target. |
+| CMP-020 | Exact Build Verification | partially verified | C-159, C-160, C-124 | Chip identifier for the target. |
 
 Every row is scoped to the target profile: iPhone16,2, A17 Pro, iOS 27.0.1, build 24A446. `not_established` means no verified evidence exists for that row. It does not mean the answer is no.
 
@@ -104,6 +106,8 @@ Every row is scoped to the target profile: iPhone16,2, A17 Pro, iOS 27.0.1, buil
 - No public A17 Pro SPTM bypass has been verified. A community reference reports an SPTM bypass valid through iOS 27.0.1, reportedly patched in a 27.2 beta. The primary post was not retrieved (C-051, unverified).
 - Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1, because no SPTM bypass is known for iOS 17.4 and later (C-066). The Titan bypass in those notes covers iOS 16.5.1 to 17.3.1 (C-065).
 - The independent SPTM paper analyses an iPhone 16 on iOS 18.4. It does not cover the A17 Pro or any iOS 27 build (C-060).
+- Apple's Secure Exclaves article of 2026-11-12 states that on SPTM-protected products the kernel cannot write page-table entries (C-145). It states that the SPTM runs at a higher privilege level than the main OS kernel and is loaded separately by the boot loader (C-146). It does not name the SPTM-protected products, so the A17 Pro's status is not established (C-162).
+- Exclave-private memory is typed for the exclave context. The kernel cannot retype or read it, and the SPTM keeps no mapping to it (C-147).
 
 Details: [research/sptm-evidence-audit.md](research/sptm-evidence-audit.md) and [research/DIM03-sptm-research.md](research/DIM03-sptm-research.md).
 
@@ -115,6 +119,14 @@ Details: [research/sptm-evidence-audit.md](research/sptm-evidence-audit.md) and 
 - Apple's index lists no published CVE entries for 27.0.1 (C-007).
 - A kernel read/write release was announced on 2026-11-04. No publication was found on 2026-11-12 (C-022, C-049).
 - No public kernel exploit is verified for the target.
+
+### Secure Exclaves and the A17 Pro manifests (v0.5.0)
+
+- Apple's Secure Exclaves article describes isolated camera and microphone processing, exclaveOS, Secure IPC and the Exclave Indicator Controller. It names iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, MacBook Neo and HomeView, and no A17 Pro product (C-138, C-139, C-143, C-144).
+- The BuildManifests of the three inspected A17 Pro builds (24A446, 24B119 and 24B156) list no exclave-named component in any of their nine identities (C-157). The A18 Pro and A19 Pro manifests list six per erase and update identity (C-158).
+- The target build's kernelcache contains 702 exclave-prefixed identifier occurrences, and its SPTM image contains 13, as static strings (C-161). Static presence is not function.
+- The A17 Pro manifest chip identifier is 0x8130, and its monitor token is t8122. The XNU source groups T8122 with T8130 (C-154, C-159, C-160). The marketing mapping of t8122 is not verified.
+- Whether Secure Exclaves applies to the A17 Pro is not established (C-162). See the [applicability assessment](reports/a17pro-exclave-applicability.md) and the [manifest reconciliation](research/exclave-manifest-reconciliation.md).
 
 Details: [research/DIM04-kernel-vulnerability.md](research/DIM04-kernel-vulnerability.md) and [research/apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md).
 
@@ -131,6 +143,7 @@ Details: [research/DIM07-exploit-chain.md](research/DIM07-exploit-chain.md).
 - **Dopamine:** latest official release 3.0.13 (2026-11-03; C-017). Its notes for 3.0.2 to 3.0.13 do not mention iOS 27 (C-055). The 3.0 release states that real-device SPTM support ends at iOS 17.3.1 (C-066). No iOS 27 support is documented for the A17 Pro (C-018).
 - **Sileo:** the latest release of the repository named Sileo/Sileo is 2.5.1 (2024-10-08). Its notes do not mention iOS 27 (C-030, partially verified).
 - **ElleKit:** the former repository identifier redirects to a repository with no GitHub release (C-056). The upstream's claim that ElleKit 1.2 covers iOS 27 is unverified (C-057).
+- **Re-check, 2026-11-12:** the latest releases and default-branch heads of Dopamine, Sileo, Procursus, the official ElleKit repository, the former ElleKit repository and the iMaxTomas tracker match the v0.4.0 records (C-167). See [the v0.5.0 ecosystem update](research/jailbreak-ecosystem-v050-update.md).
 - **Project announcement:** a project claim from November 2026 for iOS 27.0 to 27.0.1 is unverified and carries a high risk (C-064). No release was reviewed in this pass.
 - **BootROM issue:** reported for A12 and A13 chips, not the A17 Pro (C-019, partially verified).
 
@@ -162,6 +175,7 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 
 | Date | Event | Verification | Sources |
 |---|---|---|---|
+| 2025-03-08 | Press coverage reports exclave references in Apple open-source XNU code tied to M4 and A18 processors, and a 2023 first appearance of the term in Apple software (reported; not verified here). | unverified | S-060 |
 | 2025-09 | Apple announces Memory Integrity Enforcement with the iPhone 17 and iPhone Air, naming the A19 and A19 Pro chips. | verified | S-003 |
 | 2025-10-10 | Independent academic analysis of SPTM, TXM and Exclaves (arXiv:2510.09272) is submitted. Its firmware analysis uses iPhone 16 (A18) on iOS 18.4, not the A17 Pro or iOS 27. | verified | S-035 |
 | 2026-06-18 | usbliter8 BootROM exploit for A12 and A13 devices is publicised (reported by secondary outlets and a national CERT). | partially verified | S-021, S-022, S-023 |
@@ -197,6 +211,8 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | 2026-11-12 | Release v0.3.0 (A17 Pro Ghidra Static Analysis & Symbolication) was published after the validator and CI checks passed. It records static analysis, symbolication and metadata-level comparisons. Code-level differencing and binary-to-advisory correlation were not performed. Readiness is unchanged (LEVEL 0, NO-GO). | partially verified | S-004, S-043, S-044, S-045, S-046 |
 | 2026-11-12 | Documentary audit for v0.4.0: the SKVLENT iOS 27 research repository at commit 73f7a579 (statements and contradictions), metadata comparison of the A17 Pro, A19 Pro and A18 Pro firmware packages, a re-check of Erosion's documents and release metadata, an ecosystem re-check, and a sandbox-versus-jailbreak explanation. No device was used. Readiness is unchanged (LEVEL 0, NO-GO). | partially verified | S-047, S-048, S-049, S-050, S-051, S-052, S-053, S-054, S-055, S-056 |
 | 2026-11-12 | Correction: the default-branch README of the Dopamine repository, read on 2026-11-12, lists rootless ranges to iOS 17.3.1 (arm64e) and 18.7.1 (arm64), and no iOS 27 range. It supersedes the reading in DIM08 from 2026-11-11. The official ElleKit repository states no version range and has no release. | verified | S-008, S-050, S-051 |
+| 2026-11-12 | Apple publishes 'Secure Exclaves and Ambient Sensing' (SEAR and Core OS). The article describes Secure Exclaves, exclaveOS, Secure IPC, the Exclave Indicator Controller and the SPTM relationship. It names iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, MacBook Neo and HomeView, and no A17 Pro device or chip. | verified | S-058 |
+| 2026-11-12 | v0.5.0 research update: Apple Secure Exclaves article analysed; all BuildIdentities of the A17 Pro, A18 Pro and A19 Pro manifests enumerated; static string checks on the A17 Pro 24A446 kernelcache and SPTM image; XNU public-source observations; SKVLENT, Erosion and ecosystem repository heads re-checked and unchanged. | partially verified | S-043, S-044, S-045, S-055, S-056, S-057, S-058, S-047, S-048, S-049, S-050, S-051, S-052, S-054, S-040, S-031 |
 
 ## 14. Verified Claims
 
@@ -291,6 +307,33 @@ A `verified` verdict requires a fetched, API or tier-1 source and high confidenc
 | C-134 | The official ElleKit repository (dhinakg/ellekit-official) states no iOS version range and has no GitHub release | high | S-051 |
 | C-135 | The Procursus repository describes a cross-compiled OS bootstrap and states no iOS version range in the lines read | high | S-052 |
 | C-136 | The upstream iMaxTomas tracker, at commit 038b9f09 (2026-11-06), states that no publicly usable PPL or SPTM bypass is known for iOS 27.0.1 | high | S-054, S-026 |
+| C-138 | Apple describes Secure Exclaves as an architecture for camera and microphone ambient sensing | high | S-058 |
+| C-139 | Apple's Secure Exclaves article names five products and no A-series, M-series or T-series chip | high | S-058 |
+| C-140 | Apple states that exclave isolation uses capabilities and that the design has no extraneous authority | high | S-058 |
+| C-141 | Apple gives two different accounts of where the exclaves microkernel comes from | high | S-058 |
+| C-142 | Apple places exclaveOS on the exclaves microkernel and isolates it from XNU and Darwin user space | high | S-058 |
+| C-143 | Apple states that Secure IPC is written in Swift and that exclaves communicate only through explicit capabilities | high | S-058 |
+| C-144 | Apple states that the Exclave Indicator Controller gates sensor data and keeps the Siri indicator visible for at least three seconds | high | S-058 |
+| C-145 | Apple states that on SPTM-protected products the kernel cannot write page-table entries | high | S-058 |
+| C-146 | Apple describes the SPTM as running above the main OS kernel and loaded separately by the boot loader | high | S-058 |
+| C-147 | Apple states that exclave-private memory is typed so that the kernel cannot retype, map or read it | high | S-058 |
+| C-148 | Apple states that memory filters can be configured only by the SPTM | high | S-058 |
+| C-149 | Apple states that its Neural Engine uses isolated workload queues modelled on SEP queues | high | S-058 |
+| C-150 | Apple states that its formal verification of the exclaves microkernel is incremental and not complete | high | S-058 |
+| C-151 | Apple reports defect classes found by its formal verification of the exclaves microkernel | high | S-058 |
+| C-152 | Apple's Platform Security guide describes sepOS as based on an Apple-customised L4 microkernel | high | S-059 |
+| C-153 | Apple's public XNU repository contains exclave source files | high | S-057 |
+| C-154 | Apple's XNU repository pairs T8122 with T8130 and returns no hits for T8140 or T8150 | high | S-057 |
+| C-157 | The three inspected A17 Pro manifests list no exclave-named component in any of their nine identities | high | S-043, S-044, S-045 |
+| C-158 | The A18 Pro and A19 Pro manifests list six exclave-named components in each erase and update identity | high | S-056, S-055 |
+| C-159 | In the A17 Pro manifests the monitor token t8122 differs from the chip identifier 0x8130; the A18 Pro and A19 Pro tokens match | high | S-043, S-055, S-056 |
+| C-161 | The target build's kernelcache and SPTM image contain exclave-prefixed identifiers as static strings | high | S-043 |
+| C-164 | The SKVLENT repository's main branch matched the v0.4.0 snapshot on 2026-11-12 | high | S-047 |
+| C-165 | SKVLENT's README describes direction 10 as a container-boundary crossing in userland, not kernel code execution | high | S-047 |
+| C-166 | Erosion's 0.3.1 release notes and its README disagree on tweaks for iOS 26 | high | S-048 |
+| C-167 | Ecosystem repository states re-checked on 2026-11-12 matched the v0.4.0 records | high | S-050, S-052, S-051, S-031, S-040, S-054 |
+| C-168 | Apple's article says the groundwork for isolation was laid in earlier releases | high | S-058 |
+| C-169 | Apple's article says a display exclave checks drawn pixels for indicators on products like iPhone | high | S-058 |
 
 ## 15. Unverified Claims
 
@@ -327,6 +370,8 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-111 | SKVLENT reports a sandbox boundary crossing into other applications' containers and shared system groups on its A19 Pro configuration | medium | S-047 |
 | C-112 | SKVLENT reports a denial-of-service effect on its A19 Pro configuration: a single property write aborts a system UI daemon | medium | S-047 |
 | C-113 | SKVLENT reports a read over-run in a networking consumer on its A19 Pro configuration; the write is stated as reproduced locally only | medium | S-047 |
+| C-160 | The A17 Pro identifier 0x8130 matches T8130 in a community wiki, and XNU groups T8122 with T8130 | medium | S-043, S-057, S-061 |
+| C-163 | The A17 Pro package names no exclaveOS image, but its SPTM and kernelcache carry exclaveOS-related strings | medium | S-043 |
 
 ### Unverified
 
@@ -354,6 +399,9 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-077 | The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified) | low | S-026 |
 | C-124 | The chip tokens in the monitor image names (t8122, t8140, t8150) map to the marketing SoC names A17 Pro, A18 Pro and A19 Pro | low | S-043, S-055, S-056 |
 | C-137 | A community repository created on 2026-11-09 claims IOSurface kernel-surface exploitation on devices described as iPhone 13 Pro and iPhone 17 Pro | low | S-053 |
+| C-155 | Press reporting links exclave references in XNU to M4 and A18 processors | low | S-060 |
+| C-156 | Press reporting dates the term 'exclaves' in Apple software to 2023 | low | S-060 |
+| C-162 | Secure Exclaves ambient-sensing features are implemented on the A17 Pro (iPhone 15 Pro Max) | low | S-058 |
 
 ## 16. Source Index
 
@@ -417,6 +465,11 @@ Tiers: 1 primary (Apple, original research, official repositories and conference
 | S-054 | [iMaxTomas/ios27-jb-tracker: repository head and chip-status statements (commit 038b9f09, 2026-11-06)](https://github.com/iMaxTomas/ios27-jb-tracker/tree/038b9f090564) | iMaxTomas (upstream community tracker; licence field 'Other') | 3 | 2026-11-06 | fetched (partial text) |
 | S-055 | [iPhone18,1 (A19 Pro) iOS 27.0.1 (24A446) firmware package: BuildManifest (Apple CDN object, range request)](https://updates.cdn-apple.com/2026FallFCS/8451c50e-8b6f-4f5c-94c2-81469528464e/iPhone18,1_27.0.1_24A446_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-09-28 | fetched (partial text) |
 | S-056 | [iPhone17,2 (A18 Pro) iOS 27.2 (24B119) firmware package: BuildManifest (Apple CDN object, range request)](https://updates.cdn-apple.com/2026FallFCS/3a256522-d649-403a-8ec5-b6fbcb940cbe/iPhone17,2_27.2_24B119_Restore.ipsw) | Apple Inc. (CDN object; URL resolved by a firmware index lookup) | 1 | 2026-10-26 | fetched (partial text) |
+| S-057 | [Apple XNU open-source repository (apple-oss-distributions/xnu): code search results for exclave and chip identifiers](https://github.com/apple-oss-distributions/xnu) | Apple Inc. (open-source distribution) | 1 | - | API response |
+| S-058 | [Secure Exclaves and Ambient Sensing (Apple Security Research article; SEAR and Core OS)](https://security.apple.com/blog/secure-exclaves/) | Apple Inc. | 1 | 2026-11-12 | fetched (full text) |
+| S-059 | [Apple Platform Security: sepOS (Secure Enclave firmware)](https://support.apple.com/en-au/guide/security/aside/secc3e4f7a43/web) | Apple Inc. | 1 | - | fetched (partial text) |
+| S-060 | [We call this kernel saunters: How Apple rearranged its XNU core with exclaves (The Register, 2025-03-08)](https://www.theregister.com/2025/03/08/kernel_sanders_apple_rearranges_xnu/) | The Register | 2 | 2025-03-08 | fetched (full text) |
+| S-061 | [The Apple Wiki: A17 Pro chip page (search snippet only)](https://theapplewiki.com/wiki/A17_Pro) | The Apple Wiki (community wiki) | 3 | - | search snippet only |
 
 ## 17. Contribution Instructions
 

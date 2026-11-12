@@ -1,0 +1,2465 @@
+{
+  "schema": "exclave-buildidentity-summary/1",
+  "generated_on": "2026-11-12",
+  "scope": "Metadata only: BuildManifest files for the target product type and two reference families. No IPSW was downloaded in this step. No image was decrypted or extracted in this step.",
+  "method": "Each BuildManifest was parsed as a plist. Every BuildIdentity was enumerated. Components were classified by exact name or by the substring \"exclave\" in the name or path. Monitor tokens were read from SPTM file paths. Digests are the manifest-recorded SHA-384 values.",
+  "classification_rules": {
+    "exclave": "name or path contains \"exclave\" (case-insensitive), or name is Ap,cL4 or Ap,RestorecL4",
+    "sptm": "name contains SecurePageTableMonitor",
+    "txm": "name contains TrustedExecutionMonitor",
+    "kernelcache": "KernelCache or RestoreKernelCache",
+    "devicetree": "name contains DeviceTree",
+    "coprocessor": "known coprocessor firmware names and Rap, or SE, prefixes (naming only; not a functional claim)"
+  },
+  "manifests": [
+    {
+      "manifest_id": "M1",
+      "family": "A17 Pro",
+      "role": "target build",
+      "product_type": "iPhone16,2",
+      "build_number": "24A446",
+      "sha256": "c023bfa8dff4b299aa140699817e53f44fac4ad07cc3a19791d2c39a858021e1",
+      "bytes": 411742,
+      "plist_parse": "ok",
+      "manifest_version": 0,
+      "product_version": "27.0.1",
+      "product_build_version": "24A446",
+      "supported_product_types": [
+        "iPhone16,2"
+      ],
+      "identity_count": 3,
+      "identities": [
+        {
+          "index": 0,
+          "variant": "Customer Erase Install (IPSW)",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "15ae080cb9c29afde08b7b081863e77e8649b1011f4f761c041cf55e33721b166a8153fe21e83dc0bddc0bfc6b0c96e5"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "cfae5ab38bcb6534934b3ce89060363ea2357a0bd6600e027e185155170231f3252fa80ae7921e970840ed45abd9098d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "57cc009f65d59c0999d3803022130fcee4e644b8a70294142aad811fa7221a3c91b2e76f678cf7facf699e127a8873bd"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "bbc2f8a7cce36c48ae87ef0602b912539152496dce58b15b54f819ffad8c460a77a8d13839f8c418a746c7ff9a4d582e"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "75c88f9ad8773de4bcbf1c622476578c9a8895ac5689bbaeffd09ca0abc4af753418a839d88832585e9cca3fbca1eca5"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "5c25a2a2b61b917a63ed62b648a0c17c9f3dfdff363294bc61afd0cd824285c27de9362c6c314485b40932852e32a291"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 1,
+          "variant": "Customer Upgrade Install (IPSW)",
+          "restore_behavior": "Update",
+          "device_class": "d84ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "15ae080cb9c29afde08b7b081863e77e8649b1011f4f761c041cf55e33721b166a8153fe21e83dc0bddc0bfc6b0c96e5"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "cfae5ab38bcb6534934b3ce89060363ea2357a0bd6600e027e185155170231f3252fa80ae7921e970840ed45abd9098d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "57cc009f65d59c0999d3803022130fcee4e644b8a70294142aad811fa7221a3c91b2e76f678cf7facf699e127a8873bd"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "bbc2f8a7cce36c48ae87ef0602b912539152496dce58b15b54f819ffad8c460a77a8d13839f8c418a746c7ff9a4d582e"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "75c88f9ad8773de4bcbf1c622476578c9a8895ac5689bbaeffd09ca0abc4af753418a839d88832585e9cca3fbca1eca5"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "5c25a2a2b61b917a63ed62b648a0c17c9f3dfdff363294bc61afd0cd824285c27de9362c6c314485b40932852e32a291"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 2,
+          "variant": "Recovery Customer Install",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 24,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "15ae080cb9c29afde08b7b081863e77e8649b1011f4f761c041cf55e33721b166a8153fe21e83dc0bddc0bfc6b0c96e5"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "cfae5ab38bcb6534934b3ce89060363ea2357a0bd6600e027e185155170231f3252fa80ae7921e970840ed45abd9098d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "57cc009f65d59c0999d3803022130fcee4e644b8a70294142aad811fa7221a3c91b2e76f678cf7facf699e127a8873bd"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "bbc2f8a7cce36c48ae87ef0602b912539152496dce58b15b54f819ffad8c460a77a8d13839f8c418a746c7ff9a4d582e"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "75c88f9ad8773de4bcbf1c622476578c9a8895ac5689bbaeffd09ca0abc4af753418a839d88832585e9cca3fbca1eca5"
+            }
+          ],
+          "coprocessor_components": [
+            "AOP",
+            "GFX",
+            "ISP",
+            "PMP",
+            "RestoreANS",
+            "RestoreDCP",
+            "SIO"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        }
+      ],
+      "identity0_component_names": [
+        "ANE",
+        "ANS",
+        "AOP",
+        "AVE",
+        "Ap,AudioBootChime",
+        "Ap,HapticAssets",
+        "Ap,LowPowerMode",
+        "Ap,RestoreSecurePageTableMonitor",
+        "Ap,RestoreTrustedExecutionMonitor",
+        "Ap,SecurePageTableMonitor",
+        "Ap,SystemVolumeCanonicalMetadata",
+        "Ap,TrustedExecutionMonitor",
+        "AppleLogo",
+        "BMU,DigestMap",
+        "BMU,FirmwareMap",
+        "BasebandFirmware",
+        "Cryptex1,AppOS",
+        "Cryptex1,AppTrustCache",
+        "Cryptex1,AppVolume",
+        "Cryptex1,SystemOS",
+        "Cryptex1,SystemTrustCache",
+        "Cryptex1,SystemVolume",
+        "DCP",
+        "DeviceTree",
+        "GFX",
+        "ISP",
+        "KernelCache",
+        "LLB",
+        "LeapHaptics",
+        "Liquid",
+        "MtpFirmware",
+        "Multitouch",
+        "OS",
+        "PMP",
+        "Rap,RTKitIOConfig",
+        "Rap,RTKitOS",
+        "Rap,SoftwareBinaryDsp1",
+        "RecoveryMode",
+        "RestoreANS",
+        "RestoreDCP",
+        "RestoreDeviceTree",
+        "RestoreKernelCache",
+        "RestoreLogo",
+        "RestoreRamDisk",
+        "RestoreSEP",
+        "RestoreTrustCache",
+        "SE,RapRTKitOS",
+        "SE,RapSwBinDsp",
+        "SE,UpdatePayload",
+        "SEP",
+        "SIO",
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Dev-PatchVT",
+        "Savage,B0-Prod-Patch",
+        "Savage,B0-Prod-PatchVT",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Dev-PatchVT",
+        "Savage,B2-Prod-Patch",
+        "Savage,B2-Prod-PatchVT",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "SepStage1",
+        "StaticTrustCache",
+        "SystemVolume",
+        "USBPortController1,USBFirmware",
+        "WCHFirmwareUpdater",
+        "Yonkers,SepObject",
+        "Yonkers,SysTopPatch0",
+        "Yonkers,SysTopPatch1",
+        "Yonkers,SysTopPatch2",
+        "Yonkers,SysTopPatch3",
+        "Yonkers,SysTopPatch4",
+        "Yonkers,SysTopPatch5",
+        "Yonkers,SysTopPatch6",
+        "Yonkers,SysTopPatch7",
+        "Yonkers,SysTopPatch8",
+        "Yonkers,SysTopPatch9",
+        "Yonkers,SysTopPatchA",
+        "Yonkers,SysTopPatchB",
+        "Yonkers,SysTopPatchC",
+        "Yonkers,SysTopPatchD",
+        "Yonkers,SysTopPatchE",
+        "Yonkers,SysTopPatchF",
+        "eUICC,Gold",
+        "eUICC,Main",
+        "ftap",
+        "ftsp",
+        "iBEC",
+        "iBSS",
+        "iBoot",
+        "iBootData",
+        "rfta",
+        "rfts"
+      ]
+    },
+    {
+      "manifest_id": "M2",
+      "family": "A17 Pro",
+      "role": "same product type, earlier build",
+      "product_type": "iPhone16,2",
+      "build_number": "24B119",
+      "sha256": "4acab4a08dea01522f9de6c7a7a75a1d8911b8403896896f4f9b6b1b59ede379",
+      "bytes": 411725,
+      "plist_parse": "ok",
+      "manifest_version": 0,
+      "product_version": "27.2",
+      "product_build_version": "24B119",
+      "supported_product_types": [
+        "iPhone16,2"
+      ],
+      "identity_count": 3,
+      "identities": [
+        {
+          "index": 0,
+          "variant": "Customer Erase Install (IPSW)",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "76172ae7f62c7fa9412e011e0e4fc73fe4d968616c36b1466c733c85793fb1472e227acaa9db55083e2865f7d5e0063b"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8851c67c7d21e4cf330dd6e6a8318f095809a32f682be08cbe8cb78eb2adf4e4b0cd0a5cf5234bb37172d74ee98bc5a1"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "038ac673046b4d595ec56b1e68c4430d031193b4248c88edae7f7f9d5fe1685daae8c9f6bfb664a8f76baf12e59612b2"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 1,
+          "variant": "Customer Upgrade Install (IPSW)",
+          "restore_behavior": "Update",
+          "device_class": "d84ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "76172ae7f62c7fa9412e011e0e4fc73fe4d968616c36b1466c733c85793fb1472e227acaa9db55083e2865f7d5e0063b"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8851c67c7d21e4cf330dd6e6a8318f095809a32f682be08cbe8cb78eb2adf4e4b0cd0a5cf5234bb37172d74ee98bc5a1"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "038ac673046b4d595ec56b1e68c4430d031193b4248c88edae7f7f9d5fe1685daae8c9f6bfb664a8f76baf12e59612b2"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 2,
+          "variant": "Recovery Customer Install",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 24,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "76172ae7f62c7fa9412e011e0e4fc73fe4d968616c36b1466c733c85793fb1472e227acaa9db55083e2865f7d5e0063b"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8851c67c7d21e4cf330dd6e6a8318f095809a32f682be08cbe8cb78eb2adf4e4b0cd0a5cf5234bb37172d74ee98bc5a1"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            }
+          ],
+          "coprocessor_components": [
+            "AOP",
+            "GFX",
+            "ISP",
+            "PMP",
+            "RestoreANS",
+            "RestoreDCP",
+            "SIO"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        }
+      ],
+      "identity0_component_names": [
+        "ANE",
+        "ANS",
+        "AOP",
+        "AVE",
+        "Ap,AudioBootChime",
+        "Ap,HapticAssets",
+        "Ap,LowPowerMode",
+        "Ap,RestoreSecurePageTableMonitor",
+        "Ap,RestoreTrustedExecutionMonitor",
+        "Ap,SecurePageTableMonitor",
+        "Ap,SystemVolumeCanonicalMetadata",
+        "Ap,TrustedExecutionMonitor",
+        "AppleLogo",
+        "BMU,DigestMap",
+        "BMU,FirmwareMap",
+        "BasebandFirmware",
+        "Cryptex1,AppOS",
+        "Cryptex1,AppTrustCache",
+        "Cryptex1,AppVolume",
+        "Cryptex1,SystemOS",
+        "Cryptex1,SystemTrustCache",
+        "Cryptex1,SystemVolume",
+        "DCP",
+        "DeviceTree",
+        "GFX",
+        "ISP",
+        "KernelCache",
+        "LLB",
+        "LeapHaptics",
+        "Liquid",
+        "MtpFirmware",
+        "Multitouch",
+        "OS",
+        "PMP",
+        "Rap,RTKitIOConfig",
+        "Rap,RTKitOS",
+        "Rap,SoftwareBinaryDsp1",
+        "RecoveryMode",
+        "RestoreANS",
+        "RestoreDCP",
+        "RestoreDeviceTree",
+        "RestoreKernelCache",
+        "RestoreLogo",
+        "RestoreRamDisk",
+        "RestoreSEP",
+        "RestoreTrustCache",
+        "SE,RapRTKitOS",
+        "SE,RapSwBinDsp",
+        "SE,UpdatePayload",
+        "SEP",
+        "SIO",
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Dev-PatchVT",
+        "Savage,B0-Prod-Patch",
+        "Savage,B0-Prod-PatchVT",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Dev-PatchVT",
+        "Savage,B2-Prod-Patch",
+        "Savage,B2-Prod-PatchVT",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "SepStage1",
+        "StaticTrustCache",
+        "SystemVolume",
+        "USBPortController1,USBFirmware",
+        "WCHFirmwareUpdater",
+        "Yonkers,SepObject",
+        "Yonkers,SysTopPatch0",
+        "Yonkers,SysTopPatch1",
+        "Yonkers,SysTopPatch2",
+        "Yonkers,SysTopPatch3",
+        "Yonkers,SysTopPatch4",
+        "Yonkers,SysTopPatch5",
+        "Yonkers,SysTopPatch6",
+        "Yonkers,SysTopPatch7",
+        "Yonkers,SysTopPatch8",
+        "Yonkers,SysTopPatch9",
+        "Yonkers,SysTopPatchA",
+        "Yonkers,SysTopPatchB",
+        "Yonkers,SysTopPatchC",
+        "Yonkers,SysTopPatchD",
+        "Yonkers,SysTopPatchE",
+        "Yonkers,SysTopPatchF",
+        "eUICC,Gold",
+        "eUICC,Main",
+        "ftap",
+        "ftsp",
+        "iBEC",
+        "iBSS",
+        "iBoot",
+        "iBootData",
+        "rfta",
+        "rfts"
+      ]
+    },
+    {
+      "manifest_id": "M3",
+      "family": "A17 Pro",
+      "role": "same product type, later build",
+      "product_type": "iPhone16,2",
+      "build_number": "24B156",
+      "sha256": "643eeb99dc8295378a8d3965f14485dc9e375c9c2eddaea0a86d9be197bee761",
+      "bytes": 411739,
+      "plist_parse": "ok",
+      "manifest_version": 0,
+      "product_version": "27.2.1",
+      "product_build_version": "24B156",
+      "supported_product_types": [
+        "iPhone16,2"
+      ],
+      "identity_count": 3,
+      "identities": [
+        {
+          "index": 0,
+          "variant": "Customer Erase Install (IPSW)",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24B156",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8e722d80c886379718fdcec288a131812c7cfc7ad2eca17d74b0ce2fdbb562490fcc99271e59a6ce8f76a2a57a64edb4"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "4b7752203971b9da477b6e3583ae57657f6b927a303179edb722e8a48704323057cc86a1d06ba63448d94d129c487ba9"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "038ac673046b4d595ec56b1e68c4430d031193b4248c88edae7f7f9d5fe1685daae8c9f6bfb664a8f76baf12e59612b2"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 1,
+          "variant": "Customer Upgrade Install (IPSW)",
+          "restore_behavior": "Update",
+          "device_class": "d84ap",
+          "build_number": "24B156",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 97,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8e722d80c886379718fdcec288a131812c7cfc7ad2eca17d74b0ce2fdbb562490fcc99271e59a6ce8f76a2a57a64edb4"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "4b7752203971b9da477b6e3583ae57657f6b927a303179edb722e8a48704323057cc86a1d06ba63448d94d129c487ba9"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "038ac673046b4d595ec56b1e68c4430d031193b4248c88edae7f7f9d5fe1685daae8c9f6bfb664a8f76baf12e59612b2"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 2,
+          "variant": "Recovery Customer Install",
+          "restore_behavior": "Erase",
+          "device_class": "d84ap",
+          "build_number": "24B156",
+          "ap_board_id": "0x06",
+          "ap_chip_id": "0x8130",
+          "component_count": 24,
+          "exclave_component_count": 0,
+          "exclave_components": [],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "f786e4ef3f775d1248e7d1a8dec4366e50e573fdbae1ea4493f2f32f1f463ae62d998e8e2a2e8e1ca67a80d415387bed"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8122.release.im4p",
+              "digest_sha384": "6c40430e26f452c799c086ed58eac09b03c96053992279572ea16f0ba0f0751349c0d77e4d48fee8941aad854daa0bae"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8122"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "8e722d80c886379718fdcec288a131812c7cfc7ad2eca17d74b0ce2fdbb562490fcc99271e59a6ce8f76a2a57a64edb4"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone16",
+              "digest_sha384": "4b7752203971b9da477b6e3583ae57657f6b927a303179edb722e8a48704323057cc86a1d06ba63448d94d129c487ba9"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d84ap.im4p",
+              "digest_sha384": "b7e1c725d9fc537cd4a00c39f6abd8aadff6e9933aab521be92e146f9b1caf88abf710e0c1e3d9d6b042a581cd15d72e"
+            }
+          ],
+          "coprocessor_components": [
+            "AOP",
+            "GFX",
+            "ISP",
+            "PMP",
+            "RestoreANS",
+            "RestoreDCP",
+            "SIO"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        }
+      ],
+      "identity0_component_names": [
+        "ANE",
+        "ANS",
+        "AOP",
+        "AVE",
+        "Ap,AudioBootChime",
+        "Ap,HapticAssets",
+        "Ap,LowPowerMode",
+        "Ap,RestoreSecurePageTableMonitor",
+        "Ap,RestoreTrustedExecutionMonitor",
+        "Ap,SecurePageTableMonitor",
+        "Ap,SystemVolumeCanonicalMetadata",
+        "Ap,TrustedExecutionMonitor",
+        "AppleLogo",
+        "BMU,DigestMap",
+        "BMU,FirmwareMap",
+        "BasebandFirmware",
+        "Cryptex1,AppOS",
+        "Cryptex1,AppTrustCache",
+        "Cryptex1,AppVolume",
+        "Cryptex1,SystemOS",
+        "Cryptex1,SystemTrustCache",
+        "Cryptex1,SystemVolume",
+        "DCP",
+        "DeviceTree",
+        "GFX",
+        "ISP",
+        "KernelCache",
+        "LLB",
+        "LeapHaptics",
+        "Liquid",
+        "MtpFirmware",
+        "Multitouch",
+        "OS",
+        "PMP",
+        "Rap,RTKitIOConfig",
+        "Rap,RTKitOS",
+        "Rap,SoftwareBinaryDsp1",
+        "RecoveryMode",
+        "RestoreANS",
+        "RestoreDCP",
+        "RestoreDeviceTree",
+        "RestoreKernelCache",
+        "RestoreLogo",
+        "RestoreRamDisk",
+        "RestoreSEP",
+        "RestoreTrustCache",
+        "SE,RapRTKitOS",
+        "SE,RapSwBinDsp",
+        "SE,UpdatePayload",
+        "SEP",
+        "SIO",
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Dev-PatchVT",
+        "Savage,B0-Prod-Patch",
+        "Savage,B0-Prod-PatchVT",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Dev-PatchVT",
+        "Savage,B2-Prod-Patch",
+        "Savage,B2-Prod-PatchVT",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "SepStage1",
+        "StaticTrustCache",
+        "SystemVolume",
+        "USBPortController1,USBFirmware",
+        "WCHFirmwareUpdater",
+        "Yonkers,SepObject",
+        "Yonkers,SysTopPatch0",
+        "Yonkers,SysTopPatch1",
+        "Yonkers,SysTopPatch2",
+        "Yonkers,SysTopPatch3",
+        "Yonkers,SysTopPatch4",
+        "Yonkers,SysTopPatch5",
+        "Yonkers,SysTopPatch6",
+        "Yonkers,SysTopPatch7",
+        "Yonkers,SysTopPatch8",
+        "Yonkers,SysTopPatch9",
+        "Yonkers,SysTopPatchA",
+        "Yonkers,SysTopPatchB",
+        "Yonkers,SysTopPatchC",
+        "Yonkers,SysTopPatchD",
+        "Yonkers,SysTopPatchE",
+        "Yonkers,SysTopPatchF",
+        "eUICC,Gold",
+        "eUICC,Main",
+        "ftap",
+        "ftsp",
+        "iBEC",
+        "iBSS",
+        "iBoot",
+        "iBootData",
+        "rfta",
+        "rfts"
+      ]
+    },
+    {
+      "manifest_id": "M4",
+      "family": "A18 Pro",
+      "role": "reference manifest",
+      "product_type": "iPhone17,2",
+      "build_number": "24B119",
+      "sha256": "475ddc333732155158fd8fffdb56a70c300dee4e23443355d23d2f0787ce9ae4",
+      "bytes": 468701,
+      "plist_parse": "ok",
+      "manifest_version": 0,
+      "product_version": "27.2",
+      "product_build_version": "24B119",
+      "supported_product_types": [
+        "iPhone17,2"
+      ],
+      "identity_count": 3,
+      "identities": [
+        {
+          "index": 0,
+          "variant": "Customer Erase Install (IPSW)",
+          "restore_behavior": "Erase",
+          "device_class": "d94ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x0E",
+          "ap_chip_id": "0x8140",
+          "component_count": 103,
+          "exclave_component_count": 6,
+          "exclave_components": [
+            {
+              "name": "Ap,ExclaveOS",
+              "path": "141-09175-240.dmg.aea",
+              "digest_sha384": "bd86d718c6a8db74d7d3a152c901e2b2c95d82a8a14679fd5555cb9e90fa692af2a9ad9b7f2177c21ffe6987120ed7a6"
+            },
+            {
+              "name": "Ap,ExclaveOSIntegrityCatalog",
+              "path": "Firmware/141-09175-240.dmg.aea.integrity_catalog",
+              "digest_sha384": "8a97bddb9a96d7a5946545dfc128d1a1eeffd7588c13d38eb830873da1baa97e646830776ce85482e1f535bee92dedc1"
+            },
+            {
+              "name": "Ap,ExclaveOSTrustCache",
+              "path": "Firmware/141-09175-240.dmg.aea.trustcache",
+              "digest_sha384": "2d28d2bb175aa13bb18a27f341ec3e7c8e7a1970fe0065b3a7d652c7e541e28117ed1d0727af9259adf8b30378736aa2"
+            },
+            {
+              "name": "Ap,ExclaveOSVolume",
+              "path": "Firmware/141-09175-240.dmg.aea.root_hash",
+              "digest_sha384": "2f3e0171767e5ce1a02a7e8795aa6b11ee251abe2125046da219f0a71417eeda31dcf05f3a0761a233dd03f0fb7a364c"
+            },
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8140.RELEASE.restore.im4p",
+              "digest_sha384": "371d4eee37238255ebc8e552723c3888b15394cd226daaead9d5b348c8543ce84e0bee876b4a184637447790c44cdd9b"
+            },
+            {
+              "name": "Ap,cL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8140.RELEASE.im4p",
+              "digest_sha384": "f3ee2be596ea1fe76c1b78d6e65171cade33a9ade96cdfc46f6585079a9506bfd3df455be6555acd42a8ddee405d75b1"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "d3aef763bd45653f29931d36dca32da8ac7f8ac3eee198e83a5f88b238d09993b0bab56ebe810f2a6c7205a7c07a297f"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "7c497a89a15e24187440eebfb8e8cb65ef3f9fa16c14732a686d05f61f872c8604941f79a76f119df75a1696c3a85a6d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8140"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "f8399205f31ac5ae731a86e951ece58ff89a51aaa4861f1c601553040362723e55af8d823e6a7687b1988c70bb1f6659"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "53ca8de58382bcb6e575e0231da54bc8db947c4915b24645f156c08109b60ccbd1025046a605eedb2c422be7b68aacfb"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d94ap.im4p",
+              "digest_sha384": "ee73ba14b5df3985d06c421cdb9446c70785c27f00266d23e4f33c0e1af7906073896dc85fc04525c8463367633e2cb6"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d94ap.im4p",
+              "digest_sha384": "bb87515727cdccce97386ecd3e423d504e89d31b071883236f363799601f47c37cf56e248c9ec6b2dff01b5fa2729cb5"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 1,
+          "variant": "Customer Upgrade Install (IPSW)",
+          "restore_behavior": "Update",
+          "device_class": "d94ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x0E",
+          "ap_chip_id": "0x8140",
+          "component_count": 103,
+          "exclave_component_count": 6,
+          "exclave_components": [
+            {
+              "name": "Ap,ExclaveOS",
+              "path": "141-09175-240.dmg.aea",
+              "digest_sha384": "bd86d718c6a8db74d7d3a152c901e2b2c95d82a8a14679fd5555cb9e90fa692af2a9ad9b7f2177c21ffe6987120ed7a6"
+            },
+            {
+              "name": "Ap,ExclaveOSIntegrityCatalog",
+              "path": "Firmware/141-09175-240.dmg.aea.integrity_catalog",
+              "digest_sha384": "8a97bddb9a96d7a5946545dfc128d1a1eeffd7588c13d38eb830873da1baa97e646830776ce85482e1f535bee92dedc1"
+            },
+            {
+              "name": "Ap,ExclaveOSTrustCache",
+              "path": "Firmware/141-09175-240.dmg.aea.trustcache",
+              "digest_sha384": "2d28d2bb175aa13bb18a27f341ec3e7c8e7a1970fe0065b3a7d652c7e541e28117ed1d0727af9259adf8b30378736aa2"
+            },
+            {
+              "name": "Ap,ExclaveOSVolume",
+              "path": "Firmware/141-09175-240.dmg.aea.root_hash",
+              "digest_sha384": "2f3e0171767e5ce1a02a7e8795aa6b11ee251abe2125046da219f0a71417eeda31dcf05f3a0761a233dd03f0fb7a364c"
+            },
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8140.RELEASE.restore.im4p",
+              "digest_sha384": "371d4eee37238255ebc8e552723c3888b15394cd226daaead9d5b348c8543ce84e0bee876b4a184637447790c44cdd9b"
+            },
+            {
+              "name": "Ap,cL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8140.RELEASE.im4p",
+              "digest_sha384": "f3ee2be596ea1fe76c1b78d6e65171cade33a9ade96cdfc46f6585079a9506bfd3df455be6555acd42a8ddee405d75b1"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "d3aef763bd45653f29931d36dca32da8ac7f8ac3eee198e83a5f88b238d09993b0bab56ebe810f2a6c7205a7c07a297f"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "7c497a89a15e24187440eebfb8e8cb65ef3f9fa16c14732a686d05f61f872c8604941f79a76f119df75a1696c3a85a6d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8140"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "f8399205f31ac5ae731a86e951ece58ff89a51aaa4861f1c601553040362723e55af8d823e6a7687b1988c70bb1f6659"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "53ca8de58382bcb6e575e0231da54bc8db947c4915b24645f156c08109b60ccbd1025046a605eedb2c422be7b68aacfb"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d94ap.im4p",
+              "digest_sha384": "ee73ba14b5df3985d06c421cdb9446c70785c27f00266d23e4f33c0e1af7906073896dc85fc04525c8463367633e2cb6"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d94ap.im4p",
+              "digest_sha384": "bb87515727cdccce97386ecd3e423d504e89d31b071883236f363799601f47c37cf56e248c9ec6b2dff01b5fa2729cb5"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "USBPortController1,USBFirmware",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 2,
+          "variant": "Recovery Customer Install",
+          "restore_behavior": "Erase",
+          "device_class": "d94ap",
+          "build_number": "24B119",
+          "ap_board_id": "0x0E",
+          "ap_chip_id": "0x8140",
+          "component_count": 30,
+          "exclave_component_count": 1,
+          "exclave_components": [
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8140.RELEASE.restore.im4p",
+              "digest_sha384": "371d4eee37238255ebc8e552723c3888b15394cd226daaead9d5b348c8543ce84e0bee876b4a184637447790c44cdd9b"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "d3aef763bd45653f29931d36dca32da8ac7f8ac3eee198e83a5f88b238d09993b0bab56ebe810f2a6c7205a7c07a297f"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8140.release.im4p",
+              "digest_sha384": "7c497a89a15e24187440eebfb8e8cb65ef3f9fa16c14732a686d05f61f872c8604941f79a76f119df75a1696c3a85a6d"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8140"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "67646890f1d2f372250d43cfd5b0508e063056b6edf13e8b1ebf5b47aa2ff3cc8ae570520798141750f77c22a853bf52"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "d1f47d55fd17c64cc83b06458acc1d06b1a1897174332c61e63b92fee0083a119b59d366676ab973a73b610168360f3b"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "f8399205f31ac5ae731a86e951ece58ff89a51aaa4861f1c601553040362723e55af8d823e6a7687b1988c70bb1f6659"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.iphone17",
+              "digest_sha384": "53ca8de58382bcb6e575e0231da54bc8db947c4915b24645f156c08109b60ccbd1025046a605eedb2c422be7b68aacfb"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.d94ap.im4p",
+              "digest_sha384": "ee73ba14b5df3985d06c421cdb9446c70785c27f00266d23e4f33c0e1af7906073896dc85fc04525c8463367633e2cb6"
+            }
+          ],
+          "coprocessor_components": [
+            "AOP",
+            "GFX",
+            "ISP",
+            "PMP",
+            "RestoreANS",
+            "RestoreDCP",
+            "SIO"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        }
+      ],
+      "identity0_component_names": [
+        "ANE",
+        "ANS",
+        "AOP",
+        "AOP2",
+        "AVE",
+        "Ap,ApplePMCFirmware",
+        "Ap,AudioBootChime",
+        "Ap,ExclaveOS",
+        "Ap,ExclaveOSIntegrityCatalog",
+        "Ap,ExclaveOSTrustCache",
+        "Ap,ExclaveOSVolume",
+        "Ap,GFX1Firmware",
+        "Ap,LowPowerMode",
+        "Ap,RestoreSecureM3Firmware",
+        "Ap,RestoreSecurePageTableMonitor",
+        "Ap,RestoreTrustedExecutionMonitor",
+        "Ap,RestorecL4",
+        "Ap,SecureM3Firmware",
+        "Ap,SecurePageTableMonitor",
+        "Ap,SystemVolumeCanonicalMetadata",
+        "Ap,TrustedExecutionMonitor",
+        "Ap,cL4",
+        "AppleLogo",
+        "BMU,DigestMap",
+        "BMU,FirmwareMap",
+        "BasebandFirmware",
+        "Cryptex1,AppOS",
+        "Cryptex1,AppTrustCache",
+        "Cryptex1,AppVolume",
+        "Cryptex1,SystemOS",
+        "Cryptex1,SystemTrustCache",
+        "Cryptex1,SystemVolume",
+        "DCP",
+        "DeviceTree",
+        "GFX",
+        "ISP",
+        "KernelCache",
+        "LLB",
+        "LeapHaptics",
+        "Liquid",
+        "MtpFirmware",
+        "Multitouch",
+        "OS",
+        "PMP",
+        "Rap,RTKitIOConfig",
+        "Rap,RTKitOS",
+        "Rap,SoftwareBinaryDsp1",
+        "RecoveryMode",
+        "RestoreANS",
+        "RestoreDCP",
+        "RestoreDeviceTree",
+        "RestoreKernelCache",
+        "RestoreLogo",
+        "RestoreRamDisk",
+        "RestoreSEP",
+        "RestoreTrustCache",
+        "SE,RapRTKitOS",
+        "SE,RapSwBinDsp",
+        "SE,UpdatePayload",
+        "SEP",
+        "SIO",
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Prod-Patch",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Prod-Patch",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "SepStage1",
+        "StaticTrustCache",
+        "SystemVolume",
+        "USBPortController1,USBFirmware",
+        "WCHFirmwareUpdater",
+        "Yonkers,SepObject",
+        "Yonkers,SysTopPatch0",
+        "Yonkers,SysTopPatch1",
+        "Yonkers,SysTopPatch2",
+        "Yonkers,SysTopPatch3",
+        "Yonkers,SysTopPatch4",
+        "Yonkers,SysTopPatch5",
+        "Yonkers,SysTopPatch6",
+        "Yonkers,SysTopPatch7",
+        "Yonkers,SysTopPatch8",
+        "Yonkers,SysTopPatch9",
+        "Yonkers,SysTopPatchA",
+        "Yonkers,SysTopPatchB",
+        "Yonkers,SysTopPatchC",
+        "Yonkers,SysTopPatchD",
+        "Yonkers,SysTopPatchE",
+        "Yonkers,SysTopPatchF",
+        "eUICC,Gold",
+        "eUICC,Main",
+        "ftap",
+        "ftsp",
+        "iBEC",
+        "iBSS",
+        "iBoot",
+        "iBootData",
+        "rfta",
+        "rfts"
+      ]
+    },
+    {
+      "manifest_id": "M5",
+      "family": "A19 Pro",
+      "role": "reference manifest",
+      "product_type": "iPhone18,1",
+      "build_number": "24A446",
+      "sha256": "4e91acd9a28cb98b322c8e14904ff501da1406fa40fed3a2dfece9cf9299052d",
+      "bytes": 816945,
+      "plist_parse": "ok",
+      "manifest_version": 0,
+      "product_version": "27.0.1",
+      "product_build_version": "24A446",
+      "supported_product_types": [
+        "iPhone18,1"
+      ],
+      "identity_count": 3,
+      "identities": [
+        {
+          "index": 0,
+          "variant": "Customer Erase Install (IPSW)",
+          "restore_behavior": "Erase",
+          "device_class": "v53ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x0C",
+          "ap_chip_id": "0x8150",
+          "component_count": 169,
+          "exclave_component_count": 6,
+          "exclave_components": [
+            {
+              "name": "Ap,ExclaveOS",
+              "path": "043-69399-761.dmg.aea",
+              "digest_sha384": "b4006db55cb1545a64b03946887acebfa6a02bfe6772e826cacdc446a778d31ced04578a441671bab1ab6b7cd52133e3"
+            },
+            {
+              "name": "Ap,ExclaveOSIntegrityCatalog",
+              "path": "Firmware/043-69399-761.dmg.aea.integrity_catalog",
+              "digest_sha384": "3acfad8e24e7bb7853028595e9b84c56a37b8403bfd71e18e21e9ac7cb98fa4a36d4179ecb26e8b714907c8c949d135c"
+            },
+            {
+              "name": "Ap,ExclaveOSTrustCache",
+              "path": "Firmware/043-69399-761.dmg.aea.trustcache",
+              "digest_sha384": "a1c96630beff49ae3c05b019ba101a9897383e6f180316c521eb0eed9a36b8ac2c4de97eff6bef1e4950be7f3cef2482"
+            },
+            {
+              "name": "Ap,ExclaveOSVolume",
+              "path": "Firmware/043-69399-761.dmg.aea.root_hash",
+              "digest_sha384": "a574a2f1220779e8b44910b7e112a13b95449ff061af50423f56a56f1fc0cb77e7678327533370a9f6f675fa2edb7372"
+            },
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8150.RELEASE.restore.im4p",
+              "digest_sha384": "24453433e5b40a1c391e5bf1e418134d8ab05b6f6d7b0918dc8bc4f747ad8313b65096c8b8a74b4b0cecfcb56e88fbfd"
+            },
+            {
+              "name": "Ap,cL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8150.RELEASE.im4p",
+              "digest_sha384": "5e57f2573819adf6402ef3d86bed0dda855761ea0aebdb815eb95a15a2c5fb176cd3a9ba570e7fe0990e17ee10fbcb0c"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "2c288996629dcd11cb1920a23730cbb4b0195e63fb1c042d4f5263b4d37bb3b1ad67fd04c0115f8707ebc114b14a021e"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "b239e8258da310eae11f20bca0160a1d6d1d25d94a2d445204ab909fc457cec14fcaa0fb7ca8e3a70cf859e731505454"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8150"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "8180aef0a22282b33a2173ec8beac7ac25331e0ba87c3827480661495be6fcc83db3c268be4d026d4214156301f86198"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "2a5d859ec062a741b5af929339561defde47f605d5ec8e7c162ba902da8c52b293256a6948f7a9786bae2947e21cac71"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.v53ap.im4p",
+              "digest_sha384": "de1c9e8b2066f55caed22ecaf4f33c2b137747fc277bdd6af17474c7f02458cb646fba4ca34ff66b4ab3b5e40816f810"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.v53ap.im4p",
+              "digest_sha384": "2b732b48cbc7a458e703a48321153642a5e1541bb9b97e27b378beb0049a878f3c46c10aebfc93bd223d8efdb74277fd"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 1,
+          "variant": "Customer Upgrade Install (IPSW)",
+          "restore_behavior": "Update",
+          "device_class": "v53ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x0C",
+          "ap_chip_id": "0x8150",
+          "component_count": 169,
+          "exclave_component_count": 6,
+          "exclave_components": [
+            {
+              "name": "Ap,ExclaveOS",
+              "path": "043-69399-761.dmg.aea",
+              "digest_sha384": "b4006db55cb1545a64b03946887acebfa6a02bfe6772e826cacdc446a778d31ced04578a441671bab1ab6b7cd52133e3"
+            },
+            {
+              "name": "Ap,ExclaveOSIntegrityCatalog",
+              "path": "Firmware/043-69399-761.dmg.aea.integrity_catalog",
+              "digest_sha384": "3acfad8e24e7bb7853028595e9b84c56a37b8403bfd71e18e21e9ac7cb98fa4a36d4179ecb26e8b714907c8c949d135c"
+            },
+            {
+              "name": "Ap,ExclaveOSTrustCache",
+              "path": "Firmware/043-69399-761.dmg.aea.trustcache",
+              "digest_sha384": "a1c96630beff49ae3c05b019ba101a9897383e6f180316c521eb0eed9a36b8ac2c4de97eff6bef1e4950be7f3cef2482"
+            },
+            {
+              "name": "Ap,ExclaveOSVolume",
+              "path": "Firmware/043-69399-761.dmg.aea.root_hash",
+              "digest_sha384": "a574a2f1220779e8b44910b7e112a13b95449ff061af50423f56a56f1fc0cb77e7678327533370a9f6f675fa2edb7372"
+            },
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8150.RELEASE.restore.im4p",
+              "digest_sha384": "24453433e5b40a1c391e5bf1e418134d8ab05b6f6d7b0918dc8bc4f747ad8313b65096c8b8a74b4b0cecfcb56e88fbfd"
+            },
+            {
+              "name": "Ap,cL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8150.RELEASE.im4p",
+              "digest_sha384": "5e57f2573819adf6402ef3d86bed0dda855761ea0aebdb815eb95a15a2c5fb176cd3a9ba570e7fe0990e17ee10fbcb0c"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "2c288996629dcd11cb1920a23730cbb4b0195e63fb1c042d4f5263b4d37bb3b1ad67fd04c0115f8707ebc114b14a021e"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "b239e8258da310eae11f20bca0160a1d6d1d25d94a2d445204ab909fc457cec14fcaa0fb7ca8e3a70cf859e731505454"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8150"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "8180aef0a22282b33a2173ec8beac7ac25331e0ba87c3827480661495be6fcc83db3c268be4d026d4214156301f86198"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "2a5d859ec062a741b5af929339561defde47f605d5ec8e7c162ba902da8c52b293256a6948f7a9786bae2947e21cac71"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.v53ap.im4p",
+              "digest_sha384": "de1c9e8b2066f55caed22ecaf4f33c2b137747fc277bdd6af17474c7f02458cb646fba4ca34ff66b4ab3b5e40816f810"
+            },
+            {
+              "name": "RestoreDeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.v53ap.im4p",
+              "digest_sha384": "2b732b48cbc7a458e703a48321153642a5e1541bb9b97e27b378beb0049a878f3c46c10aebfc93bd223d8efdb74277fd"
+            }
+          ],
+          "coprocessor_components": [
+            "ANE",
+            "ANS",
+            "AOP",
+            "AVE",
+            "BasebandFirmware",
+            "DCP",
+            "GFX",
+            "ISP",
+            "LeapHaptics",
+            "Liquid",
+            "MtpFirmware",
+            "Multitouch",
+            "PMP",
+            "Rap,RTKitIOConfig",
+            "Rap,RTKitOS",
+            "Rap,SoftwareBinaryDsp1",
+            "RestoreANS",
+            "RestoreDCP",
+            "RestoreSEP",
+            "SE,RapRTKitOS",
+            "SE,RapSwBinDsp",
+            "SE,UpdatePayload",
+            "SEP",
+            "SIO",
+            "SepStage1",
+            "WCHFirmwareUpdater"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        },
+        {
+          "index": 2,
+          "variant": "Recovery Customer Install",
+          "restore_behavior": "Erase",
+          "device_class": "v53ap",
+          "build_number": "24A446",
+          "ap_board_id": "0x0C",
+          "ap_chip_id": "0x8150",
+          "component_count": 69,
+          "exclave_component_count": 1,
+          "exclave_components": [
+            {
+              "name": "Ap,RestorecL4",
+              "path": "Firmware/image4/exclavecore_bundle.t8150.RELEASE.restore.im4p",
+              "digest_sha384": "24453433e5b40a1c391e5bf1e418134d8ab05b6f6d7b0918dc8bc4f747ad8313b65096c8b8a74b4b0cecfcb56e88fbfd"
+            }
+          ],
+          "sptm_components": [
+            {
+              "name": "Ap,RestoreSecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "2c288996629dcd11cb1920a23730cbb4b0195e63fb1c042d4f5263b4d37bb3b1ad67fd04c0115f8707ebc114b14a021e"
+            },
+            {
+              "name": "Ap,SecurePageTableMonitor",
+              "path": "Firmware/sptm.t8150.release.im4p",
+              "digest_sha384": "b239e8258da310eae11f20bca0160a1d6d1d25d94a2d445204ab909fc457cec14fcaa0fb7ca8e3a70cf859e731505454"
+            }
+          ],
+          "monitor_image_tokens": [
+            "t8150"
+          ],
+          "txm_components": [
+            {
+              "name": "Ap,RestoreTrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "573a242a31c5f094d0c9f133d2c028efc5c6242816875fdf44d2450d32acee8ca4548898eda3988d9a8aa46f2b33b06d"
+            },
+            {
+              "name": "Ap,TrustedExecutionMonitor",
+              "path": "Firmware/txm.iphoneos.release.im4p",
+              "digest_sha384": "6b5c4cc10785a68743b80af7b5a7fc6846fef4fb12c197e85aa5709e199753c3a4e798c98ba5d3e938f974b40f28796f"
+            }
+          ],
+          "kernelcache_components": [
+            {
+              "name": "KernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "8180aef0a22282b33a2173ec8beac7ac25331e0ba87c3827480661495be6fcc83db3c268be4d026d4214156301f86198"
+            },
+            {
+              "name": "RestoreKernelCache",
+              "path": "kernelcache.release.v53",
+              "digest_sha384": "2a5d859ec062a741b5af929339561defde47f605d5ec8e7c162ba902da8c52b293256a6948f7a9786bae2947e21cac71"
+            }
+          ],
+          "devicetree_components": [
+            {
+              "name": "DeviceTree",
+              "path": "Firmware/all_flash/DeviceTree.v53ap.im4p",
+              "digest_sha384": "de1c9e8b2066f55caed22ecaf4f33c2b137747fc277bdd6af17474c7f02458cb646fba4ca34ff66b4ab3b5e40816f810"
+            }
+          ],
+          "coprocessor_components": [
+            "AOP",
+            "GFX",
+            "ISP",
+            "PMP",
+            "RestoreANS",
+            "RestoreDCP",
+            "SIO"
+          ],
+          "consistency": {
+            "build_number_matches_manifest": true,
+            "product_type_listed": true,
+            "component_map_nonempty": true
+          }
+        }
+      ],
+      "identity0_component_names": [
+        "ANE",
+        "ANS",
+        "AOP",
+        "AOP2",
+        "AVE",
+        "Ap,ApplePMCFirmware",
+        "Ap,AppleVideoEncoder0",
+        "Ap,AppleVideoEncoder1",
+        "Ap,AppleVideoEncoder2",
+        "Ap,AppleVideoEncoder3",
+        "Ap,AppleVideoEncoder4",
+        "Ap,AppleVideoEncoder5",
+        "Ap,AppleVideoEncoder6",
+        "Ap,AppleVideoEncoder7",
+        "Ap,AppleVideoEncoder8",
+        "Ap,AudioBootChime",
+        "Ap,ExclaveOS",
+        "Ap,ExclaveOSIntegrityCatalog",
+        "Ap,ExclaveOSTrustCache",
+        "Ap,ExclaveOSVolume",
+        "Ap,GFX1Firmware",
+        "Ap,HapticAssets",
+        "Ap,LowPowerMode",
+        "Ap,MSRFirmware",
+        "Ap,RestoreMSRFirmware",
+        "Ap,RestoreSecureM3Firmware",
+        "Ap,RestoreSecurePageTableMonitor",
+        "Ap,RestoreTrustedExecutionMonitor",
+        "Ap,RestorecL4",
+        "Ap,SecureM3Firmware",
+        "Ap,SecurePageTableMonitor",
+        "Ap,SystemVolumeCanonicalMetadata",
+        "Ap,TrustedExecutionMonitor",
+        "Ap,cL4",
+        "AppleLogo",
+        "BMU,DigestMap",
+        "BMU,FirmwareMap",
+        "BMU2,DigestMap",
+        "BMU2,FirmwareMap",
+        "BasebandFirmware",
+        "Cryptex1,AppOS",
+        "Cryptex1,AppTrustCache",
+        "Cryptex1,AppVolume",
+        "Cryptex1,SystemOS",
+        "Cryptex1,SystemTrustCache",
+        "Cryptex1,SystemVolume",
+        "DCP",
+        "DeviceTree",
+        "GFX",
+        "ISP",
+        "JasmineIR1,FwPatch0",
+        "JasmineIR1,FwPatch1",
+        "JasmineIR1,FwPatch2",
+        "JasmineIR1,FwPatch3",
+        "JasmineIR1,FwPatch4",
+        "JasmineIR1,FwPatch5",
+        "JasmineIR1,FwPatch6",
+        "JasmineIR1,FwPatch7",
+        "JasmineIR1,FwPatch8",
+        "JasmineIR1,FwPatch9",
+        "JasmineIR1,FwPatchA",
+        "JasmineIR1,FwPatchB",
+        "JasmineIR1,FwPatchC",
+        "JasmineIR1,FwPatchD",
+        "JasmineIR1,FwPatchE",
+        "JasmineIR1,FwPatchF",
+        "JasmineIR1,SepObject",
+        "JasmineIR1,VideoPatch0",
+        "JasmineIR1,VideoPatch1",
+        "JasmineIR1,VideoPatch2",
+        "JasmineIR1,VideoPatch3",
+        "JasmineIR1,VideoPatch4",
+        "JasmineIR1,VideoPatch5",
+        "JasmineIR1,VideoPatch6",
+        "JasmineIR1,VideoPatch7",
+        "KernelCache",
+        "LLB",
+        "LeapHaptics",
+        "Liquid",
+        "MtpFirmware",
+        "Multitouch",
+        "OS",
+        "PMP",
+        "Rap,RTKitIOConfig",
+        "Rap,RTKitOS",
+        "Rap,SoftwareBinaryDsp1",
+        "RecoveryMode",
+        "RestoreANS",
+        "RestoreDCP",
+        "RestoreDeviceTree",
+        "RestoreKernelCache",
+        "RestoreLogo",
+        "RestoreRamDisk",
+        "RestoreSEP",
+        "RestoreTrustCache",
+        "SE,RapRTKitOS",
+        "SE,RapSwBinDsp",
+        "SE,UpdatePayload",
+        "SEP",
+        "SIO",
+        "SepStage1",
+        "StaticTrustCache",
+        "SystemVolume",
+        "WCHFirmwareUpdater",
+        "Wireless1,ACIBT",
+        "Wireless1,ACIBTLPEM",
+        "Wireless1,ACIBTManuf",
+        "Wireless1,ACIWIFI",
+        "Wireless1,ACIWiFiTxManuf",
+        "Wireless1,BTSecondary",
+        "Wireless1,BTSecondaryManuf",
+        "Wireless1,CCPUApplicationFirmware",
+        "Wireless1,CoexRealTimeArbiter",
+        "Wireless1,PhyBlueTooth",
+        "Wireless1,PhyBlueTooth5G",
+        "Wireless1,PhyBlueTooth5GManuf",
+        "Wireless1,PhyBlueToothLPM",
+        "Wireless1,PhyBlueToothManuf",
+        "Wireless1,PhyBluetooth5GTrim",
+        "Wireless1,PhyBluetoothTrim",
+        "Wireless1,RTKitOS",
+        "Wireless1,RTKitOSLPEM",
+        "Wireless1,ScanBTLPEM",
+        "Wireless1,ScanBTManuf",
+        "Wireless1,ScanBluetooth",
+        "Wireless1,ScanWifi",
+        "Wireless1,ScanWifiManuf",
+        "Wireless1,WiFiRx",
+        "Wireless1,WiFiRxManuf",
+        "Wireless1,WiFiTx",
+        "Wireless1,WiFiTxManuf",
+        "Wireless1,Wifi2GLMAC",
+        "Wireless1,Wifi2GLMACManuf",
+        "Wireless1,Wifi2GLPhy",
+        "Wireless1,Wifi2GLPhyManuf",
+        "Wireless1,Wifi2GLPhyTrim",
+        "Wireless1,Wifi5GLMAC",
+        "Wireless1,Wifi5GLMACManuf",
+        "Wireless1,Wifi5GLPhy",
+        "Wireless1,Wifi5GLPhyManuf",
+        "Wireless1,Wifi5GLPhyTrim",
+        "Wireless1,WifiRegData",
+        "Yonkers,SepObject",
+        "Yonkers,SysTopPatch0",
+        "Yonkers,SysTopPatch1",
+        "Yonkers,SysTopPatch2",
+        "Yonkers,SysTopPatch3",
+        "Yonkers,SysTopPatch4",
+        "Yonkers,SysTopPatch5",
+        "Yonkers,SysTopPatch6",
+        "Yonkers,SysTopPatch7",
+        "Yonkers,SysTopPatch8",
+        "Yonkers,SysTopPatch9",
+        "Yonkers,SysTopPatchA",
+        "Yonkers,SysTopPatchB",
+        "Yonkers,SysTopPatchC",
+        "Yonkers,SysTopPatchD",
+        "Yonkers,SysTopPatchE",
+        "Yonkers,SysTopPatchF",
+        "eUICC,Gold",
+        "eUICC,Main",
+        "ftap",
+        "ftsp",
+        "iBEC",
+        "iBSS",
+        "iBoot",
+        "iBootData",
+        "rfta",
+        "rfts"
+      ]
+    }
+  ],
+  "chip_token_observations": [
+    {
+      "manifest_id": "M1",
+      "product_type": "iPhone16,2",
+      "ap_chip_id_values": [
+        "0x8130"
+      ],
+      "monitor_image_tokens": [
+        "t8122"
+      ]
+    },
+    {
+      "manifest_id": "M2",
+      "product_type": "iPhone16,2",
+      "ap_chip_id_values": [
+        "0x8130"
+      ],
+      "monitor_image_tokens": [
+        "t8122"
+      ]
+    },
+    {
+      "manifest_id": "M3",
+      "product_type": "iPhone16,2",
+      "ap_chip_id_values": [
+        "0x8130"
+      ],
+      "monitor_image_tokens": [
+        "t8122"
+      ]
+    },
+    {
+      "manifest_id": "M4",
+      "product_type": "iPhone17,2",
+      "ap_chip_id_values": [
+        "0x8140"
+      ],
+      "monitor_image_tokens": [
+        "t8140"
+      ]
+    },
+    {
+      "manifest_id": "M5",
+      "product_type": "iPhone18,1",
+      "ap_chip_id_values": [
+        "0x8150"
+      ],
+      "monitor_image_tokens": [
+        "t8150"
+      ]
+    }
+  ],
+  "identity0_comparisons": {
+    "M1_vs_M4_identity0": {
+      "shared_name_count": 92,
+      "only_in_M1": [
+        "Ap,HapticAssets",
+        "Savage,B0-Dev-PatchVT",
+        "Savage,B0-Prod-PatchVT",
+        "Savage,B2-Dev-PatchVT",
+        "Savage,B2-Prod-PatchVT"
+      ],
+      "only_in_M4": [
+        "AOP2",
+        "Ap,ApplePMCFirmware",
+        "Ap,ExclaveOS",
+        "Ap,ExclaveOSIntegrityCatalog",
+        "Ap,ExclaveOSTrustCache",
+        "Ap,ExclaveOSVolume",
+        "Ap,GFX1Firmware",
+        "Ap,RestoreSecureM3Firmware",
+        "Ap,RestorecL4",
+        "Ap,SecureM3Firmware",
+        "Ap,cL4"
+      ]
+    },
+    "M1_vs_M5_identity0": {
+      "shared_name_count": 82,
+      "only_in_M1": [
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Dev-PatchVT",
+        "Savage,B0-Prod-Patch",
+        "Savage,B0-Prod-PatchVT",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Dev-PatchVT",
+        "Savage,B2-Prod-Patch",
+        "Savage,B2-Prod-PatchVT",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "USBPortController1,USBFirmware"
+      ],
+      "only_in_M5": [
+        "AOP2",
+        "Ap,ApplePMCFirmware",
+        "Ap,AppleVideoEncoder0",
+        "Ap,AppleVideoEncoder1",
+        "Ap,AppleVideoEncoder2",
+        "Ap,AppleVideoEncoder3",
+        "Ap,AppleVideoEncoder4",
+        "Ap,AppleVideoEncoder5",
+        "Ap,AppleVideoEncoder6",
+        "Ap,AppleVideoEncoder7",
+        "Ap,AppleVideoEncoder8",
+        "Ap,ExclaveOS",
+        "Ap,ExclaveOSIntegrityCatalog",
+        "Ap,ExclaveOSTrustCache",
+        "Ap,ExclaveOSVolume",
+        "Ap,GFX1Firmware",
+        "Ap,MSRFirmware",
+        "Ap,RestoreMSRFirmware",
+        "Ap,RestoreSecureM3Firmware",
+        "Ap,RestorecL4",
+        "Ap,SecureM3Firmware",
+        "Ap,cL4",
+        "BMU2,DigestMap",
+        "BMU2,FirmwareMap",
+        "JasmineIR1,FwPatch0",
+        "JasmineIR1,FwPatch1",
+        "JasmineIR1,FwPatch2",
+        "JasmineIR1,FwPatch3",
+        "JasmineIR1,FwPatch4",
+        "JasmineIR1,FwPatch5",
+        "JasmineIR1,FwPatch6",
+        "JasmineIR1,FwPatch7",
+        "JasmineIR1,FwPatch8",
+        "JasmineIR1,FwPatch9",
+        "JasmineIR1,FwPatchA",
+        "JasmineIR1,FwPatchB",
+        "JasmineIR1,FwPatchC",
+        "JasmineIR1,FwPatchD",
+        "JasmineIR1,FwPatchE",
+        "JasmineIR1,FwPatchF",
+        "JasmineIR1,SepObject",
+        "JasmineIR1,VideoPatch0",
+        "JasmineIR1,VideoPatch1",
+        "JasmineIR1,VideoPatch2",
+        "JasmineIR1,VideoPatch3",
+        "JasmineIR1,VideoPatch4",
+        "JasmineIR1,VideoPatch5",
+        "JasmineIR1,VideoPatch6",
+        "JasmineIR1,VideoPatch7",
+        "Wireless1,ACIBT",
+        "Wireless1,ACIBTLPEM",
+        "Wireless1,ACIBTManuf",
+        "Wireless1,ACIWIFI",
+        "Wireless1,ACIWiFiTxManuf",
+        "Wireless1,BTSecondary",
+        "Wireless1,BTSecondaryManuf",
+        "Wireless1,CCPUApplicationFirmware",
+        "Wireless1,CoexRealTimeArbiter",
+        "Wireless1,PhyBlueTooth",
+        "Wireless1,PhyBlueTooth5G",
+        "Wireless1,PhyBlueTooth5GManuf",
+        "Wireless1,PhyBlueToothLPM",
+        "Wireless1,PhyBlueToothManuf",
+        "Wireless1,PhyBluetooth5GTrim",
+        "Wireless1,PhyBluetoothTrim",
+        "Wireless1,RTKitOS",
+        "Wireless1,RTKitOSLPEM",
+        "Wireless1,ScanBTLPEM",
+        "Wireless1,ScanBTManuf",
+        "Wireless1,ScanBluetooth",
+        "Wireless1,ScanWifi",
+        "Wireless1,ScanWifiManuf",
+        "Wireless1,WiFiRx",
+        "Wireless1,WiFiRxManuf",
+        "Wireless1,WiFiTx",
+        "Wireless1,WiFiTxManuf",
+        "Wireless1,Wifi2GLMAC",
+        "Wireless1,Wifi2GLMACManuf",
+        "Wireless1,Wifi2GLPhy",
+        "Wireless1,Wifi2GLPhyManuf",
+        "Wireless1,Wifi2GLPhyTrim",
+        "Wireless1,Wifi5GLMAC",
+        "Wireless1,Wifi5GLMACManuf",
+        "Wireless1,Wifi5GLPhy",
+        "Wireless1,Wifi5GLPhyManuf",
+        "Wireless1,Wifi5GLPhyTrim",
+        "Wireless1,WifiRegData"
+      ]
+    },
+    "M4_vs_M5_identity0": {
+      "shared_name_count": 92,
+      "only_in_M4": [
+        "Savage,B0-Dev-Patch",
+        "Savage,B0-Prod-Patch",
+        "Savage,B2-Dev-Patch",
+        "Savage,B2-Prod-Patch",
+        "Savage,BA-Dev-Patch",
+        "Savage,BA-Prod-Patch",
+        "Savage,BE-Dev-Patch",
+        "Savage,BE-Prod-Patch",
+        "Savage,BF-Dev-Patch",
+        "Savage,BF-Prod-Patch",
+        "USBPortController1,USBFirmware"
+      ],
+      "only_in_M5": [
+        "Ap,AppleVideoEncoder0",
+        "Ap,AppleVideoEncoder1",
+        "Ap,AppleVideoEncoder2",
+        "Ap,AppleVideoEncoder3",
+        "Ap,AppleVideoEncoder4",
+        "Ap,AppleVideoEncoder5",
+        "Ap,AppleVideoEncoder6",
+        "Ap,AppleVideoEncoder7",
+        "Ap,AppleVideoEncoder8",
+        "Ap,HapticAssets",
+        "Ap,MSRFirmware",
+        "Ap,RestoreMSRFirmware",
+        "BMU2,DigestMap",
+        "BMU2,FirmwareMap",
+        "JasmineIR1,FwPatch0",
+        "JasmineIR1,FwPatch1",
+        "JasmineIR1,FwPatch2",
+        "JasmineIR1,FwPatch3",
+        "JasmineIR1,FwPatch4",
+        "JasmineIR1,FwPatch5",
+        "JasmineIR1,FwPatch6",
+        "JasmineIR1,FwPatch7",
+        "JasmineIR1,FwPatch8",
+        "JasmineIR1,FwPatch9",
+        "JasmineIR1,FwPatchA",
+        "JasmineIR1,FwPatchB",
+        "JasmineIR1,FwPatchC",
+        "JasmineIR1,FwPatchD",
+        "JasmineIR1,FwPatchE",
+        "JasmineIR1,FwPatchF",
+        "JasmineIR1,SepObject",
+        "JasmineIR1,VideoPatch0",
+        "JasmineIR1,VideoPatch1",
+        "JasmineIR1,VideoPatch2",
+        "JasmineIR1,VideoPatch3",
+        "JasmineIR1,VideoPatch4",
+        "JasmineIR1,VideoPatch5",
+        "JasmineIR1,VideoPatch6",
+        "JasmineIR1,VideoPatch7",
+        "Wireless1,ACIBT",
+        "Wireless1,ACIBTLPEM",
+        "Wireless1,ACIBTManuf",
+        "Wireless1,ACIWIFI",
+        "Wireless1,ACIWiFiTxManuf",
+        "Wireless1,BTSecondary",
+        "Wireless1,BTSecondaryManuf",
+        "Wireless1,CCPUApplicationFirmware",
+        "Wireless1,CoexRealTimeArbiter",
+        "Wireless1,PhyBlueTooth",
+        "Wireless1,PhyBlueTooth5G",
+        "Wireless1,PhyBlueTooth5GManuf",
+        "Wireless1,PhyBlueToothLPM",
+        "Wireless1,PhyBlueToothManuf",
+        "Wireless1,PhyBluetooth5GTrim",
+        "Wireless1,PhyBluetoothTrim",
+        "Wireless1,RTKitOS",
+        "Wireless1,RTKitOSLPEM",
+        "Wireless1,ScanBTLPEM",
+        "Wireless1,ScanBTManuf",
+        "Wireless1,ScanBluetooth",
+        "Wireless1,ScanWifi",
+        "Wireless1,ScanWifiManuf",
+        "Wireless1,WiFiRx",
+        "Wireless1,WiFiRxManuf",
+        "Wireless1,WiFiTx",
+        "Wireless1,WiFiTxManuf",
+        "Wireless1,Wifi2GLMAC",
+        "Wireless1,Wifi2GLMACManuf",
+        "Wireless1,Wifi2GLPhy",
+        "Wireless1,Wifi2GLPhyManuf",
+        "Wireless1,Wifi2GLPhyTrim",
+        "Wireless1,Wifi5GLMAC",
+        "Wireless1,Wifi5GLMACManuf",
+        "Wireless1,Wifi5GLPhy",
+        "Wireless1,Wifi5GLPhyManuf",
+        "Wireless1,Wifi5GLPhyTrim",
+        "Wireless1,WifiRegData"
+      ]
+    }
+  },
+  "limitations": [
+    "Manifest-level metadata only. Presence of a component name is not evidence that the component runs, is signed for use, or is enabled on a device.",
+    "Absence of an exclave-named component in a manifest is not proof that the component is absent from the device or from the firmware image set.",
+    "The monitor token in a file name is not, by itself, an authoritative chip identifier. The manifest ApChipID field is recorded separately and is not mapped to a marketing name here.",
+    "Only three BuildIdentities per manifest were enumerated. Other restore paths, if any, are outside the manifest data inspected.",
+    "Coprocessor names are recorded as names only. Their functions are not inferred."
+  ],
+  "public_source_observations": {
+    "date": "2026-11-12",
+    "source": "S-057",
+    "xnu_exclave_code_search_total": 168,
+    "xnu_chip_identifier_search_totals": {
+      "T8130": 3,
+      "T8122": 3,
+      "T8140": 0,
+      "T8150": 0
+    },
+    "method": "Repository code search results (count and path only); no function-level review."
+  },
+  "string_observations": {
+    "date": "2026-11-12",
+    "source": "S-043",
+    "target_build": "24A446 (iPhone16,2)",
+    "kernelcache_exclave_prefix": {
+      "total_occurrences": 702,
+      "distinct_forms": 187,
+      "conclave_prefix_occurrences": 8
+    },
+    "sptm_t8122_exclave_prefix": {
+      "total_occurrences": 13,
+      "distinct_forms": 10,
+      "conclave_prefix_occurrences": 0
+    },
+    "method": "Counts of case-insensitive matches in decompressed local copies of the public payloads. Identifier names are not published.",
+    "interpretation_limit": "Static string presence only. Not evidence of enabled or functional exclave code on any device."
+  }
+}

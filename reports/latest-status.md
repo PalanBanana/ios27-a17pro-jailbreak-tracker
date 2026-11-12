@@ -36,7 +36,7 @@
 
 ## Dataset
 
-**Data snapshot (2026-11-12):** 136 claims (87 verified, 27 partially verified, 22 unverified), 56 sources, 35 timeline events, 18 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 168 claims (114 verified, 29 partially verified, 25 unverified), 61 sources, 38 timeline events, 20 compatibility rows and 4 firmware builds.
 
 ## Open items
 

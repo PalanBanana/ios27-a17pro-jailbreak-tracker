@@ -2035,7 +2035,7 @@
       "S-047"
     ],
     "contradicting_source_ids": [],
-    "limitations": "A technical result stated by the repository. Not reproduced or confirmed independently. Not transferable to the A17 Pro.",
+    "limitations": "A technical result stated by the repository. Not reproduced or confirmed independently. Not transferable to the A17 Pro. Direction 10 wording at commit 73f7a579ce91 is recorded in C-165 (container boundary in userland; not kernel code execution).",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
   },
@@ -2235,7 +2235,7 @@
       "S-056"
     ],
     "contradicting_source_ids": [],
-    "limitations": "A difference in what the packages list. Its reason and any behavioural effect are not established.",
+    "limitations": "A difference in what the packages list. Its reason and any behavioural effect are not established. Re-enumerated on 2026-11-12: all three BuildIdentities of each A17 Pro manifest were inspected (C-157); the A18 Pro and A19 Pro counts are in C-158.",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
   },
@@ -2275,7 +2275,7 @@
       "S-056"
     ],
     "contradicting_source_ids": [],
-    "limitations": "Unresolved. No mapping claim is made beyond what the manifests show.",
+    "limitations": "Unresolved. No mapping claim is made beyond what the manifests show. On 2026-11-12, C-159 and C-160 recorded the manifest ApChipID and token values and a non-authoritative identifier. No source reviewed maps the monitor token to a marketing name.",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
   },
@@ -2517,5 +2517,627 @@
     "limitations": "Metadata only. The 17 Pro in the description is the iPhone 17 Pro (A19 Pro), not the tracker's target. No compatibility inference is drawn.",
     "first_observed": "2026-11-12",
     "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-138",
+    "title": "Apple describes Secure Exclaves as an architecture for camera and microphone ambient sensing",
+    "description": "Apple's article 'Secure Exclaves and Ambient Sensing' (SEAR and Core OS, published 2026-11-12) says the design aims to run ambient sensing 'in a strongly isolated environment with the full power of the main application processor'. It also says: 'We believe Secure Exclaves are the most advanced architecture for ambient sensing in the industry.' The second statement is Apple's own assessment.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Products named by Apple (see C-139); no iPhone 15 Pro Max or A17 Pro statement",
+    "chipset_scope": "Apple silicon; no chip generation named",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's statements about its own architecture. Not independently verified and not a device result.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-139",
+    "title": "Apple's Secure Exclaves article names five products and no A-series, M-series or T-series chip",
+    "description": "The article names iPhone 18 Pro, iPhone 18 Pro Max and iPhone Duo (on-screen indicators), MacBook Neo (camera indicator) and HomeView (camera indicator and person recognition). It names no A-series, M-series or T-series chip, and no iPhone 15, iPhone 16 or iPhone 17 model. It does not map its product names to ProductType identifiers.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 18 Pro, iPhone 18 Pro Max, iPhone Duo, MacBook Neo and HomeView (as named)",
+    "chipset_scope": "None named",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Absence statements come from a search of the fetched text on 2026-11-12. The article's three embedded diagrams were not read.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-140",
+    "title": "Apple states that exclave isolation uses capabilities and that the design has no extraneous authority",
+    "description": "Apple's article says the exclaves microkernel uses capabilities, which are 'secure resource handles that both identify and authorize access to the underlying resource', and that the system 'contains no extraneous authority'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A design statement. No implementation evidence for any device is recorded.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-141",
+    "title": "Apple gives two different accounts of where the exclaves microkernel comes from",
+    "description": "The article's architecture section calls the microkernel 'an Apple-customized version of the L4 microkernel'. Its technical deep dive says that the exclaves microkernel was 'developed from scratch at Apple'. The article does not reconcile the two statements.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The inconsistency is inside the article. No other source reviewed settles which account is accurate.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-142",
+    "title": "Apple places exclaveOS on the exclaves microkernel and isolates it from XNU and Darwin user space",
+    "description": "The article says that exclaveOS 'builds on the exclaves microkernel to create an environment isolated from XNU and Darwin user space'. Its external-architecture section describes XNU, Darwin user space and exclaveOS as the software that runs on the application processor cores.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Application processor cores (no chip named)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Architecture description only. The article publishes no code or implementation detail.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-143",
+    "title": "Apple states that Secure IPC is written in Swift and that exclaves communicate only through explicit capabilities",
+    "description": "The article says Secure IPC is 'written in Swift for memory safety'. By default, exclaves are 'unable to communicate or even refer to one another', and an exclave 'may only initiate IPC if it has an explicit capability to an IPC connection'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Architecture-level statements. Interface definitions and runtime behaviour are not published in the article.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-144",
+    "title": "Apple states that the Exclave Indicator Controller gates sensor data and keeps the Siri indicator visible for at least three seconds",
+    "description": "The article calls the Exclave Indicator Controller 'the overall system gatekeeper for sensor data'. In its Siri example the indicator stays on screen until the session ends, 'with a minimum duration of three seconds'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Named products in the Siri example",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The Siri example applies to the named product. The article does not state indicator rules for other products.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-145",
+    "title": "Apple states that on SPTM-protected products the kernel cannot write page-table entries",
+    "description": "The article says: 'On SPTM-protected products, the kernel cannot write a page table entry itself.' Each mapping change is a request that the SPTM validates against policy before it is applied. The article does not name the SPTM-protected products.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Applicability to the target is not stated. See C-107 and C-162.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-146",
+    "title": "Apple describes the SPTM as running above the main OS kernel and loaded separately by the boot loader",
+    "description": "The article says the SPTM 'runs at a higher privilege level than the main OS kernel', 'doesn't share data or code with the main OS', and 'is separately loaded by the boot loader'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The article does not name the products that load the SPTM in this way.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-147",
+    "title": "Apple states that exclave-private memory is typed so that the kernel cannot retype, map or read it",
+    "description": "The article says Secure Exclave private memory 'is assigned types that only the Secure Exclave context owns', that 'The OS kernel cannot retype these pages', and that 'Even the SPTM itself, by design, keeps no mapping to this memory'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Design statement. No implementation evidence for any device is recorded.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-148",
+    "title": "Apple states that memory filters can be configured only by the SPTM",
+    "description": "The article places memory filters 'between each resource and the shared fabric, which can only be configured by the SPTM'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The article does not list which resources or products have memory filters.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-149",
+    "title": "Apple states that its Neural Engine uses isolated workload queues modelled on SEP queues",
+    "description": "The article says Apple 'extended the Apple Neural Engine (ANE) by adding isolated workload queues, like those we use in the SEP'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Apple Neural Engine (generation not named)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The article does not state which Neural Engine generation has these queues.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-150",
+    "title": "Apple states that its formal verification of the exclaves microkernel is incremental and not complete",
+    "description": "The article says Apple uses Isabelle/HOL with AutoCorres2 to model the kernel's C implementation and applies formal verification 'gradually and incrementally to different parts'. It also says: 'we do not claim complete coverage of all aspects of the kernel'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The article makes no formal-verification claim for the SPTM, exclaveOS, Secure IPC, the Exclave Indicator Controller or memory filters. That is a reading of the article text, not a statement by Apple that those parts are unverified.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-151",
+    "title": "Apple reports defect classes found by its formal verification of the exclaves microkernel",
+    "description": "The article says the verification work found, in core subsystems, 'incomplete input validation of syscalls, inconsistent state updates, misaligned reads, and malformed page-table updates' that could otherwise have led to kernel compromise.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's own report of its results. The project has not reviewed the findings.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-152",
+    "title": "Apple's Platform Security guide describes sepOS as based on an Apple-customised L4 microkernel",
+    "description": "Apple's Platform Security guide (sepOS page) states that 'The Secure Enclave firmware' is 'based on an Apple-customised version of the L4 microkernel'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Secure Enclave (not device-specific)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-059"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Read from the page's raw HTML; the visible-text extraction was partial. The sentence describes sepOS, the Secure Enclave firmware, not the Exclaves microkernel.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-153",
+    "title": "Apple's public XNU repository contains exclave source files",
+    "description": "A code search of the apple-oss-distributions/xnu repository for 'exclave' returned 168 results on 2026-11-12, including iokit/Exclaves/Exclaves.h and osfmk/kern/exclaves_xnuproxy.c.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-057"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A search-index result on the access date; counts change with the index. The files were not read in full. Source presence is not evidence of runtime use on any device.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-154",
+    "title": "Apple's XNU repository pairs T8122 with T8130 and returns no hits for T8140 or T8150",
+    "description": "On 2026-11-12 the XNU repository's board-configuration header tested the macro ARM64_BOARD_CONFIG_T8122_T8130, a make-definitions file listed t8122 among SPTM-enabled SoCs for macOS builds, and code searches for T8140 and T8150 returned no results.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "T8122 and T8130 (identifiers only)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-057"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Search-index snapshot; the public source may not match iOS 27.0.1. The configuration grouping is a build statement, not a marketing mapping.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-155",
+    "title": "Press reporting links exclave references in XNU to M4 and A18 processors",
+    "description": "The Register reported on 2025-03-08 that exclave references in XNU source for M4 chips and for the A18 processors in iPhone 16 led its unnamed source to argue for a redesign of XNU's security model.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "M4 and A18 (as reported)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-060"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A single press report based on an unnamed source. The project has not checked the M4 or A18 references in the source.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: REPORTED OR LEAD ONLY. Not verified by this project."
+  },
+  {
+    "id": "C-156",
+    "title": "Press reporting dates the term 'exclaves' in Apple software to 2023",
+    "description": "The 2025 press report says the term first surfaced in an Apple open-source libc file in 2023 and then in iOS 17, citing a blog analysis.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 17 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-060"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A secondary report of a primary observation that this project has not reproduced.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: REPORTED OR LEAD ONLY. Not verified by this project."
+  },
+  {
+    "id": "C-157",
+    "title": "The three inspected A17 Pro manifests list no exclave-named component in any of their nine identities",
+    "description": "The BuildManifest files for iPhone16,2 at builds 24A446, 24B119 and 24B156 each parse completely and list three BuildIdentities (Erase, Update and Recovery). None of the nine identities lists a component whose name or path contains 'exclave'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2 (A17 Pro)",
+    "chipset_scope": "A17 Pro (ApChipID 0x8130)",
+    "ios_scope": "27.0.1, 27.2 and 27.2.1",
+    "build_scope": "24A446, 24B119, 24B156",
+    "supporting_source_ids": [
+      "S-043",
+      "S-044",
+      "S-045"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Manifest metadata. An absent manifest entry does not prove absence from the device or from the firmware set. See the reconciliation report.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS MANIFEST METADATA (static). Not a device result."
+  },
+  {
+    "id": "C-158",
+    "title": "The A18 Pro and A19 Pro manifests list six exclave-named components in each erase and update identity",
+    "description": "The BuildManifest files for iPhone17,2 (build 24B119) and iPhone18,1 (build 24A446) each list six exclave-named components in the Erase and Update identities: Ap,ExclaveOS, Ap,ExclaveOSIntegrityCatalog, Ap,ExclaveOSTrustCache, Ap,ExclaveOSVolume, Ap,cL4 and Ap,RestorecL4. The Recovery identity lists Ap,RestorecL4 only.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone17,2 (A18 Pro); iPhone18,1 (A19 Pro)",
+    "chipset_scope": "A18 Pro (ApChipID 0x8140); A19 Pro (ApChipID 0x8150)",
+    "ios_scope": "27.2 (24B119); 27.0.1 (24A446)",
+    "build_scope": "24B119; 24A446",
+    "supporting_source_ids": [
+      "S-056",
+      "S-055"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Manifest metadata for two comparison devices. The components' functions and runtime use are not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS MANIFEST METADATA (static). Not a device result."
+  },
+  {
+    "id": "C-159",
+    "title": "In the A17 Pro manifests the monitor token t8122 differs from the chip identifier 0x8130; the A18 Pro and A19 Pro tokens match",
+    "description": "Each inspected manifest names its SPTM image with a monitor token: t8122 for iPhone16,2, t8140 for iPhone17,2 and t8150 for iPhone18,1. The BuildIdentity ApChipID values are 0x8130, 0x8140 and 0x8150. For the A18 Pro and A19 Pro the token equals the ApChipID value; for the A17 Pro it does not.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2; iPhone17,2; iPhone18,1",
+    "chipset_scope": "A17 Pro, A18 Pro, A19 Pro (manifest values)",
+    "ios_scope": "Not applicable",
+    "build_scope": "24A446, 24B119",
+    "supporting_source_ids": [
+      "S-043",
+      "S-055",
+      "S-056"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The reason for the A17 Pro difference is not established. The token is not treated as the chip identifier.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS MANIFEST METADATA (static). Not a device result."
+  },
+  {
+    "id": "C-160",
+    "title": "The A17 Pro identifier 0x8130 matches T8130 in a community wiki, and XNU groups T8122 with T8130",
+    "description": "The manifest ApChipID 0x8130 matches the identifier T8130 that a community wiki gives for the A17 Pro. The XNU repository groups T8122 with T8130 in one board configuration. No Apple source reviewed states the marketing mapping, and no source reviewed maps the monitor token t8122 to a marketing name.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone16,2",
+    "chipset_scope": "A17 Pro (ApChipID 0x8130; T8130 as a wiki identifier)",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043",
+      "S-057",
+      "S-061"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The wiki was read as a search snippet only (tier 3). The XNU grouping is a build statement. The marketing mapping is not verified from an authoritative source.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: PARTIALLY VERIFIED. The manifest value and the XNU grouping support the pairing; the marketing name rests on a non-authoritative source."
+  },
+  {
+    "id": "C-161",
+    "title": "The target build's kernelcache and SPTM image contain exclave-prefixed identifiers as static strings",
+    "description": "In the decompressed kernelcache of the public iOS 27.0.1 (24A446) iPhone16,2 firmware package, identifiers beginning with 'exclave' occur 702 times in 187 distinct forms. In the decompressed SPTM image (token t8122), they occur 13 times in 10 distinct forms. Identifier names are not published here.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone16,2",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Static string presence only. It is not a functional, runtime or device result and does not show that any feature is enabled. Counts come from a local decompressed copy.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS STATIC STRING PRESENCE IN A PUBLIC IMAGE. Not a functional, runtime or device result."
+  },
+  {
+    "id": "C-162",
+    "title": "Secure Exclaves ambient-sensing features are implemented on the A17 Pro (iPhone 15 Pro Max)",
+    "description": "Recorded as an open question. Apple's article names no A17 Pro or iPhone 15 Pro Max product, and no independent evidence for the target was found.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [
+      "S-043"
+    ],
+    "limitations": "No checkable support for the claim itself. The supporting source shows only that the article names no A17 Pro product; the contradicting source lists no exclaveOS image for the target. Future evidence would need an Apple statement naming the product or an independent reproduction on the exact target.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: NOT VERIFIED. No outcome of any of the three kinds is reached for the target."
+  },
+  {
+    "id": "C-163",
+    "title": "The A17 Pro package names no exclaveOS image, but its SPTM and kernelcache carry exclaveOS-related strings",
+    "description": "The three inspected A17 Pro manifests list no exclaveOS image component (no ExclaveOS, integrity catalog, trust cache, volume or cL4 entry). The target's decompressed SPTM image contains the strings 'exclaveosintegritycatalog' and 'exclaveostrustcache', and its kernelcache contains exclave-prefixed identifiers (C-161).",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "iPhone16,2",
+    "chipset_scope": "A17 Pro",
+    "ios_scope": "27.0.1",
+    "build_scope": "24A446",
+    "supporting_source_ids": [
+      "S-043"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Whether these strings correspond to a packaged exclaveOS image, and whether any such code runs, is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS STATIC STRING PRESENCE IN A PUBLIC IMAGE. Not a functional, runtime or device result."
+  },
+  {
+    "id": "C-164",
+    "title": "The SKVLENT repository's main branch matched the v0.4.0 snapshot on 2026-11-12",
+    "description": "A compare of commit 73f7a579ce91 with the default branch returned 'identical' on 2026-11-12. The latest commit on the default branch is 73f7a579ce91, committed 2026-11-12T00:50:18Z.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Repository (not device-specific)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A repository state at the access date. The repository may change after this date.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-165",
+    "title": "SKVLENT's README describes direction 10 as a container-boundary crossing in userland, not kernel code execution",
+    "description": "At commit 73f7a579ce91 the README table labels direction 10 'Sandbox escape to other containers' (status: demonstrated). The text says the escape 'crosses a container boundary in userland; it is not kernel code execution', and that kernel read/write and a jailbreak were not demonstrated on the stated configuration.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "A19 Pro configuration as stated by the repository",
+    "chipset_scope": "Not stated",
+    "ios_scope": "27.0.1 (as stated)",
+    "build_scope": "24A446 (as stated)",
+    "supporting_source_ids": [
+      "S-047"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Repository statement. Not reproduced or verified by this project.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-166",
+    "title": "Erosion's 0.3.1 release notes and its README disagree on tweaks for iOS 26",
+    "description": "Erosion release 0.3.1 (2026-11-10) states 'Allow Config Tweaks on iOS/iPadOS 26'. The README FAQ at commit 585a24a973d1 says MobileGestalt tweaks 'do not work' on iOS 26, because worse_query cannot write MobileGestalt there.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 26 (as stated)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-048"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The two statements may refer to different tweak classes (config tweaks and MobileGestalt tweaks). The difference is not resolved.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-167",
+    "title": "Ecosystem repository states re-checked on 2026-11-12 matched the v0.4.0 records",
+    "description": "On 2026-11-12, the default-branch heads, latest releases and licence metadata of Dopamine (3.0.13), Sileo (2.5.1), Procursus, the official ElleKit repository, the former ElleKit repository (tealbathingsuit/ellekit, pushed 2026-07-31, BSD-3-Clause, no release) and the iMaxTomas tracker matched the v0.4.0 records. The repository opa334/ElleKit is a different repository (pushed 2024-04-26) and is not the former repository.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-050",
+      "S-052",
+      "S-051",
+      "S-031",
+      "S-040",
+      "S-054"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Repository metadata on the access date. Build status and CI results of these repositories were not checked.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS A REPOSITORY STATEMENT at the access date. Not a technical result."
+  },
+  {
+    "id": "C-168",
+    "title": "Apple's article says the groundwork for isolation was laid in earlier releases",
+    "description": "The article says 'We laid the groundwork for isolation in earlier releases', by rebuilding a subsystem as the Secure Page Table Monitor. It does not name the earlier releases.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not device-specific",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The timing of the SPTM groundwork is not established by this statement.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
+  },
+  {
+    "id": "C-169",
+    "title": "Apple's article says a display exclave checks drawn pixels for indicators on products like iPhone",
+    "description": "The article says that for 'products like iPhone that use an indicator dot on the screen', a display exclave 'uses a specialized hardware block in the display subsystem to check what pixels have been drawn to the screen'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone (as a product class named by Apple)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-058"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The article names iPhone as a product class. It does not name iPhone 15 Pro Max or the A17 Pro.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12",
+    "notes": "Verification outcome: VERIFIED AS AN APPLE DOCUMENT STATEMENT. Not an implementation result on any device."
   }
 ]

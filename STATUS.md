@@ -10,11 +10,11 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 | GO / NO-GO | **NO-GO.** Required conditions are unmet (see [docs/RESEARCH_METHODOLOGY.md](docs/RESEARCH_METHODOLOGY.md)). |
 | Device operations performed by this project | None. The project does not connect to, inspect, or modify any maintainer-owned device. |
 | Public repository | PalanBanana/ios27-a17pro-jailbreak-tracker (public) |
-| Latest release | v0.4.0 (cross-device sandbox research audit and A17 Pro compatibility), created only after the CI workflows pass for the release commit. Earlier releases v0.3.0, v0.2.0, v0.1.1 and v0.1.0 are unchanged. See the Releases page. |
+| Latest release | v0.5.0 (Secure Exclaves architecture and A17 Pro exclave applicability), created only after the CI workflows pass for the release commit. Earlier releases v0.4.0, v0.3.0, v0.2.0, v0.1.1 and v0.1.0 are unchanged. See the Releases page. |
 
 ## Data
 
-**Data snapshot (2026-11-12):** 136 claims (87 verified, 27 partially verified, 22 unverified), 56 sources, 35 timeline events, 18 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 168 claims (114 verified, 29 partially verified, 25 unverified), 61 sources, 38 timeline events, 20 compatibility rows and 4 firmware builds.
 
 ## Research priorities
 
@@ -29,8 +29,11 @@ No compatibility is marked verified without evidence. The target readiness stays
 1. **Primary sources:** as of 2026-11-12, the Hexacon 2026 programme pages, any primary Calif.io statement, the opa334 PSA of 2026-10-17, and a primary write-up of the November kernel read/write announcement have not been located.
 2. **Signing status:** a third-party index (ipsw.me, S-014; checked 2026-11-12) lists 24A446 as not signed. A community reference (S-026) reported it as signed on 2026-11-02, so the status changed between observations. The change date is not known (C-021, E-030).
 3. **Apple records:** Apple's iOS 27, 27.2 and 27.2.1 advisories are parsed (`research/apple-27x-cve-mapping.md`). Apple states no affected version range for any entry, so the applicability of each entry to 24A446 is not established.
+4. **Secure Exclaves applicability:** Apple's article names no A17 Pro product. The A17 Pro manifests list no exclave-named component, and the target's kernelcache and SPTM contain exclave identifiers as static strings. Applicability is not established (C-162, C-157, C-161).
 
 ## Latest update
+
+- 2026-11-12 (v0.5.0 research update): Apple's Secure Exclaves article analysed in full; BuildIdentities of the A17 Pro, A18 Pro and A19 Pro manifests enumerated with hashes preserved; static exclave-identifier checks on the target build; XNU public-source observations; SKVLENT, Erosion and ecosystem repositories re-checked and unchanged. Readiness unchanged (LEVEL 0 / NO-GO). Details in CHANGELOG.md.
 
 - 2026-11-12 (local Ghidra analysis, no release): static analysis of the 24A446 kernelcache and the SPTM and TXM images. Provenance verified for the kernelcache and monitor containers; restore-entry digests unresolved; full-package hash not computed. Records C-078 to C-088, source S-043, timeline E-031. Readiness unchanged (LEVEL 0 / NO-GO).
 - 2026-11-12 (v0.2.0 research update): Apple's iOS 27.2 and 27.2.1 advisories parsed and mapped; the upstream reference reconciled claim by claim; Dopamine 3.0 release notes read; the independent SPTM paper's scope checked; a November project claim recorded as unverified; the 24A446 signing change recorded. Readiness unchanged (LEVEL 0 / NO-GO). Details in CHANGELOG.md.

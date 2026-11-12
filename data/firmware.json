@@ -201,7 +201,7 @@
     "cve_status": "none_published",
     "cves": [],
     "patched_vulnerabilities": [],
-    "relevant_kernel_changes": "No CVE entries are published for 27.0.1 (Apple index). Build 24A446 is later than 27.0, where the Apple-listed kernel entries are fixed; that ordering is an inference. Per-build kernel differences were not reviewed.",
+    "relevant_kernel_changes": "No CVE entries are published for 27.0.1 (Apple index). Build 24A446 is later than 27.0, where the Apple-listed kernel entries are fixed; that ordering is an inference. Per-build kernel differences were not reviewed. 2026-11-12 manifest check: none of the three BuildIdentities lists an exclave-named component (C-157). The decompressed kernelcache and SPTM image contain exclave-prefixed identifiers as static strings (C-161); this is not evidence of function.",
     "exploit_compatibility": "No verified public exploit compatibility for 24A446 on iPhone 15 Pro Max. The public demonstration reports concern an iPhone 18 Pro (A20 Pro), not this target.",
     "a17pro_compatibility": "not_established",
     "source_ids": [
@@ -391,7 +391,7 @@
     "patched_vulnerabilities": [
       "All 162 CVE-2026 identifiers on Apple's iOS 27.2 page are listed here. 15 are in the Kernel component. 23 have a kernel-memory impact (4 write, 12 corruption, 1 copy-on-write, 6 read or disclosure). 6 are credited to Calif.io and none of those has a kernel-memory impact. The page has no kernel or root privilege entry. The press figure of 163 differs from the 162 identifiers in the extracted text (C-046)."
     ],
-    "relevant_kernel_changes": "Apple's iOS 27.2 page lists kernel-memory write, corruption, copy-on-write, read and disclosure entries (research/apple-27x-cve-mapping.md). It states no affected version range, so it does not show whether iOS 27.0.1 was affected (C-047). It has no kernel or root privilege entry (C-074).",
+    "relevant_kernel_changes": "Apple's iOS 27.2 page lists kernel-memory write, corruption, copy-on-write, read and disclosure entries (research/apple-27x-cve-mapping.md). It states no affected version range, so it does not show whether iOS 27.0.1 was affected (C-047). It has no kernel or root privilege entry (C-074). 2026-11-12 manifest check: none of the three BuildIdentities lists an exclave-named component (C-157). Strings were not analysed for this build in v0.5.0.",
     "exploit_compatibility": "No verified public exploit compatibility for 27.2 on iPhone 15 Pro Max. The Calif.io-credited entries in 27.2 have no kernel-memory impact (C-042).",
     "a17pro_compatibility": "not_established",
     "source_ids": [
@@ -431,7 +431,7 @@
     "patched_vulnerabilities": [
       "Nine CVE identifiers on Apple's iOS 27.2.1 page. None is listed under the Kernel component or has a kernel-memory impact (C-045)."
     ],
-    "relevant_kernel_changes": "No kernel-memory entries on the 27.2.1 page (C-045).",
+    "relevant_kernel_changes": "No kernel-memory entries on the 27.2.1 page (C-045). 2026-11-12 manifest check: none of the three BuildIdentities lists an exclave-named component (C-157). Strings were not analysed for this build in v0.5.0.",
     "exploit_compatibility": "No verified public exploit compatibility for 24B156 on iPhone 15 Pro Max.",
     "a17pro_compatibility": "not_established",
     "source_ids": [

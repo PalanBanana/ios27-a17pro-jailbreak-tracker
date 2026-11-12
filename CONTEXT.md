@@ -18,6 +18,9 @@ Definitions used across the repository. Where a term has a project-specific mean
 - **Signing / signed window**: Apple signs a firmware build only for a limited period. An installed build is not necessarily restorable.
 - **SHSH blobs**: signed restore tickets. They do not guarantee a restore after Apple stops signing a build.
 - **Downgrade**: installing an older signed build. Not possible once that build is no longer signed.
+- **BuildIdentity**: an entry in a BuildManifest for one restore path, such as Erase, Update or Recovery. A manifest lists several.
+- **ApChipID**: the chip identifier in a BuildIdentity, for example 0x8130 for iPhone16,2. It is not the same as a monitor token.
+- **Monitor token**: the token in a monitor image file name, for example t8122 in sptm.t8122. It is not a marketing name (C-159).
 
 ## Security architecture
 
@@ -28,6 +31,12 @@ Definitions used across the repository. Where a term has a project-specific mean
 - **EMTE (Enhanced Memory Tagging Extension)**: the hardware tagging foundation that Apple names for MIE (S-003).
 - **PAC (Pointer Authentication Codes)**: pointer-integrity feature that Apple's platform guide lists (S-004).
 - **AMFI (Apple Mobile File Integrity)**: code-signing enforcement component. Not researched in this pass.
+- **Secure Exclaves**: Apple's architecture for isolated camera and microphone processing in ambient sensing (S-058). Applicability to the target is not established (C-162).
+- **exclaveOS**: the operating system built on the exclaves microkernel and isolated from XNU and Darwin user space (S-058).
+- **Exclaves microkernel**: the capability-based kernel under exclaveOS. Apple gives two accounts of its origin (C-141).
+- **Secure IPC**: the interface, compiler and runtime system that governs exclave communication (C-143).
+- **Exclave Indicator Controller (EIC)**: the exclave that gates sensor data after an indicator check (C-144).
+- **SEP and sepOS**: the Secure Enclave Processor and its firmware sepOS, which Apple's guide describes as based on an Apple-customised L4 microkernel (C-152).
 
 ## Vulnerabilities and exploitation
 
@@ -61,3 +70,4 @@ Definitions used across the repository. Where a term has a project-specific mean
 - **Readiness level**: LEVEL 0 (research only) to LEVEL 6 (daily-driver stability). See `docs/RESEARCH_METHODOLOGY.md`.
 - **GO / NO-GO**: the decision on a real-device jailbreak attempt. The current decision is NO-GO.
 - **Daily-driver stability**: evidence that a jailbroken device remains reliable for daily use. None exists for the target.
+- **Static string presence**: an identifier found in a public firmware image. It is not evidence of a function, an enabled feature or a runtime result.

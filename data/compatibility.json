@@ -12,9 +12,11 @@
     },
     "evidence_claim_ids": [
       "C-013",
-      "C-014"
+      "C-014",
+      "C-145",
+      "C-157"
     ],
-    "notes": "Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. No public A17 Pro SPTM research specific to 27.0.1 was located.",
+    "notes": "Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. No public A17 Pro SPTM research specific to 27.0.1 was located. 2026-11-12: manifest metadata shows an SPTM image for the target build (C-157, C-159). Apple states that the kernel cannot write page-table entries on SPTM-protected products without naming them (C-145). No A17 Pro runtime evidence.",
     "last_checked": "2026-11-12"
   },
   {
@@ -186,9 +188,10 @@
       "C-065",
       "C-066",
       "C-133",
-      "C-135"
+      "C-135",
+      "C-167"
     ],
-    "notes": "No bootstrap for iOS 27.0.1 is verified. Dopamine's 3.0.2 to 3.0.13 release notes do not mention iOS 27 (C-055). The 3.0 release states that real-device SPTM support ends at iOS 17.3.1 (C-066). Its Titan bypass covers iOS 16.5.1 to 17.3.1 (C-065). A third-party table lists A14 to A17 for iOS 17.3.1 and earlier (C-016). The current Dopamine README lists no iOS 27 range (C-133). The Procursus README states no iOS range in the lines read (C-135). Not established for the target.",
+    "notes": "No bootstrap for iOS 27.0.1 is verified. Dopamine's 3.0.2 to 3.0.13 release notes do not mention iOS 27 (C-055). The 3.0 release states that real-device SPTM support ends at iOS 17.3.1 (C-066). Its Titan bypass covers iOS 16.5.1 to 17.3.1 (C-065). A third-party table lists A14 to A17 for iOS 17.3.1 and earlier (C-016). The current Dopamine README lists no iOS 27 range (C-133). The Procursus README states no iOS range in the lines read (C-135). Not established for the target. 2026-11-12 re-check: default-branch heads and release records unchanged (C-167).",
     "last_checked": "2026-11-12"
   },
   {
@@ -206,9 +209,10 @@
       "C-030",
       "C-056",
       "C-057",
-      "C-134"
+      "C-134",
+      "C-167"
     ],
-    "notes": "Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). The former ElleKit repository identifier redirects to tealbathingsuit/ellekit, which has no GitHub release (C-056). An upstream claim that ElleKit 1.2 covers iOS 27 is unverified (C-057). Package-manager readiness for iOS 27.0.1 is not established. The official ElleKit repository states no version range and has no release (C-134). The latest Sileo release is 2.5.1 (2024-10-08). Not established for the target.",
+    "notes": "Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). The former ElleKit repository identifier redirects to tealbathingsuit/ellekit, which has no GitHub release (C-056). An upstream claim that ElleKit 1.2 covers iOS 27 is unverified (C-057). Package-manager readiness for iOS 27.0.1 is not established. The official ElleKit repository states no version range and has no release (C-134). The latest Sileo release is 2.5.1 (2024-10-08). Not established for the target. 2026-11-12 re-check: default-branch heads and release records unchanged (C-167).",
     "last_checked": "2026-11-12"
   },
   {
@@ -301,9 +305,10 @@
     "evidence_claim_ids": [
       "C-109",
       "C-111",
-      "C-114"
+      "C-114",
+      "C-165"
     ],
-    "notes": "The SKVLENT repository states boundary crossings into other applications' containers and shared groups on an A19 Pro configuration (27.0.1). These are repository statements. No A17 Pro evidence exists. Kernel read, kernel write and a jailbreak are stated as not demonstrated. Not transferred to the target.",
+    "notes": "The SKVLENT repository states boundary crossings into other applications' containers and shared groups on an A19 Pro configuration (27.0.1). These are repository statements. No A17 Pro evidence exists. Kernel read, kernel write and a jailbreak are stated as not demonstrated. Not transferred to the target. 2026-11-12: the README wording for direction 10 is a container-boundary crossing in userland, not kernel code execution (C-165).",
     "last_checked": "2026-11-12"
   },
   {
@@ -322,9 +327,10 @@
       "C-127",
       "C-128",
       "C-129",
-      "C-132"
+      "C-132",
+      "C-166"
     ],
-    "notes": "The declared iOS range includes 27.0.1 by range only. The project names no device or SoC, and its repository records no device reports. It documents no kernel access, bootstrap, root or persistence. It warns of possible data loss. A17 Pro compatibility is not established.",
+    "notes": "The declared iOS range includes 27.0.1 by range only. The project names no device or SoC, and its repository records no device reports. It documents no kernel access, bootstrap, root or persistence. It warns of possible data loss. A17 Pro compatibility is not established. 2026-11-12: the README header and supported list disagree on the iOS 26 upper bound (26.7.2 against 26.6.2), and the 0.3.1 tweak note differs from the README FAQ (C-166).",
     "last_checked": "2026-11-12"
   },
   {
@@ -345,9 +351,53 @@
       "C-122",
       "C-123",
       "C-124",
-      "C-125"
+      "C-125",
+      "C-157",
+      "C-159",
+      "C-160"
     ],
-    "notes": "Manifest-level differences only. The A17 Pro package lists no exclave-related component in any identity. The A18 Pro and A19 Pro packages list six per erase identity. The chip-token mapping is unresolved. The reason for the difference and any behavioural effect are not established.",
+    "notes": "Manifest-level differences only. The A17 Pro package lists no exclave-related component in any identity. The A18 Pro and A19 Pro packages list six per erase identity. The chip-token mapping is unresolved. The reason for the difference and any behavioural effect are not established. 2026-11-12: all three BuildIdentities of each inspected A17 Pro manifest were enumerated (C-157). The chip-identifier pairing is partially verified (C-160).",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "CMP-019",
+    "category": "Exact Build Verification",
+    "status": "not_established",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-157",
+      "C-158",
+      "C-159",
+      "C-161",
+      "C-162",
+      "C-163"
+    ],
+    "notes": "Secure Exclaves applicability to the target. Manifest metadata shows no exclave-named component in any of the three A17 Pro BuildIdentities for build 24A446 (and for the other two inspected builds). The target kernelcache and SPTM contain exclave-prefixed identifiers as static strings. Apple's article names no A17 Pro product. No device, runtime or independent evidence. Status: not established. The A18 Pro and A19 Pro rows of the reconciliation are manifest-level only and are not evidence for the target.",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "CMP-020",
+    "category": "Exact Build Verification",
+    "status": "partially_verified",
+    "target": {
+      "device_identifier": "iPhone16,2",
+      "device_name": "iPhone 15 Pro Max",
+      "chipset": "A17 Pro",
+      "ios_version": "27.0.1",
+      "build_number": "24A446"
+    },
+    "evidence_claim_ids": [
+      "C-159",
+      "C-160",
+      "C-124"
+    ],
+    "notes": "Chip identifier for the target. The manifest ApChipID 0x8130 and a community wiki identifier T8130 agree. The SPTM monitor token t8122 differs from the ApChipID and is not mapped to a marketing name by any authoritative source reviewed. The XNU repository groups T8122 with T8130 in one board configuration. Partially verified; the marketing mapping rests on a non-authoritative source.",
     "last_checked": "2026-11-12"
   }
 ]

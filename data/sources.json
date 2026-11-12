@@ -576,7 +576,8 @@
     "source_type": "official_repository_api",
     "verification_method": "api_response",
     "associated_claim_ids": [
-      "C-030"
+      "C-030",
+      "C-167"
     ],
     "reliability_notes": "GitHub API response for the latest release of the repository named Sileo/Sileo: tag 2.5.1, published 2024-10-08. The release notes do not mention iOS 27. The repository's identity is taken from its name and was not confirmed against a project website, so the source is tier 2.",
     "notes": null
@@ -746,7 +747,8 @@
     "verification_method": "api_response",
     "associated_claim_ids": [
       "C-056",
-      "C-057"
+      "C-057",
+      "C-167"
     ],
     "reliability_notes": "GitHub API response, retrieved 2026-11-12. The former evelyneee/ellekit identifier redirects to repository ID 559919558, which is this repository. Its description is 'yet another tweak injector / tweak hooking library for darwin systems'. Created 2022-10-31; last pushed 2026-07-31; no GitHub release. Whether it is the ElleKit project named in other sources is not confirmed by a project statement.",
     "notes": null
@@ -825,7 +827,13 @@
       "C-122",
       "C-123",
       "C-124",
-      "C-125"
+      "C-125",
+      "C-157",
+      "C-159",
+      "C-160",
+      "C-161",
+      "C-162",
+      "C-163"
     ],
     "reliability_notes": "Partial remote extraction of the official package on 2026-11-12, by HTTP range requests: BuildManifest.plist, the kernelcache IM4P container, and the SPTM and TXM IM4P containers. Manifest digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed. The expected SHA-256 is listed by the firmware index and in the CDN object metadata.",
     "notes": null
@@ -846,7 +854,8 @@
       "C-090",
       "C-093",
       "C-094",
-      "C-095"
+      "C-095",
+      "C-157"
     ],
     "reliability_notes": "Partial remote retrieval on 2026-11-12 by HTTP range requests: BuildManifest.plist and the kernelcache, SPTM and TXM IM4P containers. Normal digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed.",
     "notes": null
@@ -867,7 +876,8 @@
       "C-092",
       "C-093",
       "C-094",
-      "C-095"
+      "C-095",
+      "C-157"
     ],
     "reliability_notes": "Partial remote retrieval on 2026-11-12 by HTTP range requests: BuildManifest.plist and the kernelcache, SPTM and TXM IM4P containers. Normal digests were checked against the retrieved containers. The complete package was not downloaded, so its full-file hash was not computed.",
     "notes": null
@@ -914,7 +924,9 @@
       "C-115",
       "C-116",
       "C-117",
-      "C-118"
+      "C-118",
+      "C-164",
+      "C-165"
     ],
     "reliability_notes": "Original research publication (tier 1 under the methodology). Statements are the repository's own at the audited commit. Technical results were not reproduced. The repository states that no exploit is published. Operational material in some direction folders was not reproduced or used. Licence: educational use with attribution.",
     "notes": null
@@ -937,7 +949,8 @@
       "C-129",
       "C-130",
       "C-131",
-      "C-132"
+      "C-132",
+      "C-166"
     ],
     "reliability_notes": "Official source repository and its release records (tier 1). README and release notes read in full. Source code and IPA assets were not reviewed or downloaded. Commit 585a24a973d1 (2026-11-10). GPL-3.0.",
     "notes": null
@@ -972,7 +985,8 @@
     "source_type": "official_repository_readme",
     "verification_method": "fetched_full_text",
     "associated_claim_ids": [
-      "C-133"
+      "C-133",
+      "C-167"
     ],
     "reliability_notes": "Official repository README (457 bytes), read in full at the default-branch head. Repository metadata: MIT licence; last push 2026-11-03.",
     "notes": null
@@ -989,7 +1003,8 @@
     "source_type": "official_repository_readme",
     "verification_method": "fetched_full_text",
     "associated_claim_ids": [
-      "C-134"
+      "C-134",
+      "C-167"
     ],
     "reliability_notes": "README (359 bytes) read in full. No GitHub release. No licence field. The README names maintainers and states no version range.",
     "notes": null
@@ -1006,7 +1021,8 @@
     "source_type": "official_repository_readme",
     "verification_method": "fetched_partial_text",
     "associated_claim_ids": [
-      "C-135"
+      "C-135",
+      "C-167"
     ],
     "reliability_notes": "README read by keyword and section lines, not in full. No GitHub release. Licence: BSD Zero Clause (repository metadata). No iOS version range is stated in the lines read.",
     "notes": null
@@ -1040,7 +1056,8 @@
     "source_type": "community_reference",
     "verification_method": "fetched_partial_text",
     "associated_claim_ids": [
-      "C-136"
+      "C-136",
+      "C-167"
     ],
     "reliability_notes": "Upstream community tracker, read in part at the recorded head. Its chip-status statements are its own and are recorded as repository statements. Not an official source.",
     "notes": null
@@ -1061,7 +1078,9 @@
       "C-122",
       "C-123",
       "C-124",
-      "C-125"
+      "C-125",
+      "C-158",
+      "C-159"
     ],
     "reliability_notes": "BuildManifest.plist only, retrieved by HTTP range request on 2026-11-12. No component of the package was downloaded or hashed. Used for component names and counts. The device is not the tracker's target.",
     "notes": null
@@ -1082,9 +1101,115 @@
       "C-122",
       "C-123",
       "C-124",
-      "C-125"
+      "C-125",
+      "C-158",
+      "C-159"
     ],
     "reliability_notes": "BuildManifest.plist only, retrieved by HTTP range request on 2026-11-12. No component of the package was downloaded or hashed. Used for component names and counts. The device is not the tracker's target.",
     "notes": null
+  },
+  {
+    "id": "S-057",
+    "title": "Apple XNU open-source repository (apple-oss-distributions/xnu): code search results for exclave and chip identifiers",
+    "url": "https://github.com/apple-oss-distributions/xnu",
+    "publisher": "Apple Inc. (open-source distribution)",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-153",
+      "C-154",
+      "C-160"
+    ],
+    "reliability_notes": "Search-index results from the official repository, read on 2026-11-12. Counts and matches reflect the index snapshot. The default branch was not cloned or read in full.",
+    "notes": "Used only for the existence of exclave source files and for board-configuration identifiers. No function-level review."
+  },
+  {
+    "id": "S-058",
+    "title": "Secure Exclaves and Ambient Sensing (Apple Security Research article; SEAR and Core OS)",
+    "url": "https://security.apple.com/blog/secure-exclaves/",
+    "publisher": "Apple Inc.",
+    "author": "Security Engineering and Architecture (SEAR) and Core Operating Systems (Core OS)",
+    "source_tier": 1,
+    "publication_date": "2026-11-12",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_security_blog",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-138",
+      "C-139",
+      "C-140",
+      "C-141",
+      "C-142",
+      "C-143",
+      "C-144",
+      "C-145",
+      "C-146",
+      "C-147",
+      "C-148",
+      "C-149",
+      "C-150",
+      "C-151",
+      "C-162",
+      "C-168",
+      "C-169"
+    ],
+    "reliability_notes": "Official Apple article, read in full on 2026-11-12 (no update date shown). Quoted phrases were checked by exact match against the fetched text. Three embedded diagrams were not read. Two linked resources were not fetched. Product statements are as printed.",
+    "notes": "Apple's own assessments (for example 'the most advanced architecture') are recorded as Apple's statements, not as verified facts."
+  },
+  {
+    "id": "S-059",
+    "title": "Apple Platform Security: sepOS (Secure Enclave firmware)",
+    "url": "https://support.apple.com/en-au/guide/security/aside/secc3e4f7a43/web",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "vendor_security_guide",
+    "verification_method": "fetched_partial_text",
+    "associated_claim_ids": [
+      "C-152"
+    ],
+    "reliability_notes": "Apple guide page read from its raw HTML on 2026-11-12. The visible-text extraction was partial; the quoted sentence was found in the raw HTML. No date is shown on the page.",
+    "notes": "Describes sepOS, not the Exclaves microkernel."
+  },
+  {
+    "id": "S-060",
+    "title": "We call this kernel saunters: How Apple rearranged its XNU core with exclaves (The Register, 2025-03-08)",
+    "url": "https://www.theregister.com/2025/03/08/kernel_sanders_apple_rearranges_xnu/",
+    "publisher": "The Register",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2025-03-08",
+    "access_date": "2026-11-12",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-155",
+      "C-156"
+    ],
+    "reliability_notes": "Reputable news article, read on 2026-11-12. It reports an unnamed source's reading of Apple's open-source XNU and of iOS 17 references. Its claims are reported, not verified here.",
+    "notes": "The page heading reads: How Apple rearranged its XNU kernel with security exclaves."
+  },
+  {
+    "id": "S-061",
+    "title": "The Apple Wiki: A17 Pro chip page (search snippet only)",
+    "url": "https://theapplewiki.com/wiki/A17_Pro",
+    "publisher": "The Apple Wiki (community wiki)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "community_wiki",
+    "verification_method": "search_snippet_only",
+    "associated_claim_ids": [
+      "C-160"
+    ],
+    "reliability_notes": "Community wiki. Read only as a search snippet that gives the A17 Pro identifier as T8130. The page was not fetched. Search snippets are leads and cannot support a verified verdict.",
+    "notes": "Used only as a lead for the chip-identifier pairing. The marketing mapping is not verified."
   }
 ]

@@ -6,9 +6,9 @@
 
 | Verdict | Claims |
 |---|---|
-| verified | 87 |
-| partially verified | 27 |
-| unverified | 22 |
+| verified | 114 |
+| partially verified | 29 |
+| unverified | 25 |
 | disproved | 0 |
 | superseded | 0 |
 
@@ -16,17 +16,17 @@
 
 | Source tier | Sources |
 |---|---|
-| Tier 1 | 27 |
-| Tier 2 | 20 |
-| Tier 3 | 8 |
+| Tier 1 | 30 |
+| Tier 2 | 21 |
+| Tier 3 | 9 |
 | Tier 4 | 1 |
 
 | Verification method | Sources |
 |---|---|
-| fetched (full text) | 26 |
-| fetched (partial text) | 11 |
-| API response | 8 |
-| search snippet only | 11 |
+| fetched (full text) | 28 |
+| fetched (partial text) | 12 |
+| API response | 9 |
+| search snippet only | 12 |
 | not accessed | 0 |
 
 ## Claims supported only by search snippets
@@ -74,6 +74,8 @@ These claims rest on secondary, community or unverifiable sources. They are reco
 - C-097: The signature set kernel/27.0 in the symbolicator repository declares a darwin range of 27.0.0 to 27.2.0 (supporting tiers: 3)
 - C-136: The upstream iMaxTomas tracker, at commit 038b9f09 (2026-11-06), states that no publicly usable PPL or SPTM bypass is known for iOS 27.0.1 (supporting tiers: 3)
 - C-137: A community repository created on 2026-11-09 claims IOSurface kernel-surface exploitation on devices described as iPhone 13 Pro and iPhone 17 Pro (supporting tiers: 3)
+- C-155: Press reporting links exclave references in XNU to M4 and A18 processors (supporting tiers: 2)
+- C-156: Press reporting dates the term 'exclaves' in Apple software to 2023 (supporting tiers: 2)
 
 ## Claims with contradicting sources
 
@@ -86,6 +88,7 @@ These claims rest on secondary, community or unverifiable sources. They are reco
 - C-054: The upstream states that DarkSword and ClearSword kernel exploits support iOS only up to 26.0.1 (V8); no primary source confirms the range (contradicting: S-042)
 - C-057: ElleKit 1.2 is reported to cover iOS 15 to 27 (upstream reference) (contradicting: S-040)
 - C-075: heise reports the Calif.io jailbreak as 'the first reboot-proof jailbreak since iOS 9' (press claim; unverified) (contradicting: S-026)
+- C-162: Secure Exclaves ambient-sensing features are implemented on the A17 Pro (iPhone 15 Pro Max) (contradicting: S-043)
 
 ## Checks applied
 

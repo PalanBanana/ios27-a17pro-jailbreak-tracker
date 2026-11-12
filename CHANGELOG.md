@@ -4,6 +4,38 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-11-12
+
+### Added
+
+- Apple Secure Exclaves architecture from Apple's 2026-11-12 article, read in full; quoted phrases were checked by exact match. See `research/apple-secure-exclaves-architecture.md`, `research/apple-security-terminology.md` and `reports/secure-exclaves-architecture-map.md`.
+- Manifest reconciliation: every BuildIdentity of the A17 Pro manifests (24A446, 24B119, 24B156), the A18 Pro manifest (24B119) and the A19 Pro manifest (24A446), with SHA-256 hashes preserved. See `research/exclave-manifest-reconciliation.md`, `reports/a17pro-exclave-applicability.md` and `analysis/exclave-buildidentity-summary.json`.
+- Static exclave-identifier counts for the target build's decompressed kernelcache and SPTM image (counts only; identifier names are not published), and public XNU source observations (counts and paths only).
+- Architecture matrix and boundary analysis: `reports/apple-silicon-security-matrix.md`, `research/a17pro-security-boundaries.md`, `research/exclave-security-implications-for-jailbreak.md` and `reports/a17pro-jailbreak-dependency-update.md`.
+- Re-checks: SKVLENT (`research/skvlent-latest-update-audit.md`, `reports/skvlent-evidence-reconciliation.md`), Erosion (`research/erosion-current-status.md`, `reports/erosion-a17pro-risk-assessment.md`) and the ecosystem repositories (`research/jailbreak-ecosystem-v050-update.md`).
+- Summary and priorities: `reports/v0.5.0-research-summary.md`; `reports/next-research-priorities.md` (updated).
+- Claims C-138 to C-169, sources S-057 to S-061, timeline events E-036 to E-038, and compatibility rows CMP-019 and CMP-020.
+
+### Changed
+
+- C-122 and C-123 were re-enumerated against every identity. C-124 gained a limitation note. C-111 gained the direction 10 wording at commit 73f7a579ce91 (C-165).
+- Compatibility rows CMP-001, CMP-010, CMP-011, CMP-016, CMP-017 and CMP-018 gained evidence and notes. Their statuses are unchanged.
+- Firmware rows for 24A446, 24B119 and 24B156 gained the manifest note (C-157), and the 24A446 row gained the static-string note (C-161).
+- Erosion, Dopamine, SKVLENT and ecosystem records were re-checked on 2026-11-12. Their `last_checked` dates were updated, and no verdict changed.
+
+### Corrections
+
+- A lookup in this release against `opa334/ElleKit` was a wrong target. The former ElleKit repository in the records is `tealbathingsuit/ellekit`, which matches the v0.4.0 record (C-167).
+- The first-identity-only analysis of the A17 Pro manifest is superseded for exclave purposes by the complete enumeration (C-157, C-158). The earlier claims (C-119 to C-125) remain true.
+- A search summary said that earlier chips lack exclaves, citing a 2025 press report. The press article does not say that, and the statement is not recorded as a claim.
+
+### Notes
+
+- Readiness is unchanged: LEVEL 0 / NO-GO. Secure Exclaves applicability to the A17 Pro is not established (C-162). Apple's article names no A17 Pro product (C-139).
+- Manifest and string results are static metadata. A manifest entry or a static string is not a device or runtime result.
+- No device was connected, updated, restored, rebooted or used. No firmware was installed. Erosion was not installed or downloaded. No exploit, probe or Bench27 build was run. No code-level or binary-level differencing was performed, and no binary was mapped to an advisory.
+- Public metadata and public source were read only: BuildManifests, decompressed local copies of public payloads, Apple's article and public repository search results.
+
 ## [0.4.0] - 2026-11-12
 
 ### Added
