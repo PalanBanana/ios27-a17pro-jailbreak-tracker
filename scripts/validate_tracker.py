@@ -19,6 +19,11 @@ import sys
 from pathlib import Path
 from urllib.parse import urlparse
 
+# Reference date for the "not after the snapshot" checks. It is the date of the research
+# snapshot in STATUS.md, so results do not depend on the clock or timezone of the machine or
+# CI runner. Bump it with each research update, and never set it earlier than the newest record.
+SNAPSHOT_DATE = dt.date(2026, 11, 12)
+
 # The research target. Every compatibility row must match these values.
 TARGET = {
     "device_identifier": "iPhone16,2",
@@ -148,7 +153,7 @@ def main(argv: list[str] | None = None) -> int:
         else:
             passes.append(name)
 
-    today = dt.date.today()
+    today = SNAPSHOT_DATE
 
     # 1. Required files exist.
     check("required files present",
@@ -215,7 +220,7 @@ def main(argv: list[str] | None = None) -> int:
         if parsed is None:
             date_problems.append(f"{where}: '{value}' is not a valid date")
         elif parsed > today:
-            date_problems.append(f"{where}: '{value}' is in the future")
+            date_problems.append(f"{where}: '{value}' is after the snapshot date {SNAPSHOT_DATE.isoformat()}")
 
     for c in claims:
         check_date(f"claim {c.get('id')} first_observed", c.get("first_observed"))

@@ -25,7 +25,7 @@ This is an independent research and compatibility tracker for an iPhone 15 Pro M
 - Reciprocity: a source's `associated_claim_ids` must equal the claims that cite that source.
 - `verified` requires high confidence and a fetched, API or tier-1 source. `unverified` requires low confidence.
 - Search-snippet-only sources are leads. They cannot support a `verified` verdict.
-- Dates use ISO 8601 (`YYYY-MM-DD`) and may not be in the future.
+- Dates use ISO 8601 (`YYYY-MM-DD`) and may not be after `SNAPSHOT_DATE` in `scripts/validate_tracker.py`. Bump that constant with each research update, and only after the update's records are dated.
 
 ## Research updates
 
