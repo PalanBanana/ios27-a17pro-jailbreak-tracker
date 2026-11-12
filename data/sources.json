@@ -13,9 +13,19 @@
     "associated_claim_ids": [
       "C-005",
       "C-006",
-      "C-023"
+      "C-023",
+      "C-034",
+      "C-035",
+      "C-036",
+      "C-037",
+      "C-038",
+      "C-070",
+      "C-071",
+      "C-072",
+      "C-073",
+      "C-074"
     ],
-    "reliability_notes": "Official Apple page. Credits Calif.io researchers for four CVE entries: CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886 (the last was missed in the first extraction). An entry-update note dated October 19, 2026 follows CVE-2026-28968. Re-fetched on 2026-11-12: no entry for iOS 27.0.1, and no occurrence of the identifier CVE-2026-112611 or the handle pwnlambda.",
+    "reliability_notes": "Official Apple page. Credits Calif.io researchers for four CVE entries: CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886 (the last was missed in the first extraction). An entry-update note dated October 19, 2026 follows CVE-2026-28968. Re-fetched on 2026-11-12: no entry for iOS 27.0.1, and no occurrence of the identifier CVE-2026-112611 or the handle pwnlambda. Re-read 2026-11-12. The page marks many entries as added or updated on 2026-10-19 and 2026-10-26 (C-071); CVE-2026-112608 is marked added on 2026-10-26 (C-070).",
     "notes": "publication_date is the iOS 27 release date from search metadata; the page itself carries later update dates."
   },
   {
@@ -70,7 +80,8 @@
     "associated_claim_ids": [
       "C-013",
       "C-014",
-      "C-032"
+      "C-032",
+      "C-059"
     ],
     "reliability_notes": "Apple's platform security guide, continuously updated. States SPTM is supported on A15-or-later and M2-or-later SoCs and replaces the Page Protection Layer on supported platforms.",
     "notes": "The guide has no publication date."
@@ -123,9 +134,14 @@
       "C-016",
       "C-017",
       "C-018",
-      "C-028"
+      "C-028",
+      "C-055",
+      "C-065",
+      "C-066",
+      "C-067",
+      "C-068"
     ],
-    "reliability_notes": "Official release list retrieved through the GitHub REST API. Latest tag 3.0.13 was published 2026-11-03. Release notes describe specific fixes and do not state an iOS version range.",
+    "reliability_notes": "GitHub API release records for opa334/Dopamine (30 most recent releases, 2.2.2 to 3.0.13), retrieved 2026-11-12, with release bodies read. Dopamine 3.0 (2026-08-07) lists a Titan PPL/SPTM bypass for iOS 16.5.1 to 17.3.1, a momentarius PPL bypass for A12 and A13, and states real-device SPTM support ends at 17.3.1 (C-065 to C-068). Releases 3.0.2 to 3.0.13 do not mention iOS 27 support (C-055). The official README on the default branch is stale (S-008).",
     "notes": null
   },
   {
@@ -157,7 +173,6 @@
     "source_type": "news_article",
     "verification_method": "fetched_full_text",
     "associated_claim_ids": [
-      "C-016",
       "C-018",
       "C-028"
     ],
@@ -227,13 +242,14 @@
     "author": null,
     "source_tier": 1,
     "publication_date": null,
-    "access_date": "2026-11-11",
+    "access_date": "2026-11-12",
     "source_type": "official_repository_api",
     "verification_method": "api_response",
     "associated_claim_ids": [
-      "C-029"
+      "C-029",
+      "C-049"
     ],
-    "reliability_notes": "Confirms only that a public GitHub account with this login exists (created 2014-09-11, 27 public repositories, none with iOS 27 names in the listing). It does not establish a link to Calif.io, to any iOS exploit, or to any real-world identity.",
+    "reliability_notes": "Public GitHub account for the handle that Apple credits on two iOS 27.2 entries (C-043). On 2026-11-12 the first API page listed 27 public repositories, sorted by creation date. The newest was created 2026-01-17 and has no description. No repository name contains kernel, KRW, exploit or jailbreak terms (name-based check). Repository contents were not reviewed. Only the handle is recorded.",
     "notes": "Existence check only."
   },
   {
@@ -255,7 +271,7 @@
       "C-024",
       "C-025"
     ],
-    "reliability_notes": "Third-party firmware index, not an Apple source. Lists iPhone 15 Pro Max (iPhone16,2) builds 24A437 (27.0, 2026-09-14, signed=false), 24A446 (27.0.1, 2026-09-28, signed=false), 24B119 (27.2, 2026-10-26, signed=true) and 24B156 (27.2.1, 2026-11-09, signed=true). The signed field is the index's own status as of 2026-11-11.",
+    "reliability_notes": "Third-party firmware index (ipsw.me API), retrieved 2026-11-12. signed=false for 24A437 (released 2026-09-14) and 24A446 (released 2026-09-28); signed=true for 24B119 (released 2026-10-26 18:33 UTC) and 24B156 (released 2026-11-09 18:27 UTC). The index is a third-party status field, not an Apple statement. The 2026-11-02 report of 24A446 as signed comes from a different snapshot (C-021).",
     "notes": null
   },
   {
@@ -305,7 +321,8 @@
     "source_type": "news_article",
     "verification_method": "search_snippet_only",
     "associated_claim_ids": [
-      "C-010"
+      "C-010",
+      "C-046"
     ],
     "reliability_notes": "Secondary press. Only the search summary was reviewed. Reports 163 vulnerabilities fixed in iOS 27.2 and iPadOS 27.2. Apple's own 27.2 advisory was not located.",
     "notes": null
@@ -452,16 +469,29 @@
     "author": null,
     "source_tier": 3,
     "publication_date": "2026-11-04",
-    "access_date": "2026-11-11",
+    "access_date": "2026-11-12",
     "source_type": "community_reference",
     "verification_method": "fetched_full_text",
     "associated_claim_ids": [
       "C-015",
       "C-021",
       "C-022",
-      "C-023"
+      "C-023",
+      "C-042",
+      "C-044",
+      "C-050",
+      "C-051",
+      "C-052",
+      "C-053",
+      "C-054",
+      "C-057",
+      "C-062",
+      "C-063",
+      "C-064",
+      "C-075",
+      "C-077"
     ],
-    "reliability_notes": "Community fact-check archive in Chinese. Its original content is CC BY 4.0 per its LICENSE. Fetched README, SKILL.md and LICENSE for methodology review. Its conclusions were not adopted without independent checks, and its personal-name attributions are not reproduced here.",
+    "reliability_notes": "Upstream community fact-check archive in Chinese (CC BY 4.0 for its original content). Re-read on 2026-11-12: claims V1 to V33, E1 to E3, P1 to P6 and O1 to O3 were reviewed against the sources in this repository. Its statements are leads, recorded as reported. This repository does not reproduce personal details about individuals that appear in that file, does not link to any third-party exploit repository, and does not adopt its verdicts without its cited sources.",
     "notes": "Used as a methodology reference and a list of leads; no text is copied."
   },
   {
@@ -504,11 +534,12 @@
     "publication_date": "2026-11-04",
     "access_date": "2026-11-11",
     "source_type": "news_article",
-    "verification_method": "search_snippet_only",
+    "verification_method": "fetched_full_text",
     "associated_claim_ids": [
-      "C-022"
+      "C-022",
+      "C-049"
     ],
-    "reliability_notes": "Secondary press. Per the search summary, it reported exploit code and a write-up would follow within about a week. Conflicts with the later PBX Science article in S-019. Only the search summary was reviewed.",
+    "reliability_notes": "Secondary press (PBX Science, article dated 2026-11-04, fetched 2026-11-12). States that the Calif team member lambda said on X that kernel read/write exploit code and a detailed write-up should follow in roughly a week. The X post itself was not retrieved.",
     "notes": null
   },
   {
@@ -561,6 +592,195 @@
       "C-033"
     ],
     "reliability_notes": "GitHub API response listing the five most recent commits on the default branch (2026-10-30 to 2026-11-03). Subject lines mention posix_spawn and SpringBoard snapshot hooks, detection for the iOS 26.0 beta, and the 3.0.13 release. None mentions iOS 27. Commit bodies were not reviewed.",
+    "notes": null
+  },
+  {
+    "id": "S-033",
+    "title": "About the security content of iOS 27.2 and iPadOS 27.2",
+    "url": "https://support.apple.com/en-us/149230",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-10-26",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_security_advisory",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-039",
+      "C-040",
+      "C-041",
+      "C-042",
+      "C-043",
+      "C-044",
+      "C-046",
+      "C-047",
+      "C-048",
+      "C-072",
+      "C-073",
+      "C-074"
+    ],
+    "reliability_notes": "Official Apple advisory for iOS 27.2 and iPadOS 27.2 (release date 2026-10-26 per Apple's release index). Entries give component, impact, description and credits. The extracted text contains 162 distinct CVE identifiers. Affected version ranges are not stated. Credits are recorded by organisation or handle only. The Apple release index gives 26 Oct 2026. The ipsw release date is 2026-10-26 18:33 UTC. The upstream reference gives 2026-10-27, which is probably a time-zone difference (C-046 scope).",
+    "notes": null
+  },
+  {
+    "id": "S-034",
+    "title": "About the security content of iOS 27.2.1 and iPadOS 27.2.1",
+    "url": "https://support.apple.com/en-us/149715",
+    "publisher": "Apple Inc.",
+    "author": null,
+    "source_tier": 1,
+    "publication_date": "2026-11-09",
+    "access_date": "2026-11-12",
+    "source_type": "vendor_security_advisory",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-045"
+    ],
+    "reliability_notes": "Official Apple advisory for iOS 27.2.1 and iPadOS 27.2.1 (release date 2026-11-09). The extracted text lists nine CVE identifiers.",
+    "notes": null
+  },
+  {
+    "id": "S-035",
+    "title": "Modern iOS Security Features: A Deep Dive into SPTM, TXM, and Exclaves (arXiv:2510.09272)",
+    "url": "https://arxiv.org/abs/2510.09272",
+    "publisher": "arXiv (independent academic analysis)",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2025-10-10",
+    "access_date": "2026-11-12",
+    "source_type": "academic_paper",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-059",
+      "C-060"
+    ],
+    "reliability_notes": "Independent academic analysis of SPTM, TXM and Exclaves. The full HTML text (v1) was searched. Its firmware analysis uses iOS 18.4 (22E240) firmware for iPhone 16 (A18). It does not analyse the A17 Pro or iOS 27 firmware. Submitted 2025-10-10, before the iOS 27 release. Full-text search on 2026-11-12: the paper mentions A15 only in its SPTM and TXM availability statement. It does not mention A16 to A20, iOS 26, iOS 27, iPhone 15 or iPhone 17.",
+    "notes": null
+  },
+  {
+    "id": "S-036",
+    "title": "Works on iPhone 18 Pro: AI helps create untethered jailbreak for iOS 27.0.1",
+    "url": "https://www.heise.de/en/news/Works-on-iPhone-18-Pro-AI-helps-create-untethered-jailbreak-for-iOS-27-0-1-11490907.html",
+    "publisher": "heise online",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-10-16",
+    "access_date": "2026-11-12",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001",
+      "C-061",
+      "C-075"
+    ],
+    "reliability_notes": "Reputable German technology publication (English edition). States that the Calif.io team presented an untethered iOS 27 jailbreak at Hexacon, that the vulnerabilities used are not yet clear, and that the team's X profile had no further details. Its headline states that AI helped create the jailbreak. Secondary to the event. States that the team 'has developed the first reboot-proof jailbreak since iOS 9' (C-075).",
+    "notes": null
+  },
+  {
+    "id": "S-037",
+    "title": "Dank KI: Rebootfester Jailbreak für iOS 27.0.1 bis zum iPhone 18 Pro, untethered",
+    "url": "https://www.heise.de/news/Untethered-Jailbreak-fuer-iOS-27-0-1-auf-iPhone-18-Pro-der-Reboots-ueberlebt-11490726.html",
+    "publisher": "heise online",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-10-16",
+    "access_date": "2026-11-12",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-001",
+      "C-061"
+    ],
+    "reliability_notes": "German edition of the heise report, dated 16.10.2026. States that the vulnerabilities used are not yet known. Describes the AI-assisted comparison of iOS 27.2 beta with 27.0.1 as theoretically possible ('theoretisch'), and says that another exploit for the August screen-sharing flaw apparently did not come from Calif.io. Does not quote the 'any iPhone' statement attributed to a team member (C-052).",
+    "notes": null
+  },
+  {
+    "id": "S-038",
+    "title": "iOS-27-Jailbreak: Sicherheitsforscher greifen auf KI-Support zurück",
+    "url": "https://t3n.de/news/untethered-jailbreak-ios-27-1768775/",
+    "publisher": "t3n",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-10-18",
+    "access_date": "2026-11-12",
+    "source_type": "news_article",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-061",
+      "C-076"
+    ],
+    "reliability_notes": "German technology news, dated 18.10.2026. States that AI was used to find the exploit chain. Presents an AI-assisted comparison of the iOS 27.2 beta with iOS 27.0.1 as established. The team has not stated this method, and the heise articles call it theoretical (C-076). Not a primary source.",
+    "notes": null
+  },
+  {
+    "id": "S-039",
+    "title": "Dopamine Jailbreak (third-party page, ellekit.space)",
+    "url": "https://ellekit.space/dopamine",
+    "publisher": "ellekit.space (authorship not verified)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-016"
+    ],
+    "reliability_notes": "Third-party page. Its table lists iOS 15.0 to 17.3.1 for A14 to A17 and M1 to M2, and iOS 15.0 to 18.7.1 and 26.0 to 26.0.1 for A8 to A13. Authorship and currency were not verified. It is not an official Dopamine source. The Dopamine release notes (S-007) are the primary source for 3.0 features.",
+    "notes": null
+  },
+  {
+    "id": "S-040",
+    "title": "tealbathingsuit/ellekit (repository reached by redirect from evelyneee/ellekit)",
+    "url": "https://github.com/tealbathingsuit/ellekit",
+    "publisher": "GitHub (repository owner: tealbathingsuit)",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": null,
+    "access_date": "2026-11-12",
+    "source_type": "official_repository_api",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-056",
+      "C-057"
+    ],
+    "reliability_notes": "GitHub API response, retrieved 2026-11-12. The former evelyneee/ellekit identifier redirects to repository ID 559919558, which is this repository. Its description is 'yet another tweak injector / tweak hooking library for darwin systems'. Created 2022-10-31; last pushed 2026-07-31; no GitHub release. Whether it is the ElleKit project named in other sources is not confirmed by a project statement.",
+    "notes": null
+  },
+  {
+    "id": "S-041",
+    "title": "staturnzz/momentarius (repository metadata)",
+    "url": "https://api.github.com/repos/staturnzz/momentarius",
+    "publisher": "GitHub (repository owner: staturnzz)",
+    "author": null,
+    "source_tier": 3,
+    "publication_date": "2026-08-07",
+    "access_date": "2026-11-12",
+    "source_type": "community_reference",
+    "verification_method": "api_response",
+    "associated_claim_ids": [
+      "C-058",
+      "C-067"
+    ],
+    "reliability_notes": "GitHub API metadata, retrieved 2026-11-12: description 'A12/A13 PPL Bypass'; created 2026-08-07; last pushed 2026-08-07; updated 2026-11-05; MIT licence; not archived; not a fork. No repository contents were downloaded, reviewed or run. Dopamine 3.0 release notes (S-007) describe a momentarius PPL bypass for A12 and A13 devices.",
+    "notes": null
+  },
+  {
+    "id": "S-042",
+    "title": "Inside the DarkSword Kernel Escalation: From GPU Process to Kernel R/W (CVE-2025-43510 & CVE-2025-43520)",
+    "url": "https://www.8ksec.io/darksword-kernel-escalation-cve-2025-43510-43520/",
+    "publisher": "8kSec",
+    "author": null,
+    "source_tier": 2,
+    "publication_date": "2026-05-03",
+    "access_date": "2026-11-12",
+    "source_type": "company_site",
+    "verification_method": "fetched_full_text",
+    "associated_claim_ids": [
+      "C-054",
+      "C-069"
+    ],
+    "reliability_notes": "Security-company analysis dated 2026-05-03. Gives fixed-in versions: CVE-2025-43510 in iOS 18.7.5 and 26.2; CVE-2025-43520 in iOS 18.7.6 and 26.3. Describes the DarkSword exploit kit as reported by Google's threat intelligence team in March 2026. Covers DarkSword only; ClearSword is not mentioned. The exploit narrative is not reproduced here. Its Apple version data was not checked against Apple's 26.x advisories.",
     "notes": null
   }
 ]

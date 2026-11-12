@@ -2,6 +2,58 @@
 
 All notable changes to this repository are recorded here. Dates use ISO 8601 (`YYYY-MM-DD`). Records are superseded, never deleted.
 
+## [0.2.0] - 2026-11-12
+
+### Added
+
+- `research/apple-27x-cve-mapping.md`: every CVE entry on Apple's iOS 27, 27.2 and 27.2.1 security pages, with its component, Apple's impact text, device list and entry note. Generated from the saved pages. No credit names or handles are reproduced.
+- `research/sptm-evidence-audit.md`: a graded audit of SPTM evidence (highest-priority research).
+- `research/krw-release-audit.md`: the announced kernel read/write release, its timeline and the checks made.
+- `research/upstream-reconciliation.md`: a claim-by-claim comparison with the community reference (V1 to V33, E1 to E3, P1 to P6, O1 to O3).
+- `research/calif-hexacon-deep-audit.md`: directly sourced facts, secondary interpretations, and the differences between the A20 Pro demonstration and the A17 Pro target.
+- `reports/dependency-matrix.md` and `reports/a17pro-exploit-readiness.md`: the dependency view, and the detailed readiness and GO/NO-GO analysis.
+- Claims C-062 to C-077; timeline events E-024 to E-030; sources S-033 to S-042 (Apple iOS 27.2 and 27.2.1 pages, an independent SPTM paper, press articles, a third-party page, repository metadata and a security-company analysis).
+- Source type `academic_paper` in `schemas/source.schema.json`.
+
+### Changed
+
+- The Dopamine record (C-016) is now based on the 3.0 release notes (C-065 to C-068) as well as on a third-party table. The release notes state that real-device SPTM support ends at iOS 17.3.1.
+- Calif.io credit counts are recorded per page: four on the iOS 27 page (C-038) and six on the iOS 27.2 page (C-042). Kernel-memory impacts are recorded by page and category (C-034 to C-041).
+- Claims C-016, C-021, C-034 to C-061 were corrected or re-scoped. Earlier wording is superseded in the records, not deleted; `last_checked` dates show the change.
+- Firmware records for 24A437, 24B119 and 24B156 list every CVE identifier on the corresponding Apple page. Signing observations keep their checked dates.
+- Compatibility rows CMP-003 to CMP-014 updated with the evidence above. CMP-014 records that the announced kernel read/write work is not published.
+- Research documents DIM03 to DIM10 and `research/contradictions.md` updated. `reports/exploit-readiness.md` is now a summary that points to the detailed readiness report.
+
+### Corrected
+
+- The Dopamine 3.0 release notes were checked. They state a Titan bypass for iOS 16.5.1 to 17.3.1 and no real-device SPTM bypass for iOS 17.4 and later (C-065, C-066).
+- Apple lists CVE-2026-112705 as unexpected system termination, not as kernel memory. The upstream reference's kernel label is recorded and not adopted (C-044).
+- The former ElleKit repository identifier redirects to `tealbathingsuit/ellekit`, which has no GitHub release (C-056).
+- Apple's iOS 27.2 release date is 26 October 2026 (18:33 UTC in the index). The upstream's 27 October is probably Beijing time (contradictions.md, row 11).
+- A third-party index and a community reference disagree on the signing status of 24A446 at different dates. The change is recorded, not resolved (C-021, E-030).
+
+### Recorded (2026-11-12)
+
+- Apple's iOS 27 page lists 162 CVE-2026 identifiers; the iOS 27.2 page lists 162 (press reports 163); the iOS 27.2.1 page lists 9. The iOS 27.0.1 index lists none.
+- The iOS 27.2 page lists 23 kernel-memory entries (4 write, 12 corruption, 1 copy-on-write, 6 read or disclosure) and no kernel or root privilege entry. Its six Calif.io-credited entries have no kernel-memory impact.
+- The iOS 27 page lists four kernel or root privilege entries and marks many entries as added or updated on 2026-10-19 and 2026-10-26.
+- Apple's advisory text contains no SPTM, TXM, PPL, AGX, IOGPU, CoreTrust, AMFI or Exclave term.
+- The independent SPTM paper analyses an iPhone 16 on iOS 18.4 and 18.5 and does not mention the A17 Pro or iOS 27.
+
+### Not changed
+
+- The target profile, readiness level (LEVEL 0), GO/NO-GO (NO-GO) and the snapshot date (2026-11-12).
+- No device was connected, updated, restored, rebooted or modified for this research. No exploit code was downloaded, run or linked.
+
+### Notes
+
+- Unverified claims kept as leads include: a reported SPTM bypass valid through iOS 27.0.1 (C-051); a reported kernel read/write release (C-022, C-049); a reported crash reproduction on another model (C-062); and a project claim for iOS 27.0 to 27.0.1 (C-064), which carries a high risk.
+- Personal details about individuals in the upstream reference are not reproduced.
+
+### Release rule
+
+- v0.2.0 is tagged only after the CI workflows pass for the release commit. v0.1.1 and v0.1.0 are not moved.
+
 ## [0.1.1] - 2026-11-12
 
 ### Added

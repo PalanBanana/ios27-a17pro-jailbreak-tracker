@@ -10,8 +10,8 @@ This report preserves firmware facts for the research record. It does not recomm
 |---|---|---|---|---|
 | 27.0 | 24A437 | 2026-09-14 | not signed (third-party index), 2026-11-12 | listed on Apple page |
 | 27.0.1 | 24A446 | 2026-09-28 | not signed (third-party index), 2026-11-12 | none published |
-| 27.2 | 24B119 | 2026-10-26 | signed (third-party index), 2026-11-12 | not located |
-| 27.2.1 | 24B156 | 2026-11-09 | signed (third-party index), 2026-11-12 | not located |
+| 27.2 | 24B119 | 2026-10-26 | signed (third-party index), 2026-11-12 | listed on Apple page |
+| 27.2.1 | 24B156 | 2026-11-09 | signed (third-party index), 2026-11-12 | listed on Apple page |
 
 ## What is known
 

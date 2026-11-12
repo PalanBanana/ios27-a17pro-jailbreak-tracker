@@ -5,7 +5,9 @@
     "publication_date": "2025-09",
     "event_category": "vendor_announcement",
     "description": "Apple announces Memory Integrity Enforcement with the iPhone 17 and iPhone Air, naming the A19 and A19 Pro chips.",
-    "associated_source_ids": ["S-003"],
+    "associated_source_ids": [
+      "S-003"
+    ],
     "device_scope": "iPhone 17 and iPhone Air (Apple)",
     "firmware_scope": "Not specified",
     "verification_state": "verified"
@@ -16,7 +18,11 @@
     "publication_date": "2026-06-18",
     "event_category": "public_disclosure",
     "description": "usbliter8 BootROM exploit for A12 and A13 devices is publicised (reported by secondary outlets and a national CERT).",
-    "associated_source_ids": ["S-021", "S-022", "S-023"],
+    "associated_source_ids": [
+      "S-021",
+      "S-022",
+      "S-023"
+    ],
     "device_scope": "A12 and A13 devices (as reported)",
     "firmware_scope": "BootROM (not iOS-version specific)",
     "verification_state": "partially_verified"
@@ -27,7 +33,9 @@
     "publication_date": "2026-08-07",
     "event_category": "tool_release",
     "description": "Dopamine 3.0 released; secondary coverage quotes a support table of iOS 15.0 to 17.3.1 for A8 to A17 and M1 to M2, and iOS 26.0 to 26.0.1 for A12 and A13.",
-    "associated_source_ids": ["S-009"],
+    "associated_source_ids": [
+      "S-009"
+    ],
     "device_scope": "A8 to A17 and M1 to M2 (as quoted)",
     "firmware_scope": "iOS 15.0 to 17.3.1 (as quoted); A12 and A13 to 26.0.1",
     "verification_state": "partially_verified"
@@ -38,7 +46,10 @@
     "publication_date": "2026-09-14",
     "event_category": "firmware_release",
     "description": "iOS 27.0 released (build 24A437 per the third-party index).",
-    "associated_source_ids": ["S-014", "S-001"],
+    "associated_source_ids": [
+      "S-014",
+      "S-001"
+    ],
     "device_scope": "iPhone 15 Pro Max (iPhone16,2) and other iPhones",
     "firmware_scope": "27.0 (24A437)",
     "verification_state": "partially_verified"
@@ -49,7 +60,11 @@
     "publication_date": "2026-09-28",
     "event_category": "firmware_release",
     "description": "iOS 27.0.1 released (build 24A446). Apple's security releases index lists no published CVE entries for this build.",
-    "associated_source_ids": ["S-002", "S-014", "S-016"],
+    "associated_source_ids": [
+      "S-002",
+      "S-014",
+      "S-016"
+    ],
     "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
     "firmware_scope": "27.0.1 (24A446)",
     "verification_state": "partially_verified"
@@ -60,7 +75,11 @@
     "publication_date": "2026-10-16",
     "event_category": "conference_demo",
     "description": "Calif.io reportedly demonstrates an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro at Hexacon 2026 in Paris.",
-    "associated_source_ids": ["S-010", "S-011", "S-012"],
+    "associated_source_ids": [
+      "S-010",
+      "S-011",
+      "S-012"
+    ],
     "device_scope": "iPhone 18 Pro (A20 Pro), as reported",
     "firmware_scope": "27.0.1 (as reported)",
     "verification_state": "partially_verified"
@@ -71,7 +90,9 @@
     "publication_date": "2026-10-19",
     "event_category": "apple_security_release",
     "description": "Apple's iOS 27 security notes are updated with CVE entries credited to Calif.io researchers, two of them jointly with Claude and Anthropic Research.",
-    "associated_source_ids": ["S-001"],
+    "associated_source_ids": [
+      "S-001"
+    ],
     "device_scope": "iPhone 11 and later (Apple wording)",
     "firmware_scope": "iOS 27 (fixed-in release per CVE not confirmed)",
     "verification_state": "verified"
@@ -82,7 +103,9 @@
     "publication_date": "2026-10-23",
     "event_category": "firmware_release",
     "description": "Apple's index lists iOS 27.1 for iPhone Duo with no published CVE entries.",
-    "associated_source_ids": ["S-002"],
+    "associated_source_ids": [
+      "S-002"
+    ],
     "device_scope": "iPhone Duo (Apple index)",
     "firmware_scope": "27.1",
     "verification_state": "verified"
@@ -93,7 +116,12 @@
     "publication_date": "2026-10-26",
     "event_category": "firmware_release",
     "description": "iOS 27.2 released (build 24B119 per the third-party index). Secondary press reports 163 fixed vulnerabilities; Apple's 27.2 advisory was not located.",
-    "associated_source_ids": ["S-002", "S-014", "S-017", "S-018"],
+    "associated_source_ids": [
+      "S-002",
+      "S-014",
+      "S-017",
+      "S-018"
+    ],
     "device_scope": "iPhone 15 Pro Max (iPhone16,2) per the index",
     "firmware_scope": "27.2 (24B119)",
     "verification_state": "partially_verified"
@@ -104,7 +132,9 @@
     "publication_date": null,
     "event_category": "research_lead",
     "description": "A community reference states that iOS 27.0.1 was still signed on 2026-11-02. This is not independently verified and conflicts with the third-party index checked on 2026-11-11.",
-    "associated_source_ids": ["S-026"],
+    "associated_source_ids": [
+      "S-026"
+    ],
     "device_scope": "iPhone 15 Pro Max (target)",
     "firmware_scope": "27.0.1 (24A446)",
     "verification_state": "unverified"
@@ -115,7 +145,9 @@
     "publication_date": "2026-11-03",
     "event_category": "tool_release",
     "description": "Dopamine 3.0.13 published. Release notes describe a posix_spawn hook fix and a SpringBoard snapshot change. They do not state iOS 27 support.",
-    "associated_source_ids": ["S-007"],
+    "associated_source_ids": [
+      "S-007"
+    ],
     "device_scope": "Not applicable",
     "firmware_scope": "Not stated",
     "verification_state": "verified"
@@ -126,7 +158,9 @@
     "publication_date": "2026-11-03",
     "event_category": "press_coverage",
     "description": "Press reports that Apple responded to MIE-bypass claims with an iOS update. Details were not verified.",
-    "associated_source_ids": ["S-024"],
+    "associated_source_ids": [
+      "S-024"
+    ],
     "device_scope": "Not stated",
     "firmware_scope": "Not stated",
     "verification_state": "unverified"
@@ -137,7 +171,10 @@
     "publication_date": "2026-11-04",
     "event_category": "research_lead",
     "description": "Reported plan for a kernel read/write exploit and write-up from a Calif.io-linked researcher within about a week. Coverage conflicts; no primary announcement was located.",
-    "associated_source_ids": ["S-026", "S-029"],
+    "associated_source_ids": [
+      "S-026",
+      "S-029"
+    ],
     "device_scope": "Not stated",
     "firmware_scope": "iOS 27.0.1 (as reported)",
     "verification_state": "unverified"
@@ -148,7 +185,9 @@
     "publication_date": null,
     "event_category": "press_coverage",
     "description": "Press coverage through about 2026-11-06 reports that Apple fixed most flaws in iOS 27.2 and that no public tool is planned.",
-    "associated_source_ids": ["S-019"],
+    "associated_source_ids": [
+      "S-019"
+    ],
     "device_scope": "Not stated",
     "firmware_scope": "iOS 27.2 (as reported)",
     "verification_state": "partially_verified"
@@ -159,7 +198,11 @@
     "publication_date": "2026-11-09",
     "event_category": "firmware_release",
     "description": "iOS 27.2.1 released (build 24B156 per the third-party index and the Wikipedia infobox).",
-    "associated_source_ids": ["S-002", "S-014", "S-030"],
+    "associated_source_ids": [
+      "S-002",
+      "S-014",
+      "S-030"
+    ],
     "device_scope": "iPhone 15 Pro Max (iPhone16,2) per the index",
     "firmware_scope": "27.2.1 (24B156)",
     "verification_state": "partially_verified"
@@ -170,7 +213,9 @@
     "publication_date": null,
     "event_category": "signing_change",
     "description": "Press reports Apple stopped signing iOS 26.6.2 after iOS 27 shipped. Used as a pattern example for how older builds lose signing.",
-    "associated_source_ids": ["S-020"],
+    "associated_source_ids": [
+      "S-020"
+    ],
     "device_scope": "Not stated",
     "firmware_scope": "iOS 26.6.2 (pattern example)",
     "verification_state": "partially_verified"
@@ -181,7 +226,183 @@
     "publication_date": "2026-11-11",
     "event_category": "tracker_update",
     "description": "Tracker snapshot. The third-party index lists iOS 27.0.1 as not signed. A community reference reports the opposite for 2026-11-02, so the status is unresolved.",
-    "associated_source_ids": ["S-014", "S-026"],
+    "associated_source_ids": [
+      "S-014",
+      "S-026"
+    ],
+    "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
+    "firmware_scope": "27.0.1 (24A446)",
+    "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-018",
+    "event_date": "2025-10-10",
+    "publication_date": "2025-10-10",
+    "event_category": "public_disclosure",
+    "description": "Independent academic analysis of SPTM, TXM and Exclaves (arXiv:2510.09272) is submitted. Its firmware analysis uses iPhone 16 (A18) on iOS 18.4, not the A17 Pro or iOS 27.",
+    "associated_source_ids": [
+      "S-035"
+    ],
+    "device_scope": "iPhone 16 (A18) in the paper's firmware analysis",
+    "firmware_scope": "iOS 18.4 (22E240) in the paper",
+    "verification_state": "verified"
+  },
+  {
+    "event_id": "E-019",
+    "event_date": "2026-10-17",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "An opa334 PSA dated 2026-10-17 is reported by the upstream reference to warn of an SPTM bypass valid through iOS 27.0.1. The original was not located in this review.",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "Not stated",
+    "firmware_scope": "iOS 27.0.1 (as reported)",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-020",
+    "event_date": "2026-11-04",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "Reported (upstream reference, V31): opa334 says Dopamine A12 and A13 support could follow using momentarius once a kernel read/write exploit is public; A14 and later still need an SPTM bypass. Original not retrieved.",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "A12 and A13 (as reported); A14 and later (as reported)",
+    "firmware_scope": "Not stated",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-021",
+    "event_date": "2026-11-04",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "Reported (upstream reference, V32): a Calif.io video shows Lockdown Mode, an over-the-air update to iOS 27.2, and a reboot after which a plugin still works. Video and original post not retrieved.",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "Not stated",
+    "firmware_scope": "iOS 27.2 (as reported)",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-022",
+    "event_date": "2026-11-11",
+    "publication_date": null,
+    "event_category": "tracker_update",
+    "description": "The one-week window reported on 2026-11-04 for a kernel read/write write-up lapses. No publication, repository or source-code release for the announced work was found on 2026-11-12.",
+    "associated_source_ids": [
+      "S-029",
+      "S-013"
+    ],
+    "device_scope": "Not stated",
+    "firmware_scope": "iOS 27.0.1 (as reported)",
+    "verification_state": "partially_verified"
+  },
+  {
+    "event_id": "E-023",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "tracker_update",
+    "description": "Research pass for the v0.2.0 update: Apple's iOS 27.2 and 27.2.1 advisories parsed, the upstream reference reconciled, and the kernel, Calif.io and SPTM evidence re-classified.",
+    "associated_source_ids": [
+      "S-033",
+      "S-034",
+      "S-026"
+    ],
+    "device_scope": "iPhone 15 Pro Max (target profile)",
+    "firmware_scope": "27.0.1 (24A446) and later iOS 27 builds",
+    "verification_state": "verified"
+  },
+  {
+    "event_id": "E-024",
+    "event_date": "2026-10-26",
+    "publication_date": "2026-10-26",
+    "event_category": "apple_security_release",
+    "description": "Apple's iOS 27 security page is updated with entries marked as added on 2026-10-26, including CVE-2026-112608 (CoreMedia) and CVE-2026-86916 (kernel privilege impact).",
+    "associated_source_ids": [
+      "S-001"
+    ],
+    "device_scope": "iPhone 11 and later (Apple device lists)",
+    "firmware_scope": "iOS 27 (27.0 page)",
+    "verification_state": "verified"
+  },
+  {
+    "event_id": "E-025",
+    "event_date": "2026-08-07",
+    "publication_date": "2026-08-07",
+    "event_category": "tool_release",
+    "description": "Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for iOS 16.5.1 to 17.3.1, a momentarius PPL bypass for A12 and A13, and that real-device SPTM support ends at iOS 17.3.1 because no bypass is known for 17.4 and later.",
+    "associated_source_ids": [
+      "S-007"
+    ],
+    "device_scope": "A12 and A13 and SPTM devices (release-note wording)",
+    "firmware_scope": "iOS 16.5.1 to 17.3.1; 16.6 to 18.7.1 and 26.0 to 26.0.1 for A12 and A13",
+    "verification_state": "verified"
+  },
+  {
+    "event_id": "E-026",
+    "event_date": "2026-10-19",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "The upstream reference reports a Calif.io team member's interview on end-user tools, the scope of the chain and a 27.2 patch statement. The interview was not retrieved.",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "Not stated (any iPhone running iOS 27.0.1, as reported)",
+    "firmware_scope": "iOS 27.0.1 and iOS 27.2 (as reported)",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-027",
+    "event_date": "2026-10-30",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "A Calif.io social account reportedly posted a bare hash without explanation (upstream reference). The content it commits to is unknown.",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "Not stated",
+    "firmware_scope": "Not stated",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-028",
+    "event_date": "2026-10-30",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "A company-branded account reportedly showed a root shell on iOS 27.2 (upstream reference). Single-party, unverified (C-063).",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "Not stated",
+    "firmware_scope": "iOS 27.2 (as reported)",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-029",
+    "event_date": "2026-11-01",
+    "publication_date": null,
+    "event_category": "research_lead",
+    "description": "A project announced a semi-untethered iOS 27.0 to 27.0.1 jailbreak with a planned release one to two weeks later (upstream reference). The upstream reference found no proof of concept or third-party validation. No release was reviewed in this pass. Any future release should be treated as potentially malicious (C-064).",
+    "associated_source_ids": [
+      "S-026"
+    ],
+    "device_scope": "iPhone 15 Pro Max (A17 Pro), as reported as the test device",
+    "firmware_scope": "iOS 27.0 to 27.0.1 (as reported)",
+    "verification_state": "unverified"
+  },
+  {
+    "event_id": "E-030",
+    "event_date": "2026-11-12",
+    "publication_date": "2026-11-12",
+    "event_category": "signing_change",
+    "description": "The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021).",
+    "associated_source_ids": [
+      "S-014",
+      "S-026"
+    ],
     "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
     "firmware_scope": "27.0.1 (24A446)",
     "verification_state": "partially_verified"

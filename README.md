@@ -2,7 +2,7 @@
 
 Independent research and compatibility tracker for the **iPhone 15 Pro Max** (Apple A17 Pro, device identifier `iPhone16,2`) on **iOS 27.0.1** (build `24A446`).
 
-> **Status (data as of 2026-11-11): NO-GO. Readiness LEVEL 0 for the target.** No verified jailbreak exists for this device and build. This repository is not a jailbreak tool. It supplies no exploit code, tools or installation steps.
+> **Status (data as of 2026-11-12): NO-GO. Readiness LEVEL 0 for the target.** No verified jailbreak exists for this device and build. This repository is not a jailbreak tool. It supplies no exploit code, tools or installation steps.
 
 ## 1. Project Introduction
 
@@ -44,15 +44,15 @@ The five evidence levels, and which of them are not established, are in [docs/DE
 | iOS version | 27.0.1, released 2026-09-28 (C-024) |
 | Build | 24A446 (third-party index; C-003, partially verified) |
 | Apple security notes | No published CVE entries for 27.0.1 (C-007) |
-| Signing status (public observation) | Unresolved. A third-party firmware index (ipsw.me, S-014) lists build 24A446 as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02. Apple has not published a signing record that the project could check (C-021). |
+| Signing status (public observation) | Unresolved. A third-party firmware index (ipsw.me, S-014) lists build 24A446 as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02, so the status changed between observations. The change date is not known (C-021, E-030). Apple has not published a signing record that the project could check. |
 
 The research target is fixed at iOS 27.0.1 (build 24A446), as described in the target profile above. Firmware observations in this section come from public sources, with attribution and the date each was last checked.
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-11):** 32 claims (10 verified, 15 partially verified, 7 unverified), 32 sources, 17 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 76 claims (39 verified, 17 partially verified, 20 unverified), 42 sources, 30 timeline events, 15 compatibility rows and 4 firmware builds.
 
-**Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's documented range for A15 to A17 devices ends at iOS 17.3.1, and no iOS 27 support is documented for the A17 Pro (C-018).
+**Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
 
 Research status by dimension (details in [research/](research/)):
 
@@ -60,9 +60,9 @@ Research status by dimension (details in [research/](research/)):
 |---|---|
 | DIM01 Event verification | Partially researched |
 | DIM02 A17 Pro architecture | Partially researched |
-| DIM03 SPTM research | Partially researched |
-| DIM04 Kernel vulnerability intelligence | Partially researched |
-| DIM05 Sandbox escape and privilege escalation | Not researched in depth |
+| DIM03 SPTM research | Researched (graded audit: [sptm-evidence-audit.md](research/sptm-evidence-audit.md)) |
+| DIM04 Kernel vulnerability intelligence | Researched for the Apple advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) |
+| DIM05 Sandbox escape and privilege escalation | Partially researched (Apple advisory text only) |
 | DIM06 Firmware and build compatibility | Partially researched |
 | DIM07 Exploit chain integration | Partially researched |
 | DIM08 Jailbreak ecosystem | Partially researched |
@@ -79,38 +79,41 @@ Status key: `verified`; `partially_verified`; `reported_unverified` (reported, n
 |---|---|---|---|---|
 | CMP-001 | SPTM Research | partially verified | C-013, C-014 | Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. |
 | CMP-002 | SPTM Bypass | unverified | C-015 | The only SPTM bypass mention is a community reference describing an undisclosed bypass. |
-| CMP-003 | Kernel Vulnerability | unverified | C-005 | Apple credits Calif.io for iOS 27 entries, including a kernel-memory impact on CVE-2026-28968. |
-| CMP-004 | Kernel Read | unverified | C-022 | A kernel read primitive is reported as planned by a Calif.io-linked researcher. |
-| CMP-005 | Kernel Write | unverified | C-022 | Same basis as CMP-004. |
-| CMP-006 | Sandbox Escape | not established | - | No verified public sandbox escape for this target. |
-| CMP-007 | Privilege Escalation | not established | - | No verified public privilege escalation for this target. |
+| CMP-003 | Kernel Vulnerability | unverified | C-037, C-039, C-041, C-070, C-071 | Apple's iOS 27 and iOS 27.2 notes list kernel-memory write and corruption entries (research/apple-27x-cve-mapping.md). |
+| CMP-004 | Kernel Read | unverified | C-035, C-040 | Apple lists kernel-memory read, disclosure and layout impacts: eight on the iOS 27 page (including CVE-2026-84622, which needs root) and six on the iOS 27.2 page. |
+| CMP-005 | Kernel Write | unverified | C-037, C-039, C-041 | Apple lists write and corruption impacts for kernel memory on the iOS 27 and iOS 27.2 pages. |
+| CMP-006 | Sandbox Escape | not established | C-034, C-048, C-074 | Apple lists a WebContent sandbox escape reachable by a remote attacker (iOS 27.2: CVE-2026-112690) and a WebKit Process Model escape (iOS 27.2: CVE-2026-113897). |
+| CMP-007 | Privilege Escalation | not established | C-035, C-036, C-074 | Apple lists a kernel entry in which a malicious app may gain root privileges (iOS 27: CVE-2026-43689) and an entry in which an app with root privileges reads uninitialised kernel memory (iOS 27: CVE-2026-84622). |
 | CMP-008 | AMFI Compatibility | not researched | - | AMFI (code signing enforcement) was not researched in this pass. |
-| CMP-009 | Complete Exploit Chain | reported, unverified | C-001, C-002, C-027 | A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. |
-| CMP-010 | Bootstrap | not established | C-016 | No bootstrap for iOS 27.0.1 is verified. |
-| CMP-011 | Package Manager | not established | C-030 | Sileo: the repository named Sileo/Sileo has 2.5.1 (2024-10-08) as its latest release, and its notes do not mention iOS 27. |
-| CMP-012 | Persistence | reported, unverified | C-004 | Reboot persistence is reported for an iPhone 18 Pro demonstration, not for the target. |
-| CMP-013 | Public Jailbreak Tool | not established | C-028 | No publicly installable tool is verified for this target. |
-| CMP-014 | Independent A17 Pro Reproduction | not established | - | No independent reproduction on A17 Pro hardware was found. |
+| CMP-009 | Complete Exploit Chain | reported, unverified | C-001, C-002, C-027, C-038, C-042, C-049 | A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. |
+| CMP-010 | Bootstrap | not established | C-016, C-055, C-065, C-066 | No bootstrap for iOS 27.0.1 is verified. |
+| CMP-011 | Package Manager | not established | C-030, C-056, C-057 | Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). |
+| CMP-012 | Persistence | reported, unverified | C-004, C-053 | Reboot persistence is reported for the iPhone 18 Pro demonstration (C-004). |
+| CMP-013 | Public Jailbreak Tool | not established | C-028, C-058, C-064 | No publicly installable tool is verified for this target (C-028). |
+| CMP-014 | Independent A17 Pro Reproduction | not established | C-049, C-062 | No independent reproduction on A17 Pro hardware was found. |
 | CMP-015 | Exact Build Verification | partially verified | C-003, C-024, C-025 | Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. |
 
 Every row is scoped to the target profile: iPhone16,2, A17 Pro, iOS 27.0.1, build 24A446. `not_established` means no verified evidence exists for that row. It does not mean the answer is no.
 
 ## 7. SPTM Research
 
-- Apple states that SPTM is supported on A15-or-later and M2-or-later SoCs, and replaces PPL on supported platforms (C-013). By ordering, that covers the A17 Pro (C-014, partially verified).
-- No public A17 Pro SPTM bypass has been verified. A community reference reports an undisclosed bypass. That report is unverified (C-015).
-- Dopamine's documented A15 to A17 range ends at iOS 17.3.1 (C-016). It does not cover iOS 27.0.1.
+- Apple states that SPTM is supported on A15-or-later and M2-or-later SoCs, and replaces PPL on supported platforms (C-013). The A17 Pro is in that class (C-014, partially verified).
+- No public A17 Pro SPTM bypass has been verified. A community reference reports an SPTM bypass valid through iOS 27.0.1, reportedly patched in a 27.2 beta. The primary post was not retrieved (C-051, unverified).
+- Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1, because no SPTM bypass is known for iOS 17.4 and later (C-066). The Titan bypass in those notes covers iOS 16.5.1 to 17.3.1 (C-065).
+- The independent SPTM paper analyses an iPhone 16 on iOS 18.4. It does not cover the A17 Pro or any iOS 27 build (C-060).
 
-Details: [research/DIM03-sptm-research.md](research/DIM03-sptm-research.md).
+Details: [research/sptm-evidence-audit.md](research/sptm-evidence-audit.md) and [research/DIM03-sptm-research.md](research/DIM03-sptm-research.md).
 
 ## 8. Kernel Research
 
-- Apple's iOS 27 security notes credit Calif.io researchers for four CVE entries: CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886 (C-005). One entry's impact text reads "corrupt kernel memory", and another reads "modify protected system files". Applicability to iOS 27.0.1 or the A17 Pro is not established.
+- Apple's iOS 27 security notes credit Calif.io researchers for four CVE entries: CVE-2026-65409, CVE-2026-65410, CVE-2026-28968 and CVE-2026-86886 (C-038). CVE-2026-28968 is a Kernel entry with a kernel-memory corruption impact.
+- Apple's iOS 27.2 security notes credit Calif.io researchers for six entries. None has a kernel-memory impact (C-042).
+- Apple's iOS 27.2 notes list 23 kernel-memory entries: 4 write, 12 corruption, 1 copy-on-write and 6 read or disclosure. The notes state no affected version range (C-039 to C-041, C-047).
 - Apple's index lists no published CVE entries for 27.0.1 (C-007).
-- A kernel read/write release was reported as planned. No primary release has been found (C-022, unverified).
+- A kernel read/write release was announced on 2026-11-04. No publication was found on 2026-11-12 (C-022, C-049).
 - No public kernel exploit is verified for the target.
 
-Details: [research/DIM04-kernel-vulnerability.md](research/DIM04-kernel-vulnerability.md).
+Details: [research/DIM04-kernel-vulnerability.md](research/DIM04-kernel-vulnerability.md) and [research/apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md).
 
 ## 9. Exploit Chain Status
 
@@ -122,9 +125,10 @@ Details: [research/DIM07-exploit-chain.md](research/DIM07-exploit-chain.md).
 
 ## 10. Jailbreak Ecosystem
 
-- **Dopamine:** latest official release 3.0.13 (2026-11-03; C-017). The five most recent commit subjects do not mention iOS 27 (C-033). The documented support range stops at iOS 17.3.1 for A15 to A17 (C-016). No iOS 27 support is documented for the A17 Pro (C-018).
+- **Dopamine:** latest official release 3.0.13 (2026-11-03; C-017). Its notes for 3.0.2 to 3.0.13 do not mention iOS 27 (C-055). The 3.0 release states that real-device SPTM support ends at iOS 17.3.1 (C-066). No iOS 27 support is documented for the A17 Pro (C-018).
 - **Sileo:** the latest release of the repository named Sileo/Sileo is 2.5.1 (2024-10-08). Its notes do not mention iOS 27 (C-030, partially verified).
-- **ElleKit:** the official upstream could not be confirmed in this pass. Status not established.
+- **ElleKit:** the former repository identifier redirects to a repository with no GitHub release (C-056). The upstream's claim that ElleKit 1.2 covers iOS 27 is unverified (C-057).
+- **Project announcement:** a project claim from November 2026 for iOS 27.0 to 27.0.1 is unverified and carries a high risk (C-064). No release was reviewed in this pass.
 - **BootROM issue:** reported for A12 and A13 chips, not the A17 Pro (C-019, partially verified).
 
 Details: [research/DIM08-jailbreak-ecosystem.md](research/DIM08-jailbreak-ecosystem.md).
@@ -139,11 +143,11 @@ Details: [research/DIM08-jailbreak-ecosystem.md](research/DIM08-jailbreak-ecosys
 |---|---|---|---|---|
 | 27.0 | 24A437 | 2026-09-14 | not signed (third-party index), 2026-11-12 | listed on Apple page |
 | 27.0.1 | 24A446 | 2026-09-28 | not signed (third-party index), 2026-11-12 | none published |
-| 27.2 | 24B119 | 2026-10-26 | signed (third-party index), 2026-11-12 | not located |
-| 27.2.1 | 24B156 | 2026-11-09 | signed (third-party index), 2026-11-12 | not located |
+| 27.2 | 24B119 | 2026-10-26 | signed (third-party index), 2026-11-12 | listed on Apple page |
+| 27.2.1 | 24B156 | 2026-11-09 | signed (third-party index), 2026-11-12 | listed on Apple page |
 
 - An installed build is not the same as a restorable build. Restore depends on Apple's signing at restore time.
-- The signing status of 24A446 is unresolved (C-021). A third-party index (ipsw.me, S-014) lists it as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02. Do not assume a restore to it is possible.
+- The signing status of 24A446 is unresolved. A third-party index (ipsw.me, S-014) lists it as not signed, last checked 2026-11-12. A community reference (S-026) reported it as signed on 2026-11-02, so the status changed between observations (C-021, E-030). Do not assume a restore to it is possible.
 - SHSH blobs do not guarantee a restore.
 - The project does not recommend updating or downgrading. Those decisions belong to the device owner.
 - Update-deferral settings, where a device offers them, do not guarantee protection against every update or restore pathway. Their coverage is device-specific, and this project does not verify it.
@@ -156,22 +160,35 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | Date | Event | Verification | Sources |
 |---|---|---|---|
 | 2025-09 | Apple announces Memory Integrity Enforcement with the iPhone 17 and iPhone Air, naming the A19 and A19 Pro chips. | verified | S-003 |
+| 2025-10-10 | Independent academic analysis of SPTM, TXM and Exclaves (arXiv:2510.09272) is submitted. Its firmware analysis uses iPhone 16 (A18) on iOS 18.4, not the A17 Pro or iOS 27. | verified | S-035 |
 | 2026-06-18 | usbliter8 BootROM exploit for A12 and A13 devices is publicised (reported by secondary outlets and a national CERT). | partially verified | S-021, S-022, S-023 |
 | 2026-08-07 | Dopamine 3.0 released; secondary coverage quotes a support table of iOS 15.0 to 17.3.1 for A8 to A17 and M1 to M2, and iOS 26.0 to 26.0.1 for A12 and A13. | partially verified | S-009 |
+| 2026-08-07 | Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for iOS 16.5.1 to 17.3.1, a momentarius PPL bypass for A12 and A13, and that real-device SPTM support ends at iOS 17.3.1 because no bypass is known for 17.4 and later. | verified | S-007 |
 | 2026-09-14 | iOS 27.0 released (build 24A437 per the third-party index). | partially verified | S-014, S-001 |
 | 2026-09-21 | Press reports Apple stopped signing iOS 26.6.2 after iOS 27 shipped. Used as a pattern example for how older builds lose signing. | partially verified | S-020 |
 | 2026-09-28 | iOS 27.0.1 released (build 24A446). Apple's security releases index lists no published CVE entries for this build. | partially verified | S-002, S-014, S-016 |
 | 2026-10-16 | Calif.io reportedly demonstrates an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro at Hexacon 2026 in Paris. | partially verified | S-010, S-011, S-012 |
+| 2026-10-17 | An opa334 PSA dated 2026-10-17 is reported by the upstream reference to warn of an SPTM bypass valid through iOS 27.0.1. The original was not located in this review. | unverified | S-026 |
 | 2026-10-19 | Apple's iOS 27 security notes are updated with CVE entries credited to Calif.io researchers, two of them jointly with Claude and Anthropic Research. | verified | S-001 |
+| 2026-10-19 | The upstream reference reports a Calif.io team member's interview on end-user tools, the scope of the chain and a 27.2 patch statement. The interview was not retrieved. | unverified | S-026 |
 | 2026-10-23 | Apple's index lists iOS 27.1 for iPhone Duo with no published CVE entries. | verified | S-002 |
 | 2026-10-26 | iOS 27.2 released (build 24B119 per the third-party index). Secondary press reports 163 fixed vulnerabilities; Apple's 27.2 advisory was not located. | partially verified | S-002, S-014, S-017, S-018 |
+| 2026-10-26 | Apple's iOS 27 security page is updated with entries marked as added on 2026-10-26, including CVE-2026-112608 (CoreMedia) and CVE-2026-86916 (kernel privilege impact). | verified | S-001 |
+| 2026-10-30 | A Calif.io social account reportedly posted a bare hash without explanation (upstream reference). The content it commits to is unknown. | unverified | S-026 |
+| 2026-10-30 | A company-branded account reportedly showed a root shell on iOS 27.2 (upstream reference). Single-party, unverified (C-063). | unverified | S-026 |
+| 2026-11-01 | A project announced a semi-untethered iOS 27.0 to 27.0.1 jailbreak with a planned release one to two weeks later (upstream reference). The upstream reference found no proof of concept or third-party validation. No release was reviewed in this pass. Any future release should be treated as potentially malicious (C-064). | unverified | S-026 |
 | 2026-11-02 | A community reference states that iOS 27.0.1 was still signed on 2026-11-02. This is not independently verified and conflicts with the third-party index checked on 2026-11-11. | unverified | S-026 |
 | 2026-11-03 | Dopamine 3.0.13 published. Release notes describe a posix_spawn hook fix and a SpringBoard snapshot change. They do not state iOS 27 support. | verified | S-007 |
 | 2026-11-03 | Press reports that Apple responded to MIE-bypass claims with an iOS update. Details were not verified. | unverified | S-024 |
 | 2026-11-04 | Reported plan for a kernel read/write exploit and write-up from a Calif.io-linked researcher within about a week. Coverage conflicts; no primary announcement was located. | unverified | S-026, S-029 |
+| 2026-11-04 | Reported (upstream reference, V31): opa334 says Dopamine A12 and A13 support could follow using momentarius once a kernel read/write exploit is public; A14 and later still need an SPTM bypass. Original not retrieved. | unverified | S-026 |
+| 2026-11-04 | Reported (upstream reference, V32): a Calif.io video shows Lockdown Mode, an over-the-air update to iOS 27.2, and a reboot after which a plugin still works. Video and original post not retrieved. | unverified | S-026 |
 | 2026-11-06 | Press coverage through about 2026-11-06 reports that Apple fixed most flaws in iOS 27.2 and that no public tool is planned. | partially verified | S-019 |
 | 2026-11-09 | iOS 27.2.1 released (build 24B156 per the third-party index and the Wikipedia infobox). | partially verified | S-002, S-014, S-030 |
 | 2026-11-11 | Tracker snapshot. The third-party index lists iOS 27.0.1 as not signed. A community reference reports the opposite for 2026-11-02, so the status is unresolved. | partially verified | S-014, S-026 |
+| 2026-11-11 | The one-week window reported on 2026-11-04 for a kernel read/write write-up lapses. No publication, repository or source-code release for the announced work was found on 2026-11-12. | partially verified | S-029, S-013 |
+| 2026-11-12 | Research pass for the v0.2.0 update: Apple's iOS 27.2 and 27.2.1 advisories parsed, the upstream reference reconciled, and the kernel, Calif.io and SPTM evidence re-classified. | verified | S-033, S-034, S-026 |
+| 2026-11-12 | The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021). | partially verified | S-014, S-026 |
 
 ## 14. Verified Claims
 
@@ -185,10 +202,39 @@ A `verified` verdict requires a fetched, API or tier-1 source and high confidenc
 | C-007 | iOS 27.0.1 has no published CVE entries in Apple's security releases index | high | S-002 |
 | C-011 | Apple says Memory Integrity Enforcement is built into all iPhone 17 and iPhone Air models and names the A19 and A19 Pro chips | high | S-003 |
 | C-013 | Apple states SPTM is supported on A15-or-later and M2-or-later SoCs | high | S-004 |
+| C-016 | Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for all devices on iOS 16.5.1 to 17.3.1 | high | S-007, S-039 |
 | C-017 | Dopamine 3.0.13 is the latest official Dopamine release (published 2026-11-03) | high | S-007 |
 | C-029 | A GitHub account with the login pwnlambda exists | high | S-013 |
 | C-032 | Apple states PPL and SPTM enforce execution of signed and trusted code on all platforms except macOS | high | S-004 |
 | C-033 | The five most recent Dopamine default-branch commit subjects do not mention iOS 27 | high | S-032 |
+| C-034 | Apple's iOS 27 notes list two kernel-component entries with arbitrary code execution with kernel privileges (CVE-2026-84607 and CVE-2026-86916) | high | S-001 |
+| C-035 | Apple's iOS 27 notes list eight kernel-memory read, disclosure, layout or state entries, one requiring root privileges | high | S-001 |
+| C-036 | Apple's iOS 27 notes list a kernel entry that lets a malicious app gain root privileges (CVE-2026-43689) | high | S-001 |
+| C-037 | Apple's iOS 27 notes list kernel-memory write and corruption entries, including the Calif.io-credited CVE-2026-28968 | high | S-001 |
+| C-038 | Apple's iOS 27 notes credit Calif.io for four entries with different components and impacts | high | S-001 |
+| C-039 | Apple's iOS 27.2 notes list 23 kernel-memory entries (4 write, 12 corruption, 1 copy-on-write, 6 read or disclosure) and no kernel or root privilege entry | high | S-033 |
+| C-040 | Apple's iOS 27.2 notes list six kernel-memory read, disclosure or layout entries from several components | high | S-033 |
+| C-041 | Apple's iOS 27.2 notes list further kernel-memory corruption and write entries in Apple Neural Engine and AVEVideoEncoder | high | S-033 |
+| C-042 | The six Calif.io-credited entries in Apple's iOS 27.2 notes carry no kernel read or write impact | high | S-033 |
+| C-043 | CVE-2026-112611 and CVE-2026-113912 credit a Calif.io-affiliated researcher by handle, but neither is a kernel entry | high | S-033 |
+| C-044 | Apple's entry for CVE-2026-112705 lists the AVEVideoEncoder component with an impact of unexpected system termination, not a kernel-level impact | high | S-033 |
+| C-045 | Apple's iOS 27.2.1 notes list nine CVE identifiers, none of them one of the six target kernel entries | high | S-034 |
+| C-047 | Apple's iOS 27.2 notes state no affected iOS versions for the listed entries | high | S-033 |
+| C-048 | Apple's iOS 27.2 notes list a WebContent sandbox-escape entry that a remote attacker may use (CVE-2026-112690) | high | S-033 |
+| C-055 | No Dopamine 3.0.x release note from 3.0.2 to 3.0.13 mentions iOS 27 support | high | S-007 |
+| C-056 | The repository formerly at evelyneee/ellekit redirects to tealbathingsuit/ellekit, which has no GitHub release | high | S-040 |
+| C-058 | A public GitHub repository named staturnzz/momentarius is described as an A12/A13 PPL bypass | high | S-041 |
+| C-059 | An independent SPTM analysis states that SPTM replaced PPL on A15 or newer and M2 or newer SoCs | high | S-035, S-004 |
+| C-060 | The arXiv SPTM analysis's firmware work uses an iPhone 16 on iOS 18.4. The paper does not analyse the A17 Pro or any iOS 27 build | high | S-035 |
+| C-065 | Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for all devices on iOS 16.5.1 to 17.3.1 | high | S-007 |
+| C-066 | Dopamine 3.0 release notes say real-device SPTM support stops at iOS 17.3.1 because no SPTM bypass is known for iOS 17.4 and later | high | S-007 |
+| C-067 | Dopamine 3.0 release notes describe a momentarius PPL bypass for A12 and A13 devices on iOS 16.6 to 18.7.1 and 26.0 to 26.0.1 | high | S-007, S-041 |
+| C-068 | Dopamine 3.0 release notes name ClearSword and DarkSword workarounds but state no iOS version range for either exploit | high | S-007 |
+| C-070 | Apple's iOS 27 notes list CVE-2026-112608 (CoreMedia) as added on 2026-10-26 | high | S-001 |
+| C-071 | Apple's iOS 27 page marks 45 identifiers as added or updated on 2026-10-19 or 2026-10-26 | high | S-001 |
+| C-072 | Most Apple entries in iOS 27 and 27.2 apply to iPhone 11 and later; three Apple Intelligence entries apply to iPhone 15 Pro and later | high | S-001, S-033 |
+| C-073 | Apple's iOS 27 and iOS 27.2 notes do not mention AGX, IOGPU, SPTM, TXM, PPL, CoreTrust, AMFI or Exclave | high | S-001, S-033 |
+| C-074 | Apple's iOS 27 notes list four kernel or root privilege entries; the iOS 27.2 notes list none | high | S-001, S-033 |
 
 ## 15. Unverified Claims
 
@@ -198,13 +244,12 @@ Partially verified claims have checkable support, but a key element (scope, buil
 
 | ID | Claim | Confidence | Sources |
 |---|---|---|---|
-| C-001 | Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro at Hexacon 2026 | medium | S-010, S-011, S-012, S-005 |
+| C-001 | Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro at Hexacon 2026 | medium | S-005, S-010, S-011, S-012, S-036, S-037 |
 | C-003 | iOS 27.0.1 build 24A446 is the build for iPhone16,2 (iPhone 15 Pro Max) | medium | S-014, S-015, S-016 |
 | C-008 | iOS 27.2 (build 24B119) was released on 2026-10-26 | medium | S-002, S-014 |
 | C-009 | iOS 27.2.1 (build 24B156) was released on 2026-11-09 | medium | S-002, S-014 |
 | C-012 | A17 Pro is not among the chips Apple names for Memory Integrity Enforcement | medium | S-003 |
 | C-014 | The A17 Pro falls within Apple's A15-or-later SPTM class | medium | S-004, S-030 |
-| C-016 | Dopamine 3.0 lists iOS 16.5.1 to 17.3.1 support for A15, A16, A17 and M2 devices | medium | S-009, S-007 |
 | C-018 | No Dopamine release is documented to support iOS 27.0.1 on A17 Pro | medium | S-009, S-007, S-008 |
 | C-019 | The usbliter8 BootROM exploit is reported to affect A12 and A13 chips and not A14 or later | medium | S-021, S-022, S-023 |
 | C-024 | iOS 27.0.1 was released on 2026-09-28 | medium | S-002, S-014, S-016 |
@@ -213,6 +258,9 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-027 | No public complete exploit chain applicable to iPhone 15 Pro Max on iOS 27.0.1 has been verified | medium | S-010, S-019 |
 | C-028 | No publicly installable jailbreak tool is verified for iOS 27.0.1 on A17 Pro | medium | S-010, S-019, S-009, S-007 |
 | C-030 | The latest GitHub release of the repository named Sileo/Sileo is 2.5.1 (2024-10-08), and its notes do not mention iOS 27 | medium | S-031 |
+| C-046 | Apple's iOS 27.2 notes contain 162 distinct CVE identifiers in the extracted text; press reports 163 | medium | S-033 |
+| C-049 | No public kernel read/write write-up or exploit code by the researcher announced on 2026-11-04 was found as of 2026-11-12 | medium | S-013, S-029 |
+| C-069 | 8kSec reports Apple's fixed-in versions for the two DarkSword kernel CVEs as iOS 26.2 and 26.3 (secondary analysis) | medium | S-042 |
 
 ### Unverified
 
@@ -222,9 +270,22 @@ Partially verified claims have checkable support, but a key element (scope, buil
 | C-010 | iOS 27.2 fixed 163 vulnerabilities | low | S-017, S-018 |
 | C-015 | A publicly disclosed SPTM bypass applies to A17 Pro on iOS 27.0.1 | low | S-026 |
 | C-020 | A tutorial page claims a full iOS 27 jailbreak using usbliter8 | low | S-025 |
-| C-021 | iOS 27.0.1 (24A446) is currently unsigned by Apple | low | S-014 |
+| C-021 | iOS 27.0.1 (24A446) is unsigned in the ipsw.me index on 2026-11-12, after a 2026-11-02 report that it was signed | low | S-014 |
 | C-022 | A Calif.io-linked researcher reportedly announced a kernel read/write exploit and write-up within about a week | low | S-026, S-029 |
 | C-023 | An Apple CVE credit confirms the identity of the lambda handle, according to the reference repository | low | S-026 |
+| C-050 | opa334 is reported (2026-11-04) to plan A12/A13 Dopamine support via momentarius once a kernel read/write exploit is public, with A14 and later still needing an SPTM bypass | low | S-026 |
+| C-051 | A 2026-10-17 opa334 statement is reported to warn of an SPTM bypass valid through iOS 27.0.1 (upstream V7) | low | S-026 |
+| C-052 | A Calif.io researcher is reported to have said the jailbreak applies to any iPhone running iOS 27.0.1, possibly including iPads (upstream V10) | low | S-026 |
+| C-053 | A Calif.io video is reported to show a jailbreak state surviving an over-the-air update to iOS 27.2 with Lockdown Mode enabled (upstream V32) | low | S-026 |
+| C-054 | The upstream states that DarkSword and ClearSword kernel exploits support iOS only up to 26.0.1 (V8); no primary source confirms the range | low | S-026 |
+| C-057 | ElleKit 1.2 is reported to cover iOS 15 to 27 (upstream reference) | low | S-026 |
+| C-061 | Press coverage reports that AI helped build the Calif.io jailbreak (not confirmed by the team) | low | S-036, S-037, S-038 |
+| C-062 | A third party is reported to have reproduced CVE-2026-112705 as a crash on iPhone 17 Pro, iOS 27.0.1 (unverified) | low | S-026 |
+| C-063 | A company-branded account is reported to have shown a root shell on iOS 27.2 (unverified) | low | S-026 |
+| C-064 | A project announced on 2026-11-01 claims a semi-untethered iOS 27.0 to 27.0.1 jailbreak for iPhone 15 Pro Max (A17 Pro); no release or validation was located | low | S-026 |
+| C-075 | heise reports the Calif.io jailbreak as 'the first reboot-proof jailbreak since iOS 9' (press claim; unverified) | low | S-036 |
+| C-076 | t3n reports AI-assisted exploit-chain discovery and an iOS 27.2 beta comparison as established; heise calls the comparison theoretical | low | S-038 |
+| C-077 | The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified) | low | S-026 |
 
 ## 16. Source Index
 
@@ -260,10 +321,20 @@ Tiers: 1 primary (Apple, original research, official repositories and conference
 | S-026 | [iOS 27.0.1 Jailbreak Fact-Check and Ongoing Tracker (iMaxTomas/ios27-jb-tracker)](https://github.com/iMaxTomas/ios27-jb-tracker) | iMaxTomas (GitHub) | 3 | 2026-11-04 | fetched (full text) |
 | S-027 | [Creative Commons Attribution 4.0 International - Legal Code](https://creativecommons.org/licenses/by/4.0/legalcode) | Creative Commons | 1 | - | fetched (full text) |
 | S-028 | [Contributor Covenant Code of Conduct, version 2.1](https://www.contributor-covenant.org/version/2/1/code_of_conduct/) | Contributor Covenant project | 1 | - | fetched (full text) |
-| S-029 | [PBX Science: Calif iPhone jailbreak coverage (2026-11-04)](https://pbxscience.com/?p=24999) | PBX Science | 2 | 2026-11-04 | search snippet only |
+| S-029 | [PBX Science: Calif iPhone jailbreak coverage (2026-11-04)](https://pbxscience.com/?p=24999) | PBX Science | 2 | 2026-11-04 | fetched (full text) |
 | S-030 | [iPhone 15 Pro](https://en.wikipedia.org/wiki/IPhone_15_Pro) | Wikipedia | 2 | - | fetched (full text) |
 | S-031 | [Sileo/Sileo: latest GitHub release (2.5.1)](https://github.com/Sileo/Sileo/releases/tag/2.5.1) | Sileo project (GitHub repository named Sileo/Sileo) | 2 | 2024-10-08 | API response |
 | S-032 | [Dopamine default-branch commit history](https://github.com/opa334/Dopamine/commits) | opa334 (Dopamine project, GitHub) | 1 | 2026-11-03 | API response |
+| S-033 | [About the security content of iOS 27.2 and iPadOS 27.2](https://support.apple.com/en-us/149230) | Apple Inc. | 1 | 2026-10-26 | fetched (full text) |
+| S-034 | [About the security content of iOS 27.2.1 and iPadOS 27.2.1](https://support.apple.com/en-us/149715) | Apple Inc. | 1 | 2026-11-09 | fetched (full text) |
+| S-035 | [Modern iOS Security Features: A Deep Dive into SPTM, TXM, and Exclaves (arXiv:2510.09272)](https://arxiv.org/abs/2510.09272) | arXiv (independent academic analysis) | 2 | 2025-10-10 | fetched (full text) |
+| S-036 | [Works on iPhone 18 Pro: AI helps create untethered jailbreak for iOS 27.0.1](https://www.heise.de/en/news/Works-on-iPhone-18-Pro-AI-helps-create-untethered-jailbreak-for-iOS-27-0-1-11490907.html) | heise online | 2 | 2026-10-16 | fetched (full text) |
+| S-037 | [Dank KI: Rebootfester Jailbreak für iOS 27.0.1 bis zum iPhone 18 Pro, untethered](https://www.heise.de/news/Untethered-Jailbreak-fuer-iOS-27-0-1-auf-iPhone-18-Pro-der-Reboots-ueberlebt-11490726.html) | heise online | 2 | 2026-10-16 | fetched (full text) |
+| S-038 | [iOS-27-Jailbreak: Sicherheitsforscher greifen auf KI-Support zurück](https://t3n.de/news/untethered-jailbreak-ios-27-1768775/) | t3n | 2 | 2026-10-18 | fetched (full text) |
+| S-039 | [Dopamine Jailbreak (third-party page, ellekit.space)](https://ellekit.space/dopamine) | ellekit.space (authorship not verified) | 3 | - | fetched (full text) |
+| S-040 | [tealbathingsuit/ellekit (repository reached by redirect from evelyneee/ellekit)](https://github.com/tealbathingsuit/ellekit) | GitHub (repository owner: tealbathingsuit) | 2 | - | API response |
+| S-041 | [staturnzz/momentarius (repository metadata)](https://api.github.com/repos/staturnzz/momentarius) | GitHub (repository owner: staturnzz) | 3 | 2026-08-07 | API response |
+| S-042 | [Inside the DarkSword Kernel Escalation: From GPU Process to Kernel R/W (CVE-2025-43510 & CVE-2025-43520)](https://www.8ksec.io/darksword-kernel-escalation-cve-2025-43510-43520/) | 8kSec | 2 | 2026-05-03 | fetched (full text) |
 
 ## 17. Contribution Instructions
 
@@ -295,4 +366,4 @@ Maintainers do not run code from pull requests, and no pull request is merged au
 - This is an independent research and compatibility project. It is not affiliated with, endorsed by, or sponsored by Apple, Calif.io, Hexacon, the Dopamine project, or Sileo.
 - It is not a jailbreak tool, and it does not provide one.
 - Information is provided for research and reference only. It is not legal, security or device-repair advice. Owners are responsible for complying with the law where they live and with their device and service agreements.
-- The data is a dated snapshot (2026-11-11). Events are moving quickly. Check the `last_checked` date on every record.
+- The data is a dated snapshot (2026-11-12). Events are moving quickly. Check the `last_checked` date on every record.

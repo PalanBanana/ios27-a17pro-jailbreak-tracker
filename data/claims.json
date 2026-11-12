@@ -10,10 +10,12 @@
     "ios_scope": "iOS 27.0.1 (as reported)",
     "build_scope": "Not stated in the reports reviewed",
     "supporting_source_ids": [
+      "S-005",
       "S-010",
       "S-011",
       "S-012",
-      "S-005"
+      "S-036",
+      "S-037"
     ],
     "contradicting_source_ids": [],
     "limitations": "Relies on press descriptions. No primary Calif.io or Hexacon talk material was found, there is no technical write-up, nothing has been independently reproduced, and the demonstration device is not the target device.",
@@ -83,7 +85,7 @@
     "description": "Apple's iOS 27 security content page lists four CVE entries that credit Calif.io researchers, some jointly with other researchers. CVE-2026-65409 and CVE-2026-65410 credit Calif.io researchers in collaboration with Claude and Anthropic Research. CVE-2026-28968 carries the impact text 'An app may be able to cause unexpected system termination or corrupt kernel memory'. CVE-2026-86886 carries the impact text 'An app may be able to modify protected system files' and the description 'A path traversal issue was addressed with improved input validation'. An entry-update note dated October 19, 2026 follows CVE-2026-28968 in the extracted text.",
     "verdict": "verified",
     "confidence": "high",
-    "device_scope": "Not established per entry from the extracted text. Apple's iOS 27 notes list 'iPhone 11 and later' among device lists, which would include the iPhone 15 Pro Max.",
+    "device_scope": "Not established per entry from the extracted text; Apple's iOS 27 notes list 'iPhone 11 and later' for several entries, which would include the iPhone 15 Pro Max.",
     "chipset_scope": "Not chip-specific",
     "ios_scope": "iOS 27 security notes; the fixed-in release per CVE is not identified in the extracted text",
     "build_scope": "Not stated",
@@ -276,28 +278,28 @@
       "S-026"
     ],
     "contradicting_source_ids": [],
-    "limitations": "Community-sourced and undisclosed. The reference does not provide primary evidence for the bypass.",
+    "limitations": "Community-sourced and undisclosed. No primary disclosure was found. The upstream's opa334 statement (2026-10-17) that is the main lead could not be retrieved; see C-051.",
     "first_observed": "2026-11-11",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "C-016",
-    "title": "Dopamine 3.0 lists iOS 16.5.1 to 17.3.1 support for A15, A16, A17 and M2 devices",
-    "description": "Secondary coverage quotes a Dopamine 3.0 support table listing iOS 16.5.1 to 17.3.1 for A15, A16, A17 and M2 devices. The official main-branch README was checked and is a stale iOS 15 description, so the table is not confirmed from an official page.",
-    "verdict": "partially_verified",
-    "confidence": "medium",
-    "device_scope": "A15, A16, A17 and M2 devices (as quoted)",
-    "chipset_scope": "A15, A16, A17, M2",
-    "ios_scope": "iOS 16.5.1 to 17.3.1 (as quoted)",
-    "build_scope": "Not applicable",
+    "title": "Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for all devices on iOS 16.5.1 to 17.3.1",
+    "description": "The Dopamine 3.0 release notes (2026-08-07) state that a Titan PPL/SPTM bypass introduces support for all devices running iOS 16.5.1 to 17.3.1. The notes name no chip families. A third-party table lists iOS 15.0 to 17.3.1 for A14 to A17 and M1 to M2 (S-039). That table is secondary.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Devices running iOS 16.5.1 to 17.3.1 (release-note wording: all devices)",
+    "chipset_scope": "Not stated in the release note. The third-party table lists A14 to A17 and M1 to M2.",
+    "ios_scope": "iOS 16.5.1 to 17.3.1",
+    "build_scope": "Not stated",
     "supporting_source_ids": [
-      "S-009",
-      "S-007"
+      "S-007",
+      "S-039"
     ],
     "contradicting_source_ids": [],
-    "limitations": "Secondary report. The official support matrix was not located in the repository README.",
+    "limitations": "Release-note statement, verified as text. The bypass method is not described. The chip table is secondary.",
     "first_observed": "2026-08-07",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "C-017",
@@ -377,8 +379,8 @@
   },
   {
     "id": "C-021",
-    "title": "iOS 27.0.1 (24A446) is currently unsigned by Apple",
-    "description": "The ipsw.me firmware index marks 27.0.1 as not signed when checked on 2026-11-11. The reference repository reported that 27.0.1 was still signed on 2026-11-02. No Apple-hosted signing record was checked.",
+    "title": "iOS 27.0.1 (24A446) is unsigned in the ipsw.me index on 2026-11-12, after a 2026-11-02 report that it was signed",
+    "description": "The ipsw.me firmware index lists 24A446 as not signed (signed=false) when checked on 2026-11-12. The reference repository reported the build as signed on 2026-11-02 from a live index pull. Both are third-party observations. The date of the change is not known. No Apple-hosted signing record was checked.",
     "verdict": "unverified",
     "confidence": "low",
     "device_scope": "iPhone 15 Pro Max (iPhone16,2)",
@@ -391,14 +393,14 @@
     "contradicting_source_ids": [
       "S-026"
     ],
-    "limitations": "Signing status changes over time. The two sources report different dates. The index field is a third-party status, not an Apple statement.",
+    "limitations": "Signing status can change. The index is a third-party status field, not an Apple statement. Do not assume that a restore to this build is possible.",
     "first_observed": "2026-11-11",
     "last_checked": "2026-11-12"
   },
   {
     "id": "C-022",
     "title": "A Calif.io-linked researcher reportedly announced a kernel read/write exploit and write-up within about a week",
-    "description": "Press coverage and the reference repository both report a planned release of exploit code and a write-up about a week after 2026-11-04. A later press report says no public tool is planned. No primary announcement was located.",
+    "description": "Press coverage and the reference repository both report a planned release of exploit code and a write-up about a week after 2026-11-04. A later press report says no public tool is planned. No primary announcement was located, and a 2026-11-12 check found no publication (C-049).",
     "verdict": "unverified",
     "confidence": "low",
     "device_scope": "Not stated",
@@ -602,6 +604,818 @@
     "contradicting_source_ids": [],
     "limitations": "Subject lines only. Commit bodies, branches and pull requests were not reviewed, so absence from subject lines is not proof of absence of iOS 27 work.",
     "first_observed": "2026-11-11",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-034",
+    "title": "Apple's iOS 27 notes list two kernel-component entries with arbitrary code execution with kernel privileges (CVE-2026-84607 and CVE-2026-86916)",
+    "description": "Apple's iOS 27 security page lists CVE-2026-84607 (AVEVideoEncoder; 'A sandboxed app may be able to execute arbitrary code with kernel privileges'; description 'A race condition was addressed with improved state management.') and CVE-2026-86916 (Kernel; 'An app may be able to execute arbitrary code with kernel privileges'; description 'A use after free issue was addressed with improved memory management.'). CVE-2026-86916 is marked 'Entry added October 26, 2026'. Both are on the iOS 27 (27.0) page.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Device list not stated per entry (Apple's page lists 'iPhone 11 and later' for most entries)",
+    "chipset_scope": "Not chip-specific in the extracted text",
+    "ios_scope": "iOS 27 security notes (27.0 release)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's impact text is a summary. The page does not state affected version ranges. This record does not establish exploitability, or applicability to iOS 27.0.1 or the A17 Pro.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-035",
+    "title": "Apple's iOS 27 notes list eight kernel-memory read, disclosure, layout or state entries, one requiring root privileges",
+    "description": "The iOS 27 page lists CVE-2026-84622 (Kernel; 'An app with root privileges may be able to read uninitialized kernel memory'), CVE-2026-65359 (Kernel; 'A local user may be able to cause unexpected system termination or read kernel memory'), CVE-2026-65415 (Kernel; the same impact), CVE-2026-86903 and CVE-2026-84530 (Kernel; 'An app may be able to disclose kernel memory'), CVE-2026-43687 (Kernel; 'Connecting to a malicious NFS server may disclose kernel memory'), CVE-2026-65405 (Kernel; 'An app may be able to determine kernel memory layout') and CVE-2026-64760 (IOSurfaceAccelerator; 'An app may be able to leak sensitive kernel state').",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Per-entry device lists not extracted",
+    "chipset_scope": "Not chip-specific in the extracted text",
+    "ios_scope": "iOS 27 security notes (27.0 release)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Impact text as published by Apple. These are not classified here as usable kernel read primitives for the target. No exploit or reproduction was reviewed.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-036",
+    "title": "Apple's iOS 27 notes list a kernel entry that lets a malicious app gain root privileges (CVE-2026-43689)",
+    "description": "CVE-2026-43689 (component Kernel) carries the impact 'A malicious app may be able to gain root privileges' and the description 'A permissions issue was addressed with additional restrictions.' It appears in the iOS 27 notes (27.0 release).",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Per-entry device list not extracted",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27 security notes (27.0 release)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Impact text only. The affected version range and the code path are not stated.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-037",
+    "title": "Apple's iOS 27 notes list kernel-memory write and corruption entries, including the Calif.io-credited CVE-2026-28968",
+    "description": "Write entries: CVE-2026-84523 (APFS) and CVE-2026-84634 (Apple Neural Engine), both 'unexpected system termination or write kernel memory'. Corruption entries: CVE-2026-28968 (Kernel; Calif.io-credited; 'An app may be able to cause unexpected system termination or corrupt kernel memory'), CVE-2026-65398 (IOMobileFrameBuffer; the same impact), CVE-2026-84507, CVE-2026-84561 and CVE-2026-84599 (Kernel; the same impact), CVE-2026-84566 (Kernel; 'A local attacker may be able to cause unexpected system termination or corrupt kernel memory') and CVE-2026-43686 (Kernel; 'Connecting to a malicious NFS server may lead to kernel memory corruption'). The page lists 2 write and 7 corruption entries for iOS 27. CVE-2026-28968 carries an 'Entry updated October 19, 2026' note.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Per-entry device lists not extracted",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27 security notes (27.0 release)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's impact text only. The fixed-in release of each entry is not stated in the extracted text.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-038",
+    "title": "Apple's iOS 27 notes credit Calif.io for four entries with different components and impacts",
+    "description": "The iOS 27 page credits Calif.io on CVE-2026-65409 (Foundation; 'An app may be able to cause a denial of service'), CVE-2026-65410 (AVEVideoEncoder; 'An app may be able to cause unexpected system termination'), CVE-2026-28968 (Kernel; 'An app may be able to cause unexpected system termination or corrupt kernel memory') and CVE-2026-86886 (TCC; 'An app may be able to modify protected system files'). Of these, only CVE-2026-28968 has a kernel-memory impact.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Per-entry device lists not extracted",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27 security notes (27.0 release)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Credits as printed by Apple. Individual names are not reproduced in this repository.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-039",
+    "title": "Apple's iOS 27.2 notes list 23 kernel-memory entries (4 write, 12 corruption, 1 copy-on-write, 6 read or disclosure) and no kernel or root privilege entry",
+    "description": "The iOS 27.2 page lists 15 identifiers under the Kernel component and 23 identifiers with a kernel-memory impact. Write impacts: CVE-2026-112474, CVE-2026-112507, CVE-2026-84494, CVE-2026-84495. Corruption impacts: CVE-2026-112459, CVE-2026-112468, CVE-2026-112469, CVE-2026-112470, CVE-2026-112477, CVE-2026-112514, CVE-2026-112517, CVE-2026-112679, CVE-2026-112689, CVE-2026-112696, CVE-2026-65350, CVE-2026-86969. Copy-on-write: CVE-2026-112576. Most entries have device list 'iPhone 11 and later'. The page does not state an affected iOS version.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later for the entries reviewed (Apple device lists)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes (27.2 release, 2026-10-26); affected versions not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's impact text only. Affected version ranges are not stated, so this record does not show whether iOS 27.0.1 was affected. Read-only and termination-only entries are in C-040 and C-041.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-040",
+    "title": "Apple's iOS 27.2 notes list six kernel-memory read, disclosure or layout entries from several components",
+    "description": "CVE-2026-112466 (AVEVideoEncoder; 'An app may be able to cause unexpected system termination or read kernel memory'), CVE-2026-112479 (USB; 'A malicious USB device may be able to cause unexpected system termination or read kernel memory'), CVE-2026-112515 (IOHIDFamily; 'An attacker may be able to cause unexpected system termination or read kernel memory'), CVE-2026-112554 (IOStorageFamily; 'An app may be able to cause unexpected system termination or read kernel memory'), CVE-2026-113910 (Compression; 'An app may be able to disclose kernel memory') and CVE-2026-112665 (Kernel; 'An app may be able to determine kernel memory layout').",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device lists)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Impact text only. Read and disclosure primitives are not classified here as usable for the target. No public technical analysis was found for these entries.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-041",
+    "title": "Apple's iOS 27.2 notes list further kernel-memory corruption and write entries in Apple Neural Engine and AVEVideoEncoder",
+    "description": "Apple Neural Engine: CVE-2026-112696 ('An app may be able to cause unexpected system termination or corrupt kernel memory') and CVE-2026-84494 ('An app may be able to cause unexpected system termination or write kernel memory'). AVEVideoEncoder: CVE-2026-112468, CVE-2026-112469, CVE-2026-112470 and CVE-2026-112689, each 'An app may be able to cause unexpected system termination or corrupt kernel memory'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device lists)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Impact text only; affected versions not stated.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-042",
+    "title": "The six Calif.io-credited entries in Apple's iOS 27.2 notes carry no kernel read or write impact",
+    "description": "Apple's iOS 27.2 notes credit Calif.io on six identifiers: CVE-2026-112611 (CoreGraphics; 'Processing a maliciously crafted PDF file may lead to memory corruption'), CVE-2026-112684 (WebKit; 'Processing maliciously crafted web content may lead to an unexpected process crash'), CVE-2026-112692 (App Intents; 'An app may be able to access sensitive user data'), CVE-2026-112705 (AVEVideoEncoder; 'An app may be able to cause unexpected system termination'), CVE-2026-113912 (CoreAudio; 'Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory') and CVE-2026-113950 (CoreGraphics; font processing, 'unexpected app termination or corrupt process memory'). None of these impacts is kernel memory. The script-computed check found no kernel-memory impact among them.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device list for the entries extracted)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [
+      "S-026"
+    ],
+    "limitations": "The upstream reference describes CVE-2026-112705 as kernel-level (see C-044). Credits are recorded by organisation only.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-043",
+    "title": "CVE-2026-112611 and CVE-2026-113912 credit a Calif.io-affiliated researcher by handle, but neither is a kernel entry",
+    "description": "Apple's iOS 27.2 notes credit a Calif.io-affiliated researcher by the handle @pwnlambda on CVE-2026-112611 (CoreGraphics; 'Processing a maliciously crafted PDF file may lead to memory corruption') and on CVE-2026-113912 (CoreAudio; 'Processing a maliciously crafted media file may lead to unexpected app termination or corrupt process memory'). The researcher's name is printed on Apple's page and is not reproduced here.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device list)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "These entries do not establish kernel read/write. They are kept separate from the announced kernel read/write work (see C-022 and C-049).",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-044",
+    "title": "Apple's entry for CVE-2026-112705 lists the AVEVideoEncoder component with an impact of unexpected system termination, not a kernel-level impact",
+    "description": "The iOS 27.2 notes list CVE-2026-112705 (component AVEVideoEncoder; 'An app may be able to cause unexpected system termination'; description 'An out-of-bounds write issue was addressed with improved bounds checking'), with credits to Calif.io researchers. The upstream reference describes the same component as kernel-level.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device list)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [
+      "S-026"
+    ],
+    "limitations": "Apple does not state whether the AVEVideoEncoder code path runs in the kernel. This record compares only the impact text with the upstream label.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-045",
+    "title": "Apple's iOS 27.2.1 notes list nine CVE identifiers, none of them one of the six target kernel entries",
+    "description": "The iOS 27.2.1 advisory (released 2026-11-09) lists nine identifiers. CVE-2026-111497 (brotli; 'Processing maliciously crafted input may lead to memory corruption'); CVE-2026-113960 and CVE-2026-113961 (Messages); CVE-2026-113963 (App Intents; access to sensitive user data); CVE-2026-113964 and CVE-2026-113965 (CoreUtils; pairing and rate limits); CVE-2026-113968 (AirPlay) and CVE-2026-113969 (rapportd), both rate-limit issues; CVE-2026-113970 (Bluetooth; 'An attacker in Bluetooth range may be able to corrupt process memory'). None is listed under the Kernel component.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Per Apple's device lists (not extracted per entry)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2.1 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-034"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Component and impact of the nine entries were not mapped in this pass.",
+    "first_observed": "2026-11-09",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-046",
+    "title": "Apple's iOS 27.2 notes contain 162 distinct CVE identifiers in the extracted text; press reports 163",
+    "description": "A text extraction of Apple's iOS 27.2 security page yields 162 distinct CVE identifiers. Press coverage reports 163 vulnerabilities fixed in iOS 27.2. The difference is not explained by the extraction method used here.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not applicable (counts)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 27.2",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [
+      "S-017"
+    ],
+    "limitations": "Counting method: distinct CVE identifiers in the extracted text. The press count may use a different basis.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-047",
+    "title": "Apple's iOS 27.2 notes state no affected iOS versions for the listed entries",
+    "description": "The iOS 27.2 page does not state an affected iOS version for any entry. The word 'affect' does not appear in its text. Entries are listed as fixed in the release, with component, impact, description and credits.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "24A446 not addressed by the notes",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Describes the advisory format as parsed. Apple's other documentation was not searched for version ranges.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-048",
+    "title": "Apple's iOS 27.2 notes list a WebContent sandbox-escape entry that a remote attacker may use (CVE-2026-112690)",
+    "description": "CVE-2026-112690 is listed under the App Store component, for iPhone 11 and later, with the impact 'A remote attacker may be able to break out of the WebContent sandbox' and the description 'This issue was addressed with improved input validation.' It is fixed in iOS 27.2 per the advisory. A second entry, CVE-2026-113897 (WebKit Process Model; 'A remote attacker may be able to break out of Web Content sandbox'), is also listed on the 27.2 page.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device list)",
+    "chipset_scope": "Not chip-specific",
+    "ios_scope": "iOS 27.2 notes",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Impact text only. The component label is not used here. Applicability to iOS 27.0.1 is not established.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-049",
+    "title": "No public kernel read/write write-up or exploit code by the researcher announced on 2026-11-04 was found as of 2026-11-12",
+    "description": "Searches and a GitHub account check on 2026-11-12 found no write-up, release or repository for the kernel read/write work announced on 2026-11-04. The researcher's public GitHub account showed 27 public repositories on the first API page (sorted by creation date). The newest was created 2026-01-17 and has no description. No repository name contains kernel, KRW, exploit or jailbreak terms. Contents were not reviewed.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not stated",
+    "ios_scope": "Not stated (the announcement did not name a version)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-013",
+      "S-029"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Negative search result. Absence from search and from one account is not proof that nothing was published elsewhere.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-050",
+    "title": "opa334 is reported (2026-11-04) to plan A12/A13 Dopamine support via momentarius once a kernel read/write exploit is public, with A14 and later still needing an SPTM bypass",
+    "description": "The upstream reference (V31) reports, from Chinese-language reprints of an infosec.exchange post, that opa334 said A12 and A13 support could follow quickly using momentarius, and that A14 and later devices would still need an n-day SPTM bypass. The original post was not retrieved.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "A12 and A13 (as reported); A14 and later (as reported)",
+    "chipset_scope": "A12, A13, A14 and later (as reported)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Reported second-hand by the upstream reference. The original post was not retrieved.",
+    "first_observed": "2026-11-04",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-051",
+    "title": "A 2026-10-17 opa334 statement is reported to warn of an SPTM bypass valid through iOS 27.0.1 (upstream V7)",
+    "description": "The upstream reference reports an opa334 PSA dated 2026-10-17 warning of an SPTM bypass valid through iOS 27.0.1, reportedly confirmed as real by another researcher, and reportedly patched in a 27.2 beta. The original PSA was not located by search or fetch in this review. Its kernel-coverage statement (V8) is treated separately in C-054.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.0.1 and 27.2 beta (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Second-hand. Original not retrieved. Bypass details are not public.",
+    "first_observed": "2026-10-17",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-052",
+    "title": "A Calif.io researcher is reported to have said the jailbreak applies to any iPhone running iOS 27.0.1, possibly including iPads (upstream V10)",
+    "description": "The upstream reference attributes to a Calif.io team member a statement that the jailbreak applies to any iPhone running iOS 27.0.1, possibly including iPads, from an interview it dates to 2026-10-19. The English and German heise pages and the t3n page, saved on 2026-11-12, do not quote the statement. The interview itself was not retrieved. The upstream lists the claim as verified on the strength of that interview, which this review did not see.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Any iPhone running iOS 27.0.1 (as reported)",
+    "chipset_scope": "Not stated (A14 PPL scope not established)",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Interview not located. The statement's scope (A14 PPL, iPadOS) is not established.",
+    "first_observed": "2026-10-19",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-053",
+    "title": "A Calif.io video is reported to show a jailbreak state surviving an over-the-air update to iOS 27.2 with Lockdown Mode enabled (upstream V32)",
+    "description": "The upstream reference reports a 2026-11-04 Calif.io video in which Lockdown Mode is enabled, the device is updated over the air to iOS 27.2, and a plugin still works after reboot. The mechanism is undisclosed. The video and original post were not retrieved in this review.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.2 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Second-hand. The upstream reports that the over-the-air segment of the video was edited, and that a team member said a full uncut version could be shared. Neither the video nor the original post was retrieved.",
+    "first_observed": "2026-11-04",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-054",
+    "title": "The upstream states that DarkSword and ClearSword kernel exploits support iOS only up to 26.0.1 (V8); no primary source confirms the range",
+    "description": "The upstream reference (V8) states that the existing ClearSword and DarkSword kernel exploits support only iOS up to 26.0.1. The Dopamine 3.0 release notes name both exploits and a DarkSword or ClearSword workaround, but state no version range for either (C-068). An analysis dated 2026-05-03 covers DarkSword only and gives Apple's fixed-in versions as 26.2 (CVE-2025-43510) and 26.3 (CVE-2025-43520) (C-069). The upstream range describes exploit support. That may differ from the exposure of the underlying bug. The two statements are not reconciled.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not stated (the analysis cites pre-A15 devices for 18.x)",
+    "ios_scope": "iOS 18.x and 26.x (as cited)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [
+      "S-042"
+    ],
+    "limitations": "No primary Dopamine statement of the ClearSword or DarkSword version range was found in the release notes. The 8kSec analysis covers DarkSword only.",
+    "first_observed": "2026-10-17",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-055",
+    "title": "No Dopamine 3.0.x release note from 3.0.2 to 3.0.13 mentions iOS 27 support",
+    "description": "The GitHub release notes for Dopamine 3.0.2 to 3.0.13 (published 2026-08-09 to 2026-11-03) do not mention iOS 27 support. The base release 3.0 (2026-08-07) mentions iOS 27.0 betas only for virtual-device (Corellium) testing and limits real-device support to iOS 17.3.1 (C-066).",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable (software release notes)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not stated in the notes",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Release notes only. Commit bodies and other branches were not reviewed. Absence from the notes is not proof of unsupported behaviour.",
+    "first_observed": "2026-11-03",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-056",
+    "title": "The repository formerly at evelyneee/ellekit redirects to tealbathingsuit/ellekit, which has no GitHub release",
+    "description": "The GitHub API reports that the former evelyneee/ellekit identifier (repository ID 559919558) redirects to tealbathingsuit/ellekit, the repository with that identifier. The destination has no GitHub release (checked 2026-11-12) and was last pushed on 2026-07-31.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not applicable",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-040"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The relation of this repository to the ElleKit project named in other sources is not confirmed by a project statement.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-057",
+    "title": "ElleKit 1.2 is reported to cover iOS 15 to 27 (upstream reference)",
+    "description": "The upstream reference reports that ElleKit 1.2 (2026-07-31) covers rootless injection on iOS 15 to 27 (arm64). It cites a single secondary article. The candidate repository has no GitHub release record. Its last push date (2026-07-31) matches the reported date, but does not establish a version.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 15 to 27 (as reported)",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [
+      "S-040"
+    ],
+    "limitations": "Release record not found. The statement is not verified.",
+    "first_observed": "2026-11-02",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-058",
+    "title": "A public GitHub repository named staturnzz/momentarius is described as an A12/A13 PPL bypass",
+    "description": "The GitHub repository staturnzz/momentarius was created 2026-08-07, last pushed 2026-08-07 and updated 2026-11-05. Its description reads 'A12/A13 PPL Bypass'. Only repository metadata was retrieved (MIT licence, not archived, not a fork). Dopamine 3.0 release notes describe the same bypass (C-067). The code was not downloaded, reviewed or run.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "A12 and A13 (repository description)",
+    "chipset_scope": "A12 and A13 (repository description)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-041"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Metadata only. The description is the repository's own statement and is not verified. This record makes no claim about the code.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-059",
+    "title": "An independent SPTM analysis states that SPTM replaced PPL on A15 or newer and M2 or newer SoCs",
+    "description": "arXiv paper 2510.09272 (submitted 2025-10-10; 'Modern iOS Security Features: A Deep Dive into SPTM, TXM, and Exclaves') states that SPTM and TXM were released for A15/M2 or newer SoCs in 2023 and that SPTM has replaced the PPL mitigation on A15 and M2 or newer SoCs.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Devices with A15 or newer SoCs (per the paper)",
+    "chipset_scope": "A15 or newer; M2 or newer",
+    "ios_scope": "Not version-specific in the statement",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-035",
+      "S-004"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Independent analysis. Its firmware work used other hardware (see C-060).",
+    "first_observed": "2025-10-10",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-060",
+    "title": "The arXiv SPTM analysis's firmware work uses an iPhone 16 on iOS 18.4. The paper does not analyse the A17 Pro or any iOS 27 build",
+    "description": "The arXiv paper states that its main firmware analysis used iOS 18.4 (22E240) firmware for the iPhone 16, and that a research device ran iOS 18.5. A full-text search on 2026-11-12 found no mention of A16, A17, A18, A19 or A20 beyond the A15 SPTM statement (C-059), and no mention of iOS 26, iOS 27, iPhone 15 or iPhone 17. The paper does not name the iPhone 16's SoC in the text.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 16 (A18) in the paper's firmware analysis",
+    "chipset_scope": "A18 in the paper's firmware analysis",
+    "ios_scope": "iOS 18.4 and 18.5 in the paper",
+    "build_scope": "22E240 (iOS 18.4)",
+    "supporting_source_ids": [
+      "S-035"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Full-text search of the HTML version of the paper (v1). Figures and appendices were not reviewed one by one.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-061",
+    "title": "Press coverage reports that AI helped build the Calif.io jailbreak (not confirmed by the team)",
+    "description": "heise's headline states that AI helped create the iOS 27.0.1 jailbreak, and t3n reports that AI was used to locate the exploit chain. The Calif.io team has not published its method, and the coverage reviewed does not name the models used.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 18 Pro (as reported)",
+    "chipset_scope": "A20 Pro (as reported for that model)",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-036",
+      "S-037",
+      "S-038"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Press claims. No team statement located. The coverage's AI claims are not verified.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-062",
+    "title": "A third party is reported to have reproduced CVE-2026-112705 as a crash on iPhone 17 Pro, iOS 27.0.1 (unverified)",
+    "description": "The upstream reference (V17) reports that a third party independently reproduced CVE-2026-112705 on an iPhone 17 Pro running iOS 27.0.1 and published a proof of concept. The reported effect is a kernel-side out-of-bounds write that causes a panic, which the upstream describes as denial-of-service class, without arbitrary read or write. No exploit detail is recorded here.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 17 Pro (as reported; not the target)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Reported by the upstream reference, which states that the repository exists. This review did not visit, download or run it, and no link is recorded. Apple's impact text for CVE-2026-112705 is 'unexpected system termination' (C-044). The report does not establish any read or write capability.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-063",
+    "title": "A company-branded account is reported to have shown a root shell on iOS 27.2 (unverified)",
+    "description": "The upstream reference (V18) reports that a company-branded account demonstrated on 2026-10-30 a global icon change and a root shell on iOS 27.2. It reports no CVE, no disclosure commitment and no independent media confirmation.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.2 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Single-party evidence (image or video). Device model and method are not stated. If it were true, it would describe a route other than the one reported for the Calif.io demonstration. This is not established.",
+    "first_observed": "2026-10-30",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-064",
+    "title": "A project announced on 2026-11-01 claims a semi-untethered iOS 27.0 to 27.0.1 jailbreak for iPhone 15 Pro Max (A17 Pro); no release or validation was located",
+    "description": "The upstream reference (V21, V22, V28) reports a project announced on 2026-11-01 for iOS 27.0 to 27.0.1, described as semi-untethered, with a planned release one to two weeks later. The project reportedly names iPhone 15 Pro Max (A17 Pro) as its only test device. The reported status is that its kernel-level stage works and that a later stage is unfinished. The upstream found no proof of concept or third-party validation, and rates the claims unverifiable. This record treats any future release as potentially malicious and does not link to any project resource.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "iPhone 15 Pro Max (A17 Pro), as reported as the only test device",
+    "chipset_scope": "A17 Pro (as reported)",
+    "ios_scope": "iOS 27.0 to 27.0.1 (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Self-reported claims, recorded second-hand. The individual behind the project is not named here. No release, code or third-party validation was reviewed. No stage is mapped to any listed CVE (see C-042, C-073). The claim, if real, would still need the exact-target verification that this project requires (LEVEL 5).",
+    "first_observed": "2026-11-01",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-065",
+    "title": "Dopamine 3.0 release notes state a Titan PPL/SPTM bypass for all devices on iOS 16.5.1 to 17.3.1",
+    "description": "The Dopamine 3.0 release notes (published 2026-08-07) state that a Titan PPL/SPTM bypass introduces support for all devices running iOS 16.5.1 to 17.3.1. The notes name the bypass's developer but do not describe its method.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Devices running iOS 16.5.1 to 17.3.1 (release-note wording: all devices)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 16.5.1 to 17.3.1",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Release-note statement, verified as text. The release notes do not name chip families. It does not cover iOS 27.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-066",
+    "title": "Dopamine 3.0 release notes say real-device SPTM support stops at iOS 17.3.1 because no SPTM bypass is known for iOS 17.4 and later",
+    "description": "The Dopamine 3.0 release notes (2026-08-07) say that support for SPTM devices up to the 27.0 betas has been added in general, that it can be tested on Corellium virtual devices, and that it 'obviously only works up to 17.3.1 on real devices due to lack of an SPTM bypass on >=17.4'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Real SPTM devices (release-note wording); virtual devices for iOS 27 betas",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 17.4 and later (no bypass per the notes); iOS 27 betas on virtual devices only",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The statement is the project's, dated 2026-08-07. It predates the October 2026 reports of a further SPTM bypass (C-051), and the project may have changed its view since. It concerns Dopamine's support, not SPTM in general.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-067",
+    "title": "Dopamine 3.0 release notes describe a momentarius PPL bypass for A12 and A13 devices on iOS 16.6 to 18.7.1 and 26.0 to 26.0.1",
+    "description": "The Dopamine 3.0 release notes (2026-08-07) state that a momentarius PPL bypass, by the project's listed developers, introduces support for A12 and A13 devices running iOS 16.6 to 18.7.1 and 26.0 to 26.0.1.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "A12 and A13 devices (release-note wording)",
+    "chipset_scope": "A12 and A13",
+    "ios_scope": "iOS 16.6 to 18.7.1 and 26.0 to 26.0.1",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007",
+      "S-041"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Release-note statement. The repository metadata (C-058) is consistent with it. The code was not reviewed. Not applicable to the A17 Pro.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-068",
+    "title": "Dopamine 3.0 release notes name ClearSword and DarkSword workarounds but state no iOS version range for either exploit",
+    "description": "The Dopamine 3.0 release notes (2026-08-07) name a ClearSword exploit, described as a cleaner alternative to DarkSword, and a DarkSword or ClearSword respring workaround for A8 devices. The notes give no iOS version range for either exploit.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "A8 devices for the workaround (release-note wording)",
+    "chipset_scope": "A8 (workaround)",
+    "ios_scope": "Not stated",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-007"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Release-note text only. Other release notes and commit history were not reviewed. This record is the basis for C-054's 'unverified' verdict.",
+    "first_observed": "2026-08-07",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-069",
+    "title": "8kSec reports Apple's fixed-in versions for the two DarkSword kernel CVEs as iOS 26.2 and 26.3 (secondary analysis)",
+    "description": "A security-company analysis dated 2026-05-03 reports that Apple's advisories fix CVE-2025-43510 in iOS 18.7.5 and 26.2, and CVE-2025-43520 in iOS 18.7.6 and 26.3.",
+    "verdict": "partially_verified",
+    "confidence": "medium",
+    "device_scope": "Not applicable (kernel bugs; the analysis cites pre-A15 devices for the 18.x fixes)",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 18.7.5 to 18.7.6 and 26.2 to 26.3 (fixed-in versions, as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-042"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's 26.x advisories were not retrieved. The version data comes from a secondary analysis.",
+    "first_observed": "2026-05-03",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-070",
+    "title": "Apple's iOS 27 notes list CVE-2026-112608 (CoreMedia) as added on 2026-10-26",
+    "description": "Apple's iOS 27 security page lists CVE-2026-112608 under CoreMedia, with the impact 'Processing a maliciously crafted Bluetooth packet may result in disclosure of process memory' and the description 'An out-of-bounds read was addressed with improved bounds checking.' The entry is marked 'Entry added October 26, 2026'.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Apple device list not checked for this entry",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27 (27.0 page)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's impact text. Not kernel memory in Apple's wording. Affected version ranges are not stated.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-071",
+    "title": "Apple's iOS 27 page marks 45 identifiers as added or updated on 2026-10-19 or 2026-10-26",
+    "description": "Apple's iOS 27 security page marks 45 identifiers with 'Entry added' or 'Entry updated' notes dated October 19 or October 26, 2026. The page lists these entries under iOS 27 and states no affected version range.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 27 (27.0 page)",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-001"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "The notes give the date an entry was added or updated on the page. They do not give the date a fix shipped in a given build, so 'fixed in 27.0' means listed on the 27.0 page.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-072",
+    "title": "Most Apple entries in iOS 27 and 27.2 apply to iPhone 11 and later; three Apple Intelligence entries apply to iPhone 15 Pro and later",
+    "description": "Apple's iOS 27 and iOS 27.2 security pages list most entries for 'iPhone 11 and later'. The Apple Intelligence entries CVE-2026-86920 and CVE-2026-86955 (iOS 27) and CVE-2026-86987 (iOS 27.2) list 'iPhone 15 Pro and later', which on its face includes the iPhone 15 Pro Max.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later; iPhone 15 Pro and later (Apple device lists)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27 and iOS 27.2",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001",
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A device list is Apple's statement of applicability. It does not show that the entry is reachable on a given device. The Apple Intelligence entries describe access to user data, not kernel memory.",
+    "first_observed": "2026-10-26",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-073",
+    "title": "Apple's iOS 27 and iOS 27.2 notes do not mention AGX, IOGPU, SPTM, TXM, PPL, CoreTrust, AMFI or Exclave",
+    "description": "A text search of the extracted iOS 27 and iOS 27.2 security pages (2026-11-12) found none of the terms AGX, IOGPU, SPTM, TXM, PPL, CoreTrust, AMFI or Exclave.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "iOS 27 and iOS 27.2",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-001",
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "A term search of the extracted text. Apple's notes name components and impacts only. Absence of a term does not show that a component is unaffected.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-074",
+    "title": "Apple's iOS 27 notes list four kernel or root privilege entries; the iOS 27.2 notes list none",
+    "description": "The iOS 27 page lists four entries with kernel or root privilege impacts: CVE-2026-43689 ('A malicious app may be able to gain root privileges'), CVE-2026-84607 and CVE-2026-86916 ('execute arbitrary code with kernel privileges'), and CVE-2026-84622 ('An app with root privileges may be able to read uninitialized kernel memory'). The iOS 27.2 page lists none.",
+    "verdict": "verified",
+    "confidence": "high",
+    "device_scope": "iPhone 11 and later (Apple device lists)",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27 (27.0 page); none on iOS 27.2 page",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-001",
+      "S-033"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Apple's impact text. No exploit or chain is implied. Affected version ranges are not stated.",
+    "first_observed": "2026-11-12",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-075",
+    "title": "heise reports the Calif.io jailbreak as 'the first reboot-proof jailbreak since iOS 9' (press claim; unverified)",
+    "description": "heise (English edition, 2026-10-16) states that the Calif.io team 'has developed the first reboot-proof jailbreak since iOS 9'. The upstream reference (E1) reports that a public untethered jailbreak for iOS 14.3 to 14.5.1 from 2021 contradicts that framing. This record keeps the press wording and does not adopt either framing.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.0.1 and earlier iOS 9 comparison (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-036"
+    ],
+    "contradicting_source_ids": [
+      "S-026"
+    ],
+    "limitations": "The 2021 comparison is the upstream's and is not verified here.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-076",
+    "title": "t3n reports AI-assisted exploit-chain discovery and an iOS 27.2 beta comparison as established; heise calls the comparison theoretical",
+    "description": "t3n (2026-10-18) reports that Calif.io used AI to find the exploit chain and that the team compared the iOS 27.2 beta with iOS 27.0.1 with AI support to identify the security fixes. heise (German edition, 2026-10-16) describes the comparison as theoretically possible. No team statement on the method was located.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not stated",
+    "chipset_scope": "Not stated",
+    "ios_scope": "iOS 27.0.1 and iOS 27.2 beta (as reported)",
+    "build_scope": "Not stated",
+    "supporting_source_ids": [
+      "S-038"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Press claims. The AI models used were not named by the team. The coverage reviewed does not show the method.",
+    "first_observed": "2026-10-16",
+    "last_checked": "2026-11-12"
+  },
+  {
+    "id": "C-077",
+    "title": "The upstream reports a Calif.io team member saying the team will not release an end-user jailbreak tool (unverified)",
+    "description": "The upstream reference reports that a Calif.io team member said in a 2026-10-19 interview that the team does not plan an end-user jailbreak tool, may disclose vulnerabilities so that third parties can build tools, and might release a proof of concept after Apple's fix. The interview was not retrieved.",
+    "verdict": "unverified",
+    "confidence": "low",
+    "device_scope": "Not applicable",
+    "chipset_scope": "Not applicable",
+    "ios_scope": "Not stated",
+    "build_scope": "Not applicable",
+    "supporting_source_ids": [
+      "S-026"
+    ],
+    "contradicting_source_ids": [],
+    "limitations": "Second-hand. The upstream classifies this as verified from the interview. That interview was not seen here.",
+    "first_observed": "2026-10-19",
     "last_checked": "2026-11-12"
   }
 ]

@@ -15,7 +15,7 @@
       "C-014"
     ],
     "notes": "Apple defines SPTM for A15-or-later SoCs, which includes the A17 Pro by ordering. No public A17 Pro SPTM research specific to 27.0.1 was located.",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-002",
@@ -32,7 +32,7 @@
       "C-015"
     ],
     "notes": "The only SPTM bypass mention is a community reference describing an undisclosed bypass. No public technical disclosure was found.",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-003",
@@ -46,10 +46,14 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-005"
+      "C-037",
+      "C-039",
+      "C-041",
+      "C-070",
+      "C-071"
     ],
-    "notes": "Apple credits Calif.io for iOS 27 entries, including a kernel-memory impact on CVE-2026-28968. Applicability to 27.0.1 or the A17 Pro is not established.",
-    "last_checked": "2026-11-11"
+    "notes": "Apple's iOS 27 and iOS 27.2 notes list kernel-memory write and corruption entries (research/apple-27x-cve-mapping.md). iOS 27: 2 write and 7 corruption entries, one of them Calif.io-credited (CVE-2026-28968). iOS 27.2: 4 write, 12 corruption and 1 copy-on-write entry. Applicability to iOS 27.0.1 is not established, because the advisories state no affected version range.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-004",
@@ -63,10 +67,11 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-022"
+      "C-035",
+      "C-040"
     ],
-    "notes": "A kernel read primitive is reported as planned by a Calif.io-linked researcher. No primary release was located and nothing has been reproduced.",
-    "last_checked": "2026-11-11"
+    "notes": "Apple lists kernel-memory read, disclosure and layout impacts: eight on the iOS 27 page (including CVE-2026-84622, which needs root) and six on the iOS 27.2 page. Applicability to iOS 27.0.1 is not established. No public technical analysis or exploit was reviewed.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-005",
@@ -80,10 +85,12 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-022"
+      "C-037",
+      "C-039",
+      "C-041"
     ],
-    "notes": "Same basis as CMP-004. A kernel write primitive has not been verified.",
-    "last_checked": "2026-11-11"
+    "notes": "Apple lists write and corruption impacts for kernel memory on the iOS 27 and iOS 27.2 pages. None is shown to affect iOS 27.0.1. No public write-up or reproduction was found (C-049).",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-006",
@@ -96,9 +103,13 @@
       "ios_version": "27.0.1",
       "build_number": "24A446"
     },
-    "evidence_claim_ids": [],
-    "notes": "No verified public sandbox escape for this target. A community reference describes a chain that includes one, but it is not verified.",
-    "last_checked": "2026-11-11"
+    "evidence_claim_ids": [
+      "C-034",
+      "C-048",
+      "C-074"
+    ],
+    "notes": "Apple lists a WebContent sandbox escape reachable by a remote attacker (iOS 27.2: CVE-2026-112690) and a WebKit Process Model escape (iOS 27.2: CVE-2026-113897). It also lists a kernel entry where a sandboxed app may execute arbitrary code with kernel privileges (iOS 27: CVE-2026-84607). These are Apple-listed fixes. Applicability to iOS 27.0.1 is not established. No verified public sandbox escape for the target exists.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-007",
@@ -111,9 +122,13 @@
       "ios_version": "27.0.1",
       "build_number": "24A446"
     },
-    "evidence_claim_ids": [],
-    "notes": "No verified public privilege escalation for this target.",
-    "last_checked": "2026-11-11"
+    "evidence_claim_ids": [
+      "C-035",
+      "C-036",
+      "C-074"
+    ],
+    "notes": "Apple lists a kernel entry in which a malicious app may gain root privileges (iOS 27: CVE-2026-43689) and an entry in which an app with root privileges reads uninitialised kernel memory (iOS 27: CVE-2026-84622). The iOS 27.2 page lists no kernel privilege entry. No verified public privilege escalation for the target was found.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-008",
@@ -128,7 +143,7 @@
     },
     "evidence_claim_ids": [],
     "notes": "AMFI (code signing enforcement) was not researched in this pass. Scheduled for the next research update.",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-009",
@@ -144,10 +159,13 @@
     "evidence_claim_ids": [
       "C-001",
       "C-002",
-      "C-027"
+      "C-027",
+      "C-038",
+      "C-042",
+      "C-049"
     ],
-    "notes": "A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. It is not shown for the A17 Pro and has no published write-up.",
-    "last_checked": "2026-11-11"
+    "notes": "A complete chain is reported only for an iPhone 18 Pro (A20 Pro) demonstration. Apple's notes list six Calif.io-credited entries in 27.2 and four in 27.0. None of the six 27.2 entries is a kernel-memory impact. One 27.0 entry (CVE-2026-28968) is a kernel corruption impact. Apple's notes do not identify the demonstration's chain. No write-up has been published (C-049).",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-010",
@@ -161,10 +179,13 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-016"
+      "C-016",
+      "C-055",
+      "C-065",
+      "C-066"
     ],
-    "notes": "No bootstrap for iOS 27.0.1 is verified. The documented Dopamine range for A15 to A17 stops at iOS 17.3.1 (secondary coverage).",
-    "last_checked": "2026-11-11"
+    "notes": "No bootstrap for iOS 27.0.1 is verified. Dopamine's 3.0.2 to 3.0.13 release notes do not mention iOS 27 (C-055). The 3.0 release states that real-device SPTM support ends at iOS 17.3.1 (C-066). Its Titan bypass covers iOS 16.5.1 to 17.3.1 (C-065). A third-party table lists A14 to A17 for iOS 17.3.1 and earlier (C-016).",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-011",
@@ -178,10 +199,12 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-030"
+      "C-030",
+      "C-056",
+      "C-057"
     ],
-    "notes": "Sileo: the repository named Sileo/Sileo has 2.5.1 (2024-10-08) as its latest release, and its notes do not mention iOS 27. ElleKit: name searches returned candidate repositories, none confirmed as the official upstream; the top two candidates have no GitHub release. Package-manager readiness for iOS 27.0.1 on A17 Pro is therefore not established.",
-    "last_checked": "2026-11-11"
+    "notes": "Sileo's latest release is 2.5.1 (2024-10-08), with no iOS 27 mention (C-030). The former ElleKit repository identifier redirects to tealbathingsuit/ellekit, which has no GitHub release (C-056). An upstream claim that ElleKit 1.2 covers iOS 27 is unverified (C-057). Package-manager readiness for iOS 27.0.1 is not established.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-012",
@@ -195,10 +218,11 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-004"
+      "C-004",
+      "C-053"
     ],
-    "notes": "Reboot persistence is reported for an iPhone 18 Pro demonstration, not for the target. Accounts differ and nothing has been reproduced.",
-    "last_checked": "2026-11-11"
+    "notes": "Reboot persistence is reported for the iPhone 18 Pro demonstration (C-004). An over-the-air persistence demonstration on iOS 27.2 with Lockdown Mode is reported by the upstream reference (C-053). Neither is verified for the target.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-013",
@@ -212,10 +236,12 @@
       "build_number": "24A446"
     },
     "evidence_claim_ids": [
-      "C-028"
+      "C-028",
+      "C-058",
+      "C-064"
     ],
-    "notes": "No publicly installable tool is verified for this target. Downloads advertising iOS 27.0.1 jailbreaks are not verified and must not be installed.",
-    "last_checked": "2026-11-11"
+    "notes": "No publicly installable tool is verified for this target (C-028). A public repository described as an A12/A13 PPL bypass exists (C-058). By its own description it does not apply to the target. A November 2026 project announcement claims iOS 27.0 to 27.0.1 support on the target model; no release was reviewed in this pass (C-064). None of these was reviewed or executed.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-014",
@@ -228,9 +254,12 @@
       "ios_version": "27.0.1",
       "build_number": "24A446"
     },
-    "evidence_claim_ids": [],
-    "notes": "No independent reproduction on A17 Pro hardware was found. This project does not test exploit code on any real device.",
-    "last_checked": "2026-11-11"
+    "evidence_claim_ids": [
+      "C-049",
+      "C-062"
+    ],
+    "notes": "No independent reproduction on A17 Pro hardware was found. The announced kernel read/write work has no published write-up or code as of 2026-11-12 (C-049). A reported crash reproduction on another model exists (C-062). This project does not test exploit code on any real device.",
+    "last_checked": "2026-11-12"
   },
   {
     "id": "CMP-015",
@@ -249,6 +278,6 @@
       "C-025"
     ],
     "notes": "Build 24A446 for iPhone16,2 is corroborated by third-party sources and by the Apple index date. No Apple-hosted build record was located, so verification is partial.",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   }
 ]

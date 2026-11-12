@@ -24,7 +24,7 @@
         "vendor_security_advisory", "vendor_security_guide", "vendor_security_blog",
         "vendor_spec_page", "vendor_release_index", "official_repository_api",
         "official_repository_readme", "conference_site", "company_site",
-        "news_article", "government_advisory", "third_party_firmware_index",
+        "news_article", "government_advisory", "third_party_firmware_index", "academic_paper",
         "community_wiki", "community_reference", "forum_post", "encyclopedia",
         "license_text"
       ]
