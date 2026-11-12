@@ -4,6 +4,8 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-11-12
+
 ### Added
 
 - Claims C-089 to C-107 for builds 24A446, 24B119 and 24B156: manifest and container verification for the two 27.2 builds; identity of the SPTM and TXM containers between 27.2 and 27.2.1; kernel version strings; KEXT inventory counts; the arm64e header flag; the scope of a third-party symbolication signature set and the presence of its anchor strings in the kernelcache; name conflicts and a small cross-check; the mechanism of a standalone KEXT import failure; the KEXT inventory reconciliation; a disagreement on register-indirect control flow in the monitors; four methods on the `__DATA_SPTM` segment; and Apple's Platform Security guide statements on SPTM, MIE and the A15-A18 table column.
@@ -11,11 +13,19 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 - Timeline event E-032 (static research update; no release).
 - Public reports: `reports/ghidra-kernel-symbolication.md`, `reports/ghidra-kext-loader-investigation.md`, `reports/sptm-semantic-analysis.md`, `reports/txm-semantic-analysis.md`, `reports/firmware-diff-27.0.1-27.2.md`, `reports/firmware-diff-27.0.1-27.2.1.md`, `reports/a17pro-memory-protection-analysis.md` and `reports/ghidra-cve-correlation.md`.
 - Count-level inventories: `analysis/kext-reconciliation.json`, `analysis/firmware-diff-metadata.json` and `analysis/kernel-symbolication-metrics.json`.
+- Timeline event E-033 (release record).
 
 ### Changed
 
 - S-004 (Apple Platform Security guide) was re-read on 2026-11-12. Its access date and reliability note are updated. C-013 is unchanged. C-107 records the range reading of the A15-A18 column and the fact that its cells could not be read.
 - S-043 gained the claims that cite it. The firmware rows for 24B119 and 24B156 list S-044 and S-045.
+- Existing reports carry pointers to the new analysis rather than repeating it: `reports/ghidra-kernel-analysis.md` (section 5a and the KEXT limitation) and `reports/ghidra-sandbox-analysis.md` (KEXT import). The SPTM, TXM and memory-protection reviews point to the existing summaries for provenance and structure.
+- C-013 was re-read on 2026-11-12 (C-105). Its `last_checked` date is updated. Its verdict is unchanged.
+
+### Corrections
+
+- C-013's limitation is refined by C-107. Its statement that the extracted text does not name the A17 Pro remains literally true. The guide's "A15 or later" wording and its A15-A18 table column both cover the A17 generation, although the support cells could not be read.
+- C-086's cause is refined by C-101: the import failure is raised in stub processing over an empty symbol table, which C-086 did not establish.
 
 ### Notes
 
@@ -23,7 +33,7 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 - Standalone KEXT files are not imported for analysis, because the release kernelcache's stub tables make the standalone import fail. The fileset program is used instead.
 - Symbol names, addresses, symbol listings, Ghidra projects and firmware bytes are not published. Symbolication is reported as counts.
 - The monitor reference counts were taken from a read-only copy of the Ghidra project.
-- No release was created. The findings support the research record and do not change readiness (LEVEL 0, NO-GO).
+- Release v0.3.0 was created after the validator, the secret scans and the CI workflows passed on the release-preparation commit. Earlier tags v0.1.0, v0.1.1 and v0.2.0 are unchanged. The findings support the research record and do not change readiness (LEVEL 0, NO-GO).
 
 ## [0.2.0] - 2026-11-12
 

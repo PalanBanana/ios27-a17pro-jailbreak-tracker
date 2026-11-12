@@ -241,9 +241,9 @@
       "S-004"
     ],
     "contradicting_source_ids": [],
-    "limitations": "The guide is continuously updated. The extracted text does not name the A17 Pro.",
+    "limitations": "The guide is continuously updated. The extracted text does not name the A17 Pro. Re-read on 2026-11-12 as C-105. The feature table's A15-A18 column, which includes the A17 generation, is recorded in C-107.",
     "first_observed": "2026-11-11",
-    "last_checked": "2026-11-11"
+    "last_checked": "2026-11-12"
   },
   {
     "id": "C-014",
@@ -1916,7 +1916,7 @@
   {
     "id": "C-105",
     "title": "Apple's Platform Security guide states that SPTM is supported on A15-or-later and M2-or-later SoCs, and that SPTM with TXM replaces the PPL there",
-    "description": "The OS-integrity section of the guide, re-read on 2026-11-12, gives the SPTM support statement and the replacement statement. The page date shown is January 28, 2026.",
+    "description": "The OS-integrity section of the guide, re-read on 2026-11-12, gives the SPTM support statement and the replacement statement. The page date shown is January 28, 2026. It re-reads the source of C-013 and states the same support and replacement wording.",
     "verdict": "verified",
     "confidence": "high",
     "device_scope": "Not device-specific (Apple platform documentation)",

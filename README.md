@@ -50,7 +50,7 @@ The research target is fixed at iOS 27.0.1 (build 24A446), as described in the t
 
 ## 5. Research Status
 
-**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 32 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 33 timeline events, 15 compatibility rows and 4 firmware builds.
 
 **Current position: LEVEL 0 for the target.** Calif.io reportedly demonstrated an untethered iOS 27.0.1 jailbreak on an iPhone 18 Pro (A20 Pro) on 2026-10-16 (C-001, partially verified). That demonstration did not use the target. No write-up or tool has been verified. Dopamine's 3.0 release notes state that real-device SPTM support ends at iOS 17.3.1 (C-066), and no iOS 27 support is documented for the A17 Pro (C-018). The v0.2.0 research update maps Apple's iOS 27.2 and 27.2.1 advisories ([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)) and reconciles the community reference claim by claim ([upstream-reconciliation.md](research/upstream-reconciliation.md)). It does not change the readiness level.
 
@@ -191,6 +191,7 @@ Details: [docs/RECOVERY_AND_PRESERVATION.md](docs/RECOVERY_AND_PRESERVATION.md) 
 | 2026-11-12 | The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021). | partially verified | S-014, S-026 |
 | 2026-11-12 | Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged. | partially verified | S-043 |
 | 2026-11-12 | Static research on the 24A446 kernelcache and monitors: symbolication with a third-party signature set, a KEXT import investigation, monitor structure counts, a memory-protection documentation re-read, and metadata comparison with the 24B119 and 24B156 builds. The v0.3.0 release was not created. Readiness is unchanged. | partially verified | S-004, S-043, S-044, S-045, S-046 |
+| 2026-11-12 | Release v0.3.0 (A17 Pro Ghidra Static Analysis & Symbolication) was published after the validator and CI checks passed. It records static analysis, symbolication and metadata-level comparisons. Code-level differencing and binary-to-advisory correlation were not performed. Readiness is unchanged (LEVEL 0, NO-GO). | partially verified | S-004, S-043, S-044, S-045, S-046 |
 
 ## 14. Verified Claims
 

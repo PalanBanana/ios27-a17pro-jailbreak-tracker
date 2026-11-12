@@ -5,7 +5,7 @@
 ## What was checked
 
 - Presence of the sandbox component in the 24A446 kernelcache fileset, by exact bundle identifier `com.apple.security.sandbox`. **Verified.**
-- The standalone sandbox bundle extracted from the kernelcache has an empty symbol table, and Ghidra could not import it on its own. The component was therefore examined inside the kernelcache fileset. **Verified** (import failure); cause **unresolved**.
+- The standalone sandbox bundle extracted from the kernelcache has an empty symbol table, and Ghidra could not import it on its own. The component was therefore examined inside the kernelcache fileset. **Verified** (import failure). The mechanism is verified (C-101): the loader's stub processing reads symbols from an empty table. Why the fileset load does not raise the same exception is **unresolved** (see [ghidra-kext-loader-investigation.md](ghidra-kext-loader-investigation.md)).
 - Interface and log strings that refer to the sandbox. These include a message about an IOUC call failing the sandbox check in a named process, and the bundle identifier of the sandbox daemon. **Verified** for presence only.
 
 ## What was not checked

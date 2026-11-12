@@ -30,7 +30,7 @@ Related records: [data/firmware.json](../data/firmware.json) (build 24A446), [da
 
 - Automatic analysis completed, and the program was saved. The log records 17 errors. These are 13 function-creation failures caused by thunk overlaps and 4 value-tracking failures. The affected regions were not analysed as functions.
 - The analysis recovered about 230,000 functions. Almost all have default names. Original symbol names are essentially absent, so the results below rest on segment layout and on strings, not on recovered names.
-- The standalone KEXT files extracted from the kernelcache could not be imported. Each has an empty symbol table. Analysis therefore covers the kernelcache fileset, not the separate files.
+- The standalone KEXT files extracted from the kernelcache could not be imported. Each has an empty symbol table. Analysis therefore covers the kernelcache fileset, not the separate files. The failure mechanism is now verified (C-101): the loader's stub processing reads symbols from an empty table, and the release kernelcache's own symbol tables are empty. Why the fileset load does not raise the same exception is unresolved. See [ghidra-kext-loader-investigation.md](ghidra-kext-loader-investigation.md).
 
 ## 4. Presence of security-related components (verified, by exact bundle identifier)
 
@@ -58,7 +58,7 @@ Presence of a string does not show how the corresponding code path behaves, whet
 
 ## 5a. The __DATA_SPTM segment (unresolved)
 
-The `__DATA_SPTM` segment is a single read-only block of 311,296 bytes. In this analysis, Ghidra recorded no code reference into it. The one recorded reference is a data-table entry in the linkage segment, not code. The cause is not established. Possible explanations are indirect accesses that were not resolved, accesses made from the monitor side, and the analysis errors above (C-085). This is a limitation of the analysis, not a finding about the segment's behaviour.
+The `__DATA_SPTM` segment is a single read-only block of 311,296 bytes. In this analysis, Ghidra recorded no code reference into it. The one recorded reference is a data-table entry in the linkage segment, not code. The cause is not established. Possible explanations are indirect accesses that were not resolved, accesses made from the monitor side, and the analysis errors above (C-085). This is a limitation of the analysis, not a finding about the segment's behaviour. Four further read-only methods also found no code path that addresses the segment (C-104). The cause remains unresolved. See [sptm-semantic-analysis.md](sptm-semantic-analysis.md), section 4.
 
 ## 6. What this analysis does not establish
 

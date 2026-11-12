@@ -50,7 +50,7 @@
 
 ## 5. 연구 현황
 
-**데이터 스냅샷(2026-11-12):** 주장 106건(검증됨 62, 부분 검증 24, 미검증 20), 출처 46건, 타임라인 사건 32건, 호환성 행 15건, 펌웨어 빌드 4건.
+**데이터 스냅샷(2026-11-12):** 주장 106건(검증됨 62, 부분 검증 24, 미검증 20), 출처 46건, 타임라인 사건 33건, 호환성 행 15건, 펌웨어 빌드 4건.
 
 **현재 위치: 대상 기기 LEVEL 0.** Calif.io가 2026-10-16에 iPhone 18 Pro(A20 Pro)에서 iOS 27.0.1 untethered 탈옥을 시연했다고 보도되었습니다(C-001, 부분 검증). 그 시연은 대상 기기를 사용하지 않았습니다. 검증된 기술 문서나 도구는 없습니다. Dopamine 3.0 릴리스 노트는 실기기 SPTM 지원이 iOS 17.3.1에서 끝난다고 명시합니다(C-066). A17 Pro에 대한 iOS 27 지원은 문서화되어 있지 않습니다(C-018). 이번 v0.2.0 연구 업데이트는 Apple의 iOS 27.2 및 27.2.1 공지를 매핑하고([apple-27x-cve-mapping.md](research/apple-27x-cve-mapping.md)), 상류 참고 자료를 주장별로 대조합니다([upstream-reconciliation.md](research/upstream-reconciliation.md)). 준비도 수준은 바뀌지 않았습니다.
 
@@ -191,6 +191,7 @@
 | 2026-11-12 | The third-party index lists iOS 27.0.1 (24A446) as not signed on 2026-11-12. The upstream reference recorded it as signed on 2026-11-02. The date of the change is not known (C-021). | 부분 검증 | S-014, S-026 |
 | 2026-11-12 | Local static provenance and Ghidra analysis of the 24A446 kernelcache and the SPTM and TXM monitor images. Manifest digests match the normal containers; restore-entry digests do not match (unresolved). The complete package was not hashed. Readiness is unchanged. | 부분 검증 | S-043 |
 | 2026-11-12 | Static research on the 24A446 kernelcache and monitors: symbolication with a third-party signature set, a KEXT import investigation, monitor structure counts, a memory-protection documentation re-read, and metadata comparison with the 24B119 and 24B156 builds. The v0.3.0 release was not created. Readiness is unchanged. | 부분 검증 | S-004, S-043, S-044, S-045, S-046 |
+| 2026-11-12 | Release v0.3.0 (A17 Pro Ghidra Static Analysis & Symbolication) was published after the validator and CI checks passed. It records static analysis, symbolication and metadata-level comparisons. Code-level differencing and binary-to-advisory correlation were not performed. Readiness is unchanged (LEVEL 0, NO-GO). | 부분 검증 | S-004, S-043, S-044, S-045, S-046 |
 
 ## 14. 검증된 주장
 

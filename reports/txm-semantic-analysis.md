@@ -1,23 +1,14 @@
 # Ghidra static analysis: TXM semantic review, iOS 27.0.1 (build 24A446)
 
-**Status:** structure, call-structure counts and interface-string presence are verified. Behaviour and enforcement
-logic are not analysed. Data as of 2026-11-12. Target: iPhone 15 Pro Max (A17 Pro, `iPhone16,2`), iOS 27.0.1, build
-24A446. Offline and static. The analysis used a read-only copy of the project.
+**Status:** function-level structure, call-structure counts and interface-string categories are verified. Behaviour and enforcement logic are not analysed. Data as of 2026-11-12. Target: iPhone 15 Pro Max (A17 Pro, `iPhone16,2`), iOS 27.0.1, build 24A446. Offline and static. The analysis used a read-only copy of the project.
 
-This page does not describe how the TXM enforces anything, and it does not assess any bypass. The provenance and
-analysis summary is in [ghidra-txm-analysis.md](ghidra-txm-analysis.md). The companion SPTM review is
-[sptm-semantic-analysis.md](sptm-semantic-analysis.md).
+Provenance (container, digests, encryption), the segment layout and the analysis summary are in [ghidra-txm-analysis.md](ghidra-txm-analysis.md). They are not repeated here. This page adds the function-level and call-structure counts and the interface-string categories. The kernel-side evidence of TXM interfaces (C-083) is in the public TXM summary.
 
-Claims: C-081 (container), C-083 (kernel strings), C-103 (indirect control flow), C-105 (documentation).
+This page does not describe how the TXM enforces anything, and it does not assess any bypass. The companion SPTM review is [sptm-semantic-analysis.md](sptm-semantic-analysis.md).
 
-## 1. Structure (verified)
+Claims: C-081 (container), C-083 (kernel strings), C-103 (indirect control flow), C-105 and C-106 (documentation).
 
-- The image is a 64-bit Mach-O `MH_EXECUTE` of 557,088 bytes once decompressed. Its load commands name six segments,
-  and Ghidra shows 21 memory blocks.
-- It carries a module version string for the image-verification module (presence only; build metadata is not reproduced).
-- One entry point, named `entry` by the analysis.
-
-## 2. Functions (verified: read-only Ghidra export)
+## 1. Functions and incoming references (verified: read-only Ghidra export)
 
 | Measure | Value |
 |---|---|
@@ -29,7 +20,7 @@ Claims: C-081 (container), C-083 (kernel strings), C-103 (indirect control flow)
 
 The 487 functions without an incoming reference are not reviewed. Their count does not show that any of them is unused.
 
-## 3. Call structure (counts only)
+## 2. Call structure (counts only)
 
 | Reference or encoding | Ghidra's reference model | Byte-level decoder (upper bound) |
 |---|---|---|
@@ -38,18 +29,16 @@ The 487 functions without an incoming reference are not reviewed. Their count do
 | Register-indirect call | **none recorded** | 279 encodings |
 | Register-indirect branch | **none recorded** | 87 encodings |
 | Return | not counted | 1,521 encodings |
-| Distinct direct-call targets | not counted | 1,106 |
+| Distinct direct-call targets | not counted | 1,106 (all inside executable segments) |
 | Data references | 12,688 | not counted |
 
-- Calls are mostly direct. The two methods disagree on register-indirect control flow: Ghidra records none, and the
-  decoder finds 279 call and 87 branch encodings. The disagreement is not resolved (C-103). The decoder counts every
-  aligned word in an executable segment, so its counts are upper bounds.
+- Calls are mostly direct. The two methods disagree on register-indirect control flow: Ghidra records none, and the decoder finds 279 call and 87 branch encodings. The disagreement is not resolved (C-103). The decoder counts every aligned word in an executable segment, so its counts are upper bounds. Ghidra decodes 74,071 instructions against the decoder's 90,112 words.
+- The TXM has more distinct call targets (1,106) than the SPTM (294). This is a count and nothing more.
 - No conclusion about what any call target does is drawn from these counts.
 
-## 4. Interface strings (presence only)
+## 3. Interface strings (presence only)
 
-The printable strings of six or more characters number about 1,100, and Ghidra counts 797 defined string items. Grouped
-by category:
+The printable strings of six or more characters number about 1,100, and Ghidra counts 797 defined string items. Grouped by category:
 
 | Category | Distinct strings (approximate) | What the strings show |
 |---|---|---|
@@ -60,35 +49,27 @@ by category:
 | ASID and address-space terms | 2 | A message about initialising an ASID table, and one about the shared page for the secure channel |
 | Thread and context terms | 2 | Messages about panics on thread stacks |
 
-The strings show that these conditions and interfaces exist in this build. They do not show how the code handles them.
-No function was reviewed.
+The listed matches (capped at 60 in the export) include trust-cache messages, entitlement names for loading and unloading trust caches (kept in the local listing), panic and assertion templates, and a message about the image-verification module's version and build metadata.
 
-## 5. Kernel-side evidence of TXM interfaces (presence only)
+The strings show that these conditions and interfaces exist in this build. They do not show how the code handles them. No function was reviewed.
 
-The 24A446 kernelcache contains kernel log and format strings that refer to a TXM load address and to errors on TXM
-thread association and disassociation (C-083). This shows that kernel code paths use a TXM interface for thread
-management. It does not show how those paths behave.
+## 4. Documentation
 
-## 6. Documentation
+Apple's Platform Security guide states that TXM is designed to work with SPTM, and that TXM enforces code-execution policy at a lower privilege level (see the SPTM review, C-105). The guide's MIE passage names A19 and M5 processors or later (C-106). The guide does not describe the TXM's behaviour on any particular chip.
 
-Apple's Platform Security guide states that TXM is designed to work with SPTM, and that TXM enforces code-execution
-policy at a lower privilege level (see the SPTM review, C-105). The guide's MIE passage names A19 and M5 processors or
-later (C-106). The guide does not name the TXM's behaviour on any particular chip.
+## 5. What this review does not establish
 
-## 7. What this review does not establish
-
-- The TXM's enforcement logic. Apple's guide describes SPTM and TXM as working together to protect page tables. That
-  statement is general, and this review adds no detail to it.
+- The TXM's enforcement logic. Apple's guide describes SPTM and TXM as working together to protect page tables. That statement is general, and this review adds no detail to it.
 - Any relationship between this image and the reported SPTM bypass, which is second-hand and unverified (C-051).
 - Whether the TXM behaves the same way on the A17 Pro as on other devices.
 - Any vulnerability in the TXM. No function was reviewed for correctness or security.
 
-## 8. Status
+## 6. Status
 
 | Question | Status |
 |---|---|
-| Image present, unencrypted, and matching its normal manifest digest | Verified (C-081) |
-| Structure, function counts and analysis without errors | Verified (tool output) |
+| Image present, unencrypted, and matching its normal manifest digest | Verified (C-081; see the public TXM summary) |
+| Function counts, incoming references and analysis without errors | Verified (tool output) |
 | Call-structure counts for Ghidra's reference model | Verified |
 | Indirect control flow: the two methods disagree | Unresolved (C-103) |
 | Kernel-side strings referring to TXM interfaces | Verified for presence (C-083) |

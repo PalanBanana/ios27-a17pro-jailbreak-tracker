@@ -10,11 +10,11 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 | GO / NO-GO | **NO-GO.** Required conditions are unmet (see [docs/RESEARCH_METHODOLOGY.md](docs/RESEARCH_METHODOLOGY.md)). |
 | Device operations performed by this project | None. The project does not connect to, inspect, or modify any maintainer-owned device. |
 | Public repository | PalanBanana/ios27-a17pro-jailbreak-tracker (public) |
-| Latest release | v0.2.0 (A17 Pro Deep Technical Research Update), created only after the CI workflows pass for the release commit. Earlier releases v0.1.1 and v0.1.0 are unchanged. See the Releases page. |
+| Latest release | v0.3.0 (A17 Pro Ghidra Static Analysis & Symbolication), created only after the CI workflows pass for the release commit. Earlier releases v0.2.0, v0.1.1 and v0.1.0 are unchanged. See the Releases page. |
 
 ## Data
 
-**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 32 timeline events, 15 compatibility rows and 4 firmware builds.
+**Data snapshot (2026-11-12):** 106 claims (62 verified, 24 partially verified, 20 unverified), 46 sources, 33 timeline events, 15 compatibility rows and 4 firmware builds.
 
 ## Research priorities
 
