@@ -4,6 +4,11 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ## [Unreleased]
 
+### Added
+
+- Documentation completion for v0.5.0 (no new research, no data changes, no release): `research/cross-generation-security-matrix.md` (A17 Pro, A18 Pro and A19 Pro manifest comparison, metadata level), `reports/ghidra-exclave-research-integration.md` (counts and conclusions from the existing local static analysis, with no offsets or paths), `docs/RESEARCH_WORKFLOW.md`, `docs/AGENT_CONFIGURATION.md` and `docs/USAGE_EFFICIENCY.md`.
+- Two read-only research agent definitions in `.claude/agents/` (`primary-source-auditor`, `manifest-auditor`). A restart of the Claude Code session may be needed before they are discovered.
+
 ## [0.5.0] - 2026-11-12
 
 ### Added

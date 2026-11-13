@@ -31,6 +31,10 @@ This is an independent research and compatibility tracker for an iPhone 15 Pro M
 
 Follow the update procedure in `docs/RESEARCH_METHODOLOGY.md`. If nothing material changed, record `NO MATERIAL CHANGE` in `CHANGELOG.md`. Do not invent changes.
 
+## Workflow and agents
+
+Session order is in `docs/RESEARCH_WORKFLOW.md`. Models, the two read-only research agents (`.claude/agents/`) and their limits are in `docs/AGENT_CONFIGURATION.md`. Resource and stop rules are in `docs/USAGE_EFFICIENCY.md`. Subagents never make final compatibility decisions.
+
 ## Tone
 
 Plain, precise and appropriately hedged. Use "reported" for facts that appear only in press coverage.
