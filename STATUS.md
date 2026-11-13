@@ -8,7 +8,7 @@ Current project position for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) on iO
 | Target | iPhone 15 Pro Max; A17 Pro; iPhone16,2; iOS 27.0.1; build 24A446 |
 | Readiness | **LEVEL 0** for the target (research only). See [reports/exploit-readiness.md](reports/exploit-readiness.md). |
 | GO / NO-GO | **NO-GO.** Required conditions are unmet (see [docs/RESEARCH_METHODOLOGY.md](docs/RESEARCH_METHODOLOGY.md)). |
-| Device operations performed by this project | None. The project does not connect to, inspect, or modify any maintainer-owned device. |
+| Device operations performed by this project | None performed. By default the project does not connect to, inspect, or modify any maintainer-owned device. A narrow, user-authorised, read-only identification exception exists (`docs/SAFETY_POLICY.md` section 8). Its results stay local. |
 | Public repository | PalanBanana/ios27-a17pro-jailbreak-tracker (public) |
 | Latest release | v0.5.0 (Secure Exclaves architecture and A17 Pro exclave applicability), created only after the CI workflows pass for the release commit. Earlier releases v0.4.0, v0.3.0, v0.2.0, v0.1.1 and v0.1.0 are unchanged. See the Releases page. |
 

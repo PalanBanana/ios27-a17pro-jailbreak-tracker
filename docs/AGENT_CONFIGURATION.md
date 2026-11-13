@@ -10,10 +10,12 @@ How AI agents are intended to be configured for work in this repository. The rul
 | Subagents | Haiku 5.5 | high | Isolated tasks that save main-context space: primary-source verification, manifest metadata inspection, repetitive evidence classification, small read-only audits |
 
 - At most **two** subagents exist, and **one** runs at a time by default. Two run together only when their tasks are independent.
-- No agent teams. No recursive spawning. Subagents do not commit, push, publish or touch any device.
+- No agent teams. No recursive spawning. Subagents do not commit, push, publish or touch any device (see section 5).
 - Subagents return a concise evidence summary, not a source dump. The agent definitions below cap output at 20 lines.
 
 **Not delegated:** final security conclusions, device compatibility verdicts, repository publication, and anything involving a physical device.
+
+**Physical device.** Device access is off by default. Only when the user has separately authorised it, the main Sonnet agent may perform the read-only USB identification defined in [SAFETY_POLICY.md](SAFETY_POLICY.md) section 8, and nothing else.
 
 ## 2. Project agents
 
@@ -44,6 +46,7 @@ Default is high for both roles. Raise or lower it for a task, and restore it aft
 ## 5. Subagent restrictions
 
 - Read-only. No code execution, no download or build of exploit binaries, no device testing, no payloads, no bypass development.
+- Haiku subagents never access a physical device, even when the user has authorised identification for the main agent. They never request a new pairing, never modify device settings and never execute device commands. They remain read-only documentation researchers.
 - Scope given in the task: the files or URLs to read, the output format and the stop condition. No open-ended browsing.
 - Findings are returned with source, date, evidence class, confidence, limitations and open questions. The main agent re-checks any high-impact finding before it is recorded.
 - A subagent never makes the final compatibility decision.

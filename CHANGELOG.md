@@ -4,6 +4,10 @@ All notable changes to this repository are recorded here. Dates use ISO 8601 (`Y
 
 ## [Unreleased]
 
+### Changed
+
+- Device policy (no research, no data changes, no release): added a narrow exception for separately authorised, read-only identification of a user's own device, limited to six metadata fields, with results kept local. The default prohibition on device access is unchanged. Updated `CLAUDE.md` (rules 2, 10 and 11), `docs/SAFETY_POLICY.md` (new section 8), `docs/DEVICE_PROFILE.md`, `docs/RESEARCH_WORKFLOW.md`, `docs/AGENT_CONFIGURATION.md`, `README.md`, `README_KR.md`, `STATUS.md` and `reports/a17pro-exploit-readiness.md` (row 12). No device was connected.
+
 ### Added
 
 - Documentation completion for v0.5.0 (no new research, no data changes, no release): `research/cross-generation-security-matrix.md` (A17 Pro, A18 Pro and A19 Pro manifest comparison, metadata level), `reports/ghidra-exclave-research-integration.md` (counts and conclusions from the existing local static analysis, with no offsets or paths), `docs/RESEARCH_WORKFLOW.md`, `docs/AGENT_CONFIGURATION.md` and `docs/USAGE_EFFICIENCY.md`.

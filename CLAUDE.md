@@ -9,7 +9,7 @@ This is an independent research and compatibility tracker for an iPhone 15 Pro M
 ## Non-negotiable rules
 
 1. Never write, link to or describe working exploit steps, exploit code or jailbreak tools. Summarise public reporting only.
-2. Never instruct anyone to connect to, modify, update, restore, downgrade or jailbreak an iPhone. The project never operates on devices.
+2. Never instruct anyone to connect to, modify, update, restore, downgrade or jailbreak an iPhone. The project never operates on devices. The only exception is the narrow, separately authorised read-only identification in rule 11.
 3. Never claim compatibility for the exact device without evidence. Use the five evidence levels in `docs/DEVICE_PROFILE.md`.
 4. Never invent sources, dates, build numbers, verdicts or quotations. If evidence is missing, record `unverified`, `not_established` or `not_researched`.
 5. Never publish personal data: no device identifiers (UDID, ECID, serial number, IMEI, EID), no Apple Account details, no tokens, no personal filesystem paths and no real names of private individuals.
@@ -17,7 +17,8 @@ This is an independent research and compatibility tracker for an iPhone 15 Pro M
 7. Keep `README.md` and `README_KR.md` structurally parallel. English is the source of truth.
 8. Before finishing any change, run `python3 scripts/validate_tracker.py` and fix every failure. Never weaken a check to make it pass.
 9. Never force-push, rewrite history or delete existing evidence. Supersede an earlier verdict with a new record instead.
-10. Never record a maintainer's personal device state (installed build, update or configuration settings, usage, or any device identifier) in this repository. The research target profile in `docs/DEVICE_PROFILE.md` is the only device description published here.
+10. Never record a maintainer's personal device state (installed build, update or configuration settings, usage, or any device identifier) in this repository. The research target profile in `docs/DEVICE_PROFILE.md` is the only device description published here. Results of an identification under rule 11 stay local and are never committed, pushed or quoted in published text.
+11. Narrow exception: a user may separately authorise limited, read-only identification of their own physical device. Without that authorisation, rules 2 and 10 apply in full and no agent touches a device. Under an authorisation, only these fields may be collected: ProductType, ProductVersion, BuildVersion, DeviceClass, HardwareModel and CPUArchitecture. Nothing else may be collected. The authorisation covers one session and one device, and it does not carry over to another session or operation. Only the main agent may perform it, and only under the conditions in `docs/SAFETY_POLICY.md` section 8. Subagents never access a device. Identification does not establish compatibility, vulnerability status or readiness. Any new pairing or trust relationship, diagnostic collection, backup or broader access needs a separate approval from the user, and if identification would need one, stop.
 
 ## Data conventions
 

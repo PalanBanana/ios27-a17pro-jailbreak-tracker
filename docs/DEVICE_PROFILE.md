@@ -27,11 +27,19 @@ The project keeps five separate questions. A result for one does not answer the 
 
 ## Target profile statement
 
-This repository maintains an independent research target profile for the iPhone 15 Pro Max (A17 Pro) running iOS 27.0.1 (build 24A446).
+The profile has two separate parts.
+
+### A. Public research target profile
+
+This repository maintains an independent research target profile for the iPhone 15 Pro Max (A17 Pro, `iPhone16,2`) running iOS 27.0.1 (build 24A446). This is the only device description published here.
 
 The target profile is used for compatibility research. It does not disclose or verify the personal device state of the repository maintainer.
 
-The project does not connect to, inspect, or modify any maintainer-owned device.
+### B. Private device identification results
+
+By default the project does not connect to, inspect, or modify any maintainer-owned device. The only exception is the read-only identification in [SAFETY_POLICY.md](SAFETY_POLICY.md) section 8, which needs a separate authorisation from the user and is limited to six metadata fields.
+
+Any result of such an identification stays local. It is never published, and no published text may confirm the state of a private device. It does not change the five evidence levels above.
 
 ## Public firmware signing observations
 

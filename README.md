@@ -16,7 +16,7 @@ Every claim is recorded with its sources, dates, scope, verdict and limitations.
 
 - Establish, with evidence, whether any jailbreak path exists for the target device and build.
 - Track the research areas that could lead to one: SPTM, kernel research, sandbox and privilege escalation, build compatibility, exploit-chain integration, the jailbreak ecosystem, persistence, and scam detection.
-- Protect real devices from research risk. The project never connects to, inspects, or modifies any maintainer-owned device, and it never recommends operations on a real device.
+- Protect real devices from research risk. By default the project never connects to, inspects, or modifies any maintainer-owned device, and it never recommends operations on a real device. The only exception is a narrow, separately authorised, read-only identification of six metadata fields, with results kept local (see the safety policy).
 - Keep firmware facts accurate: what is installed, what is signed, and what is not known.
 - Publish evidence that others can check, correct and reuse under the licences in section 19.
 
@@ -26,7 +26,7 @@ This repository maintains an independent research target profile for the iPhone 
 
 The target profile is used for compatibility research. It does not disclose or verify the personal device state of the repository maintainer.
 
-The project does not connect to, inspect, or modify any maintainer-owned device.
+By default the project does not connect to, inspect, or modify any maintainer-owned device. The only exception is the read-only identification in [docs/SAFETY_POLICY.md](docs/SAFETY_POLICY.md) section 8. Its results stay local and are never published.
 
 | Field | Value |
 |---|---|
@@ -479,10 +479,10 @@ Maintainers do not run code from pull requests, and no pull request is merged au
 
 ## 18. Safety Policy
 
-- This project never connects to, operates on, or recommends operations on an iPhone. Permission to research a jailbreak is not permission to execute one.
+- By default this project never connects to, operates on, or recommends operations on an iPhone. The only exception is the read-only identification in the safety policy. Permission to research a jailbreak is not permission to execute one.
 - Do not install IPA files, configuration profiles or jailbreak tools from unverified sources. Treat them as malware until shown otherwise.
 - Never publish or submit serial numbers, UDIDs, ECIDs, IMEI or EID values, Apple Account data, tokens, backups or device logs.
-- The project never connects to, inspects, or modifies any maintainer-owned device. Research never requires operating on a real device, and any operation on a real device needs explicit authorization from that device's owner for that operation.
+- By default the project never connects to, inspects, or modifies any maintainer-owned device. The only exception is a separately authorised, read-only identification of six metadata fields (USB, existing pairing only), with results kept local. Research never requires operating on a real device, and any operation on a real device needs explicit authorization from that device's owner for that operation.
 - Full policy: [docs/SAFETY_POLICY.md](docs/SAFETY_POLICY.md). Security reports: [SECURITY.md](SECURITY.md).
 
 ## 19. License

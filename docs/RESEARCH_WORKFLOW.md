@@ -2,7 +2,7 @@
 
 A practical checklist for a research session. The evidence rules, tiers and readiness levels are defined in [RESEARCH_METHODOLOGY.md](RESEARCH_METHODOLOGY.md), and the safety rules in [SAFETY_POLICY.md](SAFETY_POLICY.md). This page does not repeat them. It orders the work.
 
-All research uses public information and authorised local static-analysis artifacts. No physical device is involved at any step.
+All research uses public information and authorised local static-analysis artifacts. No physical device is involved at any step, except the optional, separately authorised identification in section 4.
 
 ## 1. Bounded process for each question
 
@@ -42,5 +42,15 @@ A failed technical operation is attempted at most three times. After that, take 
 - Quote only short, verified phrases, and check each quotation against the fetched text. Summarise everything else with attribution.
 - Do not write or link exploit steps, offsets, selectors or bypass code. Do not run, build or install a third-party exploit or tool.
 - Code-level comparison against later builds and mapping of binaries to advisories remain declined. Metadata-level comparison is allowed.
-- Never record a maintainer's personal device state. The target is described only as a profile.
+- Never record a maintainer's personal device state. The target is described only as a profile. Results of the optional identification in section 4 stay local.
 - Do not create a release unless the owner asks. Clarification and correction go to `main` with a normal commit.
+
+## 4. Optional device identification phase
+
+This phase is optional and runs only when the user has explicitly authorised it for the session. Public source analysis and static reverse engineering never need it.
+
+- The conditions, the stop rule and the handling of results are in [SAFETY_POLICY.md](SAFETY_POLICY.md) section 8. Only the main agent performs it.
+- It is limited to six metadata fields: ProductType, ProductVersion, BuildVersion, DeviceClass, HardwareModel and CPUArchitecture.
+- If it would need a new pairing or trust relationship, stop and record the limitation. Continue with public sources.
+- Device identification does not establish jailbreak compatibility or vulnerability status. It leaves the evidence levels, the readiness level and every verdict unchanged.
+- Diagnostic collection, backups and any broader device access need a separate approval from the user.
